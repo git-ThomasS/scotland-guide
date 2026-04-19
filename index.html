@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Scotland Field Guide</title>
+  <meta name="theme-color" content="#111111" />
+  <style>
+    :root {
+      --bg: #111111;
+      --panel: #1b1b1b;
+      --panel-2: #232323;
+      --text: #f3eee4;
+      --muted: #b8b0a1;
+      --accent: #c7a86c;
+      --line: #2e2e2e;
+      --good: #6aa56a;
+      --warn: #c59152;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100%;
+    }
+
+    body {
+      padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0;
+    }
+
+    .app {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.6rem;
+      line-height: 1.1;
+      margin: 0;
+      color: var(--text);
+    }
+
+    .subtitle {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .status-pill {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      margin-bottom: 14px;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    button, .button-link {
+      appearance: none;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #202020;
+      color: var(--text);
+      padding: 14px 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+    }
+
+    button.primary, .button-link.primary {
+      border-color: rgba(199,168,108,0.35);
+      background: rgba(199,168,108,0.12);
+      color: #f6ead1;
+    }
+
+    button:disabled {
+      opacity: 0.55;
+    }
+
+    .mode-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .tab.active {
+      color: var(--text);
+      border-color: rgba(199,168,108,0.35);
+      background: rgba(199,168,108,0.12);
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .spot-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255,255,255,0.01);
+      display: grid;
+      gap: 8px;
+    }
+
+    .spot-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .spot-name {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .spot-meta {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      color: #f6ead1;
+      background: rgba(199,168,108,0.12);
+      border: 1px solid rgba(199,168,108,0.25);
+      padding: 6px 8px;
+      border-radius: 999px;
+    }
+
+    .spot-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .spot-actions button,
+    .spot-actions .button-link {
+      min-height: 42px;
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      flex: 1;
+    }
+
+    .arrow-wrap {
+      display: grid;
+      place-items: center;
+      gap: 10px;
+      padding: 6px 0 2px;
+    }
+
+    .arrow-disc {
+      width: min(66vw, 280px);
+      height: min(66vw, 280px);
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at center, rgba(199,168,108,0.10), rgba(199,168,108,0.02) 40%, transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .arrow-cardinals {
+      position: absolute;
+      inset: 10px;
+      pointer-events: none;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .cardinal {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .cardinal.n { top: 2px; }
+    .cardinal.s { bottom: 2px; }
+    .cardinal.e {
+      top: 50%;
+      left: auto;
+      right: 2px;
+      transform: translateY(-50%);
+    }
+    .cardinal.w {
+      top: 50%;
+      left: 2px;
+      transform: translateY(-50%);
+    }
+
+    .arrow {
+      width: 0;
+      height: 0;
+      border-left: 22px solid transparent;
+      border-right: 22px solid transparent;
+      border-bottom: 105px solid var(--accent);
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,0.4));
+      transform-origin: center 80%;
+      transition: transform 0.18s linear;
+    }
+
+    .dot {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      bottom: calc(50% - 9px);
+      box-shadow: 0 0 0 8px rgba(199,168,108,0.08);
+    }
+
+    .selected-title {
+      text-align: center;
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .selected-subtitle {
+      text-align: center;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      background: rgba(255,255,255,0.01);
+      text-align: center;
+    }
+
+    .metric-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .arrival {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(106,165,106,0.25);
+      background: rgba(106,165,106,0.08);
+      display: none;
+    }
+
+    .arrival.visible { display: block; }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .trivia p,
+    .trivia li,
+    .helper {
+      color: var(--text);
+      line-height: 1.5;
+      font-size: 0.96rem;
+    }
+
+    .helper.muted,
+    .muted {
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    .small {
+      font-size: 0.86rem;
+    }
+
+    .hidden { display: none !important; }
+
+    .footer-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 520px) {
+      .controls,
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1 class="title">Scotland Field Guide</h1>
+        <p class="subtitle">Nearby story points, directional guidance, and walking handoff to Google Maps.</p>
+      </div>
+      <div id="statusPill" class="status-pill">Location off</div>
+    </header>
+
+    <section class="panel">
+      <div class="controls">
+        <button id="enableLocationBtn" class="primary">Enable location</button>
+        <button id="enableCompassBtn">Enable compass</button>
+      </div>
+      <p class="helper muted small">
+        On iPhone, compass access may need an extra permission tap. If the compass is unavailable, the guide will still show distance, bearing, and a Google Maps directions button.
+      </p>
+    </section>
+
+    <div class="mode-tabs">
+      <button id="nearbyTab" class="tab active">Nearby</button>
+      <button id="guideTab" class="tab">Point me there</button>
+    </div>
+
+    <section id="nearbyView" class="panel">
+      <h2 class="section-title">Nearby points</h2>
+      <div id="nearbyList" class="list"></div>
+      <p id="nearbyEmpty" class="helper muted">Enable location to sort places by distance.</p>
+    </section>
+
+    <section id="guideView" class="panel hidden">
+      <h2 class="section-title">Selected point</h2>
+      <div class="arrow-wrap">
+        <div class="arrow-disc" id="arrowDisc">
+          <div class="arrow-cardinals">
+            <span class="cardinal n">N</span>
+            <span class="cardinal e">E</span>
+            <span class="cardinal s">S</span>
+            <span class="cardinal w">W</span>
+          </div>
+          <div id="arrow" class="arrow"></div>
+          <div class="dot"></div>
+        </div>
+        <h3 id="selectedTitle" class="selected-title">Choose a point</h3>
+        <p id="selectedSubtitle" class="selected-subtitle">Distance and direction will appear here.</p>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-label">Distance</span>
+          <span id="distanceValue" class="metric-value">—</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Bearing</span>
+          <span id="bearingValue" class="metric-value">—</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Heading</span>
+          <span id="headingValue" class="metric-value">—</span>
+        </div>
+      </div>
+
+      <div class="spot-actions" style="margin-top:14px;">
+        <a id="mapsBtn" class="button-link primary" href="#" target="_blank" rel="noopener noreferrer">Open walking directions</a>
+        <button id="showTriviaBtn">Reveal trivia</button>
+      </div>
+
+      <div id="arrivalBox" class="arrival">
+        <strong>You’re here.</strong>
+        <div class="small" id="arrivalText">Open the scene, trivia, or stand-here notes.</div>
+      </div>
+
+      <div id="triviaBox" class="trivia hidden" style="margin-top:14px;">
+        <h3 class="section-title">Story layer</h3>
+        <p id="sceneText"></p>
+        <p id="storyText"></p>
+        <p id="visualText"></p>
+        <h3 class="section-title" style="margin-top:16px;">Did you know?</h3>
+        <ul id="triviaList"></ul>
+      </div>
+    </section>
+
+    <p class="footer-note">Starter template for GitHub Pages or any static hosting.</p>
+  </div>
+
+  <script>
+    const spots = [
+      {
+        id: 'victoria-street',
+        name: 'Victoria Street',
+        subtitle: 'Where imagination found its shape',
+        type: 'Exact point',
+        lat: 55.94877,
+        lon: -3.19128,
+        arrivalRadiusM: 35,
+        scene: 'The curved street echoes the layered visual identity often associated with Diagon Alley and the hidden-world logic of the Harry Potter universe.',
+        story: 'Edinburgh shaped more than names or references; it offered a dense, historic city structure where fantasy feels tucked inside ordinary streets.',
+        visual: 'The bend hides and reveals space in fragments, which makes the street feel discovered rather than simply seen.',
+        trivia: [
+          'Victoria Street was completed in 1834 as part of a major Old Town redesign.',
+          'Its multi-level layout follows Edinburgh’s steep medieval topography.',
+          'The colorful facades are much newer than the underlying street structure.'
+        ]
+      },
+      {
+        id: 'tom-riddle-grave',
+        name: 'Greyfriars Kirkyard – Tom Riddle grave',
+        subtitle: 'Names from the dead',
+        type: 'Exact point',
+        lat: 55.94734,
+        lon: -3.19263,
+        arrivalRadiusM: 25,
+        scene: 'This is less about a filmed scene and more about literary archaeology: the thrill of seeing how real places can feed fictional worlds.',
+        story: 'Greyfriars is where Edinburgh’s historical texture becomes literary fuel. Grave markers, names, and atmosphere all invite story-making.',
+        visual: 'Tombstones, enclosure walls, and old stone surfaces create a gothic frame that feels naturally cinematic.',
+        trivia: [
+          'The grave is usually associated with Thomas Riddell, often linked to the name Tom Riddle.',
+          'Greyfriars Kirkyard dates back to the 16th century.',
+          'The kirkyard is one of the city’s most famous gothic sites.'
+        ]
+      },
+      {
+        id: 'glenfinnan-viewpoint',
+        name: 'Glenfinnan Viaduct viewpoint',
+        subtitle: 'The moment between worlds',
+        type: 'Exact point',
+        lat: 56.87239,
+        lon: -5.4312,
+        arrivalRadiusM: 45,
+        scene: 'The Hogwarts Express crossing works as a visual threshold: travel becomes transformation.',
+        story: 'Train journeys in British storytelling often mark the crossing from one reality into another. Glenfinnan makes that metaphor visible.',
+        visual: 'The structured arc of the viaduct contrasts with the irregular landscape, creating cinematic tension.',
+        trivia: [
+          'The viaduct opened in 1901 and has 21 arches.',
+          'It was an early large-scale concrete structure.',
+          'The Jacobite steam train uses the line and is one of Scotland’s most iconic rail experiences.'
+        ]
+      },
+      {
+        id: 'old-man-of-storr',
+        name: 'Old Man of Storr viewpoint',
+        subtitle: 'Where landscape becomes myth',
+        type: 'Area viewpoint',
+        lat: 57.50667,
+        lon: -6.17641,
+        arrivalRadiusM: 60,
+        scene: 'Skye’s geology often feels like concept art made real; that is why films use it when they want a world that feels ancient or alien.',
+        story: 'These formations sit naturally inside folklore traditions where rock, weather, and scale invite mythic interpretation.',
+        visual: 'Vertical stone forms break the horizon and create an image that feels unstable, dramatic, and otherworldly.',
+        trivia: [
+          'The Storr formed through a massive landslip.',
+          'The name has Old Norse roots and is often translated as “great man.”',
+          'Visibility can shift extremely quickly with changing Skye weather.'
+        ]
+      }
+    ];
+
+    const state = {
+      currentLat: null,
+      currentLon: null,
+      accuracy: null,
+      heading: null,
+      watchId: null,
+      selectedSpotId: spots[0].id,
+      compassEnabled: false,
+      locationEnabled: false
+    };
+
+    const nearbyList = document.getElementById('nearbyList');
+    const nearbyEmpty = document.getElementById('nearbyEmpty');
+    const nearbyView = document.getElementById('nearbyView');
+    const guideView = document.getElementById('guideView');
+    const nearbyTab = document.getElementById('nearbyTab');
+    const guideTab = document.getElementById('guideTab');
+    const statusPill = document.getElementById('statusPill');
+    const enableLocationBtn = document.getElementById('enableLocationBtn');
+    const enableCompassBtn = document.getElementById('enableCompassBtn');
+    const selectedTitle = document.getElementById('selectedTitle');
+    const selectedSubtitle = document.getElementById('selectedSubtitle');
+    const distanceValue = document.getElementById('distanceValue');
+    const bearingValue = document.getElementById('bearingValue');
+    const headingValue = document.getElementById('headingValue');
+    const mapsBtn = document.getElementById('mapsBtn');
+    const arrow = document.getElementById('arrow');
+    const showTriviaBtn = document.getElementById('showTriviaBtn');
+    const triviaBox = document.getElementById('triviaBox');
+    const sceneText = document.getElementById('sceneText');
+    const storyText = document.getElementById('storyText');
+    const visualText = document.getElementById('visualText');
+    const triviaList = document.getElementById('triviaList');
+    const arrivalBox = document.getElementById('arrivalBox');
+    const arrivalText = document.getElementById('arrivalText');
+
+    nearbyTab.addEventListener('click', () => switchView('nearby'));
+    guideTab.addEventListener('click', () => switchView('guide'));
+    enableLocationBtn.addEventListener('click', enableLocation);
+    enableCompassBtn.addEventListener('click', enableCompass);
+    showTriviaBtn.addEventListener('click', () => triviaBox.classList.toggle('hidden'));
+
+    function switchView(mode) {
+      const showNearby = mode === 'nearby';
+      nearbyView.classList.toggle('hidden', !showNearby);
+      guideView.classList.toggle('hidden', showNearby);
+      nearbyTab.classList.toggle('active', showNearby);
+      guideTab.classList.toggle('active', !showNearby);
+    }
+
+    function enableLocation() {
+      if (!navigator.geolocation) {
+        statusPill.textContent = 'Geolocation unavailable';
+        return;
+      }
+
+      if (state.watchId !== null) {
+        navigator.geolocation.clearWatch(state.watchId);
+      }
+
+      state.watchId = navigator.geolocation.watchPosition(
+        (pos) => {
+          state.currentLat = pos.coords.latitude;
+          state.currentLon = pos.coords.longitude;
+          state.accuracy = pos.coords.accuracy;
+          state.locationEnabled = true;
+          updateStatus();
+          renderNearby();
+          renderSelected();
+        },
+        (err) => {
+          statusPill.textContent = err.code === 1 ? 'Location denied' : 'Location error';
+        },
+        {
+          enableHighAccuracy: true,
+          maximumAge: 5000,
+          timeout: 15000
+        }
+      );
+    }
+
+    async function enableCompass() {
+      try {
+        if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+          const response = await DeviceOrientationEvent.requestPermission();
+          if (response !== 'granted') {
+            statusPill.textContent = 'Compass denied';
+            return;
+          }
+        }
+
+        window.addEventListener('deviceorientationabsolute', handleOrientation, true);
+        window.addEventListener('deviceorientation', handleOrientation, true);
+        state.compassEnabled = true;
+        updateStatus();
+      } catch (error) {
+        statusPill.textContent = 'Compass unavailable';
+      }
+    }
+
+    function handleOrientation(event) {
+      let heading = null;
+
+      if (typeof event.webkitCompassHeading === 'number') {
+        heading = event.webkitCompassHeading;
+      } else if (typeof event.alpha === 'number') {
+        heading = (360 - event.alpha) % 360;
+      }
+
+      if (heading !== null && !Number.isNaN(heading)) {
+        state.heading = heading;
+        renderSelected();
+      }
+    }
+
+    function renderNearby() {
+      nearbyList.innerHTML = '';
+
+      const enriched = spots
+        .map((spot) => ({
+          ...spot,
+          distanceM: getDistanceMeters(state.currentLat, state.currentLon, spot.lat, spot.lon),
+          bearingDeg: getBearingDegrees(state.currentLat, state.currentLon, spot.lat, spot.lon)
+        }))
+        .sort((a, b) => a.distanceM - b.distanceM);
+
+      nearbyEmpty.classList.toggle('hidden', !!state.locationEnabled);
+
+      enriched.forEach((spot) => {
+        const card = document.createElement('article');
+        card.className = 'spot-card';
+        card.innerHTML = `
+          <div class="spot-top">
+            <div>
+              <h3 class="spot-name">${spot.name}</h3>
+              <p class="spot-meta">${spot.subtitle}</p>
+            </div>
+            <span class="tag">${spot.type}</span>
+          </div>
+          <div class="helper muted">${formatDistance(spot.distanceM)} away • bearing ${Math.round(spot.bearingDeg)}°</div>
+          <div class="spot-actions">
+            <button data-select="${spot.id}">Point me there</button>
+            <a class="button-link" target="_blank" rel="noopener noreferrer" href="${makeGoogleMapsDirectionsUrl(spot.lat, spot.lon)}">Google Maps</a>
+          </div>
+        `;
+
+        card.querySelector('button').addEventListener('click', () => {
+          state.selectedSpotId = spot.id;
+          renderSelected();
+          switchView('guide');
+        });
+
+        nearbyList.appendChild(card);
+      });
+    }
+
+    function renderSelected() {
+      const spot = spots.find((s) => s.id === state.selectedSpotId) || spots[0];
+      const canLocate = state.currentLat !== null && state.currentLon !== null;
+      const distanceM = canLocate ? getDistanceMeters(state.currentLat, state.currentLon, spot.lat, spot.lon) : null;
+      const bearingDeg = canLocate ? getBearingDegrees(state.currentLat, state.currentLon, spot.lat, spot.lon) : null;
+      const relativeTurn = canLocate && state.heading !== null ? normalizeAngle(bearingDeg - state.heading) : null;
+      const arrived = distanceM !== null && distanceM <= spot.arrivalRadiusM;
+
+      selectedTitle.textContent = spot.name;
+      selectedSubtitle.textContent = spot.subtitle;
+      distanceValue.textContent = distanceM !== null ? formatDistance(distanceM) : '—';
+      bearingValue.textContent = bearingDeg !== null ? `${Math.round(bearingDeg)}°` : '—';
+      headingValue.textContent = state.heading !== null ? `${Math.round(state.heading)}°` : '—';
+      mapsBtn.href = makeGoogleMapsDirectionsUrl(spot.lat, spot.lon);
+
+      sceneText.textContent = spot.scene;
+      storyText.textContent = spot.story;
+      visualText.textContent = spot.visual;
+      triviaList.innerHTML = spot.trivia.map((item) => `<li>${item}</li>`).join('');
+
+      if (relativeTurn !== null) {
+        arrow.style.transform = `rotate(${relativeTurn}deg)`;
+      } else if (bearingDeg !== null) {
+        arrow.style.transform = `rotate(${bearingDeg}deg)`;
+      } else {
+        arrow.style.transform = 'rotate(0deg)';
+      }
+
+      if (!canLocate) {
+        selectedSubtitle.textContent = `${spot.subtitle} — enable location for live distance and direction.`;
+      } else if (state.heading === null) {
+        selectedSubtitle.textContent = `${spot.subtitle} — compass optional; you can still navigate with distance and Google Maps.`;
+      }
+
+      arrivalBox.classList.toggle('visible', arrived);
+      arrivalText.textContent = arrived
+        ? `You are within about ${spot.arrivalRadiusM} m of the target. Open the trivia and stand-here notes.`
+        : state.accuracy
+          ? `Current GPS accuracy is about ${Math.round(state.accuracy)} m.`
+          : 'Keep moving toward the point.';
+    }
+
+    function updateStatus() {
+      if (!state.locationEnabled) {
+        statusPill.textContent = 'Location off';
+        return;
+      }
+
+      if (state.locationEnabled && state.compassEnabled) {
+        statusPill.textContent = 'Location + compass on';
+        return;
+      }
+
+      statusPill.textContent = 'Location on';
+    }
+
+    function getDistanceMeters(lat1, lon1, lat2, lon2) {
+      const R = 6371000;
+      const dLat = toRad(lat2 - lat1);
+      const dLon = toRad(lon2 - lon1);
+      const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c;
+    }
+
+    function getBearingDegrees(lat1, lon1, lat2, lon2) {
+      const phi1 = toRad(lat1);
+      const phi2 = toRad(lat2);
+      const lambda1 = toRad(lon1);
+      const lambda2 = toRad(lon2);
+      const y = Math.sin(lambda2 - lambda1) * Math.cos(phi2);
+      const x = Math.cos(phi1) * Math.sin(phi2) - Math.sin(phi1) * Math.cos(phi2) * Math.cos(lambda2 - lambda1);
+      return (toDeg(Math.atan2(y, x)) + 360) % 360;
+    }
+
+    function normalizeAngle(angle) {
+      return ((angle + 540) % 360) - 180;
+    }
+
+    function formatDistance(meters) {
+      return meters < 1000 ? `${Math.round(meters)} m` : `${(meters / 1000).toFixed(1)} km`;
+    }
+
+    function makeGoogleMapsDirectionsUrl(lat, lon) {
+      return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(lat + ',' + lon)}&travelmode=walking`;
+    }
+
+    function toRad(value) { return value * Math.PI / 180; }
+    function toDeg(value) { return value * 180 / Math.PI; }
+
+    renderNearby();
+    renderSelected();
+  </script>
+</body>
+</html>
