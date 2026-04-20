@@ -6,372 +6,328 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#1a1a2e">
-  <title>Edinburgh Castle — Scotland Guide</title>
+  <title>Edinburgh — Scotland Guide</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="../../style.css">
   <style>
-    /* Hero */
-    .hero {
-      position: relative;
-      height: 260px;
+    .page-header {
+      padding: 1.25rem 1.25rem 1rem;
+      padding-left: calc(1.25rem + var(--safe-left));
+      padding-right: calc(1.25rem + var(--safe-right));
       background: var(--bg2);
-      overflow: hidden;
     }
-    .hero-img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      opacity: 0.55;
-      transition: opacity 0.3s;
-    }
-    body.sunlight .hero-img { opacity: 0.75; }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(15,15,26,0.15) 30%, rgba(15,15,26,0.88) 100%);
-    }
-    body.sunlight .hero-overlay {
-      background: linear-gradient(to bottom, rgba(245,240,232,0.1) 30%, rgba(245,240,232,0.85) 100%);
-    }
-    .hero-top-bar {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: calc(0.75rem + var(--safe-top)) 1rem 0.75rem;
-      padding-left: calc(1rem + var(--safe-left));
-      padding-right: calc(1rem + var(--safe-right));
-    }
-    .hero-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: rgba(240,237,232,0.85);
-      text-decoration: none;
-      background: rgba(15,15,26,0.55);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: 0 12px;
-      height: 36px;
-      border-radius: 18px;
-      border: 1px solid rgba(200,169,110,0.25);
-      min-width: 44px;
-      min-height: 44px;
-      align-items: center;
-    }
-    .hero-back svg { width: 14px; height: 14px; flex-shrink: 0; }
-    .hero-content {
-      position: absolute;
-      bottom: 1rem; left: 1.25rem; right: 1.25rem;
-      padding-left: var(--safe-left);
-      padding-right: var(--safe-right);
-    }
-    .hero-region { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
-    .hero-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--text); line-height: 1.15; }
-
-    /* Tags row */
-    .tags-row {
-      display: flex;
-      gap: 6px;
-      padding: 0.9rem 1.25rem;
-      padding-left: calc(1.25rem + var(--safe-left));
-      padding-right: calc(1.25rem + var(--safe-right));
-      border-bottom: 1px solid var(--border);
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .tags-row::-webkit-scrollbar { display: none; }
-
-    /* Sections */
-    .section {
-      padding: 1rem 1.25rem;
-      padding-left: calc(1.25rem + var(--safe-left));
-      padding-right: calc(1.25rem + var(--safe-right));
-      border-bottom: 1px solid var(--border);
-    }
-    .section:last-of-type { border-bottom: none; }
-
-    /* Summary */
-    .summary-text { font-size: 14px; color: var(--text2); line-height: 1.7; }
-
-    /* Distance card */
-    .dist-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 0.9rem 1rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 56px;
-    }
-    .dist-arrow {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 1px solid var(--border2);
-      background: var(--surface2);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .dist-arrow svg { width: 16px; height: 16px; transition: transform 0.25s ease-out; }
-    .dist-value { font-size: 1.1rem; font-weight: 500; color: var(--accent); }
-    .dist-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
-    .dist-enable { font-size: 13px; color: var(--text2); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-
-    /* Trivia cards */
-    .trivia-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: 0.9rem;
-    }
-    .trivia-card-head {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0.9rem 1rem 0.75rem;
-    }
-    .trivia-card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.3;
-      flex: 1;
-    }
-    .trivia-card-body {
-      font-size: 13px;
-      color: var(--text2);
-      line-height: 1.7;
-      padding: 0 1rem 1rem;
-    }
-    .trivia-media {
-      margin: 0 1rem 1rem;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .trivia-media img {
-      width: 100%; display: block;
-      aspect-ratio: 16/9; object-fit: cover;
-    }
-    .trivia-media-caption {
-      padding: 6px 10px;
+    .header-region {
       font-size: 10px;
-      color: var(--text3);
-      letter-spacing: 0.05em;
-      border-top: 1px solid var(--border);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
     }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .header-desc { font-size: 13px; color: var(--text2); line-height: 1.6; }
 
-    /* Maps buttons */
-    .maps-btns { display: flex; gap: 10px; }
-    .maps-btn {
-      flex: 1;
+    .status-bar {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 8px;
-      min-height: 52px;
-      background: none;
-      border: 1px solid var(--border2);
-      border-radius: var(--radius);
-      color: var(--accent);
-      font-family: inherit;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
+      padding: 0 1.25rem;
+      padding-left: calc(1.25rem + var(--safe-left));
+      padding-right: calc(1.25rem + var(--safe-right));
+      height: 48px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
     }
-    .maps-btn:active { background: var(--border); }
-    .maps-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
-    .maps-btn.primary {
-      background: var(--accent);
-      color: var(--bg);
-      border-color: var(--accent);
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--text3); flex-shrink: 0; }
+    .status-dot.active { background: var(--success); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.45} }
+    .status-text { color: var(--text2); font-size: 12px; flex: 1; }
+
+    .section { padding: 1rem 1.25rem; }
+    .section + .section { padding-top: 0; }
+
+    .map-wrap { position: relative; }
+    #map { width: 100%; height: 200px; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
+    .locate-btn {
+      position: absolute; bottom: 10px; left: 10px;
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--surface); border: 1px solid var(--border2);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 1000;
+      -webkit-tap-highlight-color: transparent; touch-action: manipulation;
     }
-    .maps-btn.primary:active { opacity: 0.85; }
+    .locate-btn:active { background: var(--surface2); }
+    .locate-btn svg { width: 16px; height: 16px; color: var(--accent); }
+
+    .compass-layout { display: flex; gap: 1rem; align-items: flex-start; }
+    .compass-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .compass-dial {
+      width: 88px; height: 88px; border-radius: 50%;
+      border: 1px solid var(--border2); background: var(--surface);
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+    .c-n,.c-s,.c-e,.c-w { position: absolute; font-size: 9px; font-weight: 500; color: var(--text3); transform: translate(-50%,-50%); }
+    .c-n { top: 9px; left: 50%; color: var(--accent); }
+    .c-s { bottom: 2px; left: 50%; }
+    .c-e { right: 2px; top: 50%; }
+    .c-w { left: 9px; top: 50%; }
+    .needle { position: absolute; top: 50%; left: 50%; transform-origin: 0 0; transition: transform 0.25s ease-out; }
+    .needle-n { position: absolute; left: -4px; bottom: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 30px solid var(--accent); }
+    .needle-s { position: absolute; left: -4px; top: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 30px solid var(--text3); }
+    .needle-dot { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .compass-hdg { font-size: 11px; color: var(--text3); letter-spacing: 0.1em; }
+
+    .poi-arrows { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .poi-arrow-row {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 10px 12px; min-height: 56px;
+      cursor: pointer; text-decoration: none;
+      -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+    }
+    .poi-arrow-row:active { border-color: var(--border2); background: var(--surface2); }
+    .dir-circle {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1px solid var(--border2); background: var(--surface2);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .dir-circle svg { width: 14px; height: 14px; transition: transform 0.25s ease-out; }
+    .poi-arrow-name { font-size: 13px; font-weight: 500; color: var(--text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .poi-arrow-meta { font-size: 11px; color: var(--text3); margin-top: 1px; }
+    .poi-arrow-dist { font-size: 13px; font-weight: 500; color: var(--accent); flex-shrink: 0; }
+
+    .poi-card {
+      display: block; background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); margin-bottom: 0.85rem; overflow: hidden;
+      text-decoration: none; -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+    }
+    .poi-card:active { border-color: var(--border2); }
+    .poi-card-inner { padding: 1rem 1.1rem 0.75rem; }
+    .poi-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+    .poi-card-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); line-height: 1.2; }
+    .poi-card-summary { font-size: 12px; color: var(--text2); margin-top: 4px; line-height: 1.5; }
+    .poi-card-dist { font-size: 11px; color: var(--accent); font-weight: 500; white-space: nowrap; padding-top: 3px; flex-shrink: 0; }
+    .poi-tags { display: flex; flex-wrap: wrap; gap: 5px; padding: 0 1.1rem 0.85rem; }
+    .poi-card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border); padding: 0.65rem 1.1rem; min-height: 44px;
+    }
+    .poi-trivia-count { font-size: 11px; color: var(--text3); }
+    .poi-cta { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+    .poi-cta svg { width: 11px; height: 11px; }
   </style>
 </head>
 <body>
 
-<div class="hero">
-  <img class="hero-img" id="hero-img" src="" alt="">
-  <div class="hero-overlay"></div>
-  <div class="hero-top-bar">
-    <a class="hero-back" href="../../region/edinburgh/" id="back-link">
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 2L4 7l5 5"/></svg>
-      Edinburgh
-    </a>
-    <button class="sunlight-btn" onclick="toggleSunlight()" aria-label="Toggle sunlight mode" style="background:rgba(15,15,26,0.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41"/></svg>
-      <span class="label-dark">Sunlight</span>
-      <span class="label-light">Night</span>
+<div class="top-bar">
+  <a class="top-bar-back" href="../../index.html">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+    Scotland guide
+  </a>
+  <button class="sunlight-btn" onclick="toggleSunlight()" aria-label="Toggle sunlight mode">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41"/></svg>
+    <span class="label-dark">Sunlight</span>
+    <span class="label-light">Night</span>
+  </button>
+</div>
+
+<div class="page-header">
+  <p class="header-region">Region</p>
+  <h1>Edinburgh</h1>
+  <p class="header-desc">Scotland's dramatic capital — volcanic rock, medieval wynds, and centuries of stories.</p>
+</div>
+
+<div class="status-bar">
+  <div class="status-dot" id="status-dot"></div>
+  <span class="status-text" id="status-text">Location not active</span>
+  <button class="btn-sm" id="locate-btn" onclick="startGPS()">Enable GPS</button>
+</div>
+
+<div class="section">
+  <p class="section-label">Map</p>
+  <div class="map-wrap">
+    <div id="map"></div>
+    <button class="locate-btn" onclick="centerOnMe()" aria-label="Center on my location" style="left:10px;">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="8" cy="8" r="3"/>
+        <path d="M8 1v2M8 13v2M1 8h2M13 8h2"/>
+      </svg>
+    </button>
+    <button class="locate-btn" onclick="centerOnRegion()" aria-label="Zoom to region" style="left:54px;">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M2 2l4 1-1 4M14 2l-4 1 1 4M2 14l4-1-1-4M14 14l-4-1 1-4"/>
+      </svg>
     </button>
   </div>
-  <div class="hero-content">
-    <p class="hero-region" id="hero-region">Edinburgh</p>
-    <h1 class="hero-title" id="hero-title">Loading…</h1>
-  </div>
-</div>
-
-<div class="tags-row" id="tags-row"></div>
-
-<div class="section">
-  <p class="summary-text" id="summary"></p>
 </div>
 
 <div class="section">
-  <p class="section-label">Distance from you</p>
-  <div class="dist-card" id="dist-card">
-    <div class="dist-enable">
-      <span>Enable GPS to see distance &amp; direction</span>
-      <button class="btn-sm" onclick="startGPS()">Enable</button>
+  <p class="section-label">Nearby points of interest</p>
+  <div class="compass-layout">
+    <div class="compass-wrap">
+      <div class="compass-dial">
+        <span class="c-n">N</span><span class="c-s">S</span>
+        <span class="c-e">E</span><span class="c-w">W</span>
+        <div class="needle" id="compass-needle">
+          <div class="needle-n"></div>
+          <div class="needle-s"></div>
+          <div class="needle-dot"></div>
+        </div>
+      </div>
+      <span class="compass-hdg" id="compass-hdg">— °</span>
+    </div>
+    <div class="poi-arrows" id="poi-arrows">
+      <div class="permission-overlay">
+        <p>Enable GPS to see live distances and compass directions.</p>
+        <button class="btn-primary" onclick="startGPS()">Enable GPS</button>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="section">
-  <p class="section-label">Trivia &amp; stories</p>
-  <div id="trivia-container"></div>
-</div>
-
-<div class="section">
-  <div class="maps-btns">
-    <a id="gmaps-link" class="maps-btn primary" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-        <path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z"/>
-        <circle cx="8" cy="6" r="1.5"/>
-      </svg>
-      Google Maps route
-    </a>
-    <a id="apmaps-link" class="maps-btn" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-        <path d="M3 8h10M9 4l4 4-4 4"/>
-      </svg>
-      Apple Maps
-    </a>
-  </div>
+  <p class="section-label">All points of interest</p>
+  <div id="poi-list"></div>
 </div>
 
 <div class="bottom-safe"></div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="../../compass.js"></script>
 <script>
-const POI_ID = 'edinburgh-castle';
 const DATA_URL = '../../data/edinburgh.json';
-let poiData = null;
+let regionData = null;
+let map, userMarker;
 
 async function init() {
   const res = await fetch(DATA_URL);
-  const region = await res.json();
-  poiData = region.pois.find(p => p.id === POI_ID);
-  if (!poiData) return;
-
-  document.title = `${poiData.name} — Scotland Guide`;
-  document.getElementById('hero-title').textContent = poiData.name;
-  document.getElementById('hero-region').textContent = region.region;
-  document.getElementById('summary').textContent = poiData.summary;
-
-  const withMedia = poiData.trivia.find(t => t.media);
-  if (withMedia) {
-    const img = document.getElementById('hero-img');
-    img.src = withMedia.media.url;
-    img.alt = withMedia.media.caption;
-  }
-
-  document.getElementById('tags-row').innerHTML =
-    poiData.tags.map(t => `<span class="tag ${t}">${t}</span>`).join('');
-
-  updateMapsLinks();
-  renderTrivia();
+  regionData = await res.json();
+  initMap();
+  renderPoiList();
 }
 
-function updateMapsLinks() {
-  if (!poiData) return;
-  const dest = `${poiData.lat},${poiData.lng}`;
-  const name = encodeURIComponent(poiData.name);
-
-  // Google Maps — walking directions from current location if available, else just destination
-  const origin = GEO.lat ? `&origin=${GEO.lat},${GEO.lng}` : '';
-  const gmaps = `https://www.google.com/maps/dir/?api=1&destination=${dest}${origin}&travelmode=walking`;
-  document.getElementById('gmaps-link').href = gmaps;
-
-  // Apple Maps — always just the destination (Apple Maps handles routing natively)
-  document.getElementById('apmaps-link').href =
-    `https://maps.apple.com/?daddr=${dest}&dirflg=w&q=${name}`;
+function initMap() {
+  const dark = !document.body.classList.contains('sunlight');
+  map = L.map('map', { zoomControl: false, attributionControl: false })
+    .setView([regionData.center.lat, regionData.center.lng], 14);
+  L.tileLayer(
+    dark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+         : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    { maxZoom: 19 }
+  ).addTo(map);
+  L.control.zoom({ position: 'bottomright' }).addTo(map);
+  regionData.pois.forEach(poi => {
+    const icon = L.divIcon({
+      className: '',
+      html: `<div style="width:11px;height:11px;background:#c8a96e;border-radius:50%;border:2px solid #0f0f1a;"></div>`,
+      iconSize: [11,11], iconAnchor: [5,5]
+    });
+    L.marker([poi.lat, poi.lng], { icon }).addTo(map).bindTooltip(poi.name, { offset:[8,0] });
+  });
 }
 
-function renderTrivia() {
-  document.getElementById('trivia-container').innerHTML = poiData.trivia.map(t => {
-    const media = t.media ? `
-      <div class="trivia-media">
-        <img src="${t.media.url}" alt="${t.media.caption}" loading="lazy">
-        <div class="trivia-media-caption">${t.media.caption}</div>
-      </div>` : '';
-    return `<div class="trivia-card">
-      <div class="trivia-card-head">
-        <span class="trivia-type-badge ${t.type}">${t.type}</span>
-        <span class="trivia-card-title">${t.title}</span>
+function renderPoiList() {
+  const pois = regionData ? [...regionData.pois] : [];
+  if (GEO.lat) pois.sort((a,b) =>
+    haversine(GEO.lat,GEO.lng,a.lat,a.lng) - haversine(GEO.lat,GEO.lng,b.lat,b.lng));
+  document.getElementById('poi-list').innerHTML = pois.map(poi => {
+    const dist = GEO.lat ? formatDist(haversine(GEO.lat,GEO.lng,poi.lat,poi.lng)) : null;
+    const tags = poi.tags.map(t=>`<span class="tag ${t}">${t}</span>`).join('');
+    return `<a class="poi-card" href="../../poi/${regionData.slug}/${poi.id}.html">
+      <div class="poi-card-inner">
+        <div class="poi-card-top">
+          <div>
+            <div class="poi-card-name">${poi.name}</div>
+            <div class="poi-card-summary">${poi.summary}</div>
+          </div>
+          ${dist?`<div class="poi-card-dist">${dist}</div>`:''}
+        </div>
       </div>
-      ${media}
-      <div class="trivia-card-body">${t.body}</div>
-    </div>`;
+      <div class="poi-tags">${tags}</div>
+      <div class="poi-card-footer">
+        <span class="poi-trivia-count">${poi.trivia.length} trivia points</span>
+        <span class="poi-cta">Explore <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span>
+      </div>
+    </a>`;
   }).join('');
 }
 
-let arrowAngle = 0;
-
-function updateDist() {
-  if (!GEO.lat || !poiData) return;
-  const dist = haversine(GEO.lat, GEO.lng, poiData.lat, poiData.lng);
-  const abs = getBearing(GEO.lat, GEO.lng, poiData.lat, poiData.lng);
-  const rel = relativeBearing(abs);
-
-  // First call — build the card HTML once
-  const card = document.getElementById('dist-card');
-  if (!card.querySelector('.dist-arrow')) {
-    card.innerHTML = `
-      <div class="dist-arrow">
-        <svg id="poi-arrow-svg" viewBox="0 0 16 16" fill="none" stroke="#c8a96e" stroke-width="2" stroke-linecap="round"
-             style="transition:transform 0.25s ease-out;">
-          <path d="M8 14V2M3 7l5-5 5 5"/>
+function renderPoiArrows() {
+  if (!GEO.lat || !regionData) return;
+  document.getElementById('poi-arrows').innerHTML = regionData.pois.map(poi => {
+    const dist = haversine(GEO.lat,GEO.lng,poi.lat,poi.lng);
+    const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
+    const rel = relativeBearing(abs);
+    return `<a class="poi-arrow-row" href="../../poi/${regionData.slug}/${poi.id}.html">
+      <div class="dir-circle">
+        <svg viewBox="0 0 14 14" fill="none" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round"
+             style="transform:rotate(${rel.toFixed(0)}deg)">
+          <path d="M7 12V2M3 6l4-4 4 4"/>
         </svg>
       </div>
-      <div>
-        <div class="dist-value" id="dist-value"></div>
-        <div class="dist-sub" id="dist-sub"></div>
-      </div>`;
-    arrowAngle = rel;
-    document.getElementById('poi-arrow-svg').style.transform = `rotate(${arrowAngle}deg)`;
-  } else {
-    // Shortest-path rotation
-    let delta = ((rel - arrowAngle) % 360 + 360) % 360;
-    if (delta > 180) delta -= 360;
-    arrowAngle += delta;
-    document.getElementById('poi-arrow-svg').style.transform = `rotate(${arrowAngle}deg)`;
-  }
+      <div style="flex:1;min-width:0;">
+        <div class="poi-arrow-name">${poi.name}</div>
+        <div class="poi-arrow-meta">${Math.round(abs)}° · tap to explore</div>
+      </div>
+      <div class="poi-arrow-dist">${formatDist(dist)}</div>
+    </a>`;
+  }).join('');
+}
 
-  document.getElementById('dist-value').textContent = formatDist(dist);
-  document.getElementById('dist-sub').textContent =
-    `bearing ${Math.round(abs)}°${GEO.orientationActive ? ' · compass active' : ''}`;
+function centerOnMe() {
+  if (!GEO.lat || !map) { showToast('Location not available yet'); return; }
+  map.setView([GEO.lat, GEO.lng], 16, { animate: true });
+}
+
+function centerOnRegion() {
+  if (!map || !regionData) return;
+  map.setView([regionData.center.lat, regionData.center.lng], 14, { animate: true });
 }
 
 async function startGPS() {
+  document.getElementById('status-text').textContent = 'Requesting location…';
   const ok = await requestLocationAndCompass();
-  if (!ok) showToast('Could not get location — check Settings > Safari > Location');
+  if (!ok) {
+    document.getElementById('status-text').textContent = 'Location unavailable — tap to retry';
+  }
 }
 
+let needleAngle = 0; // cumulative angle — never resets, avoids wrap-around flip
+
 GEO.onUpdate(() => {
-  updateDist();
-  updateMapsLinks();
+  if (GEO.watching) {
+    document.getElementById('status-dot').className = 'status-dot active';
+    document.getElementById('status-text').textContent = `Active · ±${Math.round(GEO.accuracy)}m`;
+    document.getElementById('locate-btn').style.display = 'none';
+  }
+  if (GEO.lat && map) {
+    if (!userMarker) {
+      const icon = L.divIcon({
+        className:'',
+        html:`<div style="width:12px;height:12px;background:#6bcf7f;border-radius:50%;border:2px solid #0f0f1a;"></div>`,
+        iconSize:[12,12],iconAnchor:[6,6]
+      });
+      userMarker = L.marker([GEO.lat,GEO.lng],{icon}).addTo(map);
+    } else { userMarker.setLatLng([GEO.lat,GEO.lng]); }
+  }
+  // Shortest-path rotation: find the delta that keeps us within ±180°
+  const target = -GEO.heading;
+  let delta = ((target - needleAngle) % 360 + 360) % 360;
+  if (delta > 180) delta -= 360;
+  needleAngle += delta;
+  document.getElementById('compass-needle').style.transform = `rotate(${needleAngle}deg)`;
+  document.getElementById('compass-hdg').textContent = `${Math.round(GEO.heading)}°`;
+  renderPoiArrows();
+  renderPoiList();
 });
 
 init();

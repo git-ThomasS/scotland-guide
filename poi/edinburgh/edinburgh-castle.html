@@ -168,29 +168,36 @@
       border-top: 1px solid var(--border);
     }
 
-    /* Maps button */
+    /* Maps buttons */
+    .maps-btns { display: flex; gap: 10px; }
     .maps-btn {
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      width: 100%;
       min-height: 52px;
       background: none;
       border: 1px solid var(--border2);
       border-radius: var(--radius);
       color: var(--accent);
       font-family: inherit;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       cursor: pointer;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       text-decoration: none;
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
     }
     .maps-btn:active { background: var(--border); }
-    .maps-btn svg { width: 16px; height: 16px; }
+    .maps-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .maps-btn.primary {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+    .maps-btn.primary:active { opacity: 0.85; }
   </style>
 </head>
 <body>
@@ -237,10 +244,21 @@
 </div>
 
 <div class="section">
-  <a id="maps-link" class="maps-btn" href="#" target="_blank" rel="noopener">
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z"/><circle cx="8" cy="6" r="1.5"/></svg>
-    Get directions in Maps
-  </a>
+  <div class="maps-btns">
+    <a id="gmaps-link" class="maps-btn primary" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z"/>
+        <circle cx="8" cy="6" r="1.5"/>
+      </svg>
+      Google Maps route
+    </a>
+    <a id="apmaps-link" class="maps-btn" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+      Apple Maps
+    </a>
+  </div>
 </div>
 
 <div class="bottom-safe"></div>
@@ -272,10 +290,23 @@ async function init() {
   document.getElementById('tags-row').innerHTML =
     poiData.tags.map(t => `<span class="tag ${t}">${t}</span>`).join('');
 
-  document.getElementById('maps-link').href =
-    `https://maps.apple.com/?q=${encodeURIComponent(poiData.name)}&ll=${poiData.lat},${poiData.lng}`;
-
+  updateMapsLinks();
   renderTrivia();
+}
+
+function updateMapsLinks() {
+  if (!poiData) return;
+  const dest = `${poiData.lat},${poiData.lng}`;
+  const name = encodeURIComponent(poiData.name);
+
+  // Google Maps — walking directions from current location if available, else just destination
+  const origin = GEO.lat ? `&origin=${GEO.lat},${GEO.lng}` : '';
+  const gmaps = `https://www.google.com/maps/dir/?api=1&destination=${dest}${origin}&travelmode=walking`;
+  document.getElementById('gmaps-link').href = gmaps;
+
+  // Apple Maps — always just the destination (Apple Maps handles routing natively)
+  document.getElementById('apmaps-link').href =
+    `https://maps.apple.com/?daddr=${dest}&dirflg=w&q=${name}`;
 }
 
 function renderTrivia() {
@@ -296,22 +327,41 @@ function renderTrivia() {
   }).join('');
 }
 
+let arrowAngle = 0;
+
 function updateDist() {
   if (!GEO.lat || !poiData) return;
   const dist = haversine(GEO.lat, GEO.lng, poiData.lat, poiData.lng);
   const abs = getBearing(GEO.lat, GEO.lng, poiData.lat, poiData.lng);
   const rel = relativeBearing(abs);
-  document.getElementById('dist-card').innerHTML = `
-    <div class="dist-arrow">
-      <svg viewBox="0 0 16 16" fill="none" stroke="#c8a96e" stroke-width="2" stroke-linecap="round"
-           style="transform:rotate(${rel.toFixed(0)}deg);transition:transform 0.25s ease-out;">
-        <path d="M8 14V2M3 7l5-5 5 5"/>
-      </svg>
-    </div>
-    <div>
-      <div class="dist-value">${formatDist(dist)}</div>
-      <div class="dist-sub">bearing ${Math.round(abs)}°${GEO.orientationActive ? ' · compass active' : ''}</div>
-    </div>`;
+
+  // First call — build the card HTML once
+  const card = document.getElementById('dist-card');
+  if (!card.querySelector('.dist-arrow')) {
+    card.innerHTML = `
+      <div class="dist-arrow">
+        <svg id="poi-arrow-svg" viewBox="0 0 16 16" fill="none" stroke="#c8a96e" stroke-width="2" stroke-linecap="round"
+             style="transition:transform 0.25s ease-out;">
+          <path d="M8 14V2M3 7l5-5 5 5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="dist-value" id="dist-value"></div>
+        <div class="dist-sub" id="dist-sub"></div>
+      </div>`;
+    arrowAngle = rel;
+    document.getElementById('poi-arrow-svg').style.transform = `rotate(${arrowAngle}deg)`;
+  } else {
+    // Shortest-path rotation
+    let delta = ((rel - arrowAngle) % 360 + 360) % 360;
+    if (delta > 180) delta -= 360;
+    arrowAngle += delta;
+    document.getElementById('poi-arrow-svg').style.transform = `rotate(${arrowAngle}deg)`;
+  }
+
+  document.getElementById('dist-value').textContent = formatDist(dist);
+  document.getElementById('dist-sub').textContent =
+    `bearing ${Math.round(abs)}°${GEO.orientationActive ? ' · compass active' : ''}`;
 }
 
 async function startGPS() {
@@ -319,7 +369,10 @@ async function startGPS() {
   if (!ok) showToast('Could not get location — check Settings > Safari > Location');
 }
 
-GEO.onUpdate(updateDist);
+GEO.onUpdate(() => {
+  updateDist();
+  updateMapsLinks();
+});
 
 init();
 </script>
