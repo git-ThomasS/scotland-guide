@@ -43,7 +43,6 @@ const GEO = {
 
 /* ── Request location (iOS-safe) ── */
 async function requestLocationAndCompass() {
-  // 1. Geolocation
   if (!navigator.geolocation) {
     showToast('GPS not available on this device');
     return false;
@@ -72,23 +71,16 @@ async function requestLocationAndCompass() {
     );
   });
 
-  // 2. Compass — iOS 13+ needs explicit permission from a user gesture
   async function startOrientation() {
-    if (typeof DeviceOrientationEvent === 'undefined') {
-      showToast('Compass not supported on this browser');
-      return;
-    }
+    if (typeof DeviceOrientationEvent === 'undefined') return;
     if (typeof DeviceOrientationEvent.requestPermission === 'function') {
       try {
         const perm = await DeviceOrientationEvent.requestPermission();
         if (perm !== 'granted') {
-          showToast('Compass permission denied — compass will use GPS bearing');
+          showToast('Compass permission denied — using GPS bearing');
           return;
         }
-      } catch (e) {
-        showToast('Could not request compass permission');
-        return;
-      }
+      } catch (e) { return; }
     }
     window.addEventListener('deviceorientation', _onOrientation, true);
     GEO.orientationActive = true;
@@ -106,9 +98,9 @@ async function requestLocationAndCompass() {
 function _onOrientation(e) {
   let h = null;
   if (e.webkitCompassHeading != null) {
-    h = e.webkitCompassHeading; // iOS — already magnetic north, 0-360
+    h = e.webkitCompassHeading;
   } else if (e.alpha != null) {
-    h = (360 - e.alpha) % 360; // Android fallback
+    h = (360 - e.alpha) % 360;
   }
   if (h == null) return;
   GEO.heading = h;
@@ -139,26 +131,15 @@ function formatDist(m) {
   return `${(m / 1000).toFixed(1)}km`;
 }
 
-// Relative bearing from current heading to target
 function relativeBearing(targetAbsoluteBearing) {
   return ((targetAbsoluteBearing - GEO.heading) + 360) % 360;
 }
 
-// Hide the GPS button immediately — we request silently on load.
-// Only show it again if something actually fails.
+/* ── Auto-start on page load ── */
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('locate-btn');
   if (btn) btn.style.display = 'none';
-
   requestLocationAndCompass().catch(() => {
-    // On failure, show the button so the user can retry manually
     if (btn) btn.style.display = '';
   });
 });
-
-// iOS requires DeviceOrientation permission from a user gesture.
-// Use touchend with once:true — fires exactly once on first tap,
-// never interferes with link navigation afterwards.
-document.addEventListener('touchend', function() {
-  if (!GEO.orientationActive) requestLocationAndCompass();
-}, { passive: true, once: true });

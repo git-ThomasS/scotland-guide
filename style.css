@@ -79,7 +79,7 @@ body.sunlight .tag.nature, body.sunlight .trivia-type-badge.nature { background:
   margin-bottom: 0.75rem;
 }
 
-/* ── Shared top bar (sunlight toggle + back) ── */
+/* ── Top bar ── */
 .top-bar {
   display: flex;
   align-items: center;
@@ -193,12 +193,6 @@ body.sunlight .sunlight-btn .label-light { display: inline; }
   line-height: 1.6;
   margin-bottom: 1rem;
 }
-.permission-overlay .permission-icon {
-  font-size: 28px;
-  margin-bottom: 0.75rem;
-  display: block;
-  line-height: 1;
-}
 
 /* ── Toast notification ── */
 .toast {
@@ -219,16 +213,8 @@ body.sunlight .sunlight-btn .label-light { display: inline; }
 }
 .toast.show { transform: translateX(-50%) translateY(0); }
 
-/* ── iOS tap fix ── */
-body { touch-action: pan-y; cursor: pointer; }
-a, button { touch-action: manipulation; cursor: pointer; }
-a { -webkit-tap-highlight-color: rgba(0,0,0,0); cursor: pointer; }
-/* Fully isolate map touch events so they never reach page links */
-.map-wrap { touch-action: none; }
-.leaflet-container { touch-action: none; }
-/* Everything outside the map gets normal touch behaviour */
-.section:not(:has(#map)), .poi-card, .poi-arrow-row { touch-action: manipulation; }
-
+/* ── Map ── */
+.leaflet-container { background: var(--bg2) !important; }
 .leaflet-control-zoom a {
   background: var(--surface) !important;
   color: var(--accent) !important;

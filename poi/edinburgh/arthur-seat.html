@@ -2,308 +2,184 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#1a1a2e">
-  <title>Edinburgh Castle — Scotland Guide</title>
+  <title>Arthur-seat — Scotland Guide</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
   <style>
-    :root {
-      --bg: #0f0f1a;
-      --bg2: #1a1a2e;
-      --surface: #1e1e35;
-      --surface2: #252540;
-      --accent: #c8a96e;
-      --accent2: #e8c88e;
-      --text: #f0ede8;
-      --text2: #a8a4a0;
-      --text3: #6a6770;
-      --border: rgba(200,169,110,0.15);
-      --border2: rgba(200,169,110,0.3);
-      --radius: 12px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    /* HERO */
     .hero {
-      position: relative;
-      height: 280px;
-      overflow: hidden;
-      background: var(--bg2);
+      position: relative; height: 260px;
+      background: var(--bg2); overflow: hidden;
     }
-    .hero-img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      opacity: 0.6;
-      display: block;
-    }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.55; transition: opacity 0.3s; }
+    body.sunlight .hero-img { opacity: 0.75; }
     .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(15,15,26,0.2) 0%, rgba(15,15,26,0.85) 100%);
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(15,15,26,0.15) 30%, rgba(15,15,26,0.88) 100%);
+    }
+    body.sunlight .hero-overlay {
+      background: linear-gradient(to bottom, rgba(245,240,232,0.1) 30%, rgba(245,240,232,0.85) 100%);
+    }
+    .hero-top-bar {
+      position: absolute; top: 0; left: 0; right: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: calc(0.75rem + var(--safe-top)) 1rem 0.75rem;
+      padding-left: calc(1rem + var(--safe-left));
+      padding-right: calc(1rem + var(--safe-right));
     }
     .hero-back {
-      position: absolute;
-      top: 1rem; left: 1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: rgba(240,237,232,0.7);
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; color: rgba(240,237,232,0.85);
       text-decoration: none;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: rgba(15,15,26,0.5);
-      padding: 6px 12px;
-      border-radius: 20px;
-      border: 1px solid rgba(200,169,110,0.2);
-      backdrop-filter: blur(4px);
+      background: rgba(15,15,26,0.55);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      padding: 0 12px; height: 44px; min-width: 44px;
+      border-radius: 22px; border: 1px solid rgba(200,169,110,0.25);
+      touch-action: manipulation;
     }
-    .hero-back:hover { color: var(--accent); }
+    .hero-back svg { width: 14px; height: 14px; flex-shrink: 0; }
     .hero-content {
-      position: absolute;
-      bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
+      position: absolute; bottom: 1rem; left: 1.25rem; right: 1.25rem;
+      padding-left: var(--safe-left); padding-right: var(--safe-right);
     }
-    .hero-region {
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.3rem;
-    }
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--text);
-    }
+    .hero-region { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--text); line-height: 1.15; }
 
-    /* TAGS */
     .tags-row {
-      display: flex;
-      gap: 6px;
-      padding: 1rem 1.5rem;
+      display: flex; gap: 6px;
+      padding: 0.9rem 1.25rem;
+      padding-left: calc(1.25rem + var(--safe-left));
+      padding-right: calc(1.25rem + var(--safe-right));
       border-bottom: 1px solid var(--border);
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+      overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
     }
     .tags-row::-webkit-scrollbar { display: none; }
-    .tag {
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
-      font-weight: 500;
-    }
-    .tag.film { background: rgba(123,94,167,0.2); color: #b89fd4; border: 1px solid rgba(123,94,167,0.3); }
-    .tag.history { background: rgba(74,143,168,0.2); color: #89bdd4; border: 1px solid rgba(74,143,168,0.3); }
-    .tag.book { background: rgba(107,158,107,0.2); color: #95c795; border: 1px solid rgba(107,158,107,0.3); }
-    .tag.royalty { background: rgba(200,169,110,0.15); color: var(--accent); border: 1px solid rgba(200,169,110,0.25); }
-    .tag.nature { background: rgba(143,168,107,0.2); color: #b5d490; border: 1px solid rgba(143,168,107,0.3); }
 
-    /* SUMMARY */
-    .summary-section {
-      padding: 1.25rem 1.5rem;
+    .section {
+      padding: 1rem 1.25rem;
+      padding-left: calc(1.25rem + var(--safe-left));
+      padding-right: calc(1.25rem + var(--safe-right));
       border-bottom: 1px solid var(--border);
     }
-    .summary-text {
-      font-size: 15px;
-      color: var(--text2);
-      line-height: 1.7;
-    }
+    .section:last-of-type { border-bottom: none; }
 
-    /* DIRECTIONS */
-    .dir-section {
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .section-label {
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text3);
-      margin-bottom: 0.75rem;
-    }
-    .dir-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 0.9rem 1rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .dir-arrow {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 1px solid var(--border2);
-      background: var(--surface2);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .dir-info { flex: 1; }
-    .dir-dist { font-size: 16px; font-weight: 500; color: var(--accent); }
-    .dir-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
-    .dir-enable {
-      font-size: 12px; color: var(--text3);
-      display: flex; align-items: center; gap: 8px;
-    }
-    .btn-sm {
-      background: none; border: 1px solid var(--border2);
-      color: var(--accent); font-family: inherit;
-      font-size: 11px; padding: 5px 12px;
-      border-radius: 20px; cursor: pointer;
-    }
-    .btn-sm:hover { background: var(--border); }
+    .summary-text { font-size: 14px; color: var(--text2); line-height: 1.7; }
 
-    /* TRIVIA CARDS */
-    .trivia-section { padding: 1rem 1.5rem 2rem; }
+    .dist-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 0.9rem 1rem;
+      display: flex; align-items: center; gap: 12px; min-height: 56px;
+    }
+    .dist-arrow {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid var(--border2); background: var(--surface2);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .dist-arrow svg { width: 16px; height: 16px; transition: transform 0.25s ease-out; }
+    .dist-value { font-size: 1.1rem; font-weight: 500; color: var(--accent); }
+    .dist-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
+    .dist-enable { font-size: 13px; color: var(--text2); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
     .trivia-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: 1rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden; margin-bottom: 0.9rem;
     }
-    .trivia-card-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0.9rem 1rem 0.75rem;
-    }
-    .trivia-type-badge {
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 20px;
-      flex-shrink: 0;
-    }
-    .trivia-type-badge.film { background: rgba(123,94,167,0.2); color: #b89fd4; }
-    .trivia-type-badge.history { background: rgba(74,143,168,0.2); color: #89bdd4; }
-    .trivia-type-badge.book { background: rgba(107,158,107,0.2); color: #95c795; }
-    .trivia-card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.3;
-    }
-    .trivia-card-body {
-      font-size: 13px;
-      color: var(--text2);
-      line-height: 1.7;
-      padding: 0 1rem 1rem;
-    }
-    .trivia-media {
-      margin: 0 1rem 1rem;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .trivia-media img {
-      width: 100%;
-      display: block;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-    }
-    .trivia-media-caption {
-      padding: 6px 10px;
-      font-size: 10px;
-      color: var(--text3);
-      letter-spacing: 0.05em;
-      border-top: 1px solid var(--border);
-    }
-    .trivia-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 0 1rem 0.9rem;
-    }
+    .trivia-card-head { display: flex; align-items: center; gap: 10px; padding: 0.9rem 1rem 0.75rem; }
+    .trivia-card-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.3; flex: 1; }
+    .trivia-card-body { font-size: 13px; color: var(--text2); line-height: 1.7; padding: 0 1rem 1rem; }
+    .trivia-media { margin: 0 1rem 1rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .trivia-media img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+    .trivia-media-caption { padding: 6px 10px; font-size: 10px; color: var(--text3); letter-spacing: 0.05em; border-top: 1px solid var(--border); }
 
-    /* MAP TO HERE */
-    .map-section {
-      padding: 0 1.5rem 2rem;
+    .maps-btns { display: flex; gap: 10px; }
+    .maps-btn {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      gap: 8px; min-height: 52px; background: none;
+      border: 1px solid var(--border2); border-radius: var(--radius);
+      color: var(--accent); font-family: inherit; font-size: 13px; font-weight: 500;
+      cursor: pointer; letter-spacing: 0.04em; text-decoration: none;
+      touch-action: manipulation;
     }
-    .map-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      background: none;
-      border: 1px solid var(--border2);
-      border-radius: var(--radius);
-      padding: 0.85rem;
-      color: var(--accent);
-      font-family: inherit;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-    }
-    .map-btn:hover { background: var(--border); }
+    .maps-btn:active { background: var(--border); }
+    .maps-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .maps-btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+    .maps-btn.primary:active { opacity: 0.85; }
   </style>
 </head>
 <body>
 
-<div class="hero" id="hero">
-  <img class="hero-img" id="hero-img" src="" alt="" onerror="this.style.display='none'">
+<div class="hero">
+  <img class="hero-img" id="hero-img" src="" alt="">
   <div class="hero-overlay"></div>
-  <a class="hero-back" href="../../region/edinburgh/">
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2L4 6l4 4"/></svg>
-    Edinburgh
-  </a>
+  <div class="hero-top-bar">
+    <a class="hero-back" href="../../region/edinburgh/">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 2L4 7l5 5"/></svg>
+      Edinburgh
+    </a>
+    <button class="sunlight-btn" onclick="toggleSunlight()" aria-label="Toggle sunlight mode"
+      style="background:rgba(15,15,26,0.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41"/></svg>
+      <span class="label-dark">Sunlight</span>
+      <span class="label-light">Night</span>
+    </button>
+  </div>
   <div class="hero-content">
-    <p class="hero-region" id="hero-region">Edinburgh</p>
+    <p class="hero-region">Edinburgh</p>
     <h1 class="hero-title" id="hero-title">Loading…</h1>
   </div>
 </div>
 
 <div class="tags-row" id="tags-row"></div>
 
-<div class="summary-section">
+<div class="section">
   <p class="summary-text" id="summary"></p>
 </div>
 
-<div class="dir-section">
+<div class="section">
   <p class="section-label">Distance from you</p>
-  <div class="dir-card" id="dir-card">
-    <div class="dir-enable">
-      <span>Enable GPS to see distance and direction</span>
-      <button class="btn-sm" onclick="requestLocation()">Enable</button>
+  <div class="dist-card" id="dist-card">
+    <div class="dist-enable">
+      <span>Enable GPS to see distance &amp; direction</span>
+      <button class="btn-sm" onclick="startGPS()">Enable</button>
     </div>
   </div>
 </div>
 
-<div class="trivia-section">
+<div class="section">
   <p class="section-label">Trivia &amp; stories</p>
   <div id="trivia-container"></div>
 </div>
 
-<div class="map-section">
-  <a id="maps-link" class="map-btn" href="#" target="_blank" rel="noopener">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z"/><circle cx="8" cy="6" r="1.5"/></svg>
-    Open in maps
-  </a>
+<div class="section">
+  <div class="maps-btns">
+    <a id="gmaps-link" class="maps-btn primary" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z"/>
+        <circle cx="8" cy="6" r="1.5"/>
+      </svg>
+      Google Maps route
+    </a>
+    <a id="apmaps-link" class="maps-btn" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+      Apple Maps
+    </a>
+  </div>
 </div>
 
+<div class="bottom-safe"></div>
+
+<script src="../../compass.js"></script>
 <script>
 const POI_ID = 'arthur-seat';
 const DATA_URL = '../../data/edinburgh.json';
 let poiData = null;
-let userLat = null, userLng = null;
 
 async function init() {
   const res = await fetch(DATA_URL);
@@ -313,98 +189,88 @@ async function init() {
 
   document.title = `${poiData.name} — Scotland Guide`;
   document.getElementById('hero-title').textContent = poiData.name;
-  document.getElementById('hero-region').textContent = region.region;
   document.getElementById('summary').textContent = poiData.summary;
 
-  const firstMedia = poiData.trivia.find(t => t.media);
-  if (firstMedia) {
-    document.getElementById('hero-img').src = firstMedia.media.url;
-    document.getElementById('hero-img').alt = firstMedia.media.caption;
+  const withMedia = poiData.trivia.find(t => t.media);
+  if (withMedia) {
+    document.getElementById('hero-img').src = withMedia.media.url;
+    document.getElementById('hero-img').alt = withMedia.media.caption;
   }
 
-  document.getElementById('tags-row').innerHTML = poiData.tags
-    .map(t => `<span class="tag ${t}">${t}</span>`).join('');
+  document.getElementById('tags-row').innerHTML =
+    poiData.tags.map(t => `<span class="tag ${t}">${t}</span>`).join('');
 
-  document.getElementById('maps-link').href =
-    `https://maps.google.com/?q=${poiData.lat},${poiData.lng}`;
-
+  updateMapsLinks();
   renderTrivia();
 }
 
 function renderTrivia() {
-  const container = document.getElementById('trivia-container');
-  container.innerHTML = poiData.trivia.map(t => {
-    const mediaHtml = t.media ? `
+  document.getElementById('trivia-container').innerHTML = poiData.trivia.map(t => {
+    const media = t.media ? `
       <div class="trivia-media">
         <img src="${t.media.url}" alt="${t.media.caption}" loading="lazy">
         <div class="trivia-media-caption">${t.media.caption}</div>
       </div>` : '';
-    return `
-      <div class="trivia-card">
-        <div class="trivia-card-header">
-          <span class="trivia-type-badge ${t.type}">${t.type}</span>
-          <span class="trivia-card-title">${t.title}</span>
-        </div>
-        ${mediaHtml}
-        <div class="trivia-card-body">${t.body}</div>
-      </div>`;
+    return `<div class="trivia-card">
+      <div class="trivia-card-head">
+        <span class="trivia-type-badge ${t.type}">${t.type}</span>
+        <span class="trivia-card-title">${t.title}</span>
+      </div>
+      ${media}
+      <div class="trivia-card-body">${t.body}</div>
+    </div>`;
   }).join('');
 }
 
-function requestLocation() {
-  if (!navigator.geolocation) return;
-  navigator.geolocation.getCurrentPosition(pos => {
-    userLat = pos.coords.latitude;
-    userLng = pos.coords.longitude;
-    updateDir();
-  });
-  if (typeof DeviceOrientationEvent !== 'undefined' &&
-      typeof DeviceOrientationEvent.requestPermission === 'function') {
-    DeviceOrientationEvent.requestPermission().then(p => {
-      if (p === 'granted') window.addEventListener('deviceorientation', onOrientation);
-    });
+function updateMapsLinks() {
+  if (!poiData) return;
+  const dest = `${poiData.lat},${poiData.lng}`;
+  const name = encodeURIComponent(poiData.name);
+  const origin = GEO.lat ? `&origin=${GEO.lat},${GEO.lng}` : '';
+  document.getElementById('gmaps-link').href =
+    `https://www.google.com/maps/dir/?api=1&destination=${dest}${origin}&travelmode=walking`;
+  document.getElementById('apmaps-link').href =
+    `https://maps.apple.com/?daddr=${dest}&dirflg=w&q=${name}`;
+}
+
+let arrowAngle = 0;
+function updateDist() {
+  if (!GEO.lat || !poiData) return;
+  const dist = haversine(GEO.lat, GEO.lng, poiData.lat, poiData.lng);
+  const abs = getBearing(GEO.lat, GEO.lng, poiData.lat, poiData.lng);
+  const rel = relativeBearing(abs);
+  const card = document.getElementById('dist-card');
+  if (!card.querySelector('.dist-arrow')) {
+    card.innerHTML = `
+      <div class="dist-arrow">
+        <svg id="poi-arrow-svg" viewBox="0 0 16 16" fill="none" stroke="#c8a96e" stroke-width="2" stroke-linecap="round"
+             style="transition:transform 0.25s ease-out;">
+          <path d="M8 14V2M3 7l5-5 5 5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="dist-value" id="dist-value"></div>
+        <div class="dist-sub" id="dist-sub"></div>
+      </div>`;
+    arrowAngle = rel;
+    document.getElementById('poi-arrow-svg').style.transform = `rotate(${arrowAngle}deg)`;
   } else {
-    window.addEventListener('deviceorientation', onOrientation);
+    let delta = ((rel - arrowAngle) % 360 + 360) % 360;
+    if (delta > 180) delta -= 360;
+    arrowAngle += delta;
+    document.getElementById('poi-arrow-svg').style.transform = `rotate(${arrowAngle}deg)`;
   }
+  document.getElementById('dist-value').textContent = formatDist(dist);
+  document.getElementById('dist-sub').textContent =
+    `bearing ${Math.round(abs)}°${GEO.orientationActive ? ' · compass active' : ''}`;
 }
 
-let compassHeading = 0;
-function onOrientation(e) {
-  compassHeading = e.webkitCompassHeading ?? e.alpha ?? 0;
-  updateDir();
+async function startGPS() {
+  const ok = await requestLocationAndCompass();
+  if (!ok) showToast('Could not get location — check Settings > Safari > Location');
 }
 
-function updateDir() {
-  if (!userLat || !poiData) return;
-  const dist = haversine(userLat, userLng, poiData.lat, poiData.lng);
-  const bearing = getBearing(userLat, userLng, poiData.lat, poiData.lng);
-  const relBearing = ((bearing - compassHeading) + 360) % 360;
-  document.getElementById('dir-card').innerHTML = `
-    <div class="dir-arrow">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#c8a96e" stroke-width="2" stroke-linecap="round"
-           style="transform:rotate(${relBearing}deg);transition:transform 0.3s;">
-        <path d="M8 14V2M3 7l5-5 5 5"/>
-      </svg>
-    </div>
-    <div class="dir-info">
-      <div class="dir-dist">${formatDist(dist)}</div>
-      <div class="dir-sub">bearing ${Math.round(bearing)}°</div>
-    </div>`;
-}
-
-function haversine(lat1, lng1, lat2, lng2) {
-  const R = 6371000, dLat = (lat2-lat1)*Math.PI/180, dLng = (lng2-lng1)*Math.PI/180;
-  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)**2;
-  return R*2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-}
-function getBearing(lat1, lng1, lat2, lng2) {
-  const dLng = (lng2-lng1)*Math.PI/180;
-  const y = Math.sin(dLng)*Math.cos(lat2*Math.PI/180);
-  const x = Math.cos(lat1*Math.PI/180)*Math.sin(lat2*Math.PI/180) -
-            Math.sin(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.cos(dLng);
-  return (Math.atan2(y,x)*180/Math.PI+360)%360;
-}
-function formatDist(m) { return m < 1000 ? `${Math.round(m)}m` : `${(m/1000).toFixed(1)}km`; }
+GEO.onUpdate(() => { updateDist(); updateMapsLinks(); });
 
 init();
 </script>

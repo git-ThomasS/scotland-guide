@@ -12,20 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../style.css">
   <style>
-    /* Hero */
     .hero {
-      position: relative;
-      height: 260px;
-      background: var(--bg2);
-      overflow: hidden;
+      position: relative; height: 260px;
+      background: var(--bg2); overflow: hidden;
     }
-    .hero-img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      opacity: 0.55;
-      transition: opacity 0.3s;
-    }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.55; transition: opacity 0.3s; }
     body.sunlight .hero-img { opacity: 0.75; }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -35,58 +26,40 @@
       background: linear-gradient(to bottom, rgba(245,240,232,0.1) 30%, rgba(245,240,232,0.85) 100%);
     }
     .hero-top-bar {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      position: absolute; top: 0; left: 0; right: 0;
+      display: flex; align-items: center; justify-content: space-between;
       padding: calc(0.75rem + var(--safe-top)) 1rem 0.75rem;
       padding-left: calc(1rem + var(--safe-left));
       padding-right: calc(1rem + var(--safe-right));
     }
     .hero-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: rgba(240,237,232,0.85);
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; color: rgba(240,237,232,0.85);
       text-decoration: none;
       background: rgba(15,15,26,0.55);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: 0 12px;
-      height: 36px;
-      border-radius: 18px;
-      border: 1px solid rgba(200,169,110,0.25);
-      min-width: 44px;
-      min-height: 44px;
-      align-items: center;
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      padding: 0 12px; height: 44px; min-width: 44px;
+      border-radius: 22px; border: 1px solid rgba(200,169,110,0.25);
+      touch-action: manipulation;
     }
     .hero-back svg { width: 14px; height: 14px; flex-shrink: 0; }
     .hero-content {
-      position: absolute;
-      bottom: 1rem; left: 1.25rem; right: 1.25rem;
-      padding-left: var(--safe-left);
-      padding-right: var(--safe-right);
+      position: absolute; bottom: 1rem; left: 1.25rem; right: 1.25rem;
+      padding-left: var(--safe-left); padding-right: var(--safe-right);
     }
     .hero-region { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
     .hero-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--text); line-height: 1.15; }
 
-    /* Tags row */
     .tags-row {
-      display: flex;
-      gap: 6px;
+      display: flex; gap: 6px;
       padding: 0.9rem 1.25rem;
       padding-left: calc(1.25rem + var(--safe-left));
       padding-right: calc(1.25rem + var(--safe-right));
       border-bottom: 1px solid var(--border);
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+      overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
     }
     .tags-row::-webkit-scrollbar { display: none; }
 
-    /* Sections */
     .section {
       padding: 1rem 1.25rem;
       padding-left: calc(1.25rem + var(--safe-left));
@@ -95,108 +68,46 @@
     }
     .section:last-of-type { border-bottom: none; }
 
-    /* Summary */
     .summary-text { font-size: 14px; color: var(--text2); line-height: 1.7; }
 
-    /* Distance card */
     .dist-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 0.9rem 1rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 56px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 0.9rem 1rem;
+      display: flex; align-items: center; gap: 12px; min-height: 56px;
     }
     .dist-arrow {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 1px solid var(--border2);
-      background: var(--surface2);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid var(--border2); background: var(--surface2);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     .dist-arrow svg { width: 16px; height: 16px; transition: transform 0.25s ease-out; }
     .dist-value { font-size: 1.1rem; font-weight: 500; color: var(--accent); }
     .dist-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
     .dist-enable { font-size: 13px; color: var(--text2); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
-    /* Trivia cards */
     .trivia-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: 0.9rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden; margin-bottom: 0.9rem;
     }
-    .trivia-card-head {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0.9rem 1rem 0.75rem;
-    }
-    .trivia-card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.3;
-      flex: 1;
-    }
-    .trivia-card-body {
-      font-size: 13px;
-      color: var(--text2);
-      line-height: 1.7;
-      padding: 0 1rem 1rem;
-    }
-    .trivia-media {
-      margin: 0 1rem 1rem;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .trivia-media img {
-      width: 100%; display: block;
-      aspect-ratio: 16/9; object-fit: cover;
-    }
-    .trivia-media-caption {
-      padding: 6px 10px;
-      font-size: 10px;
-      color: var(--text3);
-      letter-spacing: 0.05em;
-      border-top: 1px solid var(--border);
-    }
+    .trivia-card-head { display: flex; align-items: center; gap: 10px; padding: 0.9rem 1rem 0.75rem; }
+    .trivia-card-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.3; flex: 1; }
+    .trivia-card-body { font-size: 13px; color: var(--text2); line-height: 1.7; padding: 0 1rem 1rem; }
+    .trivia-media { margin: 0 1rem 1rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .trivia-media img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+    .trivia-media-caption { padding: 6px 10px; font-size: 10px; color: var(--text3); letter-spacing: 0.05em; border-top: 1px solid var(--border); }
 
-    /* Maps buttons */
     .maps-btns { display: flex; gap: 10px; }
     .maps-btn {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 52px;
-      background: none;
-      border: 1px solid var(--border2);
-      border-radius: var(--radius);
-      color: var(--accent);
-      font-family: inherit;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      -webkit-tap-highlight-color: transparent;
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      gap: 8px; min-height: 52px; background: none;
+      border: 1px solid var(--border2); border-radius: var(--radius);
+      color: var(--accent); font-family: inherit; font-size: 13px; font-weight: 500;
+      cursor: pointer; letter-spacing: 0.04em; text-decoration: none;
       touch-action: manipulation;
     }
     .maps-btn:active { background: var(--border); }
     .maps-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
-    .maps-btn.primary {
-      background: var(--accent);
-      color: var(--bg);
-      border-color: var(--accent);
-    }
+    .maps-btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
     .maps-btn.primary:active { opacity: 0.85; }
   </style>
 </head>
@@ -206,18 +117,19 @@
   <img class="hero-img" id="hero-img" src="" alt="">
   <div class="hero-overlay"></div>
   <div class="hero-top-bar">
-    <a class="hero-back" href="../../region/edinburgh/" id="back-link">
+    <a class="hero-back" href="../../region/edinburgh/">
       <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 2L4 7l5 5"/></svg>
       Edinburgh
     </a>
-    <button class="sunlight-btn" onclick="toggleSunlight()" aria-label="Toggle sunlight mode" style="background:rgba(15,15,26,0.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">
+    <button class="sunlight-btn" onclick="toggleSunlight()" aria-label="Toggle sunlight mode"
+      style="background:rgba(15,15,26,0.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41"/></svg>
       <span class="label-dark">Sunlight</span>
       <span class="label-light">Night</span>
     </button>
   </div>
   <div class="hero-content">
-    <p class="hero-region" id="hero-region">Edinburgh</p>
+    <p class="hero-region">Edinburgh</p>
     <h1 class="hero-title" id="hero-title">Loading…</h1>
   </div>
 </div>
@@ -277,14 +189,12 @@ async function init() {
 
   document.title = `${poiData.name} — Scotland Guide`;
   document.getElementById('hero-title').textContent = poiData.name;
-  document.getElementById('hero-region').textContent = region.region;
   document.getElementById('summary').textContent = poiData.summary;
 
   const withMedia = poiData.trivia.find(t => t.media);
   if (withMedia) {
-    const img = document.getElementById('hero-img');
-    img.src = withMedia.media.url;
-    img.alt = withMedia.media.caption;
+    document.getElementById('hero-img').src = withMedia.media.url;
+    document.getElementById('hero-img').alt = withMedia.media.caption;
   }
 
   document.getElementById('tags-row').innerHTML =
@@ -292,21 +202,6 @@ async function init() {
 
   updateMapsLinks();
   renderTrivia();
-}
-
-function updateMapsLinks() {
-  if (!poiData) return;
-  const dest = `${poiData.lat},${poiData.lng}`;
-  const name = encodeURIComponent(poiData.name);
-
-  // Google Maps — walking directions from current location if available, else just destination
-  const origin = GEO.lat ? `&origin=${GEO.lat},${GEO.lng}` : '';
-  const gmaps = `https://www.google.com/maps/dir/?api=1&destination=${dest}${origin}&travelmode=walking`;
-  document.getElementById('gmaps-link').href = gmaps;
-
-  // Apple Maps — always just the destination (Apple Maps handles routing natively)
-  document.getElementById('apmaps-link').href =
-    `https://maps.apple.com/?daddr=${dest}&dirflg=w&q=${name}`;
 }
 
 function renderTrivia() {
@@ -327,15 +222,23 @@ function renderTrivia() {
   }).join('');
 }
 
-let arrowAngle = 0;
+function updateMapsLinks() {
+  if (!poiData) return;
+  const dest = `${poiData.lat},${poiData.lng}`;
+  const name = encodeURIComponent(poiData.name);
+  const origin = GEO.lat ? `&origin=${GEO.lat},${GEO.lng}` : '';
+  document.getElementById('gmaps-link').href =
+    `https://www.google.com/maps/dir/?api=1&destination=${dest}${origin}&travelmode=walking`;
+  document.getElementById('apmaps-link').href =
+    `https://maps.apple.com/?daddr=${dest}&dirflg=w&q=${name}`;
+}
 
+let arrowAngle = 0;
 function updateDist() {
   if (!GEO.lat || !poiData) return;
   const dist = haversine(GEO.lat, GEO.lng, poiData.lat, poiData.lng);
   const abs = getBearing(GEO.lat, GEO.lng, poiData.lat, poiData.lng);
   const rel = relativeBearing(abs);
-
-  // First call — build the card HTML once
   const card = document.getElementById('dist-card');
   if (!card.querySelector('.dist-arrow')) {
     card.innerHTML = `
@@ -352,13 +255,11 @@ function updateDist() {
     arrowAngle = rel;
     document.getElementById('poi-arrow-svg').style.transform = `rotate(${arrowAngle}deg)`;
   } else {
-    // Shortest-path rotation
     let delta = ((rel - arrowAngle) % 360 + 360) % 360;
     if (delta > 180) delta -= 360;
     arrowAngle += delta;
     document.getElementById('poi-arrow-svg').style.transform = `rotate(${arrowAngle}deg)`;
   }
-
   document.getElementById('dist-value').textContent = formatDist(dist);
   document.getElementById('dist-sub').textContent =
     `bearing ${Math.round(abs)}°${GEO.orientationActive ? ' · compass active' : ''}`;
@@ -369,10 +270,7 @@ async function startGPS() {
   if (!ok) showToast('Could not get location — check Settings > Safari > Location');
 }
 
-GEO.onUpdate(() => {
-  updateDist();
-  updateMapsLinks();
-});
+GEO.onUpdate(() => { updateDist(); updateMapsLinks(); });
 
 init();
 </script>
