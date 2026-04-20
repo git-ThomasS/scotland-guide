@@ -1,15 +1,16 @@
 {
   "region": "Antwerp",
   "slug": "antwerp",
-  "description": "A test region for verifying GPS, compass, and distances close to home.",
-  "center": { "lat": 51.2213, "lng": 4.3866 },
+  "description": "Diamond capital, port city, and home to Rubens — two banks of the Scheldt full of stories.",
+  "center": { "lat": 51.2213, "lng": 4.3966 },
   "pois": [
     {
       "id": "sint-annastrand",
       "name": "Sint-Annastrand",
       "lat": 51.2257,
       "lng": 4.3819,
-      "summary": "A sandy beach on the left bank of the Scheldt, with a view across to the Antwerp skyline.",
+      "category": "nature",
+      "summary": "A sandy beach on the left bank of the Scheldt, with a sweeping view of the Antwerp skyline.",
       "tags": ["nature", "history"],
       "trivia": [
         {
@@ -25,27 +26,278 @@
         {
           "type": "film",
           "title": "Loft (2008)",
-          "body": "The Antwerp skyline visible from Linkeroever features prominently in several Belgian films. The view of the Cathedral of Our Lady tower from across the Scheldt is one of the most recognisable shots in Flemish cinema."
+          "body": "The view of the Cathedral of Our Lady tower from Linkeroever is one of the most recognisable shots in Flemish cinema, appearing in multiple Belgian films and TV series including the thriller Loft."
         }
       ]
     },
     {
-      "id": "linkeroever-park",
+      "id": "sint-annatunnel",
+      "name": "Sint-Annatunnel",
+      "lat": 51.2246,
+      "lng": 4.3841,
+      "category": "attraction",
+      "summary": "A 572m pedestrian and cycling tunnel under the Scheldt, complete with original 1930s wooden escalators.",
+      "tags": ["history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The wooden escalators",
+          "body": "The Sint-Annatunnel opened in 1933 and still uses its original wooden escalators — among the last in the world still in daily operation. They creak, they're slow, and they're completely charming. The tunnel descends 31 metres below the river surface.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Antwerpen_sint-annatunnel.jpg/1280px-Antwerpen_sint-annatunnel.jpg",
+            "caption": "The original wooden escalators inside Sint-Annatunnel"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Built by hand in wartime",
+          "body": "Construction began in 1931 during the Great Depression, providing employment to thousands. It was completed just before the German invasion of Belgium in 1940. During the occupation, the tunnel became a key route for the resistance movement — its narrow confines made surveillance difficult."
+        }
+      ]
+    },
+    {
+      "id": "blokkersdijk",
       "name": "Blokkersdijk Nature Reserve",
       "lat": 51.2189,
       "lng": 4.3601,
-      "summary": "A quiet nature reserve on Linkeroever, with a pond, reed beds, and walking paths.",
+      "category": "nature",
+      "summary": "A tranquil nature reserve minutes from the port, with a pond, reed beds, and over 200 bird species.",
       "tags": ["nature"],
       "trivia": [
         {
           "type": "history",
           "title": "An unexpected wilderness",
-          "body": "Blokkersdijk sits just minutes from the Port of Antwerp — one of the largest ports in Europe — yet feels completely removed from the industrial landscape. The reserve is home to over 200 bird species and is managed by Natuurpunt, Belgium's largest nature conservation organisation."
+          "body": "Blokkersdijk sits just minutes from the Port of Antwerp — one of the largest ports in Europe — yet feels completely removed from the industrial landscape. The reserve is managed by Natuurpunt, Belgium's largest nature conservation organisation."
         },
         {
           "type": "nature",
           "title": "The Scheldt estuary",
-          "body": "Linkeroever sits at the edge of the Scheldt estuary, which stretches 60km from Antwerp to the North Sea. The tidal range here is over 5 metres — unusually large for a river this far inland — which makes the wetlands around Blokkersdijk particularly rich in wildlife."
+          "body": "The tidal range at Antwerp is over 5 metres — unusually large for a river this far inland — which makes the wetlands around Blokkersdijk particularly rich in wildlife. Kingfishers, great crested grebes, and marsh harriers all breed here."
+        }
+      ]
+    },
+    {
+      "id": "linkeroever-esplanade",
+      "name": "Linkeroever Esplanade",
+      "lat": 51.2268,
+      "lng": 4.3852,
+      "category": "trivia",
+      "summary": "The riverside promenade on the left bank, with the best unobstructed view of the Antwerp skyline.",
+      "tags": ["nature", "history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The unbuilt Manhattan",
+          "body": "In the 1930s, Antwerp had grand plans to develop Linkeroever into a modernist district of high-rise towers — a 'Manhattan on the Scheldt'. The project was partially realised in the 1950s–70s with the housing blocks you see today, but the full vision was never completed. The low-rise esplanade you're standing on was meant to be a forest of skyscrapers."
+        },
+        {
+          "type": "trivia",
+          "title": "The best skyline view",
+          "body": "Photographers and filmmakers consistently rate the view from this esplanade as the finest angle on Antwerp's skyline. The Cathedral of Our Lady tower, the MAS museum, and the port cranes all align perfectly from this vantage point, especially at golden hour."
+        }
+      ]
+    },
+    {
+      "id": "grote-markt",
+      "name": "Grote Markt",
+      "lat": 51.2205,
+      "lng": 4.3997,
+      "category": "attraction",
+      "summary": "Antwerp's magnificent central square, ringed by guild houses and dominated by the ornate Town Hall.",
+      "tags": ["history", "royalty"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The hand legend",
+          "body": "The Brabo fountain in the centre depicts the Roman soldier Silvius Brabo throwing the severed hand of the giant Druon Antigoon into the Scheldt. According to legend, the giant demanded a toll from passing sailors and cut off the hands of those who refused. Brabo defeated him and returned the favour. The word 'Antwerp' supposedly derives from 'hand werpen' — hand throwing.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Antwerpen_Grote_Markt_R01.jpg/1280px-Antwerpen_Grote_Markt_R01.jpg",
+            "caption": "Grote Markt with the Town Hall and Brabo fountain"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The Spanish Fury",
+          "body": "In 1576, Spanish troops mutinied after not being paid and went on a three-day rampage through Antwerp, killing over 7,000 people and burning 1,000 buildings in what became known as the Spanish Fury. It remains one of the worst atrocities of the Eighty Years' War and directly led to the Union of Utrecht."
+        }
+      ]
+    },
+    {
+      "id": "cathedral-our-lady",
+      "name": "Cathedral of Our Lady",
+      "lat": 51.2203,
+      "lng": 4.4003,
+      "category": "attraction",
+      "summary": "The tallest Gothic church in the Low Countries, housing four major works by Rubens.",
+      "tags": ["history", "art"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "167 years to build",
+          "body": "Construction began in 1352 and wasn't completed until 1521 — 169 years of building across countless generations of architects and craftsmen. Napoleon later used it as a horse stable and storage depot, stripping many of its treasures. The four Rubens paintings inside survived only because they had been taken to Paris.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Antwerpen_OLV_Kathedraal_R01.jpg/800px-Antwerpen_OLV_Kathedraal_R01.jpg",
+            "caption": "Cathedral of Our Lady, Antwerp"
+          }
+        },
+        {
+          "type": "book",
+          "title": "A Dog of Flanders (1872)",
+          "body": "In Ouida's famous novella, the dying boy Nello and his dog Patrasche are found frozen to death beneath the Rubens painting 'The Elevation of the Cross' in this cathedral — having finally seen the masterpiece they could never afford to enter and view. The story is almost unknown in Belgium but is a beloved classic in Japan, where it has been adapted into anime multiple times."
+        }
+      ]
+    },
+    {
+      "id": "het-steen",
+      "name": "Het Steen",
+      "lat": 51.2215,
+      "lng": 4.3964,
+      "category": "attraction",
+      "summary": "Antwerp's oldest building — a medieval fortress on the Scheldt that has been a castle, prison, and museum.",
+      "tags": ["history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Semini the giant",
+          "body": "Mounted on the outer wall of Het Steen is a small stone figure of a crouching man — Semini, a fertility god of Germanic origin. Medieval Antwerp residents believed touching Semini would grant children to childless couples. The figure is still there today.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Het_Steen_Antwerp.jpg/1280px-Het_Steen_Antwerp.jpg",
+            "caption": "Het Steen on the Scheldt waterfront"
+          }
+        },
+        {
+          "type": "history",
+          "title": "A thousand years of history",
+          "body": "Het Steen dates to around 800 AD, making it over 1,200 years old. It has served as a Carolingian fortress, a royal residence, a prison (including for Protestant heretics during the Inquisition), and a museum of navigation. After a major renovation completed in 2022, it now houses an Antwerp visitor centre."
+        }
+      ]
+    },
+    {
+      "id": "mas-museum",
+      "name": "MAS — Museum aan de Stroom",
+      "lat": 51.2290,
+      "lng": 4.4042,
+      "category": "attraction",
+      "summary": "A striking 60-metre tower of stacked boxes overlooking the old port, with panoramic rooftop views.",
+      "tags": ["history", "art"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Free rooftop, always",
+          "body": "The rooftop of the MAS is always free to visit, even when the museum is closed. The winding external walkway spirals up all ten floors, with floor-to-ceiling windows at each level framing different views of the city, port, and river. At the top, you can see the entire port stretching to the horizon — the second largest in Europe.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/MAS_Antwerp.jpg/800px-MAS_Antwerp.jpg",
+            "caption": "The MAS tower in the old port district"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Built on the old harbour",
+          "body": "The MAS stands on the site of the Hanzestedenplaats, where merchants from the Hanseatic League once traded. The building's stacked box design by Neutelings Riedijk Architects is meant to evoke the containers in the nearby port. Each floor cantilevers 5 metres further than the one below, making it an engineering feat as well as an architectural one."
+        }
+      ]
+    },
+    {
+      "id": "red-star-line",
+      "name": "Red Star Line Museum",
+      "lat": 51.2301,
+      "lng": 4.4006,
+      "category": "trivia",
+      "summary": "The departure point for 2 million emigrants who left Europe for America between 1873 and 1934.",
+      "tags": ["history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Two million stories",
+          "body": "Between 1873 and 1934, over two million people — mostly Jewish families fleeing persecution in Eastern Europe — passed through these warehouses before boarding ships to America. The museum preserves their stories. Notable emigrants who left from here include Irving Berlin and the family of Albert Einstein.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Red_Star_Line_museum_Antwerp.jpg/1280px-Red_Star_Line_museum_Antwerp.jpg",
+            "caption": "The Red Star Line museum warehouses"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The medical inspections",
+          "body": "Before boarding, emigrants were subjected to strict medical inspections in these warehouses — those found to have diseases like trachoma were turned back. Families who had sold everything and travelled thousands of miles were sometimes separated here, with sick members refused entry to the ships. The museum documents these heart-breaking stories."
+        }
+      ]
+    },
+    {
+      "id": "rubenshuis",
+      "name": "Rubenshuis",
+      "lat": 51.2183,
+      "lng": 4.4073,
+      "category": "attraction",
+      "summary": "The former home and studio of Peter Paul Rubens — the most famous house in Antwerp.",
+      "tags": ["history", "art"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Rubens the diplomat",
+          "body": "Rubens was not just a painter — he was one of the most effective diplomats in 17th-century Europe, conducting secret peace negotiations between Spain and England on behalf of the Spanish crown. He used his status as a travelling artist as cover, meeting kings and ministers across Europe. He was eventually knighted by both King Philip IV of Spain and King Charles I of England.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Antwerpen_Rubenshuis_R02.jpg/1280px-Antwerpen_Rubenshuis_R02.jpg",
+            "caption": "The courtyard of Rubenshuis"
+          }
+        },
+        {
+          "type": "trivia",
+          "title": "A factory of art",
+          "body": "Rubens ran what was essentially a painting factory — his workshop employed dozens of assistants who would paint the backgrounds, drapery, and minor figures while Rubens painted the faces and key details himself. He was remarkably open about this practice, offering clients different price tiers depending on how much of the work was done by his own hand."
+        }
+      ]
+    },
+    {
+      "id": "meir",
+      "name": "The Meir",
+      "lat": 51.2187,
+      "lng": 4.4104,
+      "category": "trivia",
+      "summary": "Antwerp's grand pedestrian shopping boulevard, lined with 19th-century architecture and the former royal palace.",
+      "tags": ["history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Napoleon slept here",
+          "body": "The building now occupied by Starbucks at the corner of the Meir was once the Paleis op de Meir — a royal palace where Napoleon Bonaparte stayed during his visits to Antwerp in 1803 and 1811. He was reportedly impressed with Antwerp's strategic value as a port and invested heavily in expanding the docks, calling it 'a pistol pointed at the heart of England'."
+        },
+        {
+          "type": "film",
+          "title": "Detected in film",
+          "body": "The Meir and its surrounding streets have served as a backdrop for numerous Belgian productions. The distinctive curved facade of the former royal palace is instantly recognisable to Flemish viewers. Several scenes from the TV series Undercover were filmed in the streets around the Meir."
+        }
+      ]
+    },
+    {
+      "id": "zurenborg",
+      "name": "Zurenborg — Cogels-Osylei",
+      "lat": 51.2098,
+      "lng": 4.4317,
+      "category": "trivia",
+      "summary": "A street of extravagant Art Nouveau and Eclectic mansions, built by wealthy merchants at the turn of the 20th century.",
+      "tags": ["history", "art"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The street of styles",
+          "body": "Cogels-Osylei was developed between 1894 and 1906 as a showcase of architectural styles — each mansion deliberately different from its neighbours. You can walk 200 metres and see Neo-Renaissance, Art Nouveau, Neo-Gothic, and Moorish styles side by side. It's been called the most beautiful street in Belgium.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Cogels-Osylei_Antwerpen.jpg/1280px-Cogels-Osylei_Antwerpen.jpg",
+            "caption": "The eclectic mansions of Cogels-Osylei"
+          }
+        },
+        {
+          "type": "trivia",
+          "title": "Saved from the bulldozer",
+          "body": "In the 1960s, Zurenborg was slated for demolition to make way for a motorway. Local residents and activists mounted one of Belgium's first successful heritage campaigns, eventually persuading the city to reroute the road. The neighbourhood is now a protected heritage zone — a rare victory for urban conservation in that era."
         }
       ]
     }
