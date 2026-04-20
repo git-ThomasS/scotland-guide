@@ -1,0 +1,234 @@
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { -webkit-tap-highlight-color: transparent; }
+
+/* ── Themes ── */
+:root {
+  --bg: #0f0f1a;
+  --bg2: #1a1a2e;
+  --surface: #1e1e35;
+  --surface2: #252540;
+  --accent: #c8a96e;
+  --accent2: #e8c88e;
+  --text: #f0ede8;
+  --text2: #a8a4a0;
+  --text3: #6a6770;
+  --border: rgba(200,169,110,0.15);
+  --border2: rgba(200,169,110,0.3);
+  --success: #6bcf7f;
+  --radius: 12px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+/* Sunlight mode */
+body.sunlight {
+  --bg: #f5f0e8;
+  --bg2: #ede8de;
+  --surface: #ffffff;
+  --surface2: #f0ebe0;
+  --accent: #8a6a2e;
+  --accent2: #6a4e1e;
+  --text: #1a1a1a;
+  --text2: #4a4640;
+  --text3: #8a8680;
+  --border: rgba(138,106,46,0.2);
+  --border2: rgba(138,106,46,0.4);
+}
+
+/* ── Typography ── */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.25s, color 0.25s;
+}
+
+/* ── Tag colours (shared) ── */
+.tag, .trivia-type-badge {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.tag.film, .trivia-type-badge.film { background: rgba(123,94,167,0.2); color: #b89fd4; border: 1px solid rgba(123,94,167,0.3); }
+.tag.history, .trivia-type-badge.history { background: rgba(74,143,168,0.2); color: #89bdd4; border: 1px solid rgba(74,143,168,0.3); }
+.tag.book, .trivia-type-badge.book { background: rgba(107,158,107,0.2); color: #95c795; border: 1px solid rgba(107,158,107,0.3); }
+.tag.nature, .trivia-type-badge.nature { background: rgba(143,168,107,0.2); color: #b5d490; border: 1px solid rgba(143,168,107,0.3); }
+.tag.royalty { background: rgba(200,169,110,0.15); color: var(--accent); border: 1px solid rgba(200,169,110,0.25); }
+body.sunlight .tag.film, body.sunlight .trivia-type-badge.film { background: rgba(123,94,167,0.12); color: #5b3e87; }
+body.sunlight .tag.history, body.sunlight .trivia-type-badge.history { background: rgba(74,143,168,0.12); color: #2a6f88; }
+body.sunlight .tag.book, body.sunlight .trivia-type-badge.book { background: rgba(107,158,107,0.12); color: #3a7e3a; }
+body.sunlight .tag.nature, body.sunlight .trivia-type-badge.nature { background: rgba(143,168,107,0.12); color: #4a6e2a; }
+
+/* ── Section label ── */
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 0.75rem;
+}
+
+/* ── Shared top bar (sunlight toggle + back) ── */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(0.75rem + var(--safe-top)) 1.25rem 0.75rem;
+  padding-left: calc(1.25rem + var(--safe-left));
+  padding-right: calc(1.25rem + var(--safe-right));
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.top-bar-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text2);
+  text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+  padding-right: 12px;
+}
+.top-bar-back:hover, .top-bar-back:active { color: var(--accent); }
+.top-bar-back svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+/* Sunlight toggle button */
+.sunlight-btn {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 22px;
+  cursor: pointer;
+  color: var(--accent);
+  padding: 0 12px;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+}
+.sunlight-btn:active { opacity: 0.75; }
+.sunlight-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.sunlight-btn .label-dark { display: inline; }
+.sunlight-btn .label-light { display: none; }
+body.sunlight .sunlight-btn .label-dark { display: none; }
+body.sunlight .sunlight-btn .label-light { display: inline; }
+
+/* ── Primary button ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+  transition: background 0.15s;
+}
+.btn-primary:active { background: var(--accent2); opacity: 0.9; }
+
+/* ── Small outlined button ── */
+.btn-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 14px;
+  background: none;
+  border: 1px solid var(--border2);
+  border-radius: 22px;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+}
+.btn-sm:active { opacity: 0.7; }
+
+/* ── Permission overlay ── */
+.permission-overlay {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+}
+.permission-overlay p {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.permission-overlay .permission-icon {
+  font-size: 28px;
+  margin-bottom: 0.75rem;
+  display: block;
+  line-height: 1;
+}
+
+/* ── Toast notification ── */
+.toast {
+  position: fixed;
+  bottom: calc(1rem + var(--safe-bottom));
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-size: 13px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── Map ── */
+.leaflet-container { background: var(--bg2) !important; }
+.leaflet-control-zoom a {
+  background: var(--surface) !important;
+  color: var(--accent) !important;
+  border-color: var(--border2) !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  line-height: 36px !important;
+}
+
+/* ── Bottom safe area spacer ── */
+.bottom-safe { height: var(--safe-bottom); min-height: 16px; }

@@ -1,0 +1,68 @@
+{
+  "region": "Edinburgh",
+  "slug": "edinburgh",
+  "description": "Scotland's dramatic capital — volcanic rock, medieval wynds, and centuries of stories.",
+  "center": { "lat": 55.9533, "lng": -3.1883 },
+  "pois": [
+    {
+      "id": "edinburgh-castle",
+      "name": "Edinburgh Castle",
+      "lat": 55.9486,
+      "lng": -3.1999,
+      "summary": "A fortress on volcanic rock, occupied for over 3,000 years.",
+      "tags": ["history", "film", "royalty"],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Outlaw King (2018)",
+          "body": "Netflix's Robert the Bruce epic used the castle esplanade for key scenes. The real Bruce besieged it in 1314, famously scaling the north face at night.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Edinburgh_Castle_from_the_north.jpg/1280px-Edinburgh_Castle_from_the_north.jpg",
+            "caption": "Edinburgh Castle from the north"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The One O'Clock Gun",
+          "body": "Fired every day at 13:00 (except Sunday) since 1861. Originally a time signal for ships in the Firth of Forth to set their chronometers. Still going."
+        },
+        {
+          "type": "book",
+          "title": "The Da Vinci Code",
+          "body": "Dan Brown's sequel 'The Lost Symbol' weaves Rosslyn Chapel and Edinburgh Castle into a Masonic conspiracy. The castle's Honours of Scotland — Scotland's crown jewels — are very real and on display inside."
+        }
+      ]
+    },
+    {
+      "id": "arthur-seat",
+      "name": "Arthur's Seat",
+      "lat": 55.9443,
+      "lng": -3.1615,
+      "summary": "An ancient volcano rising 251m above the city. Arguably the finest urban hike in Europe.",
+      "tags": ["nature", "history", "film"],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Trainspotting (1996)",
+          "body": "Danny Boyle's opening sequence features Renton and Spud sprinting through Edinburgh's streets — and the silhouette of Arthur's Seat looms throughout. The summit scene where they contemplate their lives was filmed right at the top.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Arthur%27s_Seat_from_Salisbury_Crags.jpg/1280px-Arthur%27s_Seat_from_Salisbury_Crags.jpg",
+            "caption": "Arthur's Seat from Salisbury Crags"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The miniature coffins",
+          "body": "In 1836, children found 17 tiny carved coffins tucked in a cliff on Arthur's Seat, each holding a wooden figure in linen. Their origin remains a mystery — possibly effigies for sailors lost at sea, or connected to the Burke and Hare murders. Eight survive in the National Museum."
+        },
+        {
+          "type": "book",
+          "title": "The Private Memoirs and Confessions of a Justified Sinner (1824)",
+          "body": "James Hogg's gothic masterpiece is set in the shadow of Arthur's Seat. A pivotal duel takes place on its slopes. It's one of the earliest psychological horror novels ever written."
+        }
+      ]
+    }
+  ]
+}

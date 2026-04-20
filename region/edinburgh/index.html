@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1a2e">
+  <title>Edinburgh — Scotland Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .page-header {
+      padding: 1.25rem 1.25rem 1rem;
+      padding-left: calc(1.25rem + var(--safe-left));
+      padding-right: calc(1.25rem + var(--safe-right));
+      background: var(--bg2);
+    }
+    .header-region {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .header-desc { font-size: 13px; color: var(--text2); line-height: 1.6; }
+
+    .status-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 1.25rem;
+      padding-left: calc(1.25rem + var(--safe-left));
+      padding-right: calc(1.25rem + var(--safe-right));
+      height: 48px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--text3); flex-shrink: 0; }
+    .status-dot.active { background: var(--success); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.45} }
+    .status-text { color: var(--text2); font-size: 12px; flex: 1; }
+
+    .section { padding: 1rem 1.25rem; }
+    .section + .section { padding-top: 0; }
+
+    #map { width: 100%; height: 200px; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
+
+    .compass-layout { display: flex; gap: 1rem; align-items: flex-start; }
+    .compass-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .compass-dial {
+      width: 88px; height: 88px; border-radius: 50%;
+      border: 1px solid var(--border2); background: var(--surface);
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+    .c-n,.c-s,.c-e,.c-w { position: absolute; font-size: 9px; font-weight: 500; color: var(--text3); transform: translate(-50%,-50%); }
+    .c-n { top: 9px; left: 50%; color: var(--accent); }
+    .c-s { bottom: 2px; left: 50%; }
+    .c-e { right: 2px; top: 50%; }
+    .c-w { left: 9px; top: 50%; }
+    .needle { position: absolute; top: 50%; left: 50%; transform-origin: 0 0; transition: transform 0.25s ease-out; }
+    .needle-n { position: absolute; left: -4px; bottom: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 30px solid var(--accent); }
+    .needle-s { position: absolute; left: -4px; top: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 30px solid var(--text3); }
+    .needle-dot { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .compass-hdg { font-size: 11px; color: var(--text3); letter-spacing: 0.1em; }
+
+    .poi-arrows { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .poi-arrow-row {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 10px 12px; min-height: 56px;
+      cursor: pointer; text-decoration: none;
+      -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+    }
+    .poi-arrow-row:active { border-color: var(--border2); background: var(--surface2); }
+    .dir-circle {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1px solid var(--border2); background: var(--surface2);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .dir-circle svg { width: 14px; height: 14px; transition: transform 0.25s ease-out; }
+    .poi-arrow-name { font-size: 13px; font-weight: 500; color: var(--text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .poi-arrow-meta { font-size: 11px; color: var(--text3); margin-top: 1px; }
+    .poi-arrow-dist { font-size: 13px; font-weight: 500; color: var(--accent); flex-shrink: 0; }
+
+    .poi-card {
+      display: block; background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); margin-bottom: 0.85rem; overflow: hidden;
+      text-decoration: none; -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+    }
+    .poi-card:active { border-color: var(--border2); }
+    .poi-card-inner { padding: 1rem 1.1rem 0.75rem; }
+    .poi-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+    .poi-card-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); line-height: 1.2; }
+    .poi-card-summary { font-size: 12px; color: var(--text2); margin-top: 4px; line-height: 1.5; }
+    .poi-card-dist { font-size: 11px; color: var(--accent); font-weight: 500; white-space: nowrap; padding-top: 3px; flex-shrink: 0; }
+    .poi-tags { display: flex; flex-wrap: wrap; gap: 5px; padding: 0 1.1rem 0.85rem; }
+    .poi-card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border); padding: 0.65rem 1.1rem; min-height: 44px;
+    }
+    .poi-trivia-count { font-size: 11px; color: var(--text3); }
+    .poi-cta { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+    .poi-cta svg { width: 11px; height: 11px; }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a class="top-bar-back" href="../../index.html">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+    Scotland guide
+  </a>
+  <button class="sunlight-btn" onclick="toggleSunlight()" aria-label="Toggle sunlight mode">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41"/></svg>
+    <span class="label-dark">Sunlight</span>
+    <span class="label-light">Night</span>
+  </button>
+</div>
+
+<div class="page-header">
+  <p class="header-region">Region</p>
+  <h1>Edinburgh</h1>
+  <p class="header-desc">Scotland's dramatic capital — volcanic rock, medieval wynds, and centuries of stories.</p>
+</div>
+
+<div class="status-bar">
+  <div class="status-dot" id="status-dot"></div>
+  <span class="status-text" id="status-text">Location not active</span>
+  <button class="btn-sm" id="locate-btn" onclick="startGPS()">Enable GPS</button>
+</div>
+
+<div class="section">
+  <p class="section-label">Map</p>
+  <div id="map"></div>
+</div>
+
+<div class="section">
+  <p class="section-label">Nearby points of interest</p>
+  <div class="compass-layout">
+    <div class="compass-wrap">
+      <div class="compass-dial">
+        <span class="c-n">N</span><span class="c-s">S</span>
+        <span class="c-e">E</span><span class="c-w">W</span>
+        <div class="needle" id="compass-needle">
+          <div class="needle-n"></div>
+          <div class="needle-s"></div>
+          <div class="needle-dot"></div>
+        </div>
+      </div>
+      <span class="compass-hdg" id="compass-hdg">— °</span>
+    </div>
+    <div class="poi-arrows" id="poi-arrows">
+      <div class="permission-overlay">
+        <p>Enable GPS to see live distances and compass directions.</p>
+        <button class="btn-primary" onclick="startGPS()">Enable GPS</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-label">All points of interest</p>
+  <div id="poi-list"></div>
+</div>
+
+<div class="bottom-safe"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../../compass.js"></script>
+<script>
+const DATA_URL = '../../data/edinburgh.json';
+let regionData = null;
+let map, userMarker;
+
+async function init() {
+  const res = await fetch(DATA_URL);
+  regionData = await res.json();
+  initMap();
+  renderPoiList();
+}
+
+function initMap() {
+  const dark = !document.body.classList.contains('sunlight');
+  map = L.map('map', { zoomControl: false, attributionControl: false })
+    .setView([regionData.center.lat, regionData.center.lng], 14);
+  L.tileLayer(
+    dark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+         : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    { maxZoom: 19 }
+  ).addTo(map);
+  L.control.zoom({ position: 'bottomright' }).addTo(map);
+  regionData.pois.forEach(poi => {
+    const icon = L.divIcon({
+      className: '',
+      html: `<div style="width:11px;height:11px;background:#c8a96e;border-radius:50%;border:2px solid #0f0f1a;"></div>`,
+      iconSize: [11,11], iconAnchor: [5,5]
+    });
+    L.marker([poi.lat, poi.lng], { icon }).addTo(map).bindTooltip(poi.name, { offset:[8,0] });
+  });
+}
+
+function renderPoiList() {
+  const pois = regionData ? [...regionData.pois] : [];
+  if (GEO.lat) pois.sort((a,b) =>
+    haversine(GEO.lat,GEO.lng,a.lat,a.lng) - haversine(GEO.lat,GEO.lng,b.lat,b.lng));
+  document.getElementById('poi-list').innerHTML = pois.map(poi => {
+    const dist = GEO.lat ? formatDist(haversine(GEO.lat,GEO.lng,poi.lat,poi.lng)) : null;
+    const tags = poi.tags.map(t=>`<span class="tag ${t}">${t}</span>`).join('');
+    return `<a class="poi-card" href="../../poi/${regionData.slug}/${poi.id}.html">
+      <div class="poi-card-inner">
+        <div class="poi-card-top">
+          <div>
+            <div class="poi-card-name">${poi.name}</div>
+            <div class="poi-card-summary">${poi.summary}</div>
+          </div>
+          ${dist?`<div class="poi-card-dist">${dist}</div>`:''}
+        </div>
+      </div>
+      <div class="poi-tags">${tags}</div>
+      <div class="poi-card-footer">
+        <span class="poi-trivia-count">${poi.trivia.length} trivia points</span>
+        <span class="poi-cta">Explore <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span>
+      </div>
+    </a>`;
+  }).join('');
+}
+
+function renderPoiArrows() {
+  if (!GEO.lat || !regionData) return;
+  document.getElementById('poi-arrows').innerHTML = regionData.pois.map(poi => {
+    const dist = haversine(GEO.lat,GEO.lng,poi.lat,poi.lng);
+    const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
+    const rel = relativeBearing(abs);
+    return `<a class="poi-arrow-row" href="../../poi/${regionData.slug}/${poi.id}.html">
+      <div class="dir-circle">
+        <svg viewBox="0 0 14 14" fill="none" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round"
+             style="transform:rotate(${rel.toFixed(0)}deg)">
+          <path d="M7 12V2M3 6l4-4 4 4"/>
+        </svg>
+      </div>
+      <div style="flex:1;min-width:0;">
+        <div class="poi-arrow-name">${poi.name}</div>
+        <div class="poi-arrow-meta">${Math.round(abs)}° · tap to explore</div>
+      </div>
+      <div class="poi-arrow-dist">${formatDist(dist)}</div>
+    </a>`;
+  }).join('');
+}
+
+async function startGPS() {
+  document.getElementById('locate-btn').style.display = 'none';
+  document.getElementById('status-text').textContent = 'Requesting location…';
+  const ok = await requestLocationAndCompass();
+  if (!ok) {
+    document.getElementById('status-text').textContent = 'Location unavailable';
+    document.getElementById('locate-btn').style.display = '';
+  }
+}
+
+GEO.onUpdate(() => {
+  if (GEO.watching) {
+    document.getElementById('status-dot').className = 'status-dot active';
+    document.getElementById('status-text').textContent = `Active · ±${Math.round(GEO.accuracy)}m`;
+    document.getElementById('locate-btn').style.display = 'none';
+  }
+  if (GEO.lat && map) {
+    if (!userMarker) {
+      const icon = L.divIcon({
+        className:'',
+        html:`<div style="width:12px;height:12px;background:#6bcf7f;border-radius:50%;border:2px solid #0f0f1a;"></div>`,
+        iconSize:[12,12],iconAnchor:[6,6]
+      });
+      userMarker = L.marker([GEO.lat,GEO.lng],{icon}).addTo(map);
+    } else { userMarker.setLatLng([GEO.lat,GEO.lng]); }
+  }
+  document.getElementById('compass-needle').style.transform = `rotate(${-GEO.heading}deg)`;
+  document.getElementById('compass-hdg').textContent = `${Math.round(GEO.heading)}°`;
+  renderPoiArrows();
+  renderPoiList();
+});
+
+init();
+</script>
+</body>
+</html>
