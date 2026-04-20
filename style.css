@@ -91,7 +91,7 @@ body.sunlight .tag.nature, body.sunlight .trivia-type-badge.nature { background:
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1100;
 }
 .top-bar-back {
   display: inline-flex;

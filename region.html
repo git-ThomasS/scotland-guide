@@ -67,13 +67,25 @@
 
     /* Arrow rows */
     .poi-arrows { flex: 1; display: flex; flex-direction: column; gap: 8px; }
-    .poi-arrow-row { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; min-height: 52px; text-decoration: none; touch-action: manipulation; }
+    .poi-arrow-row { display: grid; grid-template-columns: 28px 1fr auto auto; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; min-height: 52px; text-decoration: none; touch-action: manipulation; }
     .poi-arrow-row:active { filter: brightness(0.9); }
     .poi-arrow-row.cat-attraction { border: 2px solid var(--cat-attraction); }
-    .dir-circle { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .poi-arrow-row.pinned { border: 2px solid #7f77dd; background: rgba(127,119,221,0.08); }
+    .dir-circle { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface2); display: flex; align-items: center; justify-content: center; }
     .dir-circle svg { width: 13px; height: 13px; }
-    .poi-arrow-name { font-size: 13px; font-weight: 500; color: var(--text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-    .poi-arrow-dist { font-size: 12px; font-weight: 500; color: var(--accent); flex-shrink: 0; }
+    .poi-arrow-name { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+    .poi-arrow-dist { font-size: 12px; font-weight: 500; color: var(--accent); white-space: nowrap; }
+    .pin-btn {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 1.5px solid var(--border2); background: none;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; touch-action: manipulation; flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .pin-btn svg { width: 12px; height: 12px; color: var(--text3); }
+    .pin-btn.pinned { background: #7f77dd; border-color: #7f77dd; }
+    .pin-btn.pinned svg { color: #fff; }
+    .pinned-label { font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #b0a8f0; margin-bottom: 4px; }
 
     /* POI cards */
     .poi-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 0.85rem; overflow: hidden; text-decoration: none; touch-action: manipulation; }
@@ -91,7 +103,19 @@
     .poi-cta { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
     .poi-cta svg { width: 11px; height: 11px; }
 
-    /* Arrival banner */
+    /* Visited state */
+    .poi-card.visited { opacity: 0.55; }
+    .poi-card.visited .poi-card-name { text-decoration: line-through; }
+    .visit-btn {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1.5px solid var(--border2);
+      background: none; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; flex-shrink: 0; touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .visit-btn svg { width: 14px; height: 14px; color: var(--text3); }
+    .visit-btn.done { background: var(--success); border-color: var(--success); }
+    .visit-btn.done svg { color: #0f0f1a; }
     .arrival-banner {
       background: var(--surface);
       border: 1px solid var(--border2);
@@ -174,12 +198,7 @@
       </div>
       <span class="compass-hdg" id="compass-hdg">— °</span>
     </div>
-    <div class="poi-arrows" id="poi-arrows">
-      <div class="permission-overlay">
-        <p>Enable GPS to see live distances and compass directions.</p>
-        <button class="btn-primary" onclick="startGPS()">Enable GPS</button>
-      </div>
-    </div>
+    <div class="poi-arrows" id="poi-arrows"></div>
     </div>
 </div>
 
@@ -227,6 +246,8 @@ async function init() {
   document.getElementById('region-desc').textContent = regionData.description;
   initMap();
   renderPoiList();
+  buildPoiArrows(); // show list immediately, updates with GPS later
+  arrowsBuilt = true;
 }
 
 function initMap() {
@@ -312,62 +333,134 @@ function checkArrivals() {
   ).join('');
 }
 
+// Visited state — persisted per region in localStorage
+function visitedKey() { return `visited_${regionSlug}`; }
+function getVisited() {
+  try { return JSON.parse(localStorage.getItem(visitedKey()) || '[]'); } catch { return []; }
+}
+function toggleVisited(poiId, e) {
+  e.preventDefault();
+  e.stopPropagation();
+  const visited = getVisited();
+  const idx = visited.indexOf(poiId);
+  if (idx === -1) visited.push(poiId);
+  else visited.splice(idx, 1);
+  localStorage.setItem(visitedKey(), JSON.stringify(visited));
+  renderPoiList();
+  if (arrowsBuilt) buildPoiArrows();
+}
+
 function renderPoiList() {
   const pois = regionData ? [...regionData.pois] : [];
   if (GEO.lat) pois.sort((a,b) =>
     haversine(GEO.lat,GEO.lng,a.lat,a.lng) - haversine(GEO.lat,GEO.lng,b.lat,b.lng));
   const cat = poi => poi.category || 'trivia';
   const catLabel = { attraction:'Must-see', nature:'Nature', film:'Film', history:'History', trivia:'Trivia' };
+  const visited = getVisited();
   document.getElementById('poi-list').innerHTML = pois.map(poi => {
     const dist = GEO.lat ? formatDist(haversine(GEO.lat,GEO.lng,poi.lat,poi.lng)) : null;
     const tags = poi.tags.map(t=>`<span class="tag ${t}">${t}</span>`).join('');
-    return `<a class="poi-card cat-${cat(poi)}" href="${poiUrl(poi)}">
+    const done = visited.includes(poi.id);
+    return `<a class="poi-card cat-${cat(poi)}${done?' visited':''}" href="${poiUrl(poi)}">
       <div class="poi-card-inner">
         <div class="poi-card-top">
           <div class="poi-card-title-row">
             <span class="cat-pill ${cat(poi)}">${catLabel[cat(poi)]||cat(poi)}</span>
             <span class="poi-card-name">${poi.name}</span>
           </div>
-          ${dist?`<div class="poi-card-dist">${dist}</div>`:''}
+          <button class="visit-btn${done?' done':''}" onclick="toggleVisited('${poi.id}',event)" aria-label="${done?'Mark unvisited':'Mark visited'}">
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 7l4 4 6-6"/>
+            </svg>
+          </button>
         </div>
         <div class="poi-card-summary">${poi.summary}</div>
+        ${dist?`<div style="font-size:11px;color:var(--accent);font-weight:500;margin-top:4px;">${dist}</div>`:''}
       </div>
       <div class="poi-tags">${tags}</div>
       <div class="poi-card-footer">
         <span class="poi-trivia-count">${poi.trivia.length} trivia points</span>
-        <span class="poi-cta">Explore <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span>
+        <span class="poi-cta">${done?'Visited ✓':'Explore'} <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span>
       </div>
     </a>`;
   }).join('');
 }
 
+// Pin state — one POI at a time
+function pinnedKey() { return `pinned_${regionSlug}`; }
+function getPinned() { return localStorage.getItem(pinnedKey()) || null; }
+function togglePinned(poiId, e) {
+  e.preventDefault();
+  e.stopPropagation();
+  const current = getPinned();
+  localStorage.setItem(pinnedKey(), current === poiId ? '' : poiId);
+  if (arrowsBuilt) buildPoiArrows();
+}
+
 function buildPoiArrows() {
-  if (!GEO.lat || !regionData) return;
+  if (!regionData) return;
   const catLabel = { attraction:'Must-see', nature:'Nature', film:'Film', history:'History', trivia:'Trivia' };
-  document.getElementById('poi-arrows').innerHTML = regionData.pois.map(poi => {
-    const dist = haversine(GEO.lat,GEO.lng,poi.lat,poi.lng);
-    const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
-    const rel = relativeBearing(abs);
-    const color = catColor(poi);
+  const visited = getVisited();
+  const pinned = getPinned();
+
+  let pois = regionData.pois.filter(poi => !visited.includes(poi.id));
+  if (GEO.lat) {
+    pois.sort((a, b) => {
+      if (a.id === pinned) return -1;
+      if (b.id === pinned) return 1;
+      return haversine(GEO.lat,GEO.lng,a.lat,a.lng) - haversine(GEO.lat,GEO.lng,b.lat,b.lng);
+    });
+  }
+
+  if (pois.length === 0) {
+    document.getElementById('poi-arrows').innerHTML = `
+      <div style="font-size:13px;color:var(--text3);padding:0.5rem 0;">All spots visited!</div>`;
+    return;
+  }
+
+  document.getElementById('poi-arrows').innerHTML = pois.map(poi => {
     const cat = poi.category || 'trivia';
-    arrowAngles[poi.id] = rel;
-    return `<a class="poi-arrow-row cat-${cat}" href="${poiUrl(poi)}">
-      <div class="dir-circle">
-        <svg id="arrow-${poi.id}" viewBox="0 0 14 14" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round"
-             style="transform:rotate(${rel.toFixed(0)}deg);transition:transform 0.25s ease-out;">
-          <path d="M7 12V2M3 6l4-4 4 4"/>
-        </svg>
-      </div>
-      <div class="poi-arrow-name">${poi.name}</div>
-      <span class="cat-pill ${cat}">${catLabel[cat]||cat}</span>
-      <div class="poi-arrow-dist">${formatDist(dist)}</div>
-    </a>`;
+    const isPinned = poi.id === pinned;
+    const color = catColor(poi);
+
+    let arrowSvg, distHtml;
+    if (GEO.lat) {
+      const dist = haversine(GEO.lat,GEO.lng,poi.lat,poi.lng);
+      const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
+      const rel = relativeBearing(abs);
+      arrowAngles[poi.id] = rel;
+      arrowSvg = `<svg id="arrow-${poi.id}" viewBox="0 0 14 14" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round"
+           style="transform:rotate(${rel.toFixed(0)}deg);transition:transform 0.25s ease-out;">
+        <path d="M7 12V2M3 6l4-4 4 4"/>
+      </svg>`;
+      distHtml = `<div class="poi-arrow-dist">${formatDist(dist)}</div>`;
+    } else {
+      arrowSvg = `<svg viewBox="0 0 14 14" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="7" cy="7" r="4"/>
+      </svg>`;
+      distHtml = `<div class="poi-arrow-dist">—</div>`;
+    }
+
+    return `
+      ${isPinned ? `<div class="pinned-label">📍 Next stop</div>` : ''}
+      <a class="poi-arrow-row cat-${cat}${isPinned?' pinned':''}" href="${poiUrl(poi)}">
+        <div class="dir-circle">${arrowSvg}</div>
+        <div class="poi-arrow-name">${poi.name}</div>
+        <span class="cat-pill ${cat}">${catLabel[cat]||cat}</span>
+        ${distHtml}
+        <button class="pin-btn${isPinned?' pinned':''}" onclick="togglePinned('${poi.id}',event)" aria-label="${isPinned?'Unpin':'Pin as next stop'}">
+          <svg viewBox="0 0 12 12" fill="${isPinned?'currentColor':'none'}" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M9 1L8 5l2 2-5 4-1-3-3-1 4-5 2 2z"/>
+          </svg>
+        </button>
+      </a>`;
   }).join('');
 }
 
 function updateArrowAngles() {
   if (!GEO.lat || !regionData) return;
-  regionData.pois.forEach(poi => {
+  const visited = getVisited();
+  regionData.pois.filter(poi => !visited.includes(poi.id)).forEach(poi => {
     const svg = document.getElementById(`arrow-${poi.id}`);
     if (!svg) return;
     const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);

@@ -41,7 +41,18 @@
     .trivia-media { margin: 0 1rem 1rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
     .trivia-media img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
     .trivia-media-caption { padding: 6px 10px; font-size: 10px; color: var(--text3); letter-spacing: 0.05em; border-top: 1px solid var(--border); }
-    .maps-btns { display: flex; gap: 10px; }
+    .visited-btn {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; width: 100%; min-height: 52px;
+      border-radius: var(--radius); border: 1.5px solid var(--border2);
+      background: none; color: var(--text2);
+      font-family: inherit; font-size: 14px; font-weight: 500;
+      cursor: pointer; touch-action: manipulation; letter-spacing: 0.03em;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .visited-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .visited-btn.done { background: var(--success); border-color: var(--success); color: #0a2e14; }
     .maps-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; background: none; border: 1px solid var(--border2); border-radius: var(--radius); color: var(--accent); font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; letter-spacing: 0.04em; text-decoration: none; touch-action: manipulation; }
     .maps-btn:active { background: var(--border); }
     .maps-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
@@ -91,7 +102,15 @@
 </div>
 
 <div class="section">
-  <div class="maps-btns">
+  <button id="visited-btn" class="visited-btn" onclick="toggleVisited()">
+    <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l4 4 8-8"/>
+    </svg>
+    <span id="visited-label">Mark as visited</span>
+  </button>
+</div>
+
+<div class="section">
     <a id="gmaps-link" class="maps-btn primary" href="#" target="_blank" rel="noopener">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z"/><circle cx="8" cy="6" r="1.5"/></svg>
       Google Maps route
@@ -141,6 +160,7 @@ async function init() {
       poiData.tags.map(t => `<span class="tag ${t}">${t}</span>`).join('');
 
     updateMapsLinks();
+    updateVisitedBtn();
     renderTrivia();
   } catch(e) {
     document.getElementById('hero-title').textContent = 'POI not found';
@@ -205,6 +225,26 @@ function updateDist() {
   document.getElementById('dist-value').textContent = formatDist(dist);
   document.getElementById('dist-sub').textContent =
     `bearing ${Math.round(abs)}°${GEO.orientationActive ? ' · compass active' : ''}`;
+}
+
+function visitedKey() { return `visited_${regionSlug}`; }
+function getVisited() {
+  try { return JSON.parse(localStorage.getItem(visitedKey()) || '[]'); } catch { return []; }
+}
+function toggleVisited() {
+  const visited = getVisited();
+  const idx = visited.indexOf(poiId);
+  if (idx === -1) visited.push(poiId);
+  else visited.splice(idx, 1);
+  localStorage.setItem(visitedKey(), JSON.stringify(visited));
+  updateVisitedBtn();
+}
+function updateVisitedBtn() {
+  const done = getVisited().includes(poiId);
+  const btn = document.getElementById('visited-btn');
+  const lbl = document.getElementById('visited-label');
+  btn.className = 'visited-btn' + (done ? ' done' : '');
+  lbl.textContent = done ? 'Visited ✓ — tap to undo' : 'Mark as visited';
 }
 
 async function startGPS() {
