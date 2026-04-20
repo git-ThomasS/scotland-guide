@@ -162,9 +162,31 @@ function _showCompassBtn() {
   btn.onclick = async () => {
     btn.textContent = 'Activating…';
     btn.disabled = true;
-    await requestLocationAndCompass();
+    await _requestOrientationOnly();
     if (GEO.orientationActive) btn.remove();
-    else { btn.textContent = 'Activate compass'; btn.disabled = false; }
+    else { btn.textContent = 'Try again'; btn.disabled = false; }
   };
   statusBar.appendChild(btn);
+}
+
+async function _requestOrientationOnly() {
+  if (GEO.orientationActive) return;
+  if (typeof DeviceOrientationEvent === 'undefined') {
+    showToast('Compass not supported on this device');
+    return;
+  }
+  if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+    try {
+      const perm = await DeviceOrientationEvent.requestPermission();
+      if (perm !== 'granted') {
+        showToast('Compass denied — enable in Settings → Safari → Motion & Orientation Access');
+        return;
+      }
+    } catch(e) {
+      showToast('Could not request compass permission');
+      return;
+    }
+  }
+  window.addEventListener('deviceorientation', _onOrientation, true);
+  GEO.orientationActive = true;
 }
