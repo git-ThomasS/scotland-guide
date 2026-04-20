@@ -1,0 +1,53 @@
+{
+  "region": "Antwerp",
+  "slug": "antwerp",
+  "description": "A test region for verifying GPS, compass, and distances close to home.",
+  "center": { "lat": 51.2213, "lng": 4.3866 },
+  "pois": [
+    {
+      "id": "sint-annastrand",
+      "name": "Sint-Annastrand",
+      "lat": 51.2257,
+      "lng": 4.3819,
+      "summary": "A sandy beach on the left bank of the Scheldt, with a view across to the Antwerp skyline.",
+      "tags": ["nature", "history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "A beach in a port city",
+          "body": "Sint-Annastrand has been a popular city beach since the early 20th century. Antwerp residents cross the Scheldt via the Sint-Annatunnel — a pedestrian and cycling tunnel built in 1933 — to reach it. At 572 metres long, it was one of the longest underwater pedestrian tunnels in the world when it opened.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Antwerpen_-_Sint-Annastrand_%281%29.jpg/1280px-Antwerpen_-_Sint-Annastrand_%281%29.jpg",
+            "caption": "Sint-Annastrand with the Antwerp skyline across the Scheldt"
+          }
+        },
+        {
+          "type": "film",
+          "title": "Loft (2008)",
+          "body": "The Antwerp skyline visible from Linkeroever features prominently in several Belgian films. The view of the Cathedral of Our Lady tower from across the Scheldt is one of the most recognisable shots in Flemish cinema."
+        }
+      ]
+    },
+    {
+      "id": "linkeroever-park",
+      "name": "Blokkersdijk Nature Reserve",
+      "lat": 51.2189,
+      "lng": 4.3601,
+      "summary": "A quiet nature reserve on Linkeroever, with a pond, reed beds, and walking paths.",
+      "tags": ["nature"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "An unexpected wilderness",
+          "body": "Blokkersdijk sits just minutes from the Port of Antwerp — one of the largest ports in Europe — yet feels completely removed from the industrial landscape. The reserve is home to over 200 bird species and is managed by Natuurpunt, Belgium's largest nature conservation organisation."
+        },
+        {
+          "type": "nature",
+          "title": "The Scheldt estuary",
+          "body": "Linkeroever sits at the edge of the Scheldt estuary, which stretches 60km from Antwerp to the North Sea. The tidal range here is over 5 metres — unusually large for a river this far inland — which makes the wetlands around Blokkersdijk particularly rich in wildlife."
+        }
+      ]
+    }
+  ]
+}
