@@ -46,49 +46,47 @@
     /* Category colours */
     :root {
       --cat-attraction: #c8a96e;
-      --cat-nature: #6bcf7f;
-      --cat-film: #b89fd4;
-      --cat-history: #89bdd4;
-      --cat-trivia: #a8a4a0;
+      --cat-nature:     #6bcf7f;
+      --cat-film:       #b89fd4;
+      --cat-history:    #89bdd4;
+      --cat-trivia:     #888780;
     }
+
+    /* Category pill badges */
+    .cat-pill { font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 7px; border-radius: 4px; flex-shrink: 0; }
+    .cat-pill.attraction { background: var(--cat-attraction); color: #0f0f1a; }
+    .cat-pill.nature     { background: var(--cat-nature);     color: #0a2e14; }
+    .cat-pill.film       { background: var(--cat-film);       color: #1a0a2e; }
+    .cat-pill.history    { background: var(--cat-history);    color: #0a1e2e; }
+    .cat-pill.trivia     { background: var(--cat-trivia);     color: #f0ede8; }
 
     /* Legend */
     .cat-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.75rem; }
     .cat-legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--text3); letter-spacing: 0.05em; }
     .cat-legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 
-    /* Arrow rows with category colour strip */
+    /* Arrow rows */
     .poi-arrows { flex: 1; display: flex; flex-direction: column; gap: 8px; }
-    .poi-arrow-row { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--border); border-left-width: 3px; border-radius: 10px; padding: 10px 12px; min-height: 56px; text-decoration: none; touch-action: manipulation; }
-    .poi-arrow-row:active { background: var(--surface2); }
-    .poi-arrow-row.cat-attraction { border-left-color: var(--cat-attraction); }
-    .poi-arrow-row.cat-nature { border-left-color: var(--cat-nature); }
-    .poi-arrow-row.cat-film { border-left-color: var(--cat-film); }
-    .poi-arrow-row.cat-history { border-left-color: var(--cat-history); }
-    .poi-arrow-row.cat-trivia { border-left-color: var(--cat-trivia); }
+    .poi-arrow-row { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; min-height: 52px; text-decoration: none; touch-action: manipulation; }
+    .poi-arrow-row:active { filter: brightness(0.9); }
+    .poi-arrow-row.cat-attraction { border: 2px solid var(--cat-attraction); }
+    .dir-circle { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .dir-circle svg { width: 13px; height: 13px; }
+    .poi-arrow-name { font-size: 13px; font-weight: 500; color: var(--text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+    .poi-arrow-dist { font-size: 12px; font-weight: 500; color: var(--accent); flex-shrink: 0; }
 
-    .dir-circle { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .dir-circle svg { width: 14px; height: 14px; }
-    .poi-arrow-name { font-size: 13px; font-weight: 500; color: var(--text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .poi-arrow-meta { font-size: 11px; color: var(--text3); margin-top: 1px; }
-    .poi-arrow-dist { font-size: 13px; font-weight: 500; color: var(--accent); flex-shrink: 0; }
-
-    /* POI cards with category border */
-    .poi-card { display: block; background: var(--surface); border: 1px solid var(--border); border-left-width: 3px; border-radius: var(--radius); margin-bottom: 0.85rem; overflow: hidden; text-decoration: none; touch-action: manipulation; }
-    .poi-card:active { background: var(--surface2); }
-    .poi-card.cat-attraction { border-left-color: var(--cat-attraction); }
-    .poi-card.cat-nature { border-left-color: var(--cat-nature); }
-    .poi-card.cat-film { border-left-color: var(--cat-film); }
-    .poi-card.cat-history { border-left-color: var(--cat-history); }
-    .poi-card.cat-trivia { border-left-color: var(--cat-trivia); }
-
-    .poi-card-inner { padding: 1rem 1.1rem 0.75rem; }
-    .poi-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
-    .poi-card-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); line-height: 1.2; }
-    .poi-card-summary { font-size: 12px; color: var(--text2); margin-top: 4px; line-height: 1.5; }
-    .poi-card-dist { font-size: 11px; color: var(--accent); font-weight: 500; white-space: nowrap; padding-top: 3px; flex-shrink: 0; }
-    .poi-tags { display: flex; flex-wrap: wrap; gap: 5px; padding: 0 1.1rem 0.85rem; }
-    .poi-card-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding: 0.65rem 1.1rem; min-height: 44px; }
+    /* POI cards */
+    .poi-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 0.85rem; overflow: hidden; text-decoration: none; touch-action: manipulation; }
+    .poi-card:active { filter: brightness(0.9); }
+    .poi-card.cat-attraction { border: 2px solid var(--cat-attraction); }
+    .poi-card-inner { padding: 0.9rem 1.1rem 0.6rem; }
+    .poi-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 5px; }
+    .poi-card-title-row { display: flex; align-items: center; gap: 7px; flex: 1; min-width: 0; }
+    .poi-card-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .poi-card-summary { font-size: 12px; color: var(--text2); line-height: 1.5; margin-bottom: 6px; }
+    .poi-card-dist { font-size: 11px; color: var(--accent); font-weight: 500; white-space: nowrap; padding-top: 2px; flex-shrink: 0; }
+    .poi-tags { display: flex; flex-wrap: wrap; gap: 5px; padding: 0 1.1rem 0.75rem; }
+    .poi-card-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); background: var(--surface2); padding: 0.55rem 1.1rem; min-height: 40px; }
     .poi-trivia-count { font-size: 11px; color: var(--text3); }
     .poi-cta { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
     .poi-cta svg { width: 11px; height: 11px; }
@@ -318,18 +316,21 @@ function renderPoiList() {
   const pois = regionData ? [...regionData.pois] : [];
   if (GEO.lat) pois.sort((a,b) =>
     haversine(GEO.lat,GEO.lng,a.lat,a.lng) - haversine(GEO.lat,GEO.lng,b.lat,b.lng));
+  const cat = poi => poi.category || 'trivia';
+  const catLabel = { attraction:'Must-see', nature:'Nature', film:'Film', history:'History', trivia:'Trivia' };
   document.getElementById('poi-list').innerHTML = pois.map(poi => {
     const dist = GEO.lat ? formatDist(haversine(GEO.lat,GEO.lng,poi.lat,poi.lng)) : null;
     const tags = poi.tags.map(t=>`<span class="tag ${t}">${t}</span>`).join('');
-    return `<a class="poi-card cat-${poi.category||'trivia'}" href="${poiUrl(poi)}">
+    return `<a class="poi-card cat-${cat(poi)}" href="${poiUrl(poi)}">
       <div class="poi-card-inner">
         <div class="poi-card-top">
-          <div>
-            <div class="poi-card-name">${poi.name}</div>
-            <div class="poi-card-summary">${poi.summary}</div>
+          <div class="poi-card-title-row">
+            <span class="cat-pill ${cat(poi)}">${catLabel[cat(poi)]||cat(poi)}</span>
+            <span class="poi-card-name">${poi.name}</span>
           </div>
           ${dist?`<div class="poi-card-dist">${dist}</div>`:''}
         </div>
+        <div class="poi-card-summary">${poi.summary}</div>
       </div>
       <div class="poi-tags">${tags}</div>
       <div class="poi-card-footer">
@@ -342,23 +343,23 @@ function renderPoiList() {
 
 function buildPoiArrows() {
   if (!GEO.lat || !regionData) return;
+  const catLabel = { attraction:'Must-see', nature:'Nature', film:'Film', history:'History', trivia:'Trivia' };
   document.getElementById('poi-arrows').innerHTML = regionData.pois.map(poi => {
     const dist = haversine(GEO.lat,GEO.lng,poi.lat,poi.lng);
     const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
     const rel = relativeBearing(abs);
     const color = catColor(poi);
+    const cat = poi.category || 'trivia';
     arrowAngles[poi.id] = rel;
-    return `<a class="poi-arrow-row cat-${poi.category||'trivia'}" href="${poiUrl(poi)}">
+    return `<a class="poi-arrow-row cat-${cat}" href="${poiUrl(poi)}">
       <div class="dir-circle">
         <svg id="arrow-${poi.id}" viewBox="0 0 14 14" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round"
              style="transform:rotate(${rel.toFixed(0)}deg);transition:transform 0.25s ease-out;">
           <path d="M7 12V2M3 6l4-4 4 4"/>
         </svg>
       </div>
-      <div style="flex:1;min-width:0;">
-        <div class="poi-arrow-name">${poi.name}</div>
-        <div class="poi-arrow-meta">${Math.round(abs)}°</div>
-      </div>
+      <div class="poi-arrow-name">${poi.name}</div>
+      <span class="cat-pill ${cat}">${catLabel[cat]||cat}</span>
       <div class="poi-arrow-dist">${formatDist(dist)}</div>
     </a>`;
   }).join('');

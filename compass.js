@@ -95,7 +95,11 @@ async function requestLocationAndCompass() {
   }
 }
 
+let _lastOrientation = 0;
 function _onOrientation(e) {
+  const now = Date.now();
+  if (now - _lastOrientation < 100) return; // max 10fps
+  _lastOrientation = now;
   let h = null;
   if (e.webkitCompassHeading != null) {
     h = e.webkitCompassHeading;
