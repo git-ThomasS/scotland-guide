@@ -144,13 +144,20 @@ function relativeBearing(targetAbsoluteBearing) {
   return ((targetAbsoluteBearing - GEO.heading) + 360) % 360;
 }
 
-// Auto-start GPS on page load — silent if permission already granted.
+// Hide the GPS button immediately — we request silently on load.
+// Only show it again if something actually fails.
 document.addEventListener('DOMContentLoaded', () => {
-  requestLocationAndCompass();
+  const btn = document.getElementById('locate-btn');
+  if (btn) btn.style.display = 'none';
+
+  requestLocationAndCompass().catch(() => {
+    // On failure, show the button so the user can retry manually
+    if (btn) btn.style.display = '';
+  });
 });
 
 // iOS requires DeviceOrientation permission from a user gesture.
-// If compass isn't active after page load, the first tap anywhere activates it.
+// If compass isn't active after page load, first tap anywhere activates it.
 document.addEventListener('click', function activateCompass() {
   if (!GEO.orientationActive) requestLocationAndCompass();
 }, { passive: true });
