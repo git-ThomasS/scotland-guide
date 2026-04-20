@@ -157,7 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // iOS requires DeviceOrientation permission from a user gesture.
-// If compass isn't active after page load, first tap anywhere activates it.
-document.addEventListener('click', function activateCompass() {
+// Use touchend with once:true — fires exactly once on first tap,
+// never interferes with link navigation afterwards.
+document.addEventListener('touchend', function() {
   if (!GEO.orientationActive) requestLocationAndCompass();
-}, { passive: true });
+}, { passive: true, once: true });
