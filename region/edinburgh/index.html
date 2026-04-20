@@ -260,12 +260,10 @@ function renderPoiArrows() {
 }
 
 async function startGPS() {
-  document.getElementById('locate-btn').style.display = 'none';
   document.getElementById('status-text').textContent = 'Requesting location…';
   const ok = await requestLocationAndCompass();
   if (!ok) {
-    document.getElementById('status-text').textContent = 'Location unavailable';
-    document.getElementById('locate-btn').style.display = '';
+    document.getElementById('status-text').textContent = 'Location unavailable — tap to retry';
   }
 }
 
