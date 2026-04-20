@@ -217,7 +217,7 @@ async function init() {
 
 function initMap() {
   const dark = !document.body.classList.contains('sunlight');
-  map = L.map('map', { zoomControl: false, attributionControl: false })
+  map = L.map('map', { zoomControl: false, attributionControl: false, tap: false })
     .setView([regionData.center.lat, regionData.center.lng], 14);
   L.tileLayer(
     dark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
@@ -233,6 +233,13 @@ function initMap() {
     });
     L.marker([poi.lat, poi.lng], { icon }).addTo(map).bindTooltip(poi.name, { offset:[8,0] });
   });
+
+  // Leaflet sets touch-action:none on document.body which breaks all links on iOS.
+  // Reset it after Leaflet has finished initialising.
+  setTimeout(() => {
+    document.body.style.touchAction = '';
+    document.body.style.msTouchAction = '';
+  }, 100);
 }
 
 function renderPoiList() {
@@ -242,7 +249,7 @@ function renderPoiList() {
   document.getElementById('poi-list').innerHTML = pois.map(poi => {
     const dist = GEO.lat ? formatDist(haversine(GEO.lat,GEO.lng,poi.lat,poi.lng)) : null;
     const tags = poi.tags.map(t=>`<span class="tag ${t}">${t}</span>`).join('');
-    return `<a class="poi-card" href="../../poi/${regionData.slug}/${poi.id}.html">
+    return `<a class="poi-card" href="../../poi/${regionData.slug}/${poi.id}.html" onclick="void(0)">
       <div class="poi-card-inner">
         <div class="poi-card-top">
           <div>
@@ -267,7 +274,7 @@ function renderPoiArrows() {
     const dist = haversine(GEO.lat,GEO.lng,poi.lat,poi.lng);
     const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
     const rel = relativeBearing(abs);
-    return `<a class="poi-arrow-row" href="../../poi/${regionData.slug}/${poi.id}.html">
+    return `<a class="poi-arrow-row" href="../../poi/${regionData.slug}/${poi.id}.html" onclick="void(0)">
       <div class="dir-circle">
         <svg viewBox="0 0 14 14" fill="none" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round"
              style="transform:rotate(${rel.toFixed(0)}deg)">
