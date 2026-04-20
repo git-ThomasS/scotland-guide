@@ -24,24 +24,13 @@
     .status-text { color: var(--text2); font-size: 12px; flex: 1; }
     .section { padding: 1rem 1.25rem; }
     .section + .section { padding-top: 0; }
+
+    /* Map */
     .map-wrap { position: relative; }
     #map { width: 100%; height: 200px; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
     .map-btn { position: absolute; bottom: 10px; width: 36px; height: 36px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; touch-action: manipulation; }
     .map-btn:active { background: var(--surface2); }
     .map-btn svg { width: 16px; height: 16px; color: var(--accent); }
-    .compass-layout { display: flex; gap: 1rem; align-items: flex-start; }
-    .compass-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-    .compass-dial { width: 88px; height: 88px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface); position: relative; display: flex; align-items: center; justify-content: center; }
-    .c-n,.c-s,.c-e,.c-w { position: absolute; font-size: 9px; font-weight: 500; color: var(--text3); transform: translate(-50%,-50%); }
-    .c-n { top: 9px; left: 50%; color: var(--accent); }
-    .c-s { bottom: 2px; left: 50%; }
-    .c-e { right: 2px; top: 50%; }
-    .c-w { left: 9px; top: 50%; }
-    .needle { position: absolute; top: 50%; left: 50%; transform-origin: 0 0; transition: transform 0.25s ease-out; }
-    .needle-n { position: absolute; left: -4px; bottom: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 30px solid var(--accent); }
-    .needle-s { position: absolute; left: -4px; top: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 30px solid var(--text3); }
-    .needle-dot { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-    .compass-hdg { font-size: 11px; color: var(--text3); letter-spacing: 0.1em; }
 
     /* Category colours */
     :root {
@@ -51,82 +40,125 @@
       --cat-history:    #89bdd4;
       --cat-trivia:     #888780;
     }
-
-    /* Category pill badges */
-    .cat-pill { font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 7px; border-radius: 4px; flex-shrink: 0; }
+    .cat-pill { font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 7px; border-radius: 4px; flex-shrink: 0; white-space: nowrap; }
     .cat-pill.attraction { background: var(--cat-attraction); color: #0f0f1a; }
     .cat-pill.nature     { background: var(--cat-nature);     color: #0a2e14; }
     .cat-pill.film       { background: var(--cat-film);       color: #1a0a2e; }
     .cat-pill.history    { background: var(--cat-history);    color: #0a1e2e; }
     .cat-pill.trivia     { background: var(--cat-trivia);     color: #f0ede8; }
 
-    /* Legend */
-    .cat-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.75rem; }
-    .cat-legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--text3); letter-spacing: 0.05em; }
-    .cat-legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-
-    /* Arrow rows */
-    .poi-arrows { flex: 1; display: flex; flex-direction: column; gap: 8px; }
-    .poi-arrow-row { display: grid; grid-template-columns: 28px 1fr auto auto; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; min-height: 52px; text-decoration: none; touch-action: manipulation; }
-    .poi-arrow-row:active { filter: brightness(0.9); }
-    .poi-arrow-row.cat-attraction { border: 2px solid var(--cat-attraction); }
-    .poi-arrow-row.pinned { border: 2px solid #7f77dd; background: rgba(127,119,221,0.08); }
-    .dir-circle { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface2); display: flex; align-items: center; justify-content: center; }
-    .dir-circle svg { width: 13px; height: 13px; }
-    .poi-arrow-name { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-    .poi-arrow-dist { font-size: 12px; font-weight: 500; color: var(--accent); white-space: nowrap; }
-    .pin-btn {
-      width: 28px; height: 28px; border-radius: 50%;
-      border: 1.5px solid var(--border2); background: none;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; touch-action: manipulation; flex-shrink: 0;
-      -webkit-tap-highlight-color: transparent;
+    /* Next stop */
+    .next-stop-card {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(127,119,221,0.1); border: 2px solid #7f77dd;
+      border-radius: var(--radius); padding: 10px 12px;
     }
-    .pin-btn svg { width: 12px; height: 12px; color: var(--text3); }
-    .pin-btn.pinned { background: #7f77dd; border-color: #7f77dd; }
-    .pin-btn.pinned svg { color: #fff; }
-    .pinned-label { font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #b0a8f0; margin-bottom: 4px; }
+    .next-stop-icon { width: 32px; height: 32px; border-radius: 50%; background: #7f77dd; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .next-stop-icon svg { width: 14px; height: 14px; color: #fff; transition: transform 0.25s ease-out; }
+    .next-stop-name { font-size: 13px; font-weight: 600; color: var(--text); }
+    .next-stop-meta { font-size: 11px; color: #b0a8f0; margin-top: 2px; }
+    .next-stop-dist { font-size: 13px; font-weight: 600; color: var(--accent); flex-shrink: 0; }
+    .unpin-btn { font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; border: none; background: rgba(127,119,221,0.25); color: #b0a8f0; cursor: pointer; flex-shrink: 0; touch-action: manipulation; font-family: inherit; }
+    .unpin-btn:active { opacity: 0.7; }
 
-    /* POI cards */
-    .poi-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 0.85rem; overflow: hidden; text-decoration: none; touch-action: manipulation; }
-    .poi-card:active { filter: brightness(0.9); }
-    .poi-card.cat-attraction { border: 2px solid var(--cat-attraction); }
-    .poi-card-inner { padding: 0.9rem 1.1rem 0.6rem; }
-    .poi-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 5px; }
-    .poi-card-title-row { display: flex; align-items: center; gap: 7px; flex: 1; min-width: 0; }
-    .poi-card-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .poi-card-summary { font-size: 12px; color: var(--text2); line-height: 1.5; margin-bottom: 6px; }
-    .poi-card-dist { font-size: 11px; color: var(--accent); font-weight: 500; white-space: nowrap; padding-top: 2px; flex-shrink: 0; }
-    .poi-tags { display: flex; flex-wrap: wrap; gap: 5px; padding: 0 1.1rem 0.75rem; }
-    .poi-card-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); background: var(--surface2); padding: 0.55rem 1.1rem; min-height: 40px; }
-    .poi-trivia-count { font-size: 11px; color: var(--text3); }
-    .poi-cta { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
-    .poi-cta svg { width: 11px; height: 11px; }
+    /* Compass row */
+    .compass-row { display: flex; align-items: center; gap: 14px; }
+    .compass-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+    .compass-dial { width: 72px; height: 72px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface); position: relative; display: flex; align-items: center; justify-content: center; }
+    .c-n,.c-s,.c-e,.c-w { position: absolute; font-size: 8px; font-weight: 500; color: var(--text3); transform: translate(-50%,-50%); }
+    .c-n { top: 8px; left: 50%; color: var(--accent); }
+    .c-s { bottom: 1px; left: 50%; }
+    .c-e { right: 1px; top: 50%; }
+    .c-w { left: 8px; top: 50%; }
+    .needle { position: absolute; top: 50%; left: 50%; transform-origin: 0 0; transition: transform 0.25s ease-out; }
+    .needle-n { position: absolute; left: -3px; bottom: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-bottom: 24px solid var(--accent); }
+    .needle-s { position: absolute; left: -3px; top: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 24px solid var(--text3); }
+    .needle-dot { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .compass-hdg { font-size: 10px; color: var(--text3); letter-spacing: 0.08em; }
+    .compass-info { flex: 1; }
+    .compass-info-heading { font-size: 13px; font-weight: 500; color: var(--text); }
+    .compass-info-sub { font-size: 11px; color: var(--text3); margin-top: 3px; }
+    .compass-info-hint { font-size: 11px; color: #b0a8f0; margin-top: 3px; }
 
-    /* Visited state */
-    .poi-card.visited { opacity: 0.55; }
-    .poi-card.visited .poi-card-name { text-decoration: line-through; }
-    .visit-btn {
-      width: 32px; height: 32px; border-radius: 50%;
-      border: 1.5px solid var(--border2);
-      background: none; display: flex; align-items: center; justify-content: center;
+    /* Legend */
+    .cat-legend { display: flex; flex-wrap: wrap; gap: 8px; }
+    .cat-legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--text3); }
+    .cat-legend-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+    /* Combined POI list */
+    .poi-list { display: flex; flex-direction: column; gap: 6px; }
+    .poi-row { border-radius: 10px; overflow: hidden; background: var(--surface); border: 1px solid var(--border); }
+    .poi-row.cat-attraction { border: 2px solid var(--cat-attraction); }
+
+    .poi-row-header {
+      display: grid;
+      grid-template-columns: 26px 1fr auto auto auto;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 10px;
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      text-decoration: none;
+    }
+    .poi-row-header:active { filter: brightness(0.9); }
+    .dir-circle { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .dir-circle svg { width: 12px; height: 12px; }
+    .poi-row-name { font-size: 13px; font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+    .poi-row-dist { font-size: 11px; font-weight: 500; color: var(--accent); white-space: nowrap; }
+    .expand-btn {
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 1px solid var(--border); background: none;
+      display: flex; align-items: center; justify-content: center;
       cursor: pointer; flex-shrink: 0; touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
+      transition: transform 0.2s ease;
     }
-    .visit-btn svg { width: 14px; height: 14px; color: var(--text3); }
-    .visit-btn.done { background: var(--success); border-color: var(--success); }
-    .visit-btn.done svg { color: #0f0f1a; }
-    .arrival-banner {
-      background: var(--surface);
-      border: 1px solid var(--border2);
-      border-left: 3px solid var(--success);
-      border-radius: var(--radius);
-      padding: 0.9rem 1rem;
-      margin-bottom: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .expand-btn svg { width: 10px; height: 10px; color: var(--text3); }
+    .expand-btn.open { transform: rotate(180deg); }
+
+    /* Expanded body */
+    .poi-row-body { border-top: 1px solid var(--border); padding: 10px 12px; display: none; }
+    .poi-row-body.open { display: block; }
+    .poi-row-summary { font-size: 12px; color: var(--text2); line-height: 1.6; margin-bottom: 8px; }
+    .poi-row-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+    .poi-tag { font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; background: rgba(255,255,255,0.06); color: var(--text2); }
+    body.sunlight .poi-tag { background: rgba(0,0,0,0.06); }
+    .poi-row-actions { display: flex; gap: 7px; }
+    .poi-action-btn {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      gap: 5px; padding: 8px 4px; border-radius: 8px;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.04em;
+      text-transform: uppercase; cursor: pointer; border: none;
+      font-family: inherit; touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      text-decoration: none;
     }
+    .poi-action-btn svg { width: 11px; height: 11px; flex-shrink: 0; }
+    .btn-explore { background: var(--accent); color: var(--bg); }
+    .btn-explore:active { opacity: 0.85; }
+    .btn-visit { background: rgba(107,207,127,0.12); color: var(--success); border: 1px solid rgba(107,207,127,0.25); }
+    .btn-visit.done { background: var(--success); color: #0a2e14; border-color: var(--success); }
+    .btn-visit:active { opacity: 0.8; }
+    .btn-pin { background: rgba(127,119,221,0.12); color: #b0a8f0; border: 1px solid rgba(127,119,221,0.25); }
+    .btn-pin.pinned { background: #7f77dd; color: #fff; border-color: #7f77dd; }
+    .btn-pin:active { opacity: 0.8; }
+
+    /* Visited section */
+    .visited-row {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 10px; border-radius: 8px;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 5px; opacity: 0.5;
+    }
+    body.sunlight .visited-row { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.06); }
+    .visited-tick { width: 18px; height: 18px; border-radius: 50%; background: var(--success); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .visited-tick svg { width: 10px; height: 10px; color: #0a2e14; }
+    .visited-name { font-size: 12px; color: var(--text2); flex: 1; text-decoration: line-through; }
+    .unvisit-btn { font-size: 10px; color: var(--text3); letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; background: none; border: none; font-family: inherit; touch-action: manipulation; padding: 4px; min-height: 44px; }
+
+    /* Arrival banner */
+    .arrival-banner { background: var(--surface); border: 1px solid var(--border2); border-left: 3px solid var(--success); border-radius: var(--radius); padding: 0.9rem 1rem; margin-bottom: 0.85rem; display: flex; align-items: center; gap: 10px; }
     .arrival-banner-icon { width: 32px; height: 32px; border-radius: 50%; background: rgba(107,207,127,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .arrival-banner-icon svg { width: 16px; height: 16px; color: var(--success); }
     .arrival-banner-name { font-size: 13px; font-weight: 500; color: var(--text); }
@@ -163,29 +195,36 @@
   <button class="btn-sm" id="locate-btn" onclick="startGPS()">Enable GPS</button>
 </div>
 
+<!-- Map -->
 <div class="section">
   <p class="section-label">Map</p>
   <div class="map-wrap">
     <div id="map"></div>
-    <button class="map-btn" onclick="centerOnMe()" aria-label="Center on my location" style="left:10px;">
+    <button class="map-btn" onclick="centerOnMe()" style="left:10px;">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/></svg>
     </button>
-    <button class="map-btn" onclick="centerOnRegion()" aria-label="Zoom to region" style="left:54px;">
+    <button class="map-btn" onclick="centerOnRegion()" style="left:54px;">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 2l4 1-1 4M14 2l-4 1 1 4M2 14l4-1-1-4M14 14l-4-1 1-4"/></svg>
     </button>
   </div>
 </div>
 
+<!-- Arrivals -->
+<div class="section" id="arrivals-section" style="display:none; padding-bottom:0;">
+  <p class="section-label">You are here</p>
+  <div id="arrivals-list"></div>
+</div>
+
+<!-- 1. Next stop -->
+<div class="section" id="next-stop-section" style="display:none; padding-bottom:0;">
+  <p class="section-label">Next stop</p>
+  <div class="next-stop-card" id="next-stop-card"></div>
+</div>
+
+<!-- 2. Compass -->
 <div class="section">
-  <p class="section-label">Nearby points of interest</p>
-  <div class="cat-legend">
-    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-attraction)"></div>Must-see</div>
-    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-nature)"></div>Nature</div>
-    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-film)"></div>Film</div>
-    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-history)"></div>History</div>
-    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-trivia)"></div>Trivia</div>
-  </div>
-  <div style="margin-top:0.75rem;" class="compass-layout">
+  <p class="section-label">Heading</p>
+  <div class="compass-row">
     <div class="compass-wrap">
       <div class="compass-dial">
         <span class="c-n">N</span><span class="c-s">S</span>
@@ -198,18 +237,34 @@
       </div>
       <span class="compass-hdg" id="compass-hdg">— °</span>
     </div>
-    <div class="poi-arrows" id="poi-arrows"></div>
+    <div class="compass-info">
+      <div class="compass-info-heading" id="compass-direction">Enable GPS to start</div>
+      <div class="compass-info-sub" id="compass-accuracy"></div>
+      <div class="compass-info-hint" id="compass-hint"></div>
     </div>
+  </div>
 </div>
 
-<div class="section" id="arrivals-section" style="display:none;">
-  <p class="section-label">You are here</p>
-  <div id="arrivals-list"></div>
+<!-- 3. Legend -->
+<div class="section" style="padding-top:0; padding-bottom:0.75rem;">
+  <div class="cat-legend">
+    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-attraction)"></div>Must-see</div>
+    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-nature)"></div>Nature</div>
+    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-film)"></div>Film</div>
+    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-history)"></div>History</div>
+    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-trivia)"></div>Trivia</div>
+  </div>
 </div>
 
-<div class="section">
-  <p class="section-label">All points of interest</p>
-  <div id="poi-list"></div>
+<!-- 4. Combined POI list -->
+<div class="section" style="padding-top:0;">
+  <div class="poi-list" id="poi-list"></div>
+</div>
+
+<!-- Visited -->
+<div class="section" id="visited-section" style="display:none;">
+  <p class="section-label">Visited</p>
+  <div id="visited-list"></div>
 </div>
 
 <div class="bottom-safe"></div>
@@ -225,11 +280,46 @@ const arrowAngles = {};
 let arrowsBuilt = false;
 let needleAngle = 0;
 let iconAngle = 0;
+const expandedPois = new Set();
+
+const CAT_COLORS = { attraction:'#c8a96e', nature:'#6bcf7f', film:'#b89fd4', history:'#89bdd4', trivia:'#888780' };
+const CAT_LABELS = { attraction:'Must-see', nature:'Nature', film:'Film', history:'History', trivia:'Trivia' };
+function catColor(poi) { return CAT_COLORS[poi.category] || CAT_COLORS.trivia; }
+function catLabel(poi) { return CAT_LABELS[poi.category] || poi.category || 'Trivia'; }
+function cat(poi) { return poi.category || 'trivia'; }
+function poiUrl(poi) { return `poi.html?region=${regionSlug}&id=${poi.id}`; }
+
+// Storage helpers
+function visitedKey() { return `visited_${regionSlug}`; }
+function pinnedKey()  { return `pinned_${regionSlug}`; }
+function getVisited() { try { return JSON.parse(localStorage.getItem(visitedKey())||'[]'); } catch { return []; } }
+function getPinned()  { return localStorage.getItem(pinnedKey()) || ''; }
+
+function toggleVisited(poiId, e) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+  const v = getVisited();
+  const idx = v.indexOf(poiId);
+  if (idx === -1) v.push(poiId); else v.splice(idx, 1);
+  localStorage.setItem(visitedKey(), JSON.stringify(v));
+  renderAll();
+}
+
+function togglePinned(poiId, e) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+  localStorage.setItem(pinnedKey(), getPinned() === poiId ? '' : poiId);
+  renderAll();
+}
+
+function toggleExpand(poiId, e) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+  if (expandedPois.has(poiId)) expandedPois.delete(poiId);
+  else expandedPois.add(poiId);
+  renderPoiList();
+}
 
 async function init() {
   if (!regionSlug) {
     document.getElementById('region-name').textContent = 'No region specified';
-    document.getElementById('region-desc').innerHTML = '<a href="index.html">← Back to guide</a>';
     return;
   }
   try {
@@ -238,18 +328,168 @@ async function init() {
     regionData = await res.json();
   } catch(e) {
     document.getElementById('region-name').textContent = 'Region not found';
-    document.getElementById('region-desc').innerHTML = '<a href="index.html">← Back to guide</a>';
     return;
   }
   document.title = `${regionData.region} — Scotland Guide`;
   document.getElementById('region-name').textContent = regionData.region;
   document.getElementById('region-desc').textContent = regionData.description;
   initMap();
-  renderPoiList();
-  buildPoiArrows(); // show list immediately, updates with GPS later
+  renderAll();
   arrowsBuilt = true;
 }
 
+function renderAll() {
+  renderNextStop();
+  renderPoiList();
+  renderVisited();
+}
+
+// ── Next stop card ──────────────────────────────────────
+function renderNextStop() {
+  const pinned = getPinned();
+  const section = document.getElementById('next-stop-section');
+  if (!pinned || !regionData) { section.style.display = 'none'; return; }
+  const poi = regionData.pois.find(p => p.id === pinned);
+  if (!poi) { section.style.display = 'none'; return; }
+  section.style.display = '';
+
+  const dist = GEO.lat ? formatDist(haversine(GEO.lat,GEO.lng,poi.lat,poi.lng)) : '—';
+  const abs = GEO.lat ? getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng) : null;
+  const rel = abs !== null ? relativeBearing(abs) : 0;
+  const meta = abs !== null ? `${catLabel(poi)} · ${Math.round(abs)}°` : catLabel(poi);
+
+  document.getElementById('next-stop-card').innerHTML = `
+    <div class="next-stop-icon">
+      <svg id="nextstop-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+           style="transform:rotate(${rel.toFixed(0)}deg);transition:transform 0.25s ease-out;">
+        <path d="M7 12V2M3 6l4-4 4 4"/>
+      </svg>
+    </div>
+    <div style="flex:1;min-width:0;">
+      <div class="next-stop-name">${poi.name}</div>
+      <div class="next-stop-meta">${meta}</div>
+    </div>
+    <div class="next-stop-dist">${dist}</div>
+    <button class="unpin-btn" onclick="togglePinned('${poi.id}',event)">Unpin</button>`;
+}
+
+// ── Combined POI list ────────────────────────────────────
+function renderPoiList() {
+  if (!regionData) return;
+  const visited = getVisited();
+  const pinned = getPinned();
+
+  let pois = regionData.pois.filter(p => !visited.includes(p.id));
+  if (GEO.lat) {
+    pois.sort((a,b) => haversine(GEO.lat,GEO.lng,a.lat,a.lng) - haversine(GEO.lat,GEO.lng,b.lat,b.lng));
+  }
+
+  if (pois.length === 0) {
+    document.getElementById('poi-list').innerHTML =
+      `<div style="font-size:13px;color:var(--text3);padding:0.5rem 0;text-align:center;">All spots visited!</div>`;
+    return;
+  }
+
+  document.getElementById('poi-list').innerHTML = pois.map(poi => {
+    const color = catColor(poi);
+    const isPinned = poi.id === pinned;
+    const isExpanded = expandedPois.has(poi.id);
+
+    let arrowSvg, distText;
+    if (GEO.lat) {
+      const dist = haversine(GEO.lat,GEO.lng,poi.lat,poi.lng);
+      const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
+      const rel = relativeBearing(abs);
+      arrowAngles[poi.id] = rel;
+      arrowSvg = `<svg id="arrow-${poi.id}" viewBox="0 0 14 14" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round"
+        style="transform:rotate(${rel.toFixed(0)}deg);transition:transform 0.25s ease-out;">
+        <path d="M7 12V2M3 6l4-4 4 4"/></svg>`;
+      distText = formatDist(dist);
+    } else {
+      arrowSvg = `<svg viewBox="0 0 14 14" fill="none" stroke="${color}" stroke-width="1.5"><circle cx="7" cy="7" r="4"/></svg>`;
+      distText = '—';
+    }
+
+    const tags = poi.tags.map(t=>`<span class="poi-tag">${t}</span>`).join('');
+
+    return `<div class="poi-row cat-${cat(poi)}">
+      <div class="poi-row-header" onclick="toggleExpand('${poi.id}',event)">
+        <div class="dir-circle">${arrowSvg}</div>
+        <div class="poi-row-name">${poi.name}</div>
+        <span class="cat-pill ${cat(poi)}">${catLabel(poi)}</span>
+        <div class="poi-row-dist">${distText}</div>
+        <div class="expand-btn${isExpanded?' open':''}">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M2 3l3 3 3-3"/>
+          </svg>
+        </div>
+      </div>
+      <div class="poi-row-body${isExpanded?' open':''}">
+        <div class="poi-row-summary">${poi.summary}</div>
+        <div class="poi-row-tags">${tags}</div>
+        <div class="poi-row-actions">
+          <a class="poi-action-btn btn-explore" href="${poiUrl(poi)}">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+            Explore
+          </a>
+          <button class="poi-action-btn btn-visit" onclick="toggleVisited('${poi.id}',event)">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg>
+            Visited
+          </button>
+          <button class="poi-action-btn btn-pin${isPinned?' pinned':''}" onclick="togglePinned('${poi.id}',event)">
+            <svg viewBox="0 0 12 12" fill="${isPinned?'currentColor':'none'}" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 1L8 5l2 2-5 4-1-3-3-1 4-5 2 2z"/></svg>
+            ${isPinned?'Pinned':'Pin'}
+          </button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Visited list ─────────────────────────────────────────
+function renderVisited() {
+  if (!regionData) return;
+  const visited = getVisited();
+  const section = document.getElementById('visited-section');
+  if (visited.length === 0) { section.style.display = 'none'; return; }
+  section.style.display = '';
+  document.getElementById('visited-list').innerHTML = visited.map(id => {
+    const poi = regionData.pois.find(p => p.id === id);
+    if (!poi) return '';
+    return `<div class="visited-row">
+      <div class="visited-tick"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 5l2.5 2.5 4.5-4"/></svg></div>
+      <div class="visited-name">${poi.name}</div>
+      <button class="unvisit-btn" onclick="toggleVisited('${poi.id}')">Undo</button>
+    </div>`;
+  }).join('');
+}
+
+// ── Arrivals ─────────────────────────────────────────────
+function checkArrivals() {
+  if (!GEO.lat || !regionData) return;
+  const arrived = regionData.pois.filter(poi =>
+    haversine(GEO.lat,GEO.lng,poi.lat,poi.lng) <= 50
+  );
+  const section = document.getElementById('arrivals-section');
+  if (!arrived.length) { section.style.display = 'none'; return; }
+  section.style.display = '';
+  document.getElementById('arrivals-list').innerHTML = arrived.map(poi => `
+    <div class="arrival-banner">
+      <div class="arrival-banner-icon">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z"/>
+          <circle cx="8" cy="6" r="1.5" fill="currentColor"/>
+        </svg>
+      </div>
+      <div style="flex:1;min-width:0;">
+        <div class="arrival-banner-name">${poi.name}</div>
+        <div class="arrival-banner-sub">Within ${Math.round(haversine(GEO.lat,GEO.lng,poi.lat,poi.lng))}m</div>
+      </div>
+      <a class="arrival-banner-link" href="${poiUrl(poi)}">Open →</a>
+    </div>`).join('');
+}
+
+// ── Map ───────────────────────────────────────────────────
 function initMap() {
   const dark = !document.body.classList.contains('sunlight');
   map = L.map('map', { zoomControl: false, attributionControl: false, tap: false })
@@ -262,288 +502,139 @@ function initMap() {
   L.control.zoom({ position: 'bottomright' }).addTo(map);
   regionData.pois.forEach(poi => {
     const color = catColor(poi);
-    const isAttraction = poi.category === 'attraction';
-    const size = isAttraction ? 13 : 9;
+    const isAtt = poi.category === 'attraction';
+    const size = isAtt ? 13 : 9;
     const icon = L.divIcon({
       className: '',
-      html: `<div style="width:${size}px;height:${size}px;background:${color};border-radius:50%;border:2px solid #0f0f1a;${isAttraction ? 'box-shadow:0 0 0 2px '+color+'44;' : ''}"></div>`,
-      iconSize: [size, size], iconAnchor: [size/2, size/2]
+      html: `<div style="width:${size}px;height:${size}px;background:${color};border-radius:50%;border:2px solid #0f0f1a;${isAtt?'box-shadow:0 0 0 2px '+color+'44;':''}"></div>`,
+      iconSize: [size,size], iconAnchor: [size/2,size/2]
     });
-    L.marker([poi.lat, poi.lng], { icon }).addTo(map).bindTooltip(poi.name, { offset:[8,0] });
+    L.marker([poi.lat,poi.lng],{icon}).addTo(map).bindTooltip(poi.name,{offset:[8,0]});
   });
 }
 
-// Override toggleSunlight from compass.js to also swap map tiles live
 const _origToggle = window.toggleSunlight;
 window.toggleSunlight = function() {
   _origToggle();
   if (!map || !tileLayer) return;
   const dark = !document.body.classList.contains('sunlight');
-  tileLayer.setUrl(
-    dark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-         : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
-  );
+  tileLayer.setUrl(dark
+    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png');
 };
-
-function poiUrl(poi) {
-  return `poi.html?region=${regionSlug}&id=${poi.id}`;
-}
-
-const CAT_COLORS = {
-  attraction: '#c8a96e',
-  nature:     '#6bcf7f',
-  film:       '#b89fd4',
-  history:    '#89bdd4',
-  trivia:     '#a8a4a0',
-};
-
-function catColor(poi) {
-  return CAT_COLORS[poi.category] || CAT_COLORS.trivia;
-}
-
-const ARRIVAL_RADIUS = 50; // metres
-const notifiedArrivals = new Set();
-
-function checkArrivals() {
-  if (!GEO.lat || !regionData) return;
-  const arrived = regionData.pois.filter(poi =>
-    haversine(GEO.lat, GEO.lng, poi.lat, poi.lng) <= ARRIVAL_RADIUS
-  );
-  const section = document.getElementById('arrivals-section');
-  const list = document.getElementById('arrivals-list');
-  if (arrived.length === 0) {
-    section.style.display = 'none';
-    return;
-  }
-  section.style.display = '';
-  list.innerHTML = arrived.map(poi => `
-    <div class="arrival-banner">
-      <div class="arrival-banner-icon">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z"/>
-          <circle cx="8" cy="6" r="1.5" fill="currentColor"/>
-        </svg>
-      </div>
-      <div style="flex:1;min-width:0;">
-        <div class="arrival-banner-name">${poi.name}</div>
-        <div class="arrival-banner-sub">You're within ${Math.round(haversine(GEO.lat,GEO.lng,poi.lat,poi.lng))}m</div>
-      </div>
-      <a class="arrival-banner-link" href="${poiUrl(poi)}">Open →</a>
-    </div>`
-  ).join('');
-}
-
-// Visited state — persisted per region in localStorage
-function visitedKey() { return `visited_${regionSlug}`; }
-function getVisited() {
-  try { return JSON.parse(localStorage.getItem(visitedKey()) || '[]'); } catch { return []; }
-}
-function toggleVisited(poiId, e) {
-  e.preventDefault();
-  e.stopPropagation();
-  const visited = getVisited();
-  const idx = visited.indexOf(poiId);
-  if (idx === -1) visited.push(poiId);
-  else visited.splice(idx, 1);
-  localStorage.setItem(visitedKey(), JSON.stringify(visited));
-  renderPoiList();
-  if (arrowsBuilt) buildPoiArrows();
-}
-
-function renderPoiList() {
-  const pois = regionData ? [...regionData.pois] : [];
-  if (GEO.lat) pois.sort((a,b) =>
-    haversine(GEO.lat,GEO.lng,a.lat,a.lng) - haversine(GEO.lat,GEO.lng,b.lat,b.lng));
-  const cat = poi => poi.category || 'trivia';
-  const catLabel = { attraction:'Must-see', nature:'Nature', film:'Film', history:'History', trivia:'Trivia' };
-  const visited = getVisited();
-  document.getElementById('poi-list').innerHTML = pois.map(poi => {
-    const dist = GEO.lat ? formatDist(haversine(GEO.lat,GEO.lng,poi.lat,poi.lng)) : null;
-    const tags = poi.tags.map(t=>`<span class="tag ${t}">${t}</span>`).join('');
-    const done = visited.includes(poi.id);
-    return `<a class="poi-card cat-${cat(poi)}${done?' visited':''}" href="${poiUrl(poi)}">
-      <div class="poi-card-inner">
-        <div class="poi-card-top">
-          <div class="poi-card-title-row">
-            <span class="cat-pill ${cat(poi)}">${catLabel[cat(poi)]||cat(poi)}</span>
-            <span class="poi-card-name">${poi.name}</span>
-          </div>
-          <button class="visit-btn${done?' done':''}" onclick="toggleVisited('${poi.id}',event)" aria-label="${done?'Mark unvisited':'Mark visited'}">
-            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 7l4 4 6-6"/>
-            </svg>
-          </button>
-        </div>
-        <div class="poi-card-summary">${poi.summary}</div>
-        ${dist?`<div style="font-size:11px;color:var(--accent);font-weight:500;margin-top:4px;">${dist}</div>`:''}
-      </div>
-      <div class="poi-tags">${tags}</div>
-      <div class="poi-card-footer">
-        <span class="poi-trivia-count">${poi.trivia.length} trivia points</span>
-        <span class="poi-cta">${done?'Visited ✓':'Explore'} <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span>
-      </div>
-    </a>`;
-  }).join('');
-}
-
-// Pin state — one POI at a time
-function pinnedKey() { return `pinned_${regionSlug}`; }
-function getPinned() { return localStorage.getItem(pinnedKey()) || null; }
-function togglePinned(poiId, e) {
-  e.preventDefault();
-  e.stopPropagation();
-  const current = getPinned();
-  localStorage.setItem(pinnedKey(), current === poiId ? '' : poiId);
-  if (arrowsBuilt) buildPoiArrows();
-}
-
-function buildPoiArrows() {
-  if (!regionData) return;
-  const catLabel = { attraction:'Must-see', nature:'Nature', film:'Film', history:'History', trivia:'Trivia' };
-  const visited = getVisited();
-  const pinned = getPinned();
-
-  let pois = regionData.pois.filter(poi => !visited.includes(poi.id));
-  if (GEO.lat) {
-    pois.sort((a, b) => {
-      if (a.id === pinned) return -1;
-      if (b.id === pinned) return 1;
-      return haversine(GEO.lat,GEO.lng,a.lat,a.lng) - haversine(GEO.lat,GEO.lng,b.lat,b.lng);
-    });
-  }
-
-  if (pois.length === 0) {
-    document.getElementById('poi-arrows').innerHTML = `
-      <div style="font-size:13px;color:var(--text3);padding:0.5rem 0;">All spots visited!</div>`;
-    return;
-  }
-
-  document.getElementById('poi-arrows').innerHTML = pois.map(poi => {
-    const cat = poi.category || 'trivia';
-    const isPinned = poi.id === pinned;
-    const color = catColor(poi);
-
-    let arrowSvg, distHtml;
-    if (GEO.lat) {
-      const dist = haversine(GEO.lat,GEO.lng,poi.lat,poi.lng);
-      const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
-      const rel = relativeBearing(abs);
-      arrowAngles[poi.id] = rel;
-      arrowSvg = `<svg id="arrow-${poi.id}" viewBox="0 0 14 14" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round"
-           style="transform:rotate(${rel.toFixed(0)}deg);transition:transform 0.25s ease-out;">
-        <path d="M7 12V2M3 6l4-4 4 4"/>
-      </svg>`;
-      distHtml = `<div class="poi-arrow-dist">${formatDist(dist)}</div>`;
-    } else {
-      arrowSvg = `<svg viewBox="0 0 14 14" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round">
-        <circle cx="7" cy="7" r="4"/>
-      </svg>`;
-      distHtml = `<div class="poi-arrow-dist">—</div>`;
-    }
-
-    return `
-      ${isPinned ? `<div class="pinned-label">📍 Next stop</div>` : ''}
-      <a class="poi-arrow-row cat-${cat}${isPinned?' pinned':''}" href="${poiUrl(poi)}">
-        <div class="dir-circle">${arrowSvg}</div>
-        <div class="poi-arrow-name">${poi.name}</div>
-        <span class="cat-pill ${cat}">${catLabel[cat]||cat}</span>
-        ${distHtml}
-        <button class="pin-btn${isPinned?' pinned':''}" onclick="togglePinned('${poi.id}',event)" aria-label="${isPinned?'Unpin':'Pin as next stop'}">
-          <svg viewBox="0 0 12 12" fill="${isPinned?'currentColor':'none'}" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-            <path d="M9 1L8 5l2 2-5 4-1-3-3-1 4-5 2 2z"/>
-          </svg>
-        </button>
-      </a>`;
-  }).join('');
-}
-
-function updateArrowAngles() {
-  if (!GEO.lat || !regionData) return;
-  const visited = getVisited();
-  regionData.pois.filter(poi => !visited.includes(poi.id)).forEach(poi => {
-    const svg = document.getElementById(`arrow-${poi.id}`);
-    if (!svg) return;
-    const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
-    const rel = relativeBearing(abs);
-    let prev = arrowAngles[poi.id] ?? rel;
-    let delta = ((rel - prev) % 360 + 360) % 360;
-    if (delta > 180) delta -= 360;
-    arrowAngles[poi.id] = prev + delta;
-    svg.style.transform = `rotate(${arrowAngles[poi.id].toFixed(0)}deg)`;
-  });
-}
 
 function centerOnMe() {
-  if (!GEO.lat || !map) { showToast('Location not available yet'); return; }
-  map.setView([GEO.lat, GEO.lng], 16, { animate: true });
+  if (!GEO.lat||!map) { showToast('Location not available yet'); return; }
+  map.setView([GEO.lat,GEO.lng],16,{animate:true});
 }
-
 function centerOnRegion() {
-  if (!map || !regionData) return;
-  map.setView([regionData.center.lat, regionData.center.lng], 14, { animate: true });
+  if (!map||!regionData) return;
+  map.setView([regionData.center.lat,regionData.center.lng],14,{animate:true});
 }
-
 async function startGPS() {
   document.getElementById('status-text').textContent = 'Requesting location…';
   const ok = await requestLocationAndCompass();
   if (!ok) document.getElementById('status-text').textContent = 'Location unavailable — tap to retry';
 }
 
+// ── Update arrow angles only (no DOM rebuild) ─────────────
+function updateArrowAngles() {
+  if (!GEO.lat || !regionData) return;
+  const visited = getVisited();
+  regionData.pois.filter(p => !visited.includes(p.id)).forEach(poi => {
+    const svg = document.getElementById(`arrow-${poi.id}`);
+    if (!svg) return;
+    const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
+    const rel = relativeBearing(abs);
+    let prev = arrowAngles[poi.id] ?? rel;
+    let delta = ((rel-prev)%360+360)%360;
+    if (delta>180) delta-=360;
+    arrowAngles[poi.id] = prev+delta;
+    svg.style.transform = `rotate(${arrowAngles[poi.id].toFixed(0)}deg)`;
+  });
+  // Update next stop arrow
+  const pinned = getPinned();
+  if (pinned) {
+    const poi = regionData.pois.find(p=>p.id===pinned);
+    if (poi) {
+      const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
+      const rel = relativeBearing(abs);
+      const el = document.getElementById('nextstop-arrow');
+      if (el) el.style.transform = `rotate(${rel.toFixed(0)}deg)`;
+    }
+  }
+}
+
+// ── GEO updates ───────────────────────────────────────────
 GEO.onUpdate(() => {
   if (GEO.watching) {
     document.getElementById('status-dot').className = 'status-dot active';
     document.getElementById('status-text').textContent = `Active · ±${Math.round(GEO.accuracy)}m`;
     document.getElementById('locate-btn').style.display = 'none';
   }
-  if (GEO.lat && map) {
-    // Shortest-path for map icon rotation
-    let iconDelta = ((GEO.heading - iconAngle) % 360 + 360) % 360;
-    if (iconDelta > 180) iconDelta -= 360;
-    iconAngle += iconDelta;
 
+  // Compass info
+  const hdg = GEO.heading;
+  const dirs = ['North','North-east','East','South-east','South','South-west','West','North-west'];
+  document.getElementById('compass-direction').textContent = `Facing ${dirs[Math.round(hdg/45)%8]}`;
+  document.getElementById('compass-accuracy').textContent = GEO.lat ? `GPS active · ±${Math.round(GEO.accuracy)}m` : '';
+
+  // Hint from pinned
+  const pinned = getPinned();
+  const hintEl = document.getElementById('compass-hint');
+  if (pinned && GEO.lat && regionData) {
+    const poi = regionData.pois.find(p=>p.id===pinned);
+    if (poi) {
+      const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
+      const diff = ((abs-hdg)+360)%360;
+      const turn = diff < 10 || diff > 350 ? 'Straight ahead' :
+                   diff <= 180 ? `Turn right ${Math.round(diff)}°` :
+                   `Turn left ${Math.round(360-diff)}°`;
+      hintEl.textContent = `${poi.name}: ${turn}`;
+    } else { hintEl.textContent = ''; }
+  } else { hintEl.textContent = ''; }
+
+  // Map user marker
+  if (GEO.lat && map) {
+    let iconDelta = ((GEO.heading-iconAngle)%360+360)%360;
+    if (iconDelta>180) iconDelta-=360;
+    iconAngle += iconDelta;
     if (!userMarker) {
       const icon = L.divIcon({
-        className: '',
-        html: `<div id="user-location-icon" style="width:40px;height:40px;transform:rotate(${iconAngle}deg);transform-origin:center center;transition:transform 0.25s ease-out;">
+        className:'',
+        html:`<div id="user-location-icon" style="width:40px;height:40px;transform:rotate(${iconAngle}deg);transform-origin:center center;transition:transform 0.25s ease-out;">
           <svg viewBox="0 0 40 40" width="40" height="40">
             <line x1="20" y1="20" x2="20" y2="6" stroke="#6bcf7f" stroke-width="2.5" stroke-linecap="round"/>
             <circle cx="20" cy="20" r="6" fill="#6bcf7f" stroke="#0f0f1a" stroke-width="2"/>
-          </svg>
-        </div>`,
-        iconSize: [40, 40],
-        iconAnchor: [20, 20]
+          </svg></div>`,
+        iconSize:[40,40], iconAnchor:[20,20]
       });
-      userMarker = L.marker([GEO.lat, GEO.lng], { icon }).addTo(map);
-      accuracyCircle = L.circle([GEO.lat, GEO.lng], {
-        radius: GEO.accuracy,
-        color: '#6bcf7f',
-        fillColor: '#6bcf7f',
-        fillOpacity: 0.08,
-        weight: 1,
-        opacity: 0.4,
-      }).addTo(map);
+      userMarker = L.marker([GEO.lat,GEO.lng],{icon}).addTo(map);
+      accuracyCircle = L.circle([GEO.lat,GEO.lng],{radius:GEO.accuracy,color:'#6bcf7f',fillColor:'#6bcf7f',fillOpacity:0.08,weight:1,opacity:0.4}).addTo(map);
     } else {
-      userMarker.setLatLng([GEO.lat, GEO.lng]);
-      accuracyCircle.setLatLng([GEO.lat, GEO.lng]);
+      userMarker.setLatLng([GEO.lat,GEO.lng]);
+      accuracyCircle.setLatLng([GEO.lat,GEO.lng]);
       accuracyCircle.setRadius(GEO.accuracy);
       const el = document.getElementById('user-location-icon');
       if (el) el.style.transform = `rotate(${iconAngle}deg)`;
     }
   }
-  // Compass needle — shortest-path rotation
+
+  // Needle
   const target = -GEO.heading;
-  let delta = ((target - needleAngle) % 360 + 360) % 360;
-  if (delta > 180) delta -= 360;
+  let delta = ((target-needleAngle)%360+360)%360;
+  if (delta>180) delta-=360;
   needleAngle += delta;
   document.getElementById('compass-needle').style.transform = `rotate(${needleAngle}deg)`;
   document.getElementById('compass-hdg').textContent = `${Math.round(GEO.heading)}°`;
-  // POI arrows — build once, then only rotate
+
+  // Rebuild list once on first GPS fix, then just rotate arrows
   if (GEO.lat && !arrowsBuilt) {
-    buildPoiArrows();
-    renderPoiList();
+    renderAll();
     arrowsBuilt = true;
   } else {
     updateArrowAngles();
+    renderNextStop();
   }
   checkArrivals();
 });
