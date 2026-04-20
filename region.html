@@ -42,16 +42,46 @@
     .needle-s { position: absolute; left: -4px; top: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 30px solid var(--text3); }
     .needle-dot { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
     .compass-hdg { font-size: 11px; color: var(--text3); letter-spacing: 0.1em; }
+
+    /* Category colours */
+    :root {
+      --cat-attraction: #c8a96e;
+      --cat-nature: #6bcf7f;
+      --cat-film: #b89fd4;
+      --cat-history: #89bdd4;
+      --cat-trivia: #a8a4a0;
+    }
+
+    /* Legend */
+    .cat-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.75rem; }
+    .cat-legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--text3); letter-spacing: 0.05em; }
+    .cat-legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+    /* Arrow rows with category colour strip */
     .poi-arrows { flex: 1; display: flex; flex-direction: column; gap: 8px; }
-    .poi-arrow-row { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; min-height: 56px; text-decoration: none; touch-action: manipulation; }
-    .poi-arrow-row:active { border-color: var(--border2); background: var(--surface2); }
+    .poi-arrow-row { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--border); border-left-width: 3px; border-radius: 10px; padding: 10px 12px; min-height: 56px; text-decoration: none; touch-action: manipulation; }
+    .poi-arrow-row:active { background: var(--surface2); }
+    .poi-arrow-row.cat-attraction { border-left-color: var(--cat-attraction); }
+    .poi-arrow-row.cat-nature { border-left-color: var(--cat-nature); }
+    .poi-arrow-row.cat-film { border-left-color: var(--cat-film); }
+    .poi-arrow-row.cat-history { border-left-color: var(--cat-history); }
+    .poi-arrow-row.cat-trivia { border-left-color: var(--cat-trivia); }
+
     .dir-circle { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .dir-circle svg { width: 14px; height: 14px; }
     .poi-arrow-name { font-size: 13px; font-weight: 500; color: var(--text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .poi-arrow-meta { font-size: 11px; color: var(--text3); margin-top: 1px; }
     .poi-arrow-dist { font-size: 13px; font-weight: 500; color: var(--accent); flex-shrink: 0; }
-    .poi-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 0.85rem; overflow: hidden; text-decoration: none; touch-action: manipulation; }
-    .poi-card:active { border-color: var(--border2); }
+
+    /* POI cards with category border */
+    .poi-card { display: block; background: var(--surface); border: 1px solid var(--border); border-left-width: 3px; border-radius: var(--radius); margin-bottom: 0.85rem; overflow: hidden; text-decoration: none; touch-action: manipulation; }
+    .poi-card:active { background: var(--surface2); }
+    .poi-card.cat-attraction { border-left-color: var(--cat-attraction); }
+    .poi-card.cat-nature { border-left-color: var(--cat-nature); }
+    .poi-card.cat-film { border-left-color: var(--cat-film); }
+    .poi-card.cat-history { border-left-color: var(--cat-history); }
+    .poi-card.cat-trivia { border-left-color: var(--cat-trivia); }
+
     .poi-card-inner { padding: 1rem 1.1rem 0.75rem; }
     .poi-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
     .poi-card-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); line-height: 1.2; }
@@ -62,6 +92,25 @@
     .poi-trivia-count { font-size: 11px; color: var(--text3); }
     .poi-cta { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
     .poi-cta svg { width: 11px; height: 11px; }
+
+    /* Arrival banner */
+    .arrival-banner {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-left: 3px solid var(--success);
+      border-radius: var(--radius);
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .arrival-banner-icon { width: 32px; height: 32px; border-radius: 50%; background: rgba(107,207,127,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .arrival-banner-icon svg { width: 16px; height: 16px; color: var(--success); }
+    .arrival-banner-name { font-size: 13px; font-weight: 500; color: var(--text); }
+    .arrival-banner-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
+    .arrival-banner-link { font-size: 11px; color: var(--accent); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; flex-shrink: 0; touch-action: manipulation; }
+
     .error-state { padding: 3rem 1.5rem; text-align: center; color: var(--text2); font-size: 14px; line-height: 1.6; }
     .error-state a { color: var(--accent); text-decoration: none; }
   </style>
@@ -107,7 +156,14 @@
 
 <div class="section">
   <p class="section-label">Nearby points of interest</p>
-  <div class="compass-layout">
+  <div class="cat-legend">
+    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-attraction)"></div>Must-see</div>
+    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-nature)"></div>Nature</div>
+    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-film)"></div>Film</div>
+    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-history)"></div>History</div>
+    <div class="cat-legend-item"><div class="cat-legend-dot" style="background:var(--cat-trivia)"></div>Trivia</div>
+  </div>
+  <div style="margin-top:0.75rem;" class="compass-layout">
     <div class="compass-wrap">
       <div class="compass-dial">
         <span class="c-n">N</span><span class="c-s">S</span>
@@ -126,7 +182,12 @@
         <button class="btn-primary" onclick="startGPS()">Enable GPS</button>
       </div>
     </div>
-  </div>
+    </div>
+</div>
+
+<div class="section" id="arrivals-section" style="display:none;">
+  <p class="section-label">You are here</p>
+  <div id="arrivals-list"></div>
 </div>
 
 <div class="section">
@@ -181,10 +242,13 @@ function initMap() {
   ).addTo(map);
   L.control.zoom({ position: 'bottomright' }).addTo(map);
   regionData.pois.forEach(poi => {
+    const color = catColor(poi);
+    const isAttraction = poi.category === 'attraction';
+    const size = isAttraction ? 13 : 9;
     const icon = L.divIcon({
       className: '',
-      html: `<div style="width:11px;height:11px;background:#c8a96e;border-radius:50%;border:2px solid #0f0f1a;"></div>`,
-      iconSize: [11,11], iconAnchor: [5,5]
+      html: `<div style="width:${size}px;height:${size}px;background:${color};border-radius:50%;border:2px solid #0f0f1a;${isAttraction ? 'box-shadow:0 0 0 2px '+color+'44;' : ''}"></div>`,
+      iconSize: [size, size], iconAnchor: [size/2, size/2]
     });
     L.marker([poi.lat, poi.lng], { icon }).addTo(map).bindTooltip(poi.name, { offset:[8,0] });
   });
@@ -206,6 +270,50 @@ function poiUrl(poi) {
   return `poi.html?region=${regionSlug}&id=${poi.id}`;
 }
 
+const CAT_COLORS = {
+  attraction: '#c8a96e',
+  nature:     '#6bcf7f',
+  film:       '#b89fd4',
+  history:    '#89bdd4',
+  trivia:     '#a8a4a0',
+};
+
+function catColor(poi) {
+  return CAT_COLORS[poi.category] || CAT_COLORS.trivia;
+}
+
+const ARRIVAL_RADIUS = 50; // metres
+const notifiedArrivals = new Set();
+
+function checkArrivals() {
+  if (!GEO.lat || !regionData) return;
+  const arrived = regionData.pois.filter(poi =>
+    haversine(GEO.lat, GEO.lng, poi.lat, poi.lng) <= ARRIVAL_RADIUS
+  );
+  const section = document.getElementById('arrivals-section');
+  const list = document.getElementById('arrivals-list');
+  if (arrived.length === 0) {
+    section.style.display = 'none';
+    return;
+  }
+  section.style.display = '';
+  list.innerHTML = arrived.map(poi => `
+    <div class="arrival-banner">
+      <div class="arrival-banner-icon">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z"/>
+          <circle cx="8" cy="6" r="1.5" fill="currentColor"/>
+        </svg>
+      </div>
+      <div style="flex:1;min-width:0;">
+        <div class="arrival-banner-name">${poi.name}</div>
+        <div class="arrival-banner-sub">You're within ${Math.round(haversine(GEO.lat,GEO.lng,poi.lat,poi.lng))}m</div>
+      </div>
+      <a class="arrival-banner-link" href="${poiUrl(poi)}">Open →</a>
+    </div>`
+  ).join('');
+}
+
 function renderPoiList() {
   const pois = regionData ? [...regionData.pois] : [];
   if (GEO.lat) pois.sort((a,b) =>
@@ -213,7 +321,7 @@ function renderPoiList() {
   document.getElementById('poi-list').innerHTML = pois.map(poi => {
     const dist = GEO.lat ? formatDist(haversine(GEO.lat,GEO.lng,poi.lat,poi.lng)) : null;
     const tags = poi.tags.map(t=>`<span class="tag ${t}">${t}</span>`).join('');
-    return `<a class="poi-card" href="${poiUrl(poi)}">
+    return `<a class="poi-card cat-${poi.category||'trivia'}" href="${poiUrl(poi)}">
       <div class="poi-card-inner">
         <div class="poi-card-top">
           <div>
@@ -232,17 +340,17 @@ function renderPoiList() {
   }).join('');
 }
 
-// Build arrow DOM once, then only update transforms
 function buildPoiArrows() {
   if (!GEO.lat || !regionData) return;
   document.getElementById('poi-arrows').innerHTML = regionData.pois.map(poi => {
     const dist = haversine(GEO.lat,GEO.lng,poi.lat,poi.lng);
     const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
     const rel = relativeBearing(abs);
+    const color = catColor(poi);
     arrowAngles[poi.id] = rel;
-    return `<a class="poi-arrow-row" href="${poiUrl(poi)}">
+    return `<a class="poi-arrow-row cat-${poi.category||'trivia'}" href="${poiUrl(poi)}">
       <div class="dir-circle">
-        <svg id="arrow-${poi.id}" viewBox="0 0 14 14" fill="none" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round"
+        <svg id="arrow-${poi.id}" viewBox="0 0 14 14" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round"
              style="transform:rotate(${rel.toFixed(0)}deg);transition:transform 0.25s ease-out;">
           <path d="M7 12V2M3 6l4-4 4 4"/>
         </svg>
@@ -343,6 +451,7 @@ GEO.onUpdate(() => {
   } else {
     updateArrowAngles();
   }
+  checkArrivals();
 });
 
 init();
