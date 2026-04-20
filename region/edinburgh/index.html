@@ -242,26 +242,45 @@ function renderPoiList() {
   }).join('');
 }
 
-function renderPoiArrows() {
+// Build arrow rows once, then only update angles
+const arrowAngles = {}; // poi.id → cumulative angle
+
+function buildPoiArrows() {
   if (!GEO.lat || !regionData) return;
   document.getElementById('poi-arrows').innerHTML = regionData.pois.map(poi => {
     const dist = haversine(GEO.lat,GEO.lng,poi.lat,poi.lng);
     const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
     const rel = relativeBearing(abs);
+    arrowAngles[poi.id] = rel;
     return `<a class="poi-arrow-row" href="../../poi/edinburgh/${poi.id}.html">
       <div class="dir-circle">
-        <svg viewBox="0 0 14 14" fill="none" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round"
-             style="transform:rotate(${rel.toFixed(0)}deg)">
+        <svg id="arrow-${poi.id}" viewBox="0 0 14 14" fill="none" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round"
+             style="transform:rotate(${rel.toFixed(0)}deg);transition:transform 0.25s ease-out;">
           <path d="M7 12V2M3 6l4-4 4 4"/>
         </svg>
       </div>
       <div style="flex:1;min-width:0;">
         <div class="poi-arrow-name">${poi.name}</div>
-        <div class="poi-arrow-meta">${Math.round(abs)}° · tap to explore</div>
+        <div class="poi-arrow-meta poi-arrow-meta-${poi.id}">${Math.round(abs)}° · tap to explore</div>
       </div>
-      <div class="poi-arrow-dist">${formatDist(dist)}</div>
+      <div class="poi-arrow-dist poi-arrow-dist-${poi.id}">${formatDist(dist)}</div>
     </a>`;
   }).join('');
+}
+
+function updateArrowAngles() {
+  if (!GEO.lat || !regionData) return;
+  regionData.pois.forEach(poi => {
+    const svg = document.getElementById(`arrow-${poi.id}`);
+    if (!svg) return;
+    const abs = getBearing(GEO.lat,GEO.lng,poi.lat,poi.lng);
+    const rel = relativeBearing(abs);
+    let prev = arrowAngles[poi.id] ?? rel;
+    let delta = ((rel - prev) % 360 + 360) % 360;
+    if (delta > 180) delta -= 360;
+    arrowAngles[poi.id] = prev + delta;
+    svg.style.transform = `rotate(${arrowAngles[poi.id].toFixed(0)}deg)`;
+  });
 }
 
 function centerOnMe() {
@@ -281,13 +300,17 @@ async function startGPS() {
 }
 
 let needleAngle = 0;
+let arrowsBuilt = false;
 
 GEO.onUpdate(() => {
+  // Status bar — only update when watching state changes
   if (GEO.watching) {
     document.getElementById('status-dot').className = 'status-dot active';
     document.getElementById('status-text').textContent = `Active · ±${Math.round(GEO.accuracy)}m`;
     document.getElementById('locate-btn').style.display = 'none';
   }
+
+  // User dot on map — only create/move, no DOM rebuild
   if (GEO.lat && map) {
     if (!userMarker) {
       const icon = L.divIcon({
@@ -298,14 +321,23 @@ GEO.onUpdate(() => {
       userMarker = L.marker([GEO.lat,GEO.lng],{icon}).addTo(map);
     } else { userMarker.setLatLng([GEO.lat,GEO.lng]); }
   }
+
+  // Compass needle — just a transform, no DOM rebuild
   const target = -GEO.heading;
   let delta = ((target - needleAngle) % 360 + 360) % 360;
   if (delta > 180) delta -= 360;
   needleAngle += delta;
   document.getElementById('compass-needle').style.transform = `rotate(${needleAngle}deg)`;
   document.getElementById('compass-hdg').textContent = `${Math.round(GEO.heading)}°`;
-  renderPoiArrows();
-  renderPoiList();
+
+  // POI arrows — build DOM once when location first arrives, then only rotate
+  if (GEO.lat && !arrowsBuilt) {
+    buildPoiArrows();
+    renderPoiList();
+    arrowsBuilt = true;
+  } else {
+    updateArrowAngles();
+  }
 });
 
 init();
