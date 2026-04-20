@@ -139,7 +139,32 @@ function relativeBearing(targetAbsoluteBearing) {
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('locate-btn');
   if (btn) btn.style.display = 'none';
-  requestLocationAndCompass().catch(() => {
+  requestLocationAndCompass().then(ok => {
+    // If GPS worked but compass didn't (common on iOS), show a tap-to-activate button
+    if (ok && !GEO.orientationActive) {
+      _showCompassBtn();
+    }
+  }).catch(() => {
     if (btn) btn.style.display = '';
   });
 });
+
+function _showCompassBtn() {
+  const existing = document.getElementById('compass-activate-btn');
+  if (existing) return;
+  const statusBar = document.querySelector('.status-bar');
+  if (!statusBar) return;
+  const btn = document.createElement('button');
+  btn.id = 'compass-activate-btn';
+  btn.className = 'btn-sm';
+  btn.textContent = 'Activate compass';
+  btn.style.flexShrink = '0';
+  btn.onclick = async () => {
+    btn.textContent = 'Activating…';
+    btn.disabled = true;
+    await requestLocationAndCompass();
+    if (GEO.orientationActive) btn.remove();
+    else { btn.textContent = 'Activate compass'; btn.disabled = false; }
+  };
+  statusBar.appendChild(btn);
+}
