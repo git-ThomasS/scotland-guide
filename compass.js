@@ -143,3 +143,14 @@ function formatDist(m) {
 function relativeBearing(targetAbsoluteBearing) {
   return ((targetAbsoluteBearing - GEO.heading) + 360) % 360;
 }
+
+// Auto-start GPS on page load — silent if permission already granted.
+document.addEventListener('DOMContentLoaded', () => {
+  requestLocationAndCompass();
+});
+
+// iOS requires DeviceOrientation permission from a user gesture.
+// If compass isn't active after page load, the first tap anywhere activates it.
+document.addEventListener('click', function activateCompass() {
+  if (!GEO.orientationActive) requestLocationAndCompass();
+}, { passive: true });
