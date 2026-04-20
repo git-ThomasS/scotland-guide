@@ -62,7 +62,7 @@
     .unpin-btn:active { opacity: 0.7; }
 
     /* Compass row */
-    .compass-row { display: flex; align-items: center; gap: 14px; }
+    .compass-row { display: flex; flex-direction: column; align-items: center; gap: 10px; }
     .compass-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 5px; }
     .compass-dial { width: 72px; height: 72px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface); position: relative; display: flex; align-items: center; justify-content: center; }
     .c-n,.c-s,.c-e,.c-w { position: absolute; font-size: 8px; font-weight: 500; color: var(--text3); transform: translate(-50%,-50%); }
@@ -75,7 +75,7 @@
     .needle-s { position: absolute; left: -3px; top: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 24px solid var(--text3); }
     .needle-dot { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
     .compass-hdg { font-size: 10px; color: var(--text3); letter-spacing: 0.08em; }
-    .compass-info { flex: 1; }
+    .compass-info { text-align: center; }
     .compass-info-heading { font-size: 13px; font-weight: 500; color: var(--text); }
     .compass-info-sub { font-size: 11px; color: var(--text3); margin-top: 3px; }
     .compass-info-hint { font-size: 11px; color: #b0a8f0; margin-top: 3px; }
@@ -278,6 +278,7 @@ let regionData = null;
 let map, userMarker, accuracyCircle, tileLayer;
 const arrowAngles = {};
 let arrowsBuilt = false;
+let arrowsBuiltWithGPS = false;
 let needleAngle = 0;
 let iconAngle = 0;
 const expandedPois = new Set();
@@ -628,10 +629,10 @@ GEO.onUpdate(() => {
   document.getElementById('compass-needle').style.transform = `rotate(${needleAngle}deg)`;
   document.getElementById('compass-hdg').textContent = `${Math.round(GEO.heading)}°`;
 
-  // Rebuild list once on first GPS fix, then just rotate arrows
-  if (GEO.lat && !arrowsBuilt) {
+  // Rebuild with real arrows on first GPS fix, then just rotate
+  if (GEO.lat && !arrowsBuiltWithGPS) {
     renderAll();
-    arrowsBuilt = true;
+    arrowsBuiltWithGPS = true;
   } else {
     updateArrowAngles();
     renderNextStop();
