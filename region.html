@@ -66,23 +66,24 @@
     .unpin-btn:active { opacity: 0.7; }
 
     /* Compass row */
-    .compass-row { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .compass-row { display: flex; justify-content: center; }
+    .compass-inner { display: flex; align-items: center; gap: 18px; }
     .compass-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 5px; }
-    .compass-dial { width: 72px; height: 72px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface); position: relative; display: flex; align-items: center; justify-content: center; }
-    .c-n,.c-s,.c-e,.c-w { position: absolute; font-size: 8px; font-weight: 500; color: var(--text3); transform: translate(-50%,-50%); }
-    .c-n { top: 8px; left: 50%; color: var(--accent); }
-    .c-s { bottom: 1px; left: 50%; }
-    .c-e { right: 1px; top: 50%; }
-    .c-w { left: 8px; top: 50%; }
+    .compass-dial { width: 88px; height: 88px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface); position: relative; display: flex; align-items: center; justify-content: center; }
+    .c-n,.c-s,.c-e,.c-w { position: absolute; font-size: 9px; font-weight: 500; color: var(--text3); transform: translate(-50%,-50%); }
+    .c-n { top: 9px; left: 50%; color: var(--accent); }
+    .c-s { bottom: 2px; left: 50%; }
+    .c-e { right: 2px; top: 50%; }
+    .c-w { left: 9px; top: 50%; }
     .needle { position: absolute; top: 50%; left: 50%; transform-origin: 0 0; transition: transform 0.25s ease-out; }
-    .needle-n { position: absolute; left: -3px; bottom: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-bottom: 24px solid var(--accent); }
-    .needle-s { position: absolute; left: -3px; top: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 24px solid var(--text3); }
+    .needle-n { position: absolute; left: -4px; bottom: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 28px solid var(--accent); }
+    .needle-s { position: absolute; left: -4px; top: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 28px solid var(--text3); }
     .needle-dot { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-    .compass-hdg { font-size: 10px; color: var(--text3); letter-spacing: 0.08em; }
-    .compass-info { text-align: center; }
-    .compass-info-heading { font-size: 13px; font-weight: 500; color: var(--text); }
-    .compass-info-sub { font-size: 11px; color: var(--text3); margin-top: 3px; }
-    .compass-info-hint { font-size: 11px; color: #b0a8f0; margin-top: 3px; }
+    .compass-hdg { font-size: 11px; color: var(--text3); letter-spacing: 0.08em; }
+    .compass-info { }
+    .compass-info-heading { font-size: 15px; font-weight: 500; color: var(--text); }
+    .compass-info-sub { font-size: 12px; color: var(--text3); margin-top: 4px; }
+    .compass-info-hint { font-size: 12px; color: #b0a8f0; margin-top: 4px; }
 
     /* Legend */
     .cat-legend { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -229,22 +230,24 @@
 <div class="section">
   <p class="section-label">Heading</p>
   <div class="compass-row">
-    <div class="compass-wrap">
-      <div class="compass-dial">
-        <span class="c-n">N</span><span class="c-s">S</span>
-        <span class="c-e">E</span><span class="c-w">W</span>
-        <div class="needle" id="compass-needle">
-          <div class="needle-n"></div>
-          <div class="needle-s"></div>
-          <div class="needle-dot"></div>
+    <div class="compass-inner">
+      <div class="compass-wrap">
+        <div class="compass-dial">
+          <span class="c-n">N</span><span class="c-s">S</span>
+          <span class="c-e">E</span><span class="c-w">W</span>
+          <div class="needle" id="compass-needle">
+            <div class="needle-n"></div>
+            <div class="needle-s"></div>
+            <div class="needle-dot"></div>
+          </div>
         </div>
+        <span class="compass-hdg" id="compass-hdg">— °</span>
       </div>
-      <span class="compass-hdg" id="compass-hdg">— °</span>
-    </div>
-    <div class="compass-info">
-      <div class="compass-info-heading" id="compass-direction">Enable GPS to start</div>
-      <div class="compass-info-sub" id="compass-accuracy"></div>
-      <div class="compass-info-hint" id="compass-hint"></div>
+      <div class="compass-info">
+        <div class="compass-info-heading" id="compass-direction">Enable GPS to start</div>
+        <div class="compass-info-sub" id="compass-accuracy"></div>
+        <div class="compass-info-hint" id="compass-hint"></div>
+      </div>
     </div>
   </div>
 </div>
