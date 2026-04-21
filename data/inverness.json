@@ -1,0 +1,122 @@
+{
+  "region": "Inverness",
+  "slug": "inverness",
+  "description": "The Highland capital — a compact, walkable city on the River Ness, with Culloden battlefield and Loch Ness on its doorstep.",
+  "center": { "lat": 57.4778, "lng": -4.2247 },
+  "pois": [
+    {
+      "id": "culloden-battlefield",
+      "name": "Culloden Battlefield",
+      "lat": 57.4773,
+      "lng": -4.0975,
+      "category": "attraction",
+      "summary": "The site of the last pitched battle on British soil, in 1746 — where the Jacobite cause was crushed in 68 minutes.",
+      "tags": ["history", "film"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "68 minutes that changed Scotland",
+          "body": "The Battle of Culloden on 16 April 1746 lasted less than an hour. Around 1,200 Highlanders were slaughtered by government forces under the Duke of Cumberland, who earned the nickname 'Butcher' for ordering that wounded Jacobite soldiers be executed on the field. The battle ended the Jacobite cause, destroyed the clan system, and led directly to the Highland Clearances. The sombre moor where it was fought has barely changed in nearly 300 years.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Culloden_Memorial_Cairn.jpg/1280px-Culloden_Memorial_Cairn.jpg",
+            "caption": "The memorial cairn at Culloden Battlefield"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The piper who was hanged for music",
+          "body": "James Reid was one of several pipers who played the Highland clans into battle at Culloden. After the Jacobite defeat he was captured, taken to York, and put on trial for treason. He argued he had carried neither gun nor sword — only the pipes. The judges were unmoved, ruling that the bagpipes were 'an instrument of war' and sentencing Reid to be hanged, drawn and quartered.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Culloden_battlefield.jpg/1280px-Culloden_battlefield.jpg",
+            "caption": "The open moorland of Culloden Battlefield"
+          }
+        },
+        {
+          "type": "film",
+          "title": "Outlander",
+          "body": "Culloden is central to the Outlander TV series — Claire visits the battlefield in both 1946 and 1746, with the battle itself depicted in harrowing detail in the season 2 finale. The series has brought a new wave of visitors to the site, and the visitor centre now explicitly acknowledges the show's cultural impact. Clava Cairns, just east of Culloden, inspired the standing stones through which Claire travels in time."
+        }
+      ]
+    },
+    {
+      "id": "loch-ness",
+      "name": "Loch Ness",
+      "lat": 57.3229,
+      "lng": -4.4244,
+      "category": "nature",
+      "summary": "Britain's largest body of fresh water by volume — home to a monster, or at least an excellent rumour of one.",
+      "tags": ["nature", "trivia"],
+      "trivia": [
+        {
+          "type": "trivia",
+          "title": "The monster business",
+          "body": "On 22 July 1933, a local newspaper reported that a 'grey monster, some six feet long' had been seen crossing a road near Loch Ness. No such creature had been reported since St Columba's biographer mentioned an 'aquatic beast' in the 7th century. After the 1933 sighting, the monster was being spotted constantly. As Ian Crofton notes drily, this was 'all excellent news for local hoteliers, hirers of boats, drivers of charabancs, and so on.'",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Loch_Ness_lookout.jpg/1280px-Loch_Ness_lookout.jpg",
+            "caption": "Loch Ness from the southern shore"
+          }
+        },
+        {
+          "type": "nature",
+          "title": "Scotland's largest lake by volume",
+          "body": "Loch Ness is 37km long, up to 230m deep, and contains more fresh water than all the lakes in England and Wales combined. Its dark, peaty water limits visibility to just a few metres even in bright sunlight — which is why sonar surveys have never conclusively resolved the monster question. The loch never freezes, even in severe winters, due to its sheer depth."
+        }
+      ]
+    },
+    {
+      "id": "inverness-castle",
+      "name": "Inverness Castle",
+      "lat": 57.4800,
+      "lng": -4.2249,
+      "category": "attraction",
+      "summary": "A Victorian sandstone castle on a bluff above the River Ness — and the new Highland Centre due to open to visitors after renovation.",
+      "tags": ["history", "film"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Macbeth's castle",
+          "body": "Inverness Castle stands on the site of an earlier fortress associated with Macbeth, who was the real King of Scotland from 1040 to 1057. Shakespeare's play compresses and dramatically alters the historical record — the real Macbeth was by most accounts a capable ruler who kept the peace for 17 years. The current building dates from 1836 and served as the regional courthouse and prison.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Inverness_Castle_-_geograph.org.uk_-_786459.jpg/1280px-Inverness_Castle_-_geograph.org.uk_-_786459.jpg",
+            "caption": "Inverness Castle above the River Ness"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Inverness becomes the seat of empire",
+          "body": "In September 1921, the British Cabinet met outside London for the first time in history — in Inverness. The unlikely choice was forced by the fact that Prime Minister Lloyd George was holidaying in Gairloch and summoned an emergency meeting to discuss the crisis in Ireland that would lead to the Anglo-Irish Treaty. For one brief moment, the Highland capital was the seat of imperial power."
+        }
+      ]
+    },
+    {
+      "id": "clava-cairns",
+      "name": "Clava Cairns",
+      "lat": 57.4754,
+      "lng": -4.0807,
+      "category": "history",
+      "summary": "A remarkable Bronze Age burial complex of passage tombs and standing stones, just minutes from Culloden — and the inspiration for Outlander's standing stones.",
+      "tags": ["history", "film"],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Outlander's Craig na Dun",
+          "body": "The standing stones at Clava Cairns directly inspired the fictional Craig na Dun stones in Outlander — the site through which Claire Randall travels back in time to 18th-century Scotland. The show's production designers visited the cairns extensively during pre-production. The real stones are around 4,000 years old, constructed in the Bronze Age as part of a ritual landscape that also included Culloden.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Clava_Cairns_-_geograph.org.uk_-_1392046.jpg/1280px-Clava_Cairns_-_geograph.org.uk_-_1392046.jpg",
+            "caption": "Clava Cairns Bronze Age burial site"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Aligned with the midwinter sun",
+          "body": "The three main cairns at Clava are carefully positioned so that at midwinter sunset the passage of the two outer tombs aligns precisely with the setting sun, illuminating the interior chambers. This required extraordinary skill in planning and construction from people with no written mathematics. The site was in use for around 500 years before being abandoned, and has never been built over."
+        }
+      ]
+    }
+  ]
+}

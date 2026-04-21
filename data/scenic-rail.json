@@ -1,0 +1,190 @@
+{
+  "region": "Scenic Rail",
+  "slug": "scenic-rail",
+  "description": "Four of Scotland's most spectacular train journeys — the West Highland Line, Road to the Isles, Great Glen route, and the Highland Main Line back to Edinburgh.",
+  "center": { "lat": 56.8198, "lng": -4.9819 },
+  "pois": [
+    {
+      "id": "glenfinnan-viaduct",
+      "name": "Glenfinnan Viaduct",
+      "lat": 56.8724,
+      "lng": -5.4314,
+      "category": "attraction",
+      "summary": "The 21-arch curved viaduct made famous as the Hogwarts Express crossing — one of the most photographed railway structures in the world.",
+      "tags": ["history", "film"],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "The Hogwarts Express",
+          "body": "The Glenfinnan Viaduct first appeared in Harry Potter and the Chamber of Secrets (2002) and became a recurring landmark throughout the series — most memorably in Prisoner of Azkaban when Dementors board the train. The viaduct is crossed by the Jacobite steam train, which supplied its locomotive and rolling stock for the films. The viewpoint for the classic shot is a 45-minute walk from Glenfinnan station.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Glenfinnan_Viaduct_-_geograph.org.uk_-_1549795.jpg/1280px-Glenfinnan_Viaduct_-_geograph.org.uk_-_1549795.jpg",
+            "caption": "The Jacobite steam train crossing Glenfinnan Viaduct"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Built without steel",
+          "body": "The viaduct was built in 1901 using mass concrete — an unusually advanced technique for the era. Engineer Robert McAlpine, known as 'Concrete Bob', pioneered the method partly because of a local shortage of skilled stonemasons. The 21 arches span 380 metres and stand up to 30 metres above the valley floor. More than a century later, the structure is in excellent condition."
+        }
+      ]
+    },
+    {
+      "id": "glenfinnan-monument",
+      "name": "Glenfinnan Monument",
+      "lat": 56.8715,
+      "lng": -5.4487,
+      "category": "history",
+      "summary": "A tall column topped by a kilted Highlander, marking the spot where Bonnie Prince Charlie raised his standard in 1745 — with Loch Shiel stretching hauntingly behind.",
+      "tags": ["history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The standard is raised",
+          "body": "On 19 August 1745, Charles Edward Stuart raised his standard at Glenfinnan before a gathering of Highland clans, marking the beginning of the Jacobite Rising that would sweep through Scotland before ending in catastrophe at Culloden 14 months later. At first only a handful of men had gathered — the Prince's supporters held their breath. Then the MacDonalds of Clanranald arrived, around 150 strong, followed shortly by the Camerons of Lochiel with 800 men. The rising had begun.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Glenfinnan_Monument_-_geograph.org.uk_-_1417669.jpg/800px-Glenfinnan_Monument_-_geograph.org.uk_-_1417669.jpg",
+            "caption": "Glenfinnan Monument at the head of Loch Shiel"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The inn where the Prince may have slept",
+          "body": "The Prince's House Hotel in Glenfinnan dates to 1658 and was the only sizeable building in the area when Bonnie Prince Charlie was here in 1745. There is no documentary proof that he actually stayed the night — but as the hotel now puts it, 'it was the only sizeable house in Glenfinnan at the time, so…' The building is still an inn today."
+        }
+      ]
+    },
+    {
+      "id": "rannoch-moor",
+      "name": "Rannoch Moor",
+      "lat": 56.6501,
+      "lng": -4.7102,
+      "category": "nature",
+      "summary": "Europe's largest and wildest expanse of blanket bog — a vast, treeless plateau crossed by the West Highland Line in one of its most dramatic stretches.",
+      "tags": ["nature", "film"],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Skyfall & Harry Potter",
+          "body": "Rannoch Moor is one of Scotland's most-filmed landscapes. The desolate scene where Bond and M hide in the Highlands in Skyfall (2012) was shot here, with the famous ruined cottage at Glen Etive nearby. In Harry Potter and the Deathly Hallows, the Death Eaters board the Hogwarts Express on Rannoch Moor — the Jacobite train was used for filming.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Rannoch_Moor_-_geograph.org.uk_-_1539843.jpg/1280px-Rannoch_Moor_-_geograph.org.uk_-_1539843.jpg",
+            "caption": "Rannoch Moor from the West Highland Line"
+          }
+        },
+        {
+          "type": "nature",
+          "title": "Built on brushwood",
+          "body": "The railway crossing of Rannoch Moor was one of the great engineering challenges of the Victorian era. The peat bog, in places over 6 metres deep, would swallow conventional foundations. Engineer Robert McAlpine's solution was to float the track on a raft of brushwood, tree roots, and ash. The technique worked — but even today, sections of the line continue to move slightly with the seasons."
+        }
+      ]
+    },
+    {
+      "id": "bridge-of-orchy",
+      "name": "Bridge of Orchy & West Highland Way",
+      "lat": 56.5163,
+      "lng": -4.7620,
+      "category": "nature",
+      "summary": "The station where the West Highland Way crosses the railway — a remote Highland outpost with stunning views of Ben Dorain.",
+      "tags": ["nature", "history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The granddaddy of Scottish walking",
+          "body": "The West Highland Way — the long-distance path from Milngavie near Glasgow to Fort William — passes through Bridge of Orchy on its way across Rannoch Moor. Around 15,000 walkers complete the full 96-mile route each year. The path follows ancient drove roads, old military roads built to subdue the Highlanders after Culloden, and disused railway lines — layers of Scottish history underfoot.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Bridge_of_Orchy_-_geograph.org.uk_-_1380199.jpg/1280px-Bridge_of_Orchy_-_geograph.org.uk_-_1380199.jpg",
+            "caption": "Bridge of Orchy station on the West Highland Line"
+          }
+        },
+        {
+          "type": "nature",
+          "title": "Ben Dorain and the great Gaelic poet",
+          "body": "The pyramid-shaped peak of Ben Dorain (1076m) dominates the view from Bridge of Orchy. It was immortalised by the 18th-century Gaelic poet Duncan Ban MacIntyre in his masterpiece 'Moladh Beinn Dobhrain' (In Praise of Ben Dorain) — a long, intricate poem of extraordinary beauty describing the mountain's deer, streams, and landscape in loving detail. MacIntyre was illiterate, and composed and memorised the entire poem in his head."
+        }
+      ]
+    },
+    {
+      "id": "drumochter-pass",
+      "name": "Drumochter Pass",
+      "lat": 56.8994,
+      "lng": -4.2239,
+      "category": "nature",
+      "summary": "The highest point on the main railway network in Britain — at 452m, a bleak Highland pass on the Inverness to Edinburgh line.",
+      "tags": ["nature", "history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Highest mainline railway in Britain",
+          "body": "At 452 metres, Drumochter is the highest point on any mainline railway in the UK — and one of the most inhospitable. The pass has been a key route through the Grampians for thousands of years: drove roads, military roads, and now motorway and railway all use the same corridor. In severe winters, the pass can close completely, stranding trains on the line.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Drumochter_Pass_-_geograph.org.uk_-_1592186.jpg/1280px-Drumochter_Pass_-_geograph.org.uk_-_1592186.jpg",
+            "caption": "The bleak summit of Drumochter Pass"
+          }
+        },
+        {
+          "type": "history",
+          "title": "General Wade's military roads",
+          "body": "The route through Drumochter was first properly paved by General George Wade in the 1720s, as part of his network of military roads built to allow rapid troop movements through the Highlands after the Jacobite rising of 1715. Wade built over 250 miles of road and 40 bridges across Scotland — the rhyme 'Had you seen these roads before they were made, you would lift up your hands and bless General Wade' refers to his work here."
+        }
+      ]
+    },
+    {
+      "id": "forth-bridge",
+      "name": "The Forth Bridge",
+      "lat": 56.0004,
+      "lng": -3.3878,
+      "category": "attraction",
+      "summary": "The world's first major steel bridge — a Victorian engineering marvel crossing the Firth of Forth, visible from the train approaching Edinburgh.",
+      "tags": ["history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "A monument to a disaster",
+          "body": "The Forth Bridge was built partly in response to the Tay Bridge Disaster of 1879, when the previous bridge collapsed in a storm, killing 75 people on a train crossing it. The new design by Benjamin Baker used cantilever construction and three times the amount of steel originally planned — an engineering overreaction that resulted in one of the most robust structures ever built. It opened in 1890 and uses roughly 55,000 tonnes of steel.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Forth_Bridge_from_the_south.jpg/1280px-Forth_Bridge_from_the_south.jpg",
+            "caption": "The Forth Bridge crossing the Firth of Forth"
+          }
+        },
+        {
+          "type": "trivia",
+          "title": "Painting the Forth Bridge",
+          "body": "The phrase 'like painting the Forth Bridge' has long meant an endless, repetitive task — the idea being that by the time painters finished the full length, they had to start again. This turns out to be a myth: modern paint technology means the bridge only needs repainting every 25-30 years. But the legend persists because the bridge is genuinely enormous — its painting contract is worth £130 million."
+        }
+      ]
+    },
+    {
+      "id": "loch-lomond-train",
+      "name": "Loch Lomond — from the train",
+      "lat": 56.1013,
+      "lng": -4.6389,
+      "category": "nature",
+      "summary": "Scotland's most famous loch, glimpsed from the West Highland Line — the train runs right along its eastern shore from Balloch to Ardlui.",
+      "tags": ["nature", "history"],
+      "trivia": [
+        {
+          "type": "trivia",
+          "title": "The floating island",
+          "body": "16th-century writers described Loch Lomond as home to a floating island that moved around the loch, as well as fish that changed species between fresh and salt water, and waves that rose without wind. At least one of these is real: there is an actual floating island in the loch — a mat of vegetation that breaks free from the shore and drifts around. It was last reported floating freely in 2013.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Loch_Lomond_from_Conic_Hill.jpg/1280px-Loch_Lomond_from_Conic_Hill.jpg",
+            "caption": "Loch Lomond from Conic Hill"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The Highland Boundary Fault",
+          "body": "The loch sits directly on the Highland Boundary Fault — the geological line that divides the Scottish Highlands from the Lowlands. The fault runs right through the middle of the loch, which is why the southern end is broad and shallow, surrounded by gentle hills, while the northern end narrows dramatically between steep Highland peaks. You cross it on the train between Balloch and Ardlui."
+        }
+      ]
+    }
+  ]
+}

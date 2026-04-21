@@ -1,0 +1,112 @@
+{
+  "region": "Oban",
+  "slug": "oban",
+  "description": "The gateway to the Hebrides — a bustling harbour town at the end of the West Highland Line, with fresh seafood and views across to Mull and Kerrera.",
+  "center": { "lat": 56.4154, "lng": -5.4714 },
+  "pois": [
+    {
+      "id": "mccaigs-tower",
+      "name": "McCaig's Tower",
+      "lat": 56.4175,
+      "lng": -5.4751,
+      "category": "attraction",
+      "summary": "A circular granite folly resembling the Colosseum, looming over Oban — built by a banker to provide work and immortalise his family.",
+      "tags": ["history", "trivia"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The statues that never were",
+          "body": "John Stuart McCaig was a wealthy Oban banker who began building his tower in 1897, intending it as both a monument to his family and a source of winter employment for local stonemasons. His will specified that giant bronze statues of his mother, father, five brothers, four sisters, and himself were to be erected inside. After his death, his sister Catherine challenged the will in court — and won, on the grounds that the tower was self-advertisement rather than charity. Strangely, Catherine's own will then specified the same statues be built. Her will was also challenged. The statues were never made.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/McCaig%27s_Tower_-_geograph.org.uk_-_1438553.jpg/1280px-McCaig%27s_Tower_-_geograph.org.uk_-_1438553.jpg",
+            "caption": "McCaig's Tower overlooking Oban Bay"
+          }
+        },
+        {
+          "type": "trivia",
+          "title": "Oban's own Colosseum",
+          "body": "McCaig modelled his tower on the Colosseum in Rome, though at 200 metres in diameter the comparison is ambitious. The interior was intended to house a museum, art gallery, and statues — but was never completed beyond the outer walls. Today the interior is a pleasant public garden, and the views from the outer wall over Oban Bay and to the islands beyond are among the finest in the western Highlands."
+        }
+      ]
+    },
+    {
+      "id": "oban-harbour",
+      "name": "Oban Harbour",
+      "lat": 56.4147,
+      "lng": -5.4712,
+      "category": "attraction",
+      "summary": "The beating heart of Oban — a working harbour where CalMac ferries depart for Mull, Islay, Colonsay, and the outer islands.",
+      "tags": ["nature", "history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Gateway to the Hebrides",
+          "body": "Oban has been the main ferry hub for the Western Isles since the coming of the railway in 1880. Before that, the journey from Glasgow took several days by road and boat. The arrival of the train transformed Oban almost overnight into a busy tourist resort — Victorian travellers called it the 'Charing Cross of the Highlands'. The CalMac ferries still connect the town to over 20 islands.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Oban_harbour.jpg/1280px-Oban_harbour.jpg",
+            "caption": "Oban Harbour with the ferry terminal"
+          }
+        },
+        {
+          "type": "nature",
+          "title": "The seafood capital of Scotland",
+          "body": "Oban is one of the finest places in Scotland to eat seafood — the waters of the Firth of Lorn produce outstanding langoustines, scallops, crab, and lobster. The famous Oban Seafood Shack at the harbour sells freshly caught seafood from a converted container. The day's catch is landed directly from boats at the pier, so what you eat in the afternoon may have been in the sea that morning."
+        }
+      ]
+    },
+    {
+      "id": "dunstaffnage-castle",
+      "name": "Dunstaffnage Castle",
+      "lat": 56.4549,
+      "lng": -5.4369,
+      "category": "history",
+      "summary": "A 13th-century castle on a rock above the Firth of Lorn — one of the oldest standing castles in Scotland.",
+      "tags": ["history", "royalty"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The Stone of Destiny connection",
+          "body": "According to tradition, the Stone of Destiny — the ancient coronation stone of Scottish kings — was kept at Dunstaffnage before being moved to Scone. The castle was also where Robert the Bruce imprisoned his enemy John MacDougall after the Battle of Brander in 1308. It later became the seat of the Campbells of Dunstaffnage, who still hold the hereditary captaincy today.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Dunstaffnage_Castle_-_geograph.org.uk_-_1411040.jpg/1280px-Dunstaffnage_Castle_-_geograph.org.uk_-_1411040.jpg",
+            "caption": "Dunstaffnage Castle on its rocky promontory"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Flora MacDonald imprisoned here",
+          "body": "After helping Bonnie Prince Charlie escape to Skye in 1746, Flora MacDonald was arrested and briefly imprisoned at Dunstaffnage Castle before being transferred to the Tower of London. She was later released without trial, returned to Scotland, and emigrated to North Carolina — where she supported the British side during the American Revolution, before returning to Skye to die in 1790."
+        }
+      ]
+    },
+    {
+      "id": "isle-of-kerrera",
+      "name": "Isle of Kerrera",
+      "lat": 56.3988,
+      "lng": -5.5155,
+      "category": "nature",
+      "summary": "A small, car-free island just minutes by ferry from Oban, with a circular walking route, ruined castle, and views of the mainland.",
+      "tags": ["nature", "history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "King Alexander II died here",
+          "body": "In 1249, King Alexander II of Scotland anchored his fleet at Kerrera while preparing to wrest the Western Isles from Norwegian control. He died on the island of a fever before the campaign could begin. He was just 50 years old. His son Alexander III eventually succeeded in driving out the Norwegians at the Battle of Largs in 1263.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Gylen_Castle%2C_Kerrera.jpg/1280px-Gylen_Castle%2C_Kerrera.jpg",
+            "caption": "Gylen Castle on the southern tip of Kerrera"
+          }
+        },
+        {
+          "type": "nature",
+          "title": "Wildlife on your doorstep",
+          "body": "Kerrera's 6-mile circular walking route offers the chance to spot otters, grey seals, golden eagles, and peregrine falcons — all within sight of Oban's harbour. The island has a population of just 50 people, making it one of the quieter inhabited islands off Scotland's west coast. A small passenger ferry runs from Gallanach, 2 miles south of Oban town centre."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "region": "Fort William",
+  "slug": "fort-william",
+  "description": "The Outdoor Capital of the UK — gateway to Ben Nevis, the Great Glen, and the Road to the Isles.",
+  "center": { "lat": 56.8198, "lng": -5.1052 },
+  "pois": [
+    {
+      "id": "ben-nevis",
+      "name": "Ben Nevis",
+      "lat": 56.7969,
+      "lng": -5.0035,
+      "category": "nature",
+      "summary": "Britain's highest mountain at 1345m — a deceptively flat-backed giant that has lured and humbled walkers for centuries.",
+      "tags": ["nature", "history"],
+      "trivia": [
+        {
+          "type": "trivia",
+          "title": "The proposal to make it taller",
+          "body": "A correspondent writing to the Glasgow Herald in the 1880s bemoaned the fact that Ben Nevis — Britain's highest mountain — was so lacking in distinction of shape. From most directions it appears as little more than a flat-backed lump. His solution: dynamite vast amounts of rock from neighbouring peaks and pile them on top to create a more graceful summit, raising it to 5,000 feet. 'The view would be superb,' he enthused. Happily, the Ben was saved from being turned into a slag heap by the indifference of the public.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Ben_Nevis_from_Corpach.jpg/1280px-Ben_Nevis_from_Corpach.jpg",
+            "caption": "Ben Nevis from Corpach near Fort William"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The summit observatory",
+          "body": "Between 1883 and 1904, a team of meteorologists lived year-round in a stone observatory at the summit of Ben Nevis — at 1345m, the most isolated weather station in the British Isles. They recorded readings every hour, in conditions that included winds of over 150mph and temperatures of -17°C. The data they collected transformed the understanding of Scottish mountain weather. The ruins of the observatory are still visible at the summit."
+        }
+      ]
+    },
+    {
+      "id": "glen-nevis",
+      "name": "Glen Nevis",
+      "lat": 56.7831,
+      "lng": -5.0256,
+      "category": "nature",
+      "summary": "A dramatic glacial valley beneath Ben Nevis — the filming location for Braveheart, Rob Roy, and Harry Potter.",
+      "tags": ["nature", "film"],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Braveheart & Harry Potter",
+          "body": "Glen Nevis served as a key filming location for Mel Gibson's Braveheart (1995), with the lower glen standing in for the Scottish lowlands. The spectacular Steall Falls at the head of the glen — Scotland's second highest waterfall at 120m — appeared in the background during Quidditch match sequences in the Harry Potter films. The Wire Bridge crossing the gorge to Steall is one of the most photographed spots in Scotland.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Glen_Nevis_-_geograph.org.uk_-_1501239.jpg/1280px-Glen_Nevis_-_geograph.org.uk_-_1501239.jpg",
+            "caption": "Glen Nevis with Ben Nevis above"
+          }
+        },
+        {
+          "type": "nature",
+          "title": "Ice-carved landscape",
+          "body": "Glen Nevis was carved by a glacier over 10,000 years ago. The narrow gorge at the head of the glen — the Nevis Gorge — is one of the most dramatic in Scotland, with walls rising almost vertically from the river. The glen holds one of the best surviving examples of ancient Caledonian pine forest, which once covered much of the Scottish Highlands before centuries of felling."
+        }
+      ]
+    },
+    {
+      "id": "neptunes-staircase",
+      "name": "Neptune's Staircase",
+      "lat": 56.8455,
+      "lng": -5.1248,
+      "category": "attraction",
+      "summary": "The UK's longest staircase lock — a flight of eight locks on Thomas Telford's Caledonian Canal, taking boats from sea level to Loch Lochy.",
+      "tags": ["history"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Thomas Telford's masterpiece",
+          "body": "The Caledonian Canal was completed in 1822 to the designs of Thomas Telford, connecting the Atlantic to the North Sea through the Great Glen. Neptune's Staircase at Banavie is its most spectacular feature — eight consecutive locks raising boats by 20 metres, the whole structure stretching for 460 metres. It took 19 years to build, using an army of navvies, and cost £900,000 — a sum that horrified Parliament.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Neptune%27s_Staircase_-_geograph.org.uk_-_877987.jpg/1280px-Neptune%27s_Staircase_-_geograph.org.uk_-_877987.jpg",
+            "caption": "Neptune's Staircase on the Caledonian Canal"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Built to avoid Napoleon",
+          "body": "The canal was built primarily for military reasons — to allow Royal Navy ships to move between the Atlantic and North Sea without sailing around the north of Scotland, which was exposed to French privateers during the Napoleonic Wars. By the time it opened in 1822, Napoleon had been defeated and the strategic threat had passed. The canal was largely used for fishing boats instead."
+        }
+      ]
+    },
+    {
+      "id": "west-highland-museum",
+      "name": "West Highland Museum",
+      "lat": 56.8196,
+      "lng": -5.1061,
+      "category": "history",
+      "summary": "A small but fascinating museum in the heart of Fort William, packed with Highland memorabilia — including a secret portrait of Bonnie Prince Charlie.",
+      "tags": ["history", "trivia"],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The secret portrait",
+          "body": "After the Jacobite defeat at Culloden, all things Highland were banned — including portraits of the exiled Bonnie Prince Charlie. The museum holds a remarkable workaround: a painting that looks like nothing more than a meaningless smear of colour on canvas — until viewed in a cylindrical mirror, which reflects a credible likeness of the Prince. It is one of the most ingenious pieces of hidden art ever made.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Fort_William_-_geograph.org.uk_-_1372993.jpg/1280px-Fort_William_-_geograph.org.uk_-_1372993.jpg",
+            "caption": "Fort William town centre"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Fort William's dark history",
+          "body": "The original fort was built in 1654 by General Monck during Cromwell's occupation of Scotland, and rebuilt in stone after the Glorious Revolution. It was named after the future King William III and served as a garrison to suppress the Jacobite Highlanders. The town that grew up around it was known as Gordonsburgh before taking the fort's name. The fort itself was demolished in 1864 to make way for the railway."
+        }
+      ]
+    }
+  ]
+}

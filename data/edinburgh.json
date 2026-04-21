@@ -2,7 +2,10 @@
   "region": "Edinburgh",
   "slug": "edinburgh",
   "description": "Scotland's dramatic capital — volcanic rock, medieval wynds, and centuries of stories.",
-  "center": { "lat": 55.9533, "lng": -3.1883 },
+  "center": {
+    "lat": 55.9533,
+    "lng": -3.1883
+  },
   "pois": [
     {
       "id": "edinburgh-castle",
@@ -11,7 +14,11 @@
       "lng": -3.1999,
       "category": "attraction",
       "summary": "A fortress on volcanic rock, occupied for over 3,000 years.",
-      "tags": ["history", "film", "royalty"],
+      "tags": [
+        "history",
+        "film",
+        "royalty"
+      ],
       "trivia": [
         {
           "type": "film",
@@ -32,6 +39,11 @@
           "type": "book",
           "title": "The Da Vinci Code",
           "body": "Dan Brown's sequel 'The Lost Symbol' weaves Rosslyn Chapel and Edinburgh Castle into a Masonic conspiracy. The castle's Honours of Scotland — Scotland's crown jewels — are very real and on display inside."
+        },
+        {
+          "type": "history",
+          "title": "The Honours of Scotland",
+          "body": "The Scottish Crown Jewels — the Honours of Scotland — are the oldest surviving royal regalia in the British Isles, dating to the 15th and 16th centuries. During the Cromwellian occupation, they were hidden in Kinneff Church, smuggled out in a laundry basket by the wife of the local minister. After the Act of Union in 1707, they were locked in a chest in the castle and forgotten for over a century, until Sir Walter Scott petitioned the Prince Regent to have the chest opened in 1818 — and found them untouched."
         }
       ]
     },
@@ -42,7 +54,11 @@
       "lng": -3.1615,
       "category": "nature",
       "summary": "An ancient volcano rising 251m above the city. Arguably the finest urban hike in Europe.",
-      "tags": ["nature", "history", "film"],
+      "tags": [
+        "nature",
+        "history",
+        "film"
+      ],
       "trivia": [
         {
           "type": "film",
@@ -63,6 +79,11 @@
           "type": "book",
           "title": "The Private Memoirs and Confessions of a Justified Sinner (1824)",
           "body": "James Hogg's gothic masterpiece is set in the shadow of Arthur's Seat. A pivotal duel takes place on its slopes. It's one of the earliest psychological horror novels ever written."
+        },
+        {
+          "type": "history",
+          "title": "The pregnant ale-wives' race",
+          "body": "In 1661, Edinburgh's Mercurius Caledonius newspaper reported that a dozen pregnant ale-wives had raced up Arthur's Seat 'for a groaning cheese of one hundred pound weight', with second prize being 'a budgell of Dunkeld aquavitae'. The following day the paper announced sixteen fish-wives would trot from Musselburgh to the Canon Cross for twelve pairs of lamb's offal. 17th-century Edinburgh entertainment was nothing if not inventive."
         }
       ]
     },
@@ -73,7 +94,10 @@
       "lng": -3.1883,
       "category": "attraction",
       "summary": "The historic spine of Edinburgh's Old Town, running from the Castle down to Holyrood Palace.",
-      "tags": ["history", "film"],
+      "tags": [
+        "history",
+        "film"
+      ],
       "trivia": [
         {
           "type": "film",
@@ -94,6 +118,11 @@
           "type": "book",
           "title": "Harry Potter",
           "body": "J.K. Rowling wrote much of the early Harry Potter books in Edinburgh cafés. The Elephant House on George IV Bridge is the most famous. Greyfriars Kirkyard — just off the Royal Mile — contains gravestones bearing names like Tom Riddle and McGonagall."
+        },
+        {
+          "type": "history",
+          "title": "Waverley — the only station named after a novel",
+          "body": "Edinburgh's main railway station is the only terminus in the world named after a work of fiction — Walter Scott's 1814 novel Waverley. Scott himself largely invented the romantic tartan-clad image of the Highlands: in 1822, he stage-managed King George IV's visit to Edinburgh, persuading the king to wear a kilt in public for the first time. The resulting tartan-mania swept fashionable Britain and permanently shaped how Scotland is seen."
         }
       ]
     },
@@ -104,7 +133,10 @@
       "lng": -3.1723,
       "category": "attraction",
       "summary": "The official Scottish residence of the British monarch, at the foot of the Royal Mile.",
-      "tags": ["history", "royalty"],
+      "tags": [
+        "history",
+        "royalty"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -120,6 +152,11 @@
           "type": "history",
           "title": "Bonnie Prince Charlie",
           "body": "In 1745, Charles Edward Stuart held court here for six weeks during his Jacobite rising, throwing lavish balls while his army occupied the city. The rising ended in disaster at Culloden the following year."
+        },
+        {
+          "type": "history",
+          "title": "The French poet found under the bed",
+          "body": "In 1562, the French court poet Pierre de Boscosel de Chastelard was discovered hiding under Mary Queen of Scots' bed at Holyroodhouse. He had apparently done the same thing once before and been let off with a warning. This time Mary demanded her half-brother the Earl of Moray kill him on the spot. Moray refused, and Chastelard was taken to St Andrews for trial. His defence — that he had been hiding in her privy, not under her bed — cut no ice with the court, and he was beheaded."
         }
       ]
     },
@@ -130,7 +167,10 @@
       "lng": -3.1916,
       "category": "trivia",
       "summary": "One of Edinburgh's most atmospheric graveyards — and one of its most haunted.",
-      "tags": ["history", "book"],
+      "tags": [
+        "history",
+        "book"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -151,6 +191,11 @@
           "type": "history",
           "title": "The Mackenzie Poltergeist",
           "body": "The Black Mausoleum holds George Mackenzie, a judge who persecuted Covenanters in the 1680s. Since a homeless man broke into his tomb in 1999, over 500 people have reported injuries or fainting on ghost tours — one of the most documented alleged poltergeist cases in history."
+        },
+        {
+          "type": "history",
+          "title": "The Covenanters' Prison",
+          "body": "In 1679, over 1,200 Covenanters captured at the Battle of Bothwell Brig were imprisoned in the open air in Greyfriars Kirkyard for five months. Many died of cold and starvation. Their jailer was Sir George Mackenzie — the same 'Bluidy Mackenzie' whose tomb later became associated with poltergeist activity. The walled enclosure in the kirkyard where they were held can still be visited today."
         }
       ]
     },
@@ -161,7 +206,10 @@
       "lng": -3.1929,
       "category": "trivia",
       "summary": "A curved, cobbled street of colourful shopfronts — said to have inspired Diagon Alley.",
-      "tags": ["book", "history"],
+      "tags": [
+        "book",
+        "history"
+      ],
       "trivia": [
         {
           "type": "book",
@@ -177,6 +225,11 @@
           "type": "history",
           "title": "Built over a buried street",
           "body": "Victoria Street was built in the 1840s over the older West Bow. The lower section still exists below as the Grassmarket — historically the site of public executions, with over 100 witches burned here during the Scottish witch trials."
+        },
+        {
+          "type": "history",
+          "title": "The boy who nearly burned Edinburgh",
+          "body": "In the 16th century, a boy set fire to his father's haystack in a close opposite the Tron Kirk on the Royal Mile — a building that still stands — and nearly burned down the entire Old Town. The chronicler records that he was caught 'most marvellously after escaping out of the town' and was burned at the Cross the following day, 'prompted by the instigation of Satan'. Victoria Street was built over the medieval closes where such events were commonplace."
         }
       ]
     },
@@ -187,7 +240,11 @@
       "lng": -3.1819,
       "category": "nature",
       "summary": "A hill at the east end of Princes Street with panoramic views and a collection of monuments.",
-      "tags": ["history", "nature", "film"],
+      "tags": [
+        "history",
+        "nature",
+        "film"
+      ],
       "trivia": [
         {
           "type": "film",
@@ -203,6 +260,11 @@
           "type": "history",
           "title": "Edinburgh's Disgrace",
           "body": "The National Monument was intended as a full replica of the Parthenon, commemorating Scots killed in the Napoleonic Wars. Construction began in 1826 but funds ran out after only 12 columns. It was never completed — mockingly called 'Edinburgh's Disgrace', though locals have since grown fond of its unfinished grandeur."
+        },
+        {
+          "type": "history",
+          "title": "Scotland's Disgrace and the Parthenon plan",
+          "body": "The unfinished National Monument on Calton Hill was meant to be a full replica of the Athenian Parthenon, funded by public subscription to honour Scots killed in the Napoleonic Wars. Construction began in 1826 with great fanfare — but money ran out after just twelve columns. Mocked as 'Edinburgh's Disgrace' and 'Scotland's Shame', the twelve columns were left standing. Locals have since grown fond of the ruin, and several proposals to complete it have been firmly rejected."
         }
       ]
     }
