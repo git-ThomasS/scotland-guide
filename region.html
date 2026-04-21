@@ -343,6 +343,7 @@ function renderAll() {
   renderNextStop();
   renderPoiList();
   renderVisited();
+  updatePinnedMarker();
 }
 
 // ── Next stop card ──────────────────────────────────────
@@ -491,6 +492,32 @@ function checkArrivals() {
 }
 
 // ── Map ───────────────────────────────────────────────────
+const poiMarkers = {};
+
+function poiMarkerIcon(poi, isPinned) {
+  const color = isPinned ? '#7f77dd' : catColor(poi);
+  const isAtt = poi.category === 'attraction';
+  const size = isPinned ? 16 : isAtt ? 13 : 9;
+  const border = isPinned ? '2px solid #5b54a8' : '2px solid #0f0f1a';
+  const glow = isPinned ? 'box-shadow:0 0 0 3px #7f77dd55;' : isAtt ? 'box-shadow:0 0 0 2px '+catColor(poi)+'44;' : '';
+  return L.divIcon({
+    className: '',
+    html: `<div style="width:${size}px;height:${size}px;background:${color};border-radius:50%;border:${border};${glow}"></div>`,
+    iconSize: [size, size],
+    iconAnchor: [size/2, size/2]
+  });
+}
+
+function updatePinnedMarker() {
+  if (!regionData) return;
+  const pinned = getPinned();
+  regionData.pois.forEach(poi => {
+    const marker = poiMarkers[poi.id];
+    if (!marker) return;
+    marker.setIcon(poiMarkerIcon(poi, poi.id === pinned));
+  });
+}
+
 function initMap() {
   const dark = !document.body.classList.contains('sunlight');
   map = L.map('map', { zoomControl: false, attributionControl: false, tap: false })
@@ -501,16 +528,12 @@ function initMap() {
     { maxZoom: 19 }
   ).addTo(map);
   L.control.zoom({ position: 'bottomright' }).addTo(map);
+  const pinned = getPinned();
   regionData.pois.forEach(poi => {
-    const color = catColor(poi);
-    const isAtt = poi.category === 'attraction';
-    const size = isAtt ? 13 : 9;
-    const icon = L.divIcon({
-      className: '',
-      html: `<div style="width:${size}px;height:${size}px;background:${color};border-radius:50%;border:2px solid #0f0f1a;${isAtt?'box-shadow:0 0 0 2px '+color+'44;':''}"></div>`,
-      iconSize: [size,size], iconAnchor: [size/2,size/2]
-    });
-    L.marker([poi.lat,poi.lng],{icon}).addTo(map).bindTooltip(poi.name,{offset:[8,0]});
+    const marker = L.marker([poi.lat, poi.lng], { icon: poiMarkerIcon(poi, poi.id === pinned) })
+      .addTo(map)
+      .bindTooltip(poi.name, { offset:[8,0] });
+    poiMarkers[poi.id] = marker;
   });
 }
 
