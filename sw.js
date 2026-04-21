@@ -1,0 +1,69 @@
+const CACHE = 'scotland-guide-v1';
+
+const PRECACHE = [
+  '/',
+  '/index.html',
+  '/region.html',
+  '/poi.html',
+  '/style.css',
+  '/compass.js',
+  '/manifest.json',
+  '/data/edinburgh.json',
+  '/data/antwerp.json',
+  'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap',
+  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
+  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
+];
+
+// Install — cache all core files
+self.addEventListener('install', e => {
+  e.waitUntil(
+    caches.open(CACHE).then(cache => cache.addAll(PRECACHE))
+  );
+  self.skipWaiting();
+});
+
+// Activate — delete old caches
+self.addEventListener('activate', e => {
+  e.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+    )
+  );
+  self.clients.claim();
+});
+
+// Fetch — serve from cache first, fall back to network
+// Map tiles are network-first (they change) but cached for offline
+self.addEventListener('fetch', e => {
+  const url = new URL(e.request.url);
+
+  // Map tiles — network first, cache as fallback
+  if (url.hostname.includes('cartocdn.com') || url.hostname.includes('basemaps')) {
+    e.respondWith(
+      fetch(e.request)
+        .then(res => {
+          const clone = res.clone();
+          caches.open(CACHE).then(cache => cache.put(e.request, clone));
+          return res;
+        })
+        .catch(() => caches.match(e.request))
+    );
+    return;
+  }
+
+  // Everything else — cache first, network fallback
+  e.respondWith(
+    caches.match(e.request).then(cached => {
+      if (cached) return cached;
+      return fetch(e.request).then(res => {
+        // Cache successful responses
+        if (res && res.status === 200) {
+          const clone = res.clone();
+          caches.open(CACHE).then(cache => cache.put(e.request, clone));
+        }
+        return res;
+      });
+    })
+  );
+});
