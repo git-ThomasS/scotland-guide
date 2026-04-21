@@ -2,7 +2,10 @@
   "region": "Scenic Rail",
   "slug": "scenic-rail",
   "description": "Four of Scotland's most spectacular train journeys — the West Highland Line, Road to the Isles, Great Glen route, and the Highland Main Line back to Edinburgh.",
-  "center": { "lat": 56.8198, "lng": -4.9819 },
+  "center": {
+    "lat": 56.8198,
+    "lng": -4.9819
+  },
   "pois": [
     {
       "id": "glenfinnan-viaduct",
@@ -11,7 +14,10 @@
       "lng": -5.4314,
       "category": "attraction",
       "summary": "The 21-arch curved viaduct made famous as the Hogwarts Express crossing — one of the most photographed railway structures in the world.",
-      "tags": ["history", "film"],
+      "tags": [
+        "history",
+        "film"
+      ],
       "trivia": [
         {
           "type": "film",
@@ -37,7 +43,9 @@
       "lng": -5.4487,
       "category": "history",
       "summary": "A tall column topped by a kilted Highlander, marking the spot where Bonnie Prince Charlie raised his standard in 1745 — with Loch Shiel stretching hauntingly behind.",
-      "tags": ["history"],
+      "tags": [
+        "history"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -57,13 +65,45 @@
       ]
     },
     {
+      "id": "jacobite-steam-train",
+      "name": "The Jacobite Steam Train",
+      "lat": 56.8198,
+      "lng": -5.1052,
+      "category": "attraction",
+      "summary": "The 'Hogwarts Express' — a steam train running from Fort William to Mallaig across the Glenfinnan Viaduct, one of the greatest railway journeys in the world.",
+      "tags": [
+        "history",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "The real Hogwarts Express",
+          "body": "West Coast Railways provided the route, carriages, and steam locomotives for every Harry Potter film featuring the Hogwarts Express. The specific locomotive used in the films — GWR 4900 Class 5972 Olton Hall, built in 1937 — now sits permanently on display at Warner Bros Studio Tour London. But the carriages used in filming are still in service on the Jacobite today, and the route crossing Glenfinnan Viaduct is identical. The morning First Class carriage even has period-style compartments that match the film interiors.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Glenfinnan_Viaduct_-_geograph.org.uk_-_1549795.jpg/1280px-Glenfinnan_Viaduct_-_geograph.org.uk_-_1549795.jpg",
+            "caption": "The Jacobite crossing Glenfinnan Viaduct"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The Road to the Isles",
+          "body": "The Fort William to Mallaig line — known as the Road to the Isles — was completed in 1901 and was one of the last great Victorian railway projects. It was built to open up the remote western Highlands and provide a rail connection to the Hebridean ferry port at Mallaig. The line crosses 11 viaducts, passes through 21 tunnels, and runs along the shores of three lochs. It is consistently voted one of the greatest rail journeys in the world."
+        }
+      ]
+    },
+    {
       "id": "rannoch-moor",
       "name": "Rannoch Moor",
       "lat": 56.6501,
       "lng": -4.7102,
       "category": "nature",
       "summary": "Europe's largest and wildest expanse of blanket bog — a vast, treeless plateau crossed by the West Highland Line in one of its most dramatic stretches.",
-      "tags": ["nature", "film"],
+      "tags": [
+        "nature",
+        "film"
+      ],
       "trivia": [
         {
           "type": "film",
@@ -86,10 +126,13 @@
       "id": "bridge-of-orchy",
       "name": "Bridge of Orchy & West Highland Way",
       "lat": 56.5163,
-      "lng": -4.7620,
+      "lng": -4.762,
       "category": "nature",
       "summary": "The station where the West Highland Way crosses the railway — a remote Highland outpost with stunning views of Ben Dorain.",
-      "tags": ["nature", "history"],
+      "tags": [
+        "nature",
+        "history"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -115,7 +158,10 @@
       "lng": -4.2239,
       "category": "nature",
       "summary": "The highest point on the main railway network in Britain — at 452m, a bleak Highland pass on the Inverness to Edinburgh line.",
-      "tags": ["nature", "history"],
+      "tags": [
+        "nature",
+        "history"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -141,7 +187,9 @@
       "lng": -3.3878,
       "category": "attraction",
       "summary": "The world's first major steel bridge — a Victorian engineering marvel crossing the Firth of Forth, visible from the train approaching Edinburgh.",
-      "tags": ["history"],
+      "tags": [
+        "history"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -167,7 +215,10 @@
       "lng": -4.6389,
       "category": "nature",
       "summary": "Scotland's most famous loch, glimpsed from the West Highland Line — the train runs right along its eastern shore from Balloch to Ardlui.",
-      "tags": ["nature", "history"],
+      "tags": [
+        "nature",
+        "history"
+      ],
       "trivia": [
         {
           "type": "trivia",

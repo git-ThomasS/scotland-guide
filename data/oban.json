@@ -2,7 +2,10 @@
   "region": "Oban",
   "slug": "oban",
   "description": "The gateway to the Hebrides — a bustling harbour town at the end of the West Highland Line, with fresh seafood and views across to Mull and Kerrera.",
-  "center": { "lat": 56.4154, "lng": -5.4714 },
+  "center": {
+    "lat": 56.4154,
+    "lng": -5.4714
+  },
   "pois": [
     {
       "id": "mccaigs-tower",
@@ -11,7 +14,10 @@
       "lng": -5.4751,
       "category": "attraction",
       "summary": "A circular granite folly resembling the Colosseum, looming over Oban — built by a banker to provide work and immortalise his family.",
-      "tags": ["history", "trivia"],
+      "tags": [
+        "history",
+        "trivia"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -37,7 +43,10 @@
       "lng": -5.4712,
       "category": "attraction",
       "summary": "The beating heart of Oban — a working harbour where CalMac ferries depart for Mull, Islay, Colonsay, and the outer islands.",
-      "tags": ["nature", "history"],
+      "tags": [
+        "nature",
+        "history"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -63,7 +72,10 @@
       "lng": -5.4369,
       "category": "history",
       "summary": "A 13th-century castle on a rock above the Firth of Lorn — one of the oldest standing castles in Scotland.",
-      "tags": ["history", "royalty"],
+      "tags": [
+        "history",
+        "royalty"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -89,7 +101,10 @@
       "lng": -5.5155,
       "category": "nature",
       "summary": "A small, car-free island just minutes by ferry from Oban, with a circular walking route, ruined castle, and views of the mainland.",
-      "tags": ["nature", "history"],
+      "tags": [
+        "nature",
+        "history"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -105,6 +120,35 @@
           "type": "nature",
           "title": "Wildlife on your doorstep",
           "body": "Kerrera's 6-mile circular walking route offers the chance to spot otters, grey seals, golden eagles, and peregrine falcons — all within sight of Oban's harbour. The island has a population of just 50 people, making it one of the quieter inhabited islands off Scotland's west coast. A small passenger ferry runs from Gallanach, 2 miles south of Oban town centre."
+        }
+      ]
+    },
+    {
+      "id": "castle-stalker",
+      "name": "Castle Stalker",
+      "lat": 56.5364,
+      "lng": -5.3694,
+      "category": "attraction",
+      "summary": "A 15th-century tower house on a tiny tidal island — the 'Castle of Aaaargh' from Monty Python and the Holy Grail.",
+      "tags": [
+        "history",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Monty Python and the Holy Grail (1975)",
+          "body": "Castle Stalker appears in the final moments of Monty Python and the Holy Grail as the 'Castle of Aaaargh' — the goal of the entire quest, seen tantalizingly across the water just before the police arrive and arrest everyone. Director Terry Gilliam reportedly spotted it from a passing car and immediately knew it was the shot he needed. The castle is privately owned and only accessible by boat on occasional open days.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Castle_Stalker_in_2005.jpg/1280px-Castle_Stalker_in_2005.jpg",
+            "caption": "Castle Stalker on its tidal island in Loch Laich"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Lost in a drunken wager",
+          "body": "Castle Stalker was built around 1440 by the Stewarts of Appin as a hunting lodge for King James IV. In the 17th century, the chief of Clan Stewart reportedly traded the castle to the rival MacDougalls in exchange for an eight-oared birlinn (a type of galley) — after losing a drunken bet. The Stewarts tried for centuries to get it back. It changed hands several more times before being restored in the 1960s by its current owners."
         }
       ]
     }

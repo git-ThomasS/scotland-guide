@@ -2,7 +2,10 @@
   "region": "Fort William",
   "slug": "fort-william",
   "description": "The Outdoor Capital of the UK — gateway to Ben Nevis, the Great Glen, and the Road to the Isles.",
-  "center": { "lat": 56.8198, "lng": -5.1052 },
+  "center": {
+    "lat": 56.8198,
+    "lng": -5.1052
+  },
   "pois": [
     {
       "id": "ben-nevis",
@@ -11,7 +14,10 @@
       "lng": -5.0035,
       "category": "nature",
       "summary": "Britain's highest mountain at 1345m — a deceptively flat-backed giant that has lured and humbled walkers for centuries.",
-      "tags": ["nature", "history"],
+      "tags": [
+        "nature",
+        "history"
+      ],
       "trivia": [
         {
           "type": "trivia",
@@ -37,7 +43,10 @@
       "lng": -5.0256,
       "category": "nature",
       "summary": "A dramatic glacial valley beneath Ben Nevis — the filming location for Braveheart, Rob Roy, and Harry Potter.",
-      "tags": ["nature", "film"],
+      "tags": [
+        "nature",
+        "film"
+      ],
       "trivia": [
         {
           "type": "film",
@@ -53,6 +62,11 @@
           "type": "nature",
           "title": "Ice-carved landscape",
           "body": "Glen Nevis was carved by a glacier over 10,000 years ago. The narrow gorge at the head of the glen — the Nevis Gorge — is one of the most dramatic in Scotland, with walls rising almost vertically from the river. The glen holds one of the best surviving examples of ancient Caledonian pine forest, which once covered much of the Scottish Highlands before centuries of felling."
+        },
+        {
+          "type": "film",
+          "title": "Rob Roy (1995)",
+          "body": "Liam Neeson's Rob Roy was filmed extensively in Glen Nevis and the surrounding area, with the glen standing in for the 18th-century Scottish Highlands. The production used many of the same locations as Braveheart, which filmed in the area the same year. Glen Nevis has become the default backdrop for any period drama requiring untouched Highland landscape — its lack of modern infrastructure makes it uniquely useful to filmmakers."
         }
       ]
     },
@@ -63,7 +77,9 @@
       "lng": -5.1248,
       "category": "attraction",
       "summary": "The UK's longest staircase lock — a flight of eight locks on Thomas Telford's Caledonian Canal, taking boats from sea level to Loch Lochy.",
-      "tags": ["history"],
+      "tags": [
+        "history"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -89,7 +105,10 @@
       "lng": -5.1061,
       "category": "history",
       "summary": "A small but fascinating museum in the heart of Fort William, packed with Highland memorabilia — including a secret portrait of Bonnie Prince Charlie.",
-      "tags": ["history", "trivia"],
+      "tags": [
+        "history",
+        "trivia"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -105,6 +124,46 @@
           "type": "history",
           "title": "Fort William's dark history",
           "body": "The original fort was built in 1654 by General Monck during Cromwell's occupation of Scotland, and rebuilt in stone after the Glorious Revolution. It was named after the future King William III and served as a garrison to suppress the Jacobite Highlanders. The town that grew up around it was known as Gordonsburgh before taking the fort's name. The fort itself was demolished in 1864 to make way for the railway."
+        }
+      ]
+    },
+    {
+      "id": "glencoe",
+      "name": "Glencoe",
+      "lat": 56.6806,
+      "lng": -5.0989,
+      "category": "nature",
+      "summary": "Scotland's most dramatic glen — brooding peaks, a notorious massacre, and more major film credits than almost anywhere else in the UK.",
+      "tags": [
+        "nature",
+        "history",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Braveheart, Skyfall, Highlander & more",
+          "body": "Glencoe is Scotland's most filmed landscape. Mel Gibson's Braveheart (1995) used the glen for its sweeping battle sequences. Daniel Craig and Judi Dench hid from the villain here in Skyfall (2012) — the ruined cottage used was purpose-built and then demolished after filming. The opening battle of Highlander (1986) was filmed at Buachaille Etive Beag. Outlaw King (2018) and Mary Queen of Scots (2018) both used the Three Sisters rock formation. Monty Python and the Holy Grail filmed the Knights Who Say Ni scene here.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Glencoe_valley.jpg/1280px-Glencoe_valley.jpg",
+            "caption": "The valley of Glencoe with the Three Sisters"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The Massacre of Glencoe",
+          "body": "On 13 February 1692, soldiers of King William III's army — who had been guests of the MacDonald clan for twelve days — rose before dawn and murdered 38 members of the MacIain MacDonalds in their beds. Around 40 more died fleeing through the snow. The massacre was ordered because the MacDonald chief had been five days late in signing an oath of allegiance. It became one of the most infamous acts of betrayal in Scottish history — the violation of Highland hospitality making it far more shocking than the death toll alone.",
+          "media": {
+            "type": "image",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Glencoe_-_Signal_Rock.jpg/1280px-Glencoe_-_Signal_Rock.jpg",
+            "caption": "Signal Rock, Glencoe — traditional site of the massacre signal"
+          }
+        },
+        {
+          "type": "nature",
+          "title": "A landscape of volcanoes",
+          "body": "Glencoe sits inside the collapsed crater of an ancient supervolcano that erupted around 420 million years ago. The circular ring of mountains surrounding the glen — including the distinctive Three Sisters — are the remnants of the volcano's rim. The dramatic, almost vertical walls of rock that make the glen so cinematic are the result of both volcanic activity and subsequent glaciation during the last Ice Age."
         }
       ]
     }
