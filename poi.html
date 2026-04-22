@@ -68,7 +68,7 @@
 <body>
 
 <div class="hero">
-  <img class="hero-img" id="hero-img" src="" alt="">
+  <img class="hero-img" id="hero-img" src="" alt="" style="display:none;" onload="this.style.display='block'" onerror="this.style.display='none'">
   <div class="hero-overlay"></div>
   <div class="hero-top-bar">
     <a class="hero-back" id="back-link" href="index.html">
@@ -177,7 +177,7 @@ function renderTrivia() {
   document.getElementById('trivia-container').innerHTML = poiData.trivia.map(t => {
     const media = t.media ? `
       <div class="trivia-media">
-        <img src="${t.media.url}" alt="${t.media.caption}" loading="lazy">
+        <img src="${t.media.url}" alt="${t.media.caption}" loading="lazy" style="display:none;" onload="this.style.display='block'" onerror="this.parentElement.style.display='none'">
         <div class="trivia-media-caption">${t.media.caption}</div>
       </div>` : '';
     return `<div class="trivia-card">

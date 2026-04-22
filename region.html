@@ -65,11 +65,11 @@
     .unpin-btn { font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; border: none; background: rgba(127,119,221,0.25); color: #b0a8f0; cursor: pointer; flex-shrink: 0; touch-action: manipulation; font-family: inherit; }
     .unpin-btn:active { opacity: 0.7; }
 
-    /* Compass row */
+    /* Compass row — fixed width so dial never shifts */
     .compass-row { display: flex; justify-content: center; }
-    .compass-inner { display: flex; align-items: center; gap: 22px; }
+    .compass-inner { display: flex; align-items: center; gap: 22px; width: 100%; max-width: 340px; }
     .compass-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-    .compass-dial { width: 132px; height: 132px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface); position: relative; display: flex; align-items: center; justify-content: center; }
+    .compass-dial { width: 132px; height: 132px; flex-shrink: 0; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface); position: relative; display: flex; align-items: center; justify-content: center; }
     .c-n,.c-s,.c-e,.c-w { position: absolute; font-size: 11px; font-weight: 500; color: var(--text3); transform: translate(-50%,-50%); }
     .c-n { top: 12px; left: 50%; color: var(--accent); }
     .c-s { bottom: 4px; left: 50%; }
@@ -80,7 +80,7 @@
     .needle-s { position: absolute; left: -5px; top: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 42px solid var(--text3); }
     .needle-dot { position: absolute; left: -6px; top: -6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
     .compass-hdg { font-size: 13px; color: var(--text3); letter-spacing: 0.08em; }
-    .compass-info { }
+    .compass-info { flex: 1; min-width: 0; }
     .compass-info-heading { font-size: 15px; font-weight: 500; color: var(--text); }
     .compass-info-sub { font-size: 12px; color: var(--text3); margin-top: 4px; }
     .compass-info-hint { font-size: 12px; color: #b0a8f0; margin-top: 4px; }
@@ -227,7 +227,7 @@
 </div>
 
 <!-- 2. Compass -->
-<div class="section">
+<div class="section" id="compass-section" style="padding-top: 1rem;">
   <p class="section-label">Heading</p>
   <div class="compass-row">
     <div class="compass-inner">
@@ -368,17 +368,19 @@ function renderNextStop() {
   const meta = abs !== null ? `${catLabel(poi)} · ${Math.round(abs)}°` : catLabel(poi);
 
   document.getElementById('next-stop-card').innerHTML = `
-    <div class="next-stop-icon">
-      <svg id="nextstop-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-           style="transform:rotate(${rel.toFixed(0)}deg);transition:transform 0.25s ease-out;">
-        <path d="M7 12V2M3 6l4-4 4 4"/>
-      </svg>
-    </div>
-    <div style="flex:1;min-width:0;">
-      <div class="next-stop-name">${poi.name}</div>
-      <div class="next-stop-meta">${meta}</div>
-    </div>
-    <div class="next-stop-dist">${dist}</div>
+    <a href="${poiUrl(poi)}" style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;text-decoration:none;">
+      <div class="next-stop-icon">
+        <svg id="nextstop-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+             style="transform:rotate(${rel.toFixed(0)}deg);transition:transform 0.25s ease-out;">
+          <path d="M7 12V2M3 6l4-4 4 4"/>
+        </svg>
+      </div>
+      <div style="flex:1;min-width:0;">
+        <div class="next-stop-name">${poi.name}</div>
+        <div class="next-stop-meta">${meta}</div>
+      </div>
+      <div class="next-stop-dist">${dist}</div>
+    </a>
     <button class="unpin-btn" onclick="togglePinned('${poi.id}',event)">Unpin</button>`;
 }
 

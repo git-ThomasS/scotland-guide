@@ -1,4 +1,4 @@
-const CACHE = 'scotland-guide-v3';
+const CACHE = 'scotland-guide-v4';
 
 const PRECACHE = [
   '/scotland-guide/',
@@ -9,6 +9,12 @@ const PRECACHE = [
   '/scotland-guide/compass.js',
   '/scotland-guide/manifest.json',
   '/scotland-guide/data/edinburgh.json',
+  '/scotland-guide/data/glasgow.json',
+  '/scotland-guide/data/oban.json',
+  '/scotland-guide/data/fort-william.json',
+  '/scotland-guide/data/inverness.json',
+  '/scotland-guide/data/skye.json',
+  '/scotland-guide/data/scenic-rail.json',
   '/scotland-guide/data/antwerp.json',
   'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
