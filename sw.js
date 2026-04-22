@@ -39,10 +39,19 @@ self.addEventListener('activate', e => {
   self.clients.claim();
 });
 
-// Fetch — serve from cache first, fall back to network
-// Map tiles are network-first (they change) but cached for offline
+// Fetch — smart caching strategy
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
+
+  // HTML navigations — always network first, never serve stale HTML
+  // This ensures ?region= and ?id= params are always respected
+  if (e.request.mode === 'navigate' || url.pathname.endsWith('.html')) {
+    e.respondWith(
+      fetch(e.request)
+        .catch(() => caches.match(e.request))
+    );
+    return;
+  }
 
   // Map tiles — network first, cache as fallback
   if (url.hostname.includes('cartocdn.com') || url.hostname.includes('basemaps')) {
@@ -58,12 +67,18 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // Everything else — cache first, network fallback
+  // External images (Unsplash etc) — network only, don't cache
+  if (!url.hostname.includes('github.io') && !url.hostname.includes('unpkg.com') &&
+      !url.hostname.includes('fonts.g') && url.pathname.match(/\.(jpg|jpeg|png|webp)$/i)) {
+    e.respondWith(fetch(e.request).catch(() => new Response('')));
+    return;
+  }
+
+  // Everything else (JS, CSS, JSON data) — cache first, network fallback
   e.respondWith(
     caches.match(e.request).then(cached => {
       if (cached) return cached;
       return fetch(e.request).then(res => {
-        // Cache successful responses
         if (res && res.status === 200) {
           const clone = res.clone();
           caches.open(CACHE).then(cache => cache.put(e.request, clone));

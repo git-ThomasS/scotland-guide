@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#1a1a2e">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Scotland">
+  <meta name="referrer" content="no-referrer">
   <title>Scotland Guide</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,7 +69,7 @@
 <body>
 
 <div class="hero">
-  <img class="hero-img" id="hero-img" src="" alt="" style="display:none;" onload="this.style.display='block'" onerror="this.style.display='none'">
+  <img class="hero-img" id="hero-img" src="" alt="" referrerpolicy="no-referrer" style="display:none;" onload="this.style.display='block'" onerror="this.style.display='none'">
   <div class="hero-overlay"></div>
   <div class="hero-top-bar">
     <a class="hero-back" id="back-link" href="index.html">
@@ -175,11 +176,12 @@ async function init() {
 
 function renderTrivia() {
   document.getElementById('trivia-container').innerHTML = poiData.trivia.map(t => {
+    const uid = t.title.replace(/\W/g,'').slice(0,20);
     const media = t.media ? `
-      <div class="trivia-media" id="media-${t.title.replace(/\W/g,'')}" style="display:none;">
-        <img src="${t.media.url}" alt="${t.media.caption}" loading="lazy"
-          onload="document.getElementById('media-${t.title.replace(/\W/g,'')}').style.display='block'"
-          onerror="document.getElementById('media-${t.title.replace(/\W/g,'')}').style.display='none'">
+      <div class="trivia-media" id="media-${uid}" style="display:none;">
+        <img src="${t.media.url}" alt="${t.media.caption}" loading="lazy" referrerpolicy="no-referrer"
+          onload="document.getElementById('media-${uid}').style.display='block'"
+          onerror="document.getElementById('media-${uid}').style.display='none'">
         <div class="trivia-media-caption">${t.media.caption}</div>
       </div>` : '';
     return `<div class="trivia-card">
