@@ -176,8 +176,10 @@ async function init() {
 function renderTrivia() {
   document.getElementById('trivia-container').innerHTML = poiData.trivia.map(t => {
     const media = t.media ? `
-      <div class="trivia-media">
-        <img src="${t.media.url}" alt="${t.media.caption}" loading="lazy" style="display:none;" onload="this.style.display='block'" onerror="this.parentElement.style.display='none'">
+      <div class="trivia-media" id="media-${t.title.replace(/\W/g,'')}" style="display:none;">
+        <img src="${t.media.url}" alt="${t.media.caption}" loading="lazy"
+          onload="document.getElementById('media-${t.title.replace(/\W/g,'')}').style.display='block'"
+          onerror="document.getElementById('media-${t.title.replace(/\W/g,'')}').style.display='none'">
         <div class="trivia-media-caption">${t.media.caption}</div>
       </div>` : '';
     return `<div class="trivia-card">

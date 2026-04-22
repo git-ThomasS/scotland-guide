@@ -2,7 +2,10 @@
   "region": "Inverness",
   "slug": "inverness",
   "description": "The Highland capital — a compact, walkable city on the River Ness, with Culloden battlefield and Loch Ness on its doorstep.",
-  "center": { "lat": 57.4778, "lng": -4.2247 },
+  "center": {
+    "lat": 57.4778,
+    "lng": -4.2247
+  },
   "pois": [
     {
       "id": "culloden-battlefield",
@@ -11,7 +14,10 @@
       "lng": -4.0975,
       "category": "attraction",
       "summary": "The site of the last pitched battle on British soil, in 1746 — where the Jacobite cause was crushed in 68 minutes.",
-      "tags": ["history", "film"],
+      "tags": [
+        "history",
+        "film"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -19,8 +25,8 @@
           "body": "The Battle of Culloden on 16 April 1746 lasted less than an hour. Around 1,200 Highlanders were slaughtered by government forces under the Duke of Cumberland, who earned the nickname 'Butcher' for ordering that wounded Jacobite soldiers be executed on the field. The battle ended the Jacobite cause, destroyed the clan system, and led directly to the Highland Clearances. The sombre moor where it was fought has barely changed in nearly 300 years.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Culloden_Memorial_Cairn.jpg/1280px-Culloden_Memorial_Cairn.jpg",
-            "caption": "The memorial cairn at Culloden Battlefield"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Culloden_battlefield.jpg",
+            "caption": "The open moorland of Culloden Battlefield"
           }
         },
         {
@@ -29,8 +35,8 @@
           "body": "James Reid was one of several pipers who played the Highland clans into battle at Culloden. After the Jacobite defeat he was captured, taken to York, and put on trial for treason. He argued he had carried neither gun nor sword — only the pipes. The judges were unmoved, ruling that the bagpipes were 'an instrument of war' and sentencing Reid to be hanged, drawn and quartered.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Culloden_battlefield.jpg/1280px-Culloden_battlefield.jpg",
-            "caption": "The open moorland of Culloden Battlefield"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Culloden_Memorial_Cairn.jpg",
+            "caption": "The memorial cairn at Culloden Battlefield"
           }
         },
         {
@@ -47,7 +53,10 @@
       "lng": -4.4244,
       "category": "nature",
       "summary": "Britain's largest body of fresh water by volume — home to a monster, or at least an excellent rumour of one.",
-      "tags": ["nature", "trivia"],
+      "tags": [
+        "nature",
+        "trivia"
+      ],
       "trivia": [
         {
           "type": "trivia",
@@ -55,8 +64,8 @@
           "body": "On 22 July 1933, a local newspaper reported that a 'grey monster, some six feet long' had been seen crossing a road near Loch Ness. No such creature had been reported since St Columba's biographer mentioned an 'aquatic beast' in the 7th century. After the 1933 sighting, the monster was being spotted constantly. As Ian Crofton notes drily, this was 'all excellent news for local hoteliers, hirers of boats, drivers of charabancs, and so on.'",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Loch_Ness_lookout.jpg/1280px-Loch_Ness_lookout.jpg",
-            "caption": "Loch Ness from the southern shore"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Loch_Ness_looking_south.jpg",
+            "caption": "Loch Ness looking south"
           }
         },
         {
@@ -69,11 +78,14 @@
     {
       "id": "inverness-castle",
       "name": "Inverness Castle",
-      "lat": 57.4800,
+      "lat": 57.48,
       "lng": -4.2249,
       "category": "attraction",
       "summary": "A Victorian sandstone castle on a bluff above the River Ness — and the new Highland Centre due to open to visitors after renovation.",
-      "tags": ["history", "film"],
+      "tags": [
+        "history",
+        "film"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -81,7 +93,7 @@
           "body": "Inverness Castle stands on the site of an earlier fortress associated with Macbeth, who was the real King of Scotland from 1040 to 1057. Shakespeare's play compresses and dramatically alters the historical record — the real Macbeth was by most accounts a capable ruler who kept the peace for 17 years. The current building dates from 1836 and served as the regional courthouse and prison.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Inverness_Castle_-_geograph.org.uk_-_786459.jpg/1280px-Inverness_Castle_-_geograph.org.uk_-_786459.jpg",
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inverness_Castle.jpg",
             "caption": "Inverness Castle above the River Ness"
           }
         },
@@ -99,7 +111,10 @@
       "lng": -4.0807,
       "category": "history",
       "summary": "A remarkable Bronze Age burial complex of passage tombs and standing stones, just minutes from Culloden — and the inspiration for Outlander's standing stones.",
-      "tags": ["history", "film"],
+      "tags": [
+        "history",
+        "film"
+      ],
       "trivia": [
         {
           "type": "film",
@@ -107,7 +122,7 @@
           "body": "The standing stones at Clava Cairns directly inspired the fictional Craig na Dun stones in Outlander — the site through which Claire Randall travels back in time to 18th-century Scotland. The show's production designers visited the cairns extensively during pre-production. The real stones are around 4,000 years old, constructed in the Bronze Age as part of a ritual landscape that also included Culloden.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Clava_Cairns_-_geograph.org.uk_-_1392046.jpg/1280px-Clava_Cairns_-_geograph.org.uk_-_1392046.jpg",
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Clava_Cairns.jpg",
             "caption": "Clava Cairns Bronze Age burial site"
           }
         },

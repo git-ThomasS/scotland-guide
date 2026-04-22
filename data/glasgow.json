@@ -2,7 +2,10 @@
   "region": "Glasgow",
   "slug": "glasgow",
   "description": "Scotland's largest city — a gritty, creative powerhouse of Victorian architecture, world-class museums, and remarkable street art.",
-  "center": { "lat": 55.8642, "lng": -4.2518 },
+  "center": {
+    "lat": 55.8642,
+    "lng": -4.2518
+  },
   "pois": [
     {
       "id": "george-square",
@@ -11,7 +14,10 @@
       "lng": -4.2506,
       "category": "attraction",
       "summary": "Glasgow's grand civic heart, ringed by Victorian architecture and overlooked by the City Chambers.",
-      "tags": ["history", "film"],
+      "tags": [
+        "history",
+        "film"
+      ],
       "trivia": [
         {
           "type": "film",
@@ -19,7 +25,7 @@
           "body": "George Square doubled as downtown Philadelphia in Brad Pitt's zombie blockbuster. The production closed the city centre for several days and transformed the square with American street furniture, yellow cabs, and debris. Glasgow is one of the most used stand-in cities in the world — its Victorian streetscape reads as almost any Anglo-American city from above.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/George_Square_Glasgow.jpg/1280px-George_Square_Glasgow.jpg",
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/George_Square%2C_Glasgow.jpg",
             "caption": "George Square, Glasgow"
           }
         },
@@ -27,6 +33,11 @@
           "type": "history",
           "title": "The Battle of George Square",
           "body": "On 31 January 1919, a huge crowd of striking workers gathered here demanding a 40-hour working week. The government, fearing a Bolshevik-style revolution, deployed 10,000 English troops and tanks to Glasgow — notably not Scottish troops, whom they didn't trust to fire on the crowd. The event became known as Bloody Friday and is a defining moment in Scottish labour history."
+        },
+        {
+          "type": "film",
+          "title": "Fast & Furious 6, Cloud Atlas & more",
+          "body": "Glasgow is one of Europe's most used film stand-ins. Its grid of Victorian streets has doubled for Philadelphia (World War Z), San Francisco (Cloud Atlas), and various American cities across dozens of productions. Fast & Furious 6 (2013) filmed chase sequences on the Kingston Bridge and surrounding streets. The 2019 war epic 1917 used the former Govan docks as a WWI canal crossing. Directors love Glasgow because it offers century-old architecture without the tourist crowds of London."
         }
       ]
     },
@@ -37,7 +48,10 @@
       "lng": -4.2885,
       "category": "attraction",
       "summary": "One of Scotland's most visited attractions — a magnificent red sandstone palace housing Salvador Dalí's Christ of Saint John of the Cross.",
-      "tags": ["art", "history"],
+      "tags": [
+        "art",
+        "history"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -45,7 +59,7 @@
           "body": "Local legend holds that the architect was so horrified when he realised he'd built the museum back-to-front — with the grand entrance facing away from the main road — that he threw himself from one of its towers. This is entirely false: the building was deliberately designed so the 'rear' faced the grand boulevard, and the architect lived happily for many years after it opened in 1901.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Kelvingrove_Art_Gallery_and_Museum.jpg/1280px-Kelvingrove_Art_Gallery_and_Museum.jpg",
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kelvingrove_Art_Gallery_and_Museum.jpg",
             "caption": "Kelvingrove Art Gallery and Museum"
           }
         },
@@ -63,7 +77,10 @@
       "lng": -4.2586,
       "category": "attraction",
       "summary": "Charles Rennie Mackintosh's masterpiece — a building so revolutionary it changed the course of European design.",
-      "tags": ["art", "history"],
+      "tags": [
+        "art",
+        "history"
+      ],
       "trivia": [
         {
           "type": "art",
@@ -71,8 +88,8 @@
           "body": "Charles Rennie Mackintosh designed this building in 1896 at just 28 years old, and it was constructed in two phases over 13 years. The design blends Scottish baronial, Art Nouveau, and a strange proto-modernism that was decades ahead of its time. Mackintosh died in 1928, largely forgotten, having sold his furniture for almost nothing. He is now recognised as one of the most influential architects of the 20th century.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Glasgow_School_of_Art.jpg/1280px-Glasgow_School_of_Art.jpg",
-            "caption": "Glasgow School of Art, designed by Charles Rennie Mackintosh"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Glasgow_School_of_Art.jpg",
+            "caption": "Glasgow School of Art"
           }
         },
         {
@@ -89,7 +106,9 @@
       "lng": -4.2373,
       "category": "trivia",
       "summary": "A Victorian garden cemetery on a dramatic hill overlooking the city, with over 50,000 burials and extraordinary monuments.",
-      "tags": ["history"],
+      "tags": [
+        "history"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -97,7 +116,7 @@
           "body": "In 1954, hundreds of children armed with sharpened sticks and knives descended on the Southern Necropolis (a separate cemetery in the Gorbals) after rumours spread of a '7-foot tall vampire with iron teeth' who had abducted and eaten two local boys. No children were missing, and police found no evidence of any vampire. The panic was blamed on American horror comics — and led directly to the Children and Young Persons (Harmful Publications) Act 1955.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Glasgow_Necropolis_-_panoramio_%281%29.jpg/1280px-Glasgow_Necropolis_-_panoramio_%281%29.jpg",
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Glasgow_Necropolis.jpg",
             "caption": "Glasgow Necropolis"
           }
         },
@@ -115,7 +134,10 @@
       "lng": -4.3058,
       "category": "attraction",
       "summary": "The river that built Glasgow's industrial empire — and Zaha Hadid's striking Riverside Museum on its banks.",
-      "tags": ["history", "art"],
+      "tags": [
+        "history",
+        "art"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -123,14 +145,48 @@
           "body": "At the height of the British Empire, Glasgow's shipyards on the Clyde produced more ships than any other place on earth — at their peak in the early 20th century, one in five of the world's ships was built here. When Grand Duke Alexis of Russia visited the John Elder yard in Govan, he famously described Glasgow as 'the centre of the intelligence of England' — a geographical confusion that presumably did not delight his Scottish hosts.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Riverside_Museum%2C_Glasgow.jpg/1280px-Riverside_Museum%2C_Glasgow.jpg",
-            "caption": "Riverside Museum designed by Zaha Hadid"
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Riverside_Museum%2C_Glasgow.jpg",
+            "caption": "Riverside Museum, Glasgow"
           }
         },
         {
           "type": "history",
           "title": "The Ghostly Armies of the Clyde",
           "body": "In the summer of 1686, many witnesses in the Clyde Valley reported extraordinary visions: showers of bonnets, hats, guns, and swords falling from the sky, covering the trees and ground; companies of men in arms marching along the riverside; armies meeting armies and dissolving into the ground. Covenanting memoirist Patrick Walker recorded the accounts in detail, noting that even hardened sceptics present were visibly shaken."
+        }
+      ]
+    },
+    {
+      "id": "doune-castle",
+      "name": "Doune Castle",
+      "lat": 56.1852,
+      "lng": -4.0502,
+      "category": "attraction",
+      "summary": "A 14th-century castle near Stirling that has played Camelot, Castle Leoch, and Winterfell — the most filmed castle in Scotland.",
+      "tags": [
+        "history",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Monty Python and the Holy Grail (1975)",
+          "body": "Doune Castle served as multiple locations in Monty Python and the Holy Grail — most famously as Castle Camelot ('It is a silly place'), Castle Anthrax where Galahad is tempted, and Swamp Castle where Herbert is locked in a tower. The Pythons chose it because it was cheap, available, and authentically medieval. Visitors today can borrow an audioguide narrated by cast members including Terry Jones, who reprises his role guiding you through each room.",
+          "media": {
+            "type": "image",
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Doune_Castle.jpg",
+            "caption": "Doune Castle"
+          }
+        },
+        {
+          "type": "film",
+          "title": "Outlander & Game of Thrones",
+          "body": "Doune Castle has an extraordinary on-screen CV. It plays Castle Leoch — the seat of Clan MacKenzie — throughout Outlander. It was also used as Winterfell in the original Game of Thrones pilot episode, before the production moved to Northern Ireland. The same castle therefore hosted both the Jacobite Highlands and the North of Westeros. It also appeared in Ivanhoe (1952) and the BBC's Merlin."
+        },
+        {
+          "type": "history",
+          "title": "Built by the Regent Albany",
+          "body": "Doune Castle was built around 1400 by Robert Stewart, Duke of Albany, who effectively ruled Scotland as regent while King Robert III was incapacitated. Albany was one of the most powerful men in Scottish history — and one of the most ruthless. He almost certainly arranged the imprisonment of the young Prince James in England, ensuring his own dominance. When James eventually returned as James I, one of his first acts was to execute Albany's son."
         }
       ]
     }

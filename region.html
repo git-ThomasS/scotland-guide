@@ -162,7 +162,18 @@
     .visited-name { font-size: 12px; color: var(--text2); flex: 1; text-decoration: line-through; }
     .unvisit-btn { font-size: 10px; color: var(--text3); letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; background: none; border: none; font-family: inherit; touch-action: manipulation; padding: 4px; min-height: 44px; }
 
-    /* Arrival banner */
+    /* Map bottom sheet */
+    .map-sheet { display: none; background: var(--surface); border-top: 1px solid var(--border2); border-radius: 0 0 var(--radius) var(--radius); padding: 10px 12px; }
+    .map-sheet.visible { display: block; }
+    .map-sheet-pill { font-size: 8px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; display: inline-block; margin-bottom: 4px; }
+    .map-sheet-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .map-sheet-summary { font-size: 11px; color: var(--text2); line-height: 1.5; margin-bottom: 8px; }
+    .map-sheet-actions { display: flex; gap: 6px; }
+    .map-sheet-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 7px; border-radius: 7px; font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border: none; cursor: pointer; font-family: inherit; touch-action: manipulation; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+    .map-sheet-btn svg { width: 10px; height: 10px; flex-shrink: 0; }
+    .map-sheet-btn-explore { background: var(--accent); color: var(--bg); }
+    .map-sheet-btn-pin { background: rgba(127,119,221,0.15); color: #b0a8f0; border: 1px solid rgba(127,119,221,0.3); }
+    .map-sheet-btn-pin.pinned { background: #7f77dd; color: #fff; border-color: #7f77dd; }
     .arrival-banner { background: var(--surface); border: 1px solid var(--border2); border-left: 3px solid var(--success); border-radius: var(--radius); padding: 0.9rem 1rem; margin-bottom: 0.85rem; display: flex; align-items: center; gap: 10px; }
     .arrival-banner-icon { width: 32px; height: 32px; border-radius: 50%; background: rgba(107,207,127,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .arrival-banner-icon svg { width: 16px; height: 16px; color: var(--success); }
@@ -211,6 +222,21 @@
     <button class="map-btn" onclick="centerOnRegion()" style="left:54px;">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 2l4 1-1 4M14 2l-4 1 1 4M2 14l4-1-1-4M14 14l-4-1 1-4"/></svg>
     </button>
+  </div>
+  <div class="map-sheet" id="map-sheet">
+    <span class="map-sheet-pill" id="map-sheet-pill"></span>
+    <div class="map-sheet-name" id="map-sheet-name"></div>
+    <div class="map-sheet-summary" id="map-sheet-summary"></div>
+    <div class="map-sheet-actions">
+      <a class="map-sheet-btn map-sheet-btn-explore" id="map-sheet-explore" href="#">
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+        Explore
+      </a>
+      <button class="map-sheet-btn map-sheet-btn-pin" id="map-sheet-pin" onclick="mapSheetPin()">
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 1L8 5l2 2-5 4-1-3-3-1 4-5 2 2z"/></svg>
+        <span id="map-sheet-pin-label">Pin</span>
+      </button>
+    </div>
   </div>
 </div>
 
@@ -500,6 +526,39 @@ function checkArrivals() {
     </div>`).join('');
 }
 
+// ── Map sheet ─────────────────────────────────────────────
+let selectedMapPoi = null;
+
+function showMapSheet(poi) {
+  selectedMapPoi = poi;
+  const cat = poi.category || 'trivia';
+  const pinned = getPinned() === poi.id;
+  const pill = document.getElementById('map-sheet-pill');
+  pill.textContent = CAT_LABELS[cat] || cat;
+  pill.style.background = CAT_COLORS[cat] || CAT_COLORS.trivia;
+  pill.style.color = cat === 'trivia' ? '#f0ede8' : '#0f0f1a';
+  document.getElementById('map-sheet-name').textContent = poi.name;
+  document.getElementById('map-sheet-summary').textContent = poi.summary;
+  document.getElementById('map-sheet-explore').href = poiUrl(poi);
+  const pinBtn = document.getElementById('map-sheet-pin');
+  const pinLabel = document.getElementById('map-sheet-pin-label');
+  pinBtn.className = 'map-sheet-btn map-sheet-btn-pin' + (pinned ? ' pinned' : '');
+  pinLabel.textContent = pinned ? 'Pinned' : 'Pin';
+  document.getElementById('map-sheet').classList.add('visible');
+}
+
+function mapSheetPin() {
+  if (!selectedMapPoi) return;
+  const fakeE = { preventDefault:()=>{}, stopPropagation:()=>{} };
+  togglePinned(selectedMapPoi.id, fakeE);
+  showMapSheet(selectedMapPoi);
+}
+
+function hideMapSheet() {
+  document.getElementById('map-sheet').classList.remove('visible');
+  selectedMapPoi = null;
+}
+
 // ── Map ───────────────────────────────────────────────────
 const poiMarkers = {};
 
@@ -537,11 +596,14 @@ function initMap() {
     { maxZoom: 19 }
   ).addTo(map);
   L.control.zoom({ position: 'bottomright' }).addTo(map);
+  // Dismiss sheet on map background click
+  map.on('click', hideMapSheet);
   const pinned = getPinned();
   regionData.pois.forEach(poi => {
     const marker = L.marker([poi.lat, poi.lng], { icon: poiMarkerIcon(poi, poi.id === pinned) })
       .addTo(map)
-      .bindTooltip(poi.name, { offset:[8,0] });
+      .bindTooltip(poi.name, { offset:[8,0] })
+      .on('click', () => showMapSheet(poi));
     poiMarkers[poi.id] = marker;
   });
 }

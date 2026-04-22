@@ -2,7 +2,10 @@
   "region": "Isle of Skye",
   "slug": "skye",
   "description": "Scotland's most dramatic island — jagged Cuillin peaks, fairy pools, ancient castles, and a landscape that has inspired painters, poets, and filmmakers for centuries.",
-  "center": { "lat": 57.3232, "lng": -6.2344 },
+  "center": {
+    "lat": 57.3232,
+    "lng": -6.2344
+  },
   "pois": [
     {
       "id": "old-man-of-storr",
@@ -11,7 +14,10 @@
       "lng": -6.1869,
       "category": "nature",
       "summary": "A 50m pinnacle of crumbling basalt that seems to defy gravity — the most photographed rock formation in Scotland.",
-      "tags": ["nature", "film"],
+      "tags": [
+        "nature",
+        "film"
+      ],
       "trivia": [
         {
           "type": "film",
@@ -19,7 +25,7 @@
           "body": "Ridley Scott opened his Alien prequel Prometheus with sweeping aerial shots of the Old Man of Storr and the Trotternish Ridge, representing a primeval Earth landscape. The same area also appeared in Macbeth (2015) starring Michael Fassbender, and several scenes of The BFG (2016) were set against Skye's extraordinary skyline. The island's otherworldly rock formations make it one of the most frequently used locations in British cinema.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Old_Man_of_Storr.jpg/800px-Old_Man_of_Storr.jpg",
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Old_Man_of_Storr.jpg",
             "caption": "The Old Man of Storr on the Trotternish Peninsula"
           }
         },
@@ -37,7 +43,10 @@
       "lng": -6.2749,
       "category": "nature",
       "summary": "A surreal landscape of land-slipped cliffs, pinnacles, and hidden plateaux on Skye's Trotternish Peninsula.",
-      "tags": ["nature", "film"],
+      "tags": [
+        "nature",
+        "film"
+      ],
       "trivia": [
         {
           "type": "film",
@@ -45,7 +54,7 @@
           "body": "The Quiraing's strange topography of leaning pinnacles, hidden valleys, and tilting grassy platforms has appeared in numerous productions including Stardust (2007), Transformers: The Last Knight (2017), and most recently season 3 of BBC's Shetland. The road that crosses the ridge between Staffin and Uig is one of the most dramatic drives in the UK — and frequently closed in winter when the road itself continues to slip.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/The_Quiraing%2C_Isle_of_Skye.jpg/1280px-The_Quiraing%2C_Isle_of_Skye.jpg",
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Quiraing.jpg",
             "caption": "The Quiraing — Skye's most dramatic landscape"
           }
         },
@@ -63,7 +72,10 @@
       "lng": -6.5948,
       "category": "attraction",
       "summary": "The ancient seat of Clan MacLeod — one of the oldest continuously inhabited castles in Scotland, home to the legendary Fairy Flag.",
-      "tags": ["history", "royalty"],
+      "tags": [
+        "history",
+        "royalty"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -71,7 +83,7 @@
           "body": "Dunvegan Castle's most prized possession is the Fairy Flag — a fragile, yellowed silk banner that scientific analysis dates to somewhere between the 4th and 7th centuries, possibly from the Middle East. Clan MacLeod legend holds that it was given to a MacLeod chief by his fairy wife, and that waving it in battle will save the clan from defeat — but only three times. It has supposedly been waved twice already. During WWII, many MacLeod men carried photographs of it into battle.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Dunvegan_Castle_-_geograph.org.uk_-_1751984.jpg/1280px-Dunvegan_Castle_-_geograph.org.uk_-_1751984.jpg",
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunvegan_Castle.jpg",
             "caption": "Dunvegan Castle, seat of Clan MacLeod"
           }
         },
@@ -94,7 +106,9 @@
       "lng": -6.3111,
       "category": "nature",
       "summary": "A series of crystal-clear, ice-cold pools and waterfalls at the foot of the Black Cuillin — one of the most visited spots in all of Scotland.",
-      "tags": ["nature"],
+      "tags": [
+        "nature"
+      ],
       "trivia": [
         {
           "type": "nature",
@@ -102,7 +116,7 @@
           "body": "The pools are fed by streams from the Black Cuillin ridge — a jagged arc of gabbro and basalt that forms the most challenging mountain terrain in the British Isles. The rock is so rough it grips boot rubber perfectly, but the ridges are genuinely technical and require ropes. The Cuillin has been described as the only true mountaineering in Britain — several peaks remained unclimbed until the early 20th century.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Fairy_Pools%2C_Isle_of_Skye.jpg/1280px-Fairy_Pools%2C_Isle_of_Skye.jpg",
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fairy_Pools%2C_Isle_of_Skye.jpg",
             "caption": "The Fairy Pools below the Black Cuillin"
           }
         },
@@ -120,7 +134,10 @@
       "lng": -6.1937,
       "category": "attraction",
       "summary": "Skye's largest town and capital — a pretty harbour ringed by colourful painted houses, named 'King's Harbour' after a royal visit in 1540.",
-      "tags": ["history", "nature"],
+      "tags": [
+        "history",
+        "nature"
+      ],
       "trivia": [
         {
           "type": "history",
@@ -128,7 +145,7 @@
           "body": "Portree Harbour is traditionally the spot where Bonnie Prince Charlie said farewell to Flora MacDonald in 1746 after she had smuggled him across from the mainland disguised as her maid. He reportedly told her: 'For all that has happened, I hope, Madam, we shall meet in St James's yet'. They never met again. Flora was arrested shortly afterwards and held in the Tower of London for a year before being released without trial.",
           "media": {
             "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Portree_harbour%2C_Isle_of_Skye.jpg/1280px-Portree_harbour%2C_Isle_of_Skye.jpg",
+            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Portree%2C_Isle_of_Skye.jpg",
             "caption": "Portree harbour with its colourful painted houses"
           }
         },
