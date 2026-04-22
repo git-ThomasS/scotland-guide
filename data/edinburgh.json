@@ -1,99 +1,19 @@
 {
-  "region": "Edinburgh",
-  "slug": "edinburgh",
-  "description": "Scotland's dramatic capital — volcanic rock, medieval wynds, and centuries of stories.",
+  "region": "Glasgow",
+  "slug": "glasgow",
+  "description": "Scotland's largest city — a gritty, creative powerhouse of Victorian architecture, world-class museums, and remarkable street art.",
   "center": {
-    "lat": 55.9533,
-    "lng": -3.1883
+    "lat": 55.8642,
+    "lng": -4.2518
   },
   "pois": [
     {
-      "id": "edinburgh-castle",
-      "name": "Edinburgh Castle",
-      "lat": 55.9486,
-      "lng": -3.1999,
+      "id": "george-square",
+      "name": "George Square",
+      "lat": 55.8611,
+      "lng": -4.2506,
       "category": "attraction",
-      "summary": "A fortress on volcanic rock, occupied for over 3,000 years.",
-      "tags": [
-        "history",
-        "film",
-        "royalty"
-      ],
-      "trivia": [
-        {
-          "type": "film",
-          "title": "Outlaw King (2018)",
-          "body": "Netflix's Robert the Bruce epic used the castle esplanade for key scenes. The real Bruce besieged it in 1314, famously scaling the north face at night.",
-          "media": {
-            "type": "image",
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edinburgh_Castle_from_the_Grassmarket.jpg",
-            "caption": "Edinburgh Castle from the Grassmarket"
-          }
-        },
-        {
-          "type": "history",
-          "title": "The One O'Clock Gun",
-          "body": "Fired every day at 13:00 (except Sunday) since 1861. Originally a time signal for ships in the Firth of Forth to set their chronometers. Still going."
-        },
-        {
-          "type": "book",
-          "title": "The Da Vinci Code",
-          "body": "Dan Brown's sequel 'The Lost Symbol' weaves Rosslyn Chapel and Edinburgh Castle into a Masonic conspiracy. The castle's Honours of Scotland — Scotland's crown jewels — are very real and on display inside."
-        },
-        {
-          "type": "history",
-          "title": "The Honours of Scotland",
-          "body": "The Scottish Crown Jewels — the Honours of Scotland — are the oldest surviving royal regalia in the British Isles, dating to the 15th and 16th centuries. During the Cromwellian occupation, they were hidden in Kinneff Church, smuggled out in a laundry basket by the wife of the local minister. After the Act of Union in 1707, they were locked in a chest in the castle and forgotten for over a century, until Sir Walter Scott petitioned the Prince Regent to have the chest opened in 1818 — and found them untouched."
-        }
-      ]
-    },
-    {
-      "id": "arthur-seat",
-      "name": "Arthur's Seat",
-      "lat": 55.9443,
-      "lng": -3.1615,
-      "category": "nature",
-      "summary": "An ancient volcano rising 251m above the city. Arguably the finest urban hike in Europe.",
-      "tags": [
-        "nature",
-        "history",
-        "film"
-      ],
-      "trivia": [
-        {
-          "type": "film",
-          "title": "Trainspotting (1996)",
-          "body": "Danny Boyle's opening sequence features Renton and Spud sprinting through Edinburgh's streets — and the silhouette of Arthur's Seat looms throughout. The summit scene where they contemplate their lives was filmed right at the top.",
-          "media": {
-            "type": "image",
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Arthur%27s_Seat_from_Salisbury_Crags.jpg",
-            "caption": "Arthur's Seat from Salisbury Crags"
-          }
-        },
-        {
-          "type": "history",
-          "title": "The miniature coffins",
-          "body": "In 1836, children found 17 tiny carved coffins tucked in a cliff on Arthur's Seat, each holding a wooden figure in linen. Their origin remains a mystery — possibly effigies for sailors lost at sea, or connected to the Burke and Hare murders. Eight survive in the National Museum."
-        },
-        {
-          "type": "book",
-          "title": "The Private Memoirs and Confessions of a Justified Sinner (1824)",
-          "body": "James Hogg's gothic masterpiece is set in the shadow of Arthur's Seat. A pivotal duel takes place on its slopes. It's one of the earliest psychological horror novels ever written."
-        },
-        {
-          "type": "history",
-          "title": "The pregnant ale-wives' race",
-          "body": "In 1661, Edinburgh's Mercurius Caledonius newspaper reported that a dozen pregnant ale-wives had raced up Arthur's Seat 'for a groaning cheese of one hundred pound weight', with second prize being 'a budgell of Dunkeld aquavitae'. The following day the paper announced sixteen fish-wives would trot from Musselburgh to the Canon Cross for twelve pairs of lamb's offal. 17th-century Edinburgh entertainment was nothing if not inventive."
-        }
-      ]
-    },
-    {
-      "id": "royal-mile",
-      "name": "The Royal Mile",
-      "lat": 55.9503,
-      "lng": -3.1883,
-      "category": "attraction",
-      "summary": "The historic spine of Edinburgh's Old Town, running from the Castle down to Holyrood Palace.",
+      "summary": "Glasgow's grand civic heart, ringed by Victorian architecture and overlooked by the City Chambers.",
       "tags": [
         "history",
         "film"
@@ -101,170 +21,172 @@
       "trivia": [
         {
           "type": "film",
-          "title": "Avengers: Infinity War (2018)",
-          "body": "Several scenes set in Edinburgh were filmed on and around the Royal Mile. The chase sequence where Scarlet Witch and Vision are attacked by the Black Order used the narrow closes branching off the main street — look out for Cockburn Street in particular.",
+          "title": "World War Z (2013)",
+          "body": "George Square doubled as downtown Philadelphia in Brad Pitt's zombie blockbuster. The production closed the city centre for several days and transformed the square with American street furniture, yellow cabs, and debris. Glasgow is one of the most used stand-in cities in the world — its Victorian streetscape reads as almost any Anglo-American city from above.",
           "media": {
             "type": "image",
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal_Mile_from_Edinburgh_Castle.jpg",
-            "caption": "The Royal Mile from Edinburgh Castle"
+            "url": "https://source.unsplash.com/1280x720/?george+square+glasgow",
+            "caption": "George Square, Glasgow"
           }
         },
         {
           "type": "history",
-          "title": "Burke and Hare",
-          "body": "In 1827–28, William Burke and William Hare murdered 16 people in the closes just off the Royal Mile, selling the bodies to anatomist Robert Knox at the nearby medical school. The case led directly to the Anatomy Act of 1832, which reformed how medical schools obtained cadavers."
+          "title": "The Battle of George Square",
+          "body": "On 31 January 1919, a huge crowd of striking workers gathered here demanding a 40-hour working week. The government, fearing a Bolshevik-style revolution, deployed 10,000 English troops and tanks to Glasgow — notably not Scottish troops, whom they didn't trust to fire on the crowd. The event became known as Bloody Friday and is a defining moment in Scottish labour history."
         },
         {
-          "type": "book",
-          "title": "Harry Potter",
-          "body": "J.K. Rowling wrote much of the early Harry Potter books in Edinburgh cafés. The Elephant House on George IV Bridge is the most famous. Greyfriars Kirkyard — just off the Royal Mile — contains gravestones bearing names like Tom Riddle and McGonagall."
-        },
-        {
-          "type": "history",
-          "title": "Waverley — the only station named after a novel",
-          "body": "Edinburgh's main railway station is the only terminus in the world named after a work of fiction — Walter Scott's 1814 novel Waverley. Scott himself largely invented the romantic tartan-clad image of the Highlands: in 1822, he stage-managed King George IV's visit to Edinburgh, persuading the king to wear a kilt in public for the first time. The resulting tartan-mania swept fashionable Britain and permanently shaped how Scotland is seen."
+          "type": "film",
+          "title": "Fast & Furious 6, Cloud Atlas & more",
+          "body": "Glasgow is one of Europe's most used film stand-ins. Its grid of Victorian streets has doubled for Philadelphia (World War Z), San Francisco (Cloud Atlas), and various American cities across dozens of productions. Fast & Furious 6 (2013) filmed chase sequences on the Kingston Bridge and surrounding streets. The 2019 war epic 1917 used the former Govan docks as a WWI canal crossing. Directors love Glasgow because it offers century-old architecture without the tourist crowds of London."
         }
       ]
     },
     {
-      "id": "holyrood-palace",
-      "name": "Palace of Holyroodhouse",
-      "lat": 55.9524,
-      "lng": -3.1723,
+      "id": "kelvingrove",
+      "name": "Kelvingrove Art Gallery",
+      "lat": 55.8683,
+      "lng": -4.2885,
       "category": "attraction",
-      "summary": "The official Scottish residence of the British monarch, at the foot of the Royal Mile.",
+      "summary": "One of Scotland's most visited attractions — a magnificent red sandstone palace housing Salvador Dalí's Christ of Saint John of the Cross.",
       "tags": [
-        "history",
-        "royalty"
-      ],
-      "trivia": [
-        {
-          "type": "history",
-          "title": "Mary Queen of Scots",
-          "body": "Mary Queen of Scots lived here from 1561 to 1567. Her Italian secretary David Rizzio was stabbed 56 times in her private supper room by conspirators including her husband Lord Darnley — a bloodstain on the floor is still pointed out to visitors today.",
-          "media": {
-            "type": "image",
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Palace_of_Holyroodhouse_02.jpg",
-            "caption": "Palace of Holyroodhouse"
-          }
-        },
-        {
-          "type": "history",
-          "title": "Bonnie Prince Charlie",
-          "body": "In 1745, Charles Edward Stuart held court here for six weeks during his Jacobite rising, throwing lavish balls while his army occupied the city. The rising ended in disaster at Culloden the following year."
-        },
-        {
-          "type": "history",
-          "title": "The French poet found under the bed",
-          "body": "In 1562, the French court poet Pierre de Boscosel de Chastelard was discovered hiding under Mary Queen of Scots' bed at Holyroodhouse. He had apparently done the same thing once before and been let off with a warning. This time Mary demanded her half-brother the Earl of Moray kill him on the spot. Moray refused, and Chastelard was taken to St Andrews for trial. His defence — that he had been hiding in her privy, not under her bed — cut no ice with the court, and he was beheaded."
-        }
-      ]
-    },
-    {
-      "id": "greyfriars-kirkyard",
-      "name": "Greyfriars Kirkyard",
-      "lat": 55.9469,
-      "lng": -3.1916,
-      "category": "trivia",
-      "summary": "One of Edinburgh's most atmospheric graveyards — and one of its most haunted.",
-      "tags": [
-        "history",
-        "book"
-      ],
-      "trivia": [
-        {
-          "type": "history",
-          "title": "Greyfriars Bobby",
-          "body": "The Skye Terrier who allegedly guarded his owner's grave for 14 years after his death in 1858. A statue outside the kirkyard gates has been rubbed so often for good luck that its nose is worn smooth.",
-          "media": {
-            "type": "image",
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Greyfriars_Bobby.jpg",
-            "caption": "The Greyfriars Bobby statue"
-          }
-        },
-        {
-          "type": "book",
-          "title": "Harry Potter connections",
-          "body": "The kirkyard contains the grave of Thomas Riddell — close to Tom Riddle, Voldemort's real name. There's also a grave for William McGonagall. Whether Rowling drew inspiration here is unconfirmed, but fans flock here regardless."
-        },
-        {
-          "type": "history",
-          "title": "The Mackenzie Poltergeist",
-          "body": "The Black Mausoleum holds George Mackenzie, a judge who persecuted Covenanters in the 1680s. Since a homeless man broke into his tomb in 1999, over 500 people have reported injuries or fainting on ghost tours — one of the most documented alleged poltergeist cases in history."
-        },
-        {
-          "type": "history",
-          "title": "The Covenanters' Prison",
-          "body": "In 1679, over 1,200 Covenanters captured at the Battle of Bothwell Brig were imprisoned in the open air in Greyfriars Kirkyard for five months. Many died of cold and starvation. Their jailer was Sir George Mackenzie — the same 'Bluidy Mackenzie' whose tomb later became associated with poltergeist activity. The walled enclosure in the kirkyard where they were held can still be visited today."
-        }
-      ]
-    },
-    {
-      "id": "victoria-street",
-      "name": "Victoria Street",
-      "lat": 55.9482,
-      "lng": -3.1929,
-      "category": "trivia",
-      "summary": "A curved, cobbled street of colourful shopfronts — said to have inspired Diagon Alley.",
-      "tags": [
-        "book",
+        "art",
         "history"
       ],
       "trivia": [
         {
-          "type": "book",
-          "title": "Diagon Alley inspiration",
-          "body": "Victoria Street is widely cited as one of the inspirations for Diagon Alley in Harry Potter. Its curving form, tiered layout, and eclectic mix of small specialist shops bear a striking resemblance to the fictional wizarding street.",
+          "type": "history",
+          "title": "Built the wrong way round",
+          "body": "Local legend holds that the architect was so horrified when he realised he'd built the museum back-to-front — with the grand entrance facing away from the main road — that he threw himself from one of its towers. This is entirely false: the building was deliberately designed so the 'rear' faced the grand boulevard, and the architect lived happily for many years after it opened in 1901.",
           "media": {
             "type": "image",
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria_Street%2C_Edinburgh.jpg",
-            "caption": "Victoria Street, Edinburgh"
+            "url": "https://source.unsplash.com/1280x720/?kelvingrove+museum+glasgow",
+            "caption": "Kelvingrove Art Gallery"
           }
         },
         {
-          "type": "history",
-          "title": "Built over a buried street",
-          "body": "Victoria Street was built in the 1840s over the older West Bow. The lower section still exists below as the Grassmarket — historically the site of public executions, with over 100 witches burned here during the Scottish witch trials."
-        },
-        {
-          "type": "history",
-          "title": "The boy who nearly burned Edinburgh",
-          "body": "In the 16th century, a boy set fire to his father's haystack in a close opposite the Tron Kirk on the Royal Mile — a building that still stands — and nearly burned down the entire Old Town. The chronicler records that he was caught 'most marvellously after escaping out of the town' and was burned at the Cross the following day, 'prompted by the instigation of Satan'. Victoria Street was built over the medieval closes where such events were commonplace."
+          "type": "art",
+          "title": "Dalí's Christ",
+          "body": "The gallery's most famous work, Salvador Dalí's Christ of Saint John of the Cross (1951), shows the crucifixion from an aerial perspective above Christ's head, with a Scottish fishing village below. Glasgow Corporation bought it for £8,200 in 1952 — a decision widely mocked at the time. It was damaged by a visitor who threw a stone at it in 1961. It is now worth an estimated £80 million."
         }
       ]
     },
     {
-      "id": "calton-hill",
-      "name": "Calton Hill",
-      "lat": 55.9553,
-      "lng": -3.1819,
-      "category": "nature",
-      "summary": "A hill at the east end of Princes Street with panoramic views and a collection of monuments.",
+      "id": "mackintosh-school",
+      "name": "Glasgow School of Art",
+      "lat": 55.8659,
+      "lng": -4.2586,
+      "category": "attraction",
+      "summary": "Charles Rennie Mackintosh's masterpiece — a building so revolutionary it changed the course of European design.",
+      "tags": [
+        "art",
+        "history"
+      ],
+      "trivia": [
+        {
+          "type": "art",
+          "title": "Mackintosh's genius",
+          "body": "Charles Rennie Mackintosh designed this building in 1896 at just 28 years old, and it was constructed in two phases over 13 years. The design blends Scottish baronial, Art Nouveau, and a strange proto-modernism that was decades ahead of its time. Mackintosh died in 1928, largely forgotten, having sold his furniture for almost nothing. He is now recognised as one of the most influential architects of the 20th century.",
+          "media": {
+            "type": "image",
+            "url": "https://source.unsplash.com/1280x720/?glasgow+school+art",
+            "caption": "Glasgow School of Art"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Destroyed twice by fire",
+          "body": "The Mackintosh building was devastated by fire in May 2014 during student works, destroying the famous library wing. Before restoration was complete, a second, far more destructive fire in June 2018 gutted almost the entire building. The cause remains disputed. Restoration is ongoing and enormously complex — craftspeople are having to rediscover lost techniques to recreate the original interiors."
+        }
+      ]
+    },
+    {
+      "id": "necropolis",
+      "name": "Glasgow Necropolis",
+      "lat": 55.8617,
+      "lng": -4.2373,
+      "category": "trivia",
+      "summary": "A Victorian garden cemetery on a dramatic hill overlooking the city, with over 50,000 burials and extraordinary monuments.",
+      "tags": [
+        "history"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The stalker of the Southern Necropolis",
+          "body": "In 1954, hundreds of children armed with sharpened sticks and knives descended on the Southern Necropolis (a separate cemetery in the Gorbals) after rumours spread of a '7-foot tall vampire with iron teeth' who had abducted and eaten two local boys. No children were missing, and police found no evidence of any vampire. The panic was blamed on American horror comics — and led directly to the Children and Young Persons (Harmful Publications) Act 1955.",
+          "media": {
+            "type": "image",
+            "url": "https://source.unsplash.com/1280x720/?glasgow+necropolis",
+            "caption": "Glasgow Necropolis"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Banishment to Glasgow",
+          "body": "In 1585, a tailor named David Duly was convicted of failing to report his wife's death from plague to Edinburgh's authorities. He was sentenced to hang outside his own house, but the rope broke. Taking this as divine intervention, the court commuted his sentence — to banishment to Glasgow. At the time, this was apparently considered only marginally better than death."
+        }
+      ]
+    },
+    {
+      "id": "river-clyde",
+      "name": "River Clyde & Riverside Museum",
+      "lat": 55.8607,
+      "lng": -4.3058,
+      "category": "attraction",
+      "summary": "The river that built Glasgow's industrial empire — and Zaha Hadid's striking Riverside Museum on its banks.",
       "tags": [
         "history",
-        "nature",
+        "art"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "What is the Nile to the mighty Clyde?",
+          "body": "At the height of the British Empire, Glasgow's shipyards on the Clyde produced more ships than any other place on earth — at their peak in the early 20th century, one in five of the world's ships was built here. When Grand Duke Alexis of Russia visited the John Elder yard in Govan, he famously described Glasgow as 'the centre of the intelligence of England' — a geographical confusion that presumably did not delight his Scottish hosts.",
+          "media": {
+            "type": "image",
+            "url": "https://source.unsplash.com/1280x720/?riverside+museum+glasgow+clyde",
+            "caption": "Riverside Museum, Glasgow"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The Ghostly Armies of the Clyde",
+          "body": "In the summer of 1686, many witnesses in the Clyde Valley reported extraordinary visions: showers of bonnets, hats, guns, and swords falling from the sky, covering the trees and ground; companies of men in arms marching along the riverside; armies meeting armies and dissolving into the ground. Covenanting memoirist Patrick Walker recorded the accounts in detail, noting that even hardened sceptics present were visibly shaken."
+        }
+      ]
+    },
+    {
+      "id": "doune-castle",
+      "name": "Doune Castle",
+      "lat": 56.1852,
+      "lng": -4.0502,
+      "category": "attraction",
+      "summary": "A 14th-century castle near Stirling that has played Camelot, Castle Leoch, and Winterfell — the most filmed castle in Scotland.",
+      "tags": [
+        "history",
         "film"
       ],
       "trivia": [
         {
           "type": "film",
-          "title": "Trainspotting 2 (2017)",
-          "body": "The reunion scene between Renton and Sick Boy — two decades on from the original — was filmed on Calton Hill, overlooking the city they once fled.",
+          "title": "Monty Python and the Holy Grail (1975)",
+          "body": "Doune Castle served as multiple locations in Monty Python and the Holy Grail — most famously as Castle Camelot ('It is a silly place'), Castle Anthrax where Galahad is tempted, and Swamp Castle where Herbert is locked in a tower. The Pythons chose it because it was cheap, available, and authentically medieval. Visitors today can borrow an audioguide narrated by cast members including Terry Jones, who reprises his role guiding you through each room.",
           "media": {
             "type": "image",
-            "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Calton_Hill_from_Edinburgh_Castle.jpg",
-            "caption": "Calton Hill viewed from Edinburgh Castle"
+            "url": "https://source.unsplash.com/1280x720/?doune+castle+scotland",
+            "caption": "Doune Castle"
           }
         },
         {
-          "type": "history",
-          "title": "Edinburgh's Disgrace",
-          "body": "The National Monument was intended as a full replica of the Parthenon, commemorating Scots killed in the Napoleonic Wars. Construction began in 1826 but funds ran out after only 12 columns. It was never completed — mockingly called 'Edinburgh's Disgrace', though locals have since grown fond of its unfinished grandeur."
+          "type": "film",
+          "title": "Outlander & Game of Thrones",
+          "body": "Doune Castle has an extraordinary on-screen CV. It plays Castle Leoch — the seat of Clan MacKenzie — throughout Outlander. It was also used as Winterfell in the original Game of Thrones pilot episode, before the production moved to Northern Ireland. The same castle therefore hosted both the Jacobite Highlands and the North of Westeros. It also appeared in Ivanhoe (1952) and the BBC's Merlin."
         },
         {
           "type": "history",
-          "title": "Scotland's Disgrace and the Parthenon plan",
-          "body": "The unfinished National Monument on Calton Hill was meant to be a full replica of the Athenian Parthenon, funded by public subscription to honour Scots killed in the Napoleonic Wars. Construction began in 1826 with great fanfare — but money ran out after just twelve columns. Mocked as 'Edinburgh's Disgrace' and 'Scotland's Shame', the twelve columns were left standing. Locals have since grown fond of the ruin, and several proposals to complete it have been firmly rejected."
+          "title": "Built by the Regent Albany",
+          "body": "Doune Castle was built around 1400 by Robert Stewart, Duke of Albany, who effectively ruled Scotland as regent while King Robert III was incapacitated. Albany was one of the most powerful men in Scottish history — and one of the most ruthless. He almost certainly arranged the imprisonment of the young Prince James in England, ensuring his own dominance. When James eventually returned as James I, one of his first acts was to execute Albany's son."
         }
       ]
     }
