@@ -217,7 +217,7 @@ function renderTrivia() {
         <span class="trivia-card-title">${t.title}</span>
       </div>
       <div class="trivia-media" id="media-${uid}" style="display:none;">
-        <img id="img-${uid}" alt="${t.title}" loading="lazy"
+        <img id="img-${uid}" alt="${t.title}"
           onload="document.getElementById('media-${uid}').style.display='block'"
           onerror="document.getElementById('media-${uid}').style.display='none'">
         <div class="trivia-media-caption" id="cap-${uid}"></div>
