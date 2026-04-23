@@ -139,22 +139,6 @@ const poiId = params.get('id');
 let poiData = null;
 let arrowAngle = 0;
 
-// Fetch a verified image URL from Wikipedia's REST API
-// Returns the thumbnail.source URL, or null if unavailable
-async function fetchWikipediaImage(article) {
-  try {
-    const res = await fetch(
-      `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(article)}`,
-      { headers: { 'Accept': 'application/json' } }
-    );
-    if (!res.ok) return null;
-    const data = await res.json();
-    return data.thumbnail ? data.thumbnail.source : null;
-  } catch {
-    return null;
-  }
-}
-
 async function init() {
   if (!regionSlug || !poiId) {
     document.getElementById('hero-title').textContent = 'POI not found';
@@ -179,21 +163,44 @@ async function init() {
 
     updateMapsLinks();
     updateVisitedBtn();
-
-    // Render trivia cards (placeholders first, images load async)
-    renderTrivia();
-
-    // Load all Wikipedia images in parallel, then inject them
-    loadWikipediaImages();
+    renderTrivia();   // renders cards instantly, image slots empty
+    loadImages();     // fills image slots async, never blocks content
   } catch(e) {
     document.getElementById('hero-title').textContent = 'POI not found';
   }
 }
 
+// Fetch a high-resolution thumbnail from Wikipedia.
+// Wikipedia URLs contain a size like "320px-" — we bump it to 1280px.
+async function fetchWikipediaImage(article) {
+  try {
+    const res = await fetch(
+      `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(article)}`,
+      { headers: { Accept: 'application/json' } }
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data.thumbnail) return null;
+    // Bump resolution: replace e.g. /320px- with /1280px-
+    return data.thumbnail.source.replace(/\/\d+px-/, '/1280px-');
+  } catch { return null; }
+}
+
+// Resolve a media object to a usable image URL.
+// Supports two types:
+//   { type: "wikipedia", article: "Edinburgh_Castle", caption: "..." }
+//   { type: "url",       url: "https://...",          caption: "..." }
+async function resolveMediaUrl(media) {
+  if (!media) return null;
+  if (media.type === 'url') return media.url;
+  if (media.type === 'wikipedia') return fetchWikipediaImage(media.article);
+  return null;
+}
+
 function renderTrivia() {
   document.getElementById('trivia-container').innerHTML = poiData.trivia.map(t => {
-    const uid = t.title.replace(/\W/g,'').slice(0,20);
-    // Render a hidden media container; loadWikipediaImages() will populate & show it
+    const uid = t.title.replace(/\W/g, '').slice(0, 20);
+    // Render hidden container — loadImages() will populate src and show it
     const media = t.media ? `
       <div class="trivia-media" id="media-${uid}" style="display:none;">
         <img id="img-${uid}" alt="${t.media.caption}" loading="lazy"
@@ -212,31 +219,27 @@ function renderTrivia() {
   }).join('');
 }
 
-async function loadWikipediaImages() {
-  const triviaWithMedia = poiData.trivia.filter(t => t.media && t.media.article);
-  if (!triviaWithMedia.length) return;
+async function loadImages() {
+  const withMedia = poiData.trivia.filter(t => t.media);
+  if (!withMedia.length) return;
 
-  // Fetch all images in parallel
-  const results = await Promise.all(
-    triviaWithMedia.map(t => fetchWikipediaImage(t.media.article))
-  );
+  // Resolve all URLs in parallel
+  const urls = await Promise.all(withMedia.map(t => resolveMediaUrl(t.media)));
 
-  // Inject URLs into the DOM
-  triviaWithMedia.forEach((t, i) => {
-    const imgUrl = results[i];
-    if (!imgUrl) return;
-    const uid = t.title.replace(/\W/g,'').slice(0,20);
+  // Inject into trivia cards
+  withMedia.forEach((t, i) => {
+    if (!urls[i]) return;
+    const uid = t.title.replace(/\W/g, '').slice(0, 20);
     const img = document.getElementById(`img-${uid}`);
-    if (img) img.src = imgUrl;
+    if (img) img.src = urls[i];
   });
 
-  // Set hero image from the first trivia item that has media
-  const heroTrivia = triviaWithMedia[0];
-  const heroUrl = results[triviaWithMedia.indexOf(heroTrivia)];
-  if (heroUrl) {
+  // Set hero from first trivia item that resolved an image
+  const heroIdx = urls.findIndex(u => u);
+  if (heroIdx !== -1) {
     const heroImg = document.getElementById('hero-img');
-    heroImg.alt = heroTrivia.media.caption;
-    heroImg.src = heroUrl;
+    heroImg.alt = withMedia[heroIdx].media.caption;
+    heroImg.src = urls[heroIdx];
   }
 }
 
