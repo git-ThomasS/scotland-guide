@@ -39,9 +39,6 @@
     .dist-value { font-size: 1.1rem; font-weight: 500; color: var(--accent); }
     .dist-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
     .dist-enable { font-size: 13px; color: var(--text2); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .about-card { border-color: var(--border2); }
-    .about-icon { width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent); }
-    .about-icon svg { width: 16px; height: 16px; }
     .trivia-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 0.9rem; }
     .trivia-card-head { display: flex; align-items: center; gap: 10px; padding: 0.9rem 1rem 0.75rem; }
     .trivia-card-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.3; flex: 1; }
@@ -93,6 +90,7 @@
 </div>
 
 <div class="tags-row" id="tags-row"></div>
+<div class="section"><p class="summary-text" id="summary"></p></div>
 
 <div class="section">
   <p class="section-label">Distance from you</p>
@@ -105,7 +103,7 @@
 </div>
 
 <div class="section">
-  <p class="section-label">About &amp; stories</p>
+  <p class="section-label">Trivia &amp; stories</p>
   <div id="trivia-container"></div>
 </div>
 
@@ -141,6 +139,40 @@ const poiId = params.get('id');
 let poiData = null;
 let arrowAngle = 0;
 
+// Convert a trivia title to a filename-safe slug
+// "The One O'Clock Gun" → "the-one-oclock-gun"
+function slugify(str) {
+  return str
+    .toLowerCase()
+    .replace(/'/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+// Fetch a high-res Wikipedia thumbnail (bumps size to 1280px)
+async function fetchWikipediaImage(article) {
+  try {
+    const res = await fetch(
+      `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(article)}`,
+      { headers: { Accept: 'application/json' } }
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data.thumbnail) return null;
+    return data.thumbnail.source.replace(/\/\d+px-/, '/1280px-');
+  } catch { return null; }
+}
+
+// Resolve a media object → URL
+//   { type: "wikipedia", article: "Edinburgh_Castle", caption: "..." }
+//   { type: "url",       url: "images/my-photo.jpg",  caption: "..." }
+async function resolveMediaUrl(media) {
+  if (!media) return null;
+  if (media.type === 'url') return media.url;
+  if (media.type === 'wikipedia') return fetchWikipediaImage(media.article);
+  return null;
+}
+
 async function init() {
   if (!regionSlug || !poiId) {
     document.getElementById('hero-title').textContent = 'POI not found';
@@ -156,6 +188,7 @@ async function init() {
     document.title = `${poiData.name} — Scotland Guide`;
     document.getElementById('hero-title').textContent = poiData.name;
     document.getElementById('hero-region').textContent = region.region;
+    document.getElementById('summary').textContent = poiData.summary;
     document.getElementById('back-label').textContent = region.region;
     document.getElementById('back-link').href = `region.html?region=${regionSlug}`;
 
@@ -164,104 +197,87 @@ async function init() {
 
     updateMapsLinks();
     updateVisitedBtn();
-    renderTrivia();   // renders cards instantly, image slots empty
-    loadImages();     // fills slots async — never blocks content
+    renderTrivia();   // renders instantly, image slots ready
+    loadImages();     // fills slots async — hero + trivia cards
   } catch(e) {
     document.getElementById('hero-title').textContent = 'POI not found';
   }
 }
 
-// Fetch a high-res thumbnail from Wikipedia.
-// The API returns e.g. /320px-filename.jpg — we bump it to 1280px.
-async function fetchWikipediaImage(article) {
-  try {
-    const res = await fetch(
-      `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(article)}`,
-      { headers: { Accept: 'application/json' } }
-    );
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (!data.thumbnail) return null;
-    return data.thumbnail.source.replace(/\/\d+px-/, '/1280px-');
-  } catch { return null; }
-}
-
-// Resolve any media object → image URL.
-//   { type: "wikipedia", article: "Edinburgh_Castle", caption: "..." }
-//   { type: "url",       url: "images/skyfall.jpg",   caption: "..." }
-async function resolveMediaUrl(media) {
-  if (!media) return null;
-  if (media.type === 'url') return media.url;
-  if (media.type === 'wikipedia') return fetchWikipediaImage(media.article);
-  return null;
-}
-
 function renderTrivia() {
-  // About card — uses the POI summary, no badge, no image
-  const aboutCard = `<div class="trivia-card about-card">
-    <div class="trivia-card-head">
-      <span class="about-icon">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <circle cx="8" cy="8" r="6"/><path d="M8 7v4M8 5.5v.5"/>
-        </svg>
-      </span>
-      <span class="trivia-card-title">About</span>
-    </div>
-    <div class="trivia-card-body">${poiData.summary}</div>
-  </div>`;
-
-  // Trivia cards — wikipedia media is hero-only, so only show url-type images in cards
-  const triviaCards = poiData.trivia.map(t => {
-    const uid = t.title.replace(/\W/g, '').slice(0, 20);
-    const showMedia = t.media && t.media.type === 'url';
-    const media = showMedia ? `
-      <div class="trivia-media" id="media-${uid}" style="display:none;">
-        <img id="img-${uid}" alt="${t.media.caption}" loading="lazy"
-          onload="document.getElementById('media-${uid}').style.display='block'"
-          onerror="document.getElementById('media-${uid}').style.display='none'">
-        <div class="trivia-media-caption">${t.media.caption}</div>
-      </div>` : '';
+  document.getElementById('trivia-container').innerHTML = poiData.trivia.map(t => {
+    const uid = slugify(t.title);
+    // Every trivia card gets a hidden image slot.
+    // loadImages() will try the auto-filename first, then fall back to JSON media.
     return `<div class="trivia-card">
       <div class="trivia-card-head">
         <span class="trivia-type-badge ${t.type}">${t.type}</span>
         <span class="trivia-card-title">${t.title}</span>
       </div>
-      ${media}
+      <div class="trivia-media" id="media-${uid}" style="display:none;">
+        <img id="img-${uid}" alt="${t.title}" loading="lazy"
+          onload="document.getElementById('media-${uid}').style.display='block'"
+          onerror="document.getElementById('media-${uid}').style.display='none'">
+        <div class="trivia-media-caption" id="cap-${uid}"></div>
+      </div>
       <div class="trivia-card-body">${t.body}</div>
     </div>`;
   }).join('');
-
-  document.getElementById('trivia-container').innerHTML = aboutCard + triviaCards;
 }
 
 async function loadImages() {
-  const withMedia = poiData.trivia.filter(t => t.media);
-  if (!withMedia.length) return;
-
-  // Resolve all URLs in parallel
-  const urls = await Promise.all(withMedia.map(t => resolveMediaUrl(t.media)));
-
-  // Inject into trivia cards
-  withMedia.forEach((t, i) => {
-    if (!urls[i]) return;
-    const uid = t.title.replace(/\W/g, '').slice(0, 20);
+  // --- Trivia card images ---
+  // Priority: 1) auto-filename drop-in  2) JSON media field  3) nothing
+  for (const t of poiData.trivia) {
+    const uid = slugify(t.title);
     const img = document.getElementById(`img-${uid}`);
-    if (img) img.src = urls[i];
-  });
+    const cap = document.getElementById(`cap-${uid}`);
+    if (!img) continue;
 
-  // Hero image: prefer wikipedia type (clean location shot) over url type (film still).
-  // Falls back to url type if no wikipedia image exists or resolves.
-  const heroIdx =
-    // First try: a wikipedia entry that resolved successfully
-    urls.findIndex((u, i) => u && withMedia[i].media.type === 'wikipedia') ??
-    // Fallback: any resolved image
-    urls.findIndex(u => u);
+    // 1. Try auto-filename: images/{poi-id}--{title-slug}.jpg / .png / .webp
+    const base = `images/${poiId}--${uid}`;
+    const autoUrl = await tryImageUrl([`${base}.jpg`, `${base}.jpeg`, `${base}.png`, `${base}.webp`]);
+    if (autoUrl) {
+      cap.textContent = t.title;
+      img.src = autoUrl;
+      continue;
+    }
 
-  if (heroIdx !== -1 && urls[heroIdx]) {
-    const heroImg = document.getElementById('hero-img');
-    heroImg.alt = withMedia[heroIdx].media.caption;
-    heroImg.src = urls[heroIdx];
+    // 2. Fall back to JSON media field
+    if (t.media && t.media.type !== 'wikipedia') {
+      const url = await resolveMediaUrl(t.media);
+      if (url) {
+        cap.textContent = t.media.caption;
+        img.src = url;
+      }
+    }
   }
+
+  // --- Hero image ---
+  // Prefer wikipedia media (clean location shot), fall back to first auto-file found
+  const wikiTrivia = poiData.trivia.find(t => t.media && t.media.type === 'wikipedia');
+  if (wikiTrivia) {
+    const url = await fetchWikipediaImage(wikiTrivia.media.article);
+    if (url) {
+      document.getElementById('hero-img').src = url;
+      document.getElementById('hero-img').alt = wikiTrivia.media.caption;
+    }
+  }
+}
+
+// Try a list of URLs in order, return the first that loads, or null
+function tryImageUrl(urls) {
+  return new Promise(resolve => {
+    let i = 0;
+    function next() {
+      if (i >= urls.length) return resolve(null);
+      const img = new Image();
+      img.onload = () => resolve(urls[i]);
+      img.onerror = () => { i++; next(); };
+      img.src = urls[i];
+    }
+    next();
+  });
 }
 
 function updateMapsLinks() {
