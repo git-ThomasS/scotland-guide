@@ -24,8 +24,8 @@
           "title": "The proposal to make it taller",
           "body": "A correspondent writing to the Glasgow Herald in the 1880s bemoaned the fact that Ben Nevis — Britain's highest mountain — was so lacking in distinction of shape. From most directions it appears as little more than a flat-backed lump. His solution: dynamite vast amounts of rock from neighbouring peaks and pile them on top to create a more graceful summit, raising it to 5,000 feet. 'The view would be superb,' he enthused. Happily, the Ben was saved from being turned into a slag heap by the indifference of the public.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?ben+nevis+scotland",
+            "type": "wikipedia",
+            "article": "Ben_Nevis",
             "caption": "Ben Nevis"
           }
         },
@@ -53,8 +53,8 @@
           "title": "Braveheart & Harry Potter",
           "body": "Glen Nevis served as a key filming location for Mel Gibson's Braveheart (1995), with the lower glen standing in for the Scottish lowlands. The spectacular Steall Falls at the head of the glen — Scotland's second highest waterfall at 120m — appeared in the background during Quidditch match sequences in the Harry Potter films. The Wire Bridge crossing the gorge to Steall is one of the most photographed spots in Scotland.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?glen+nevis+scotland",
+            "type": "wikipedia",
+            "article": "Glen_Nevis",
             "caption": "Glen Nevis"
           }
         },
@@ -86,8 +86,8 @@
           "title": "Thomas Telford's masterpiece",
           "body": "The Caledonian Canal was completed in 1822 to the designs of Thomas Telford, connecting the Atlantic to the North Sea through the Great Glen. Neptune's Staircase at Banavie is its most spectacular feature — eight consecutive locks raising boats by 20 metres, the whole structure stretching for 460 metres. It took 19 years to build, using an army of navvies, and cost £900,000 — a sum that horrified Parliament.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?caledonian+canal+scotland",
+            "type": "wikipedia",
+            "article": "Neptune's_Staircase",
             "caption": "Caledonian Canal"
           }
         },
@@ -115,9 +115,9 @@
           "title": "The secret portrait",
           "body": "After the Jacobite defeat at Culloden, all things Highland were banned — including portraits of the exiled Bonnie Prince Charlie. The museum holds a remarkable workaround: a painting that looks like nothing more than a meaningless smear of colour on canvas — until viewed in a cylindrical mirror, which reflects a credible likeness of the Prince. It is one of the most ingenious pieces of hidden art ever made.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?fort+william+scotland",
-            "caption": "Fort William"
+            "type": "wikipedia",
+            "article": "Fort_William,_Highland",
+            "caption": "Fort William, Scotland"
           }
         },
         {
@@ -145,9 +145,9 @@
           "title": "Braveheart, Skyfall, Highlander & more",
           "body": "Glencoe is Scotland's most filmed landscape. Mel Gibson's Braveheart (1995) used the glen for its sweeping battle sequences. Daniel Craig and Judi Dench hid from the villain here in Skyfall (2012) — the ruined cottage used was purpose-built and then demolished after filming. The opening battle of Highlander (1986) was filmed at Buachaille Etive Beag. Outlaw King (2018) and Mary Queen of Scots (2018) both used the Three Sisters rock formation. Monty Python and the Holy Grail filmed the Knights Who Say Ni scene here.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?glencoe+valley+scotland",
-            "caption": "Glencoe Valley"
+            "type": "wikipedia",
+            "article": "Glencoe,_Scotland",
+            "caption": "Glencoe, Scotland"
           }
         },
         {
@@ -155,9 +155,9 @@
           "title": "The Massacre of Glencoe",
           "body": "On 13 February 1692, soldiers of King William III's army — who had been guests of the MacDonald clan for twelve days — rose before dawn and murdered 38 members of the MacIain MacDonalds in their beds. Around 40 more died fleeing through the snow. The massacre was ordered because the MacDonald chief had been five days late in signing an oath of allegiance. It became one of the most infamous acts of betrayal in Scottish history — the violation of Highland hospitality making it far more shocking than the death toll alone.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?glencoe+highlands+scotland",
-            "caption": "Glencoe, Scottish Highlands"
+            "type": "wikipedia",
+            "article": "Massacre_of_Glencoe",
+            "caption": "Massacre of Glencoe"
           }
         },
         {

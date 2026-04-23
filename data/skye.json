@@ -24,8 +24,8 @@
           "title": "Prometheus (2012)",
           "body": "Ridley Scott opened his Alien prequel Prometheus with sweeping aerial shots of the Old Man of Storr and the Trotternish Ridge, representing a primeval Earth landscape. The same area also appeared in Macbeth (2015) starring Michael Fassbender, and several scenes of The BFG (2016) were set against Skye's extraordinary skyline. The island's otherworldly rock formations make it one of the most frequently used locations in British cinema.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?old+man+storr+skye",
+            "type": "wikipedia",
+            "article": "Old_Man_of_Storr",
             "caption": "Old Man of Storr, Skye"
           }
         },
@@ -53,8 +53,8 @@
           "title": "A landscape from another world",
           "body": "The Quiraing's strange topography of leaning pinnacles, hidden valleys, and tilting grassy platforms has appeared in numerous productions including Stardust (2007), Transformers: The Last Knight (2017), and most recently season 3 of BBC's Shetland. The road that crosses the ridge between Staffin and Uig is one of the most dramatic drives in the UK — and frequently closed in winter when the road itself continues to slip.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?quiraing+isle+skye",
+            "type": "wikipedia",
+            "article": "Quiraing",
             "caption": "The Quiraing, Isle of Skye"
           }
         },
@@ -82,8 +82,8 @@
           "title": "The Fairy Flag",
           "body": "Dunvegan Castle's most prized possession is the Fairy Flag — a fragile, yellowed silk banner that scientific analysis dates to somewhere between the 4th and 7th centuries, possibly from the Middle East. Clan MacLeod legend holds that it was given to a MacLeod chief by his fairy wife, and that waving it in battle will save the clan from defeat — but only three times. It has supposedly been waved twice already. During WWII, many MacLeod men carried photographs of it into battle.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?dunvegan+castle+skye",
+            "type": "wikipedia",
+            "article": "Dunvegan_Castle",
             "caption": "Dunvegan Castle"
           }
         },
@@ -115,8 +115,8 @@
           "title": "The Black Cuillin",
           "body": "The pools are fed by streams from the Black Cuillin ridge — a jagged arc of gabbro and basalt that forms the most challenging mountain terrain in the British Isles. The rock is so rough it grips boot rubber perfectly, but the ridges are genuinely technical and require ropes. The Cuillin has been described as the only true mountaineering in Britain — several peaks remained unclimbed until the early 20th century.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?fairy+pools+skye",
+            "type": "wikipedia",
+            "article": "Fairy_Pools",
             "caption": "Fairy Pools, Isle of Skye"
           }
         },
@@ -144,8 +144,8 @@
           "title": "Flora MacDonald's farewell",
           "body": "Portree Harbour is traditionally the spot where Bonnie Prince Charlie said farewell to Flora MacDonald in 1746 after she had smuggled him across from the mainland disguised as her maid. He reportedly told her: 'For all that has happened, I hope, Madam, we shall meet in St James's yet'. They never met again. Flora was arrested shortly afterwards and held in the Tower of London for a year before being released without trial.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?portree+harbour+skye",
+            "type": "wikipedia",
+            "article": "Portree",
             "caption": "Portree Harbour, Skye"
           }
         },

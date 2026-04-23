@@ -24,8 +24,8 @@
           "title": "The Hogwarts Express",
           "body": "The Glenfinnan Viaduct first appeared in Harry Potter and the Chamber of Secrets (2002) and became a recurring landmark throughout the series — most memorably in Prisoner of Azkaban when Dementors board the train. The viaduct is crossed by the Jacobite steam train, which supplied its locomotive and rolling stock for the films. The viewpoint for the classic shot is a 45-minute walk from Glenfinnan station.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?glenfinnan+viaduct+train",
+            "type": "wikipedia",
+            "article": "Glenfinnan_Viaduct",
             "caption": "Glenfinnan Viaduct"
           }
         },
@@ -52,8 +52,8 @@
           "title": "The standard is raised",
           "body": "On 19 August 1745, Charles Edward Stuart raised his standard at Glenfinnan before a gathering of Highland clans, marking the beginning of the Jacobite Rising that would sweep through Scotland before ending in catastrophe at Culloden 14 months later. At first only a handful of men had gathered — the Prince's supporters held their breath. Then the MacDonalds of Clanranald arrived, around 150 strong, followed shortly by the Camerons of Lochiel with 800 men. The rising had begun.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?glenfinnan+monument+loch+shiel",
+            "type": "wikipedia",
+            "article": "Glenfinnan_Monument",
             "caption": "Glenfinnan Monument"
           }
         },
@@ -81,8 +81,8 @@
           "title": "The real Hogwarts Express",
           "body": "West Coast Railways provided the route, carriages, and steam locomotives for every Harry Potter film featuring the Hogwarts Express. The specific locomotive used in the films — GWR 4900 Class 5972 Olton Hall, built in 1937 — now sits permanently on display at Warner Bros Studio Tour London. But the carriages used in filming are still in service on the Jacobite today, and the route crossing Glenfinnan Viaduct is identical. The morning First Class carriage even has period-style compartments that match the film interiors.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?steam+train+scotland+highlands",
+            "type": "wikipedia",
+            "article": "Jacobite_steam_train",
             "caption": "Jacobite Steam Train"
           }
         },
@@ -110,8 +110,8 @@
           "title": "Skyfall & Harry Potter",
           "body": "Rannoch Moor is one of Scotland's most-filmed landscapes. The desolate scene where Bond and M hide in the Highlands in Skyfall (2012) was shot here, with the famous ruined cottage at Glen Etive nearby. In Harry Potter and the Deathly Hallows, the Death Eaters board the Hogwarts Express on Rannoch Moor — the Jacobite train was used for filming.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?rannoch+moor+scotland",
+            "type": "wikipedia",
+            "article": "Rannoch_Moor",
             "caption": "Rannoch Moor"
           }
         },
@@ -139,8 +139,8 @@
           "title": "The granddaddy of Scottish walking",
           "body": "The West Highland Way — the long-distance path from Milngavie near Glasgow to Fort William — passes through Bridge of Orchy on its way across Rannoch Moor. Around 15,000 walkers complete the full 96-mile route each year. The path follows ancient drove roads, old military roads built to subdue the Highlanders after Culloden, and disused railway lines — layers of Scottish history underfoot.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?bridge+orchy+highlands",
+            "type": "wikipedia",
+            "article": "Bridge_of_Orchy",
             "caption": "Bridge of Orchy"
           }
         },
@@ -168,8 +168,8 @@
           "title": "Highest mainline railway in Britain",
           "body": "At 452 metres, Drumochter is the highest point on any mainline railway in the UK — and one of the most inhospitable. The pass has been a key route through the Grampians for thousands of years: drove roads, military roads, and now motorway and railway all use the same corridor. In severe winters, the pass can close completely, stranding trains on the line.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?drumochter+pass+scotland",
+            "type": "wikipedia",
+            "article": "Drumochter",
             "caption": "Drumochter Pass"
           }
         },
@@ -196,8 +196,8 @@
           "title": "A monument to a disaster",
           "body": "The Forth Bridge was built partly in response to the Tay Bridge Disaster of 1879, when the previous bridge collapsed in a storm, killing 75 people on a train crossing it. The new design by Benjamin Baker used cantilever construction and three times the amount of steel originally planned — an engineering overreaction that resulted in one of the most robust structures ever built. It opened in 1890 and uses roughly 55,000 tonnes of steel.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?forth+bridge+scotland",
+            "type": "wikipedia",
+            "article": "Forth_Bridge",
             "caption": "Forth Bridge"
           }
         },
@@ -225,9 +225,9 @@
           "title": "The floating island",
           "body": "16th-century writers described Loch Lomond as home to a floating island that moved around the loch, as well as fish that changed species between fresh and salt water, and waves that rose without wind. At least one of these is real: there is an actual floating island in the loch — a mat of vegetation that breaks free from the shore and drifts around. It was last reported floating freely in 2013.",
           "media": {
-            "type": "image",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Loch_Lomond_from_Conic_Hill.jpg/1280px-Loch_Lomond_from_Conic_Hill.jpg",
-            "caption": "Loch Lomond from Conic Hill"
+            "type": "wikipedia",
+            "article": "Loch_Lomond",
+            "caption": "Loch Lomond"
           }
         },
         {

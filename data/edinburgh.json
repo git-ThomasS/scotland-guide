@@ -25,8 +25,8 @@
           "title": "Outlaw King (2018)",
           "body": "Netflix's Robert the Bruce epic used the castle esplanade for key scenes. The real Bruce besieged it in 1314, famously scaling the north face at night.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?edinburgh+castle",
+            "type": "wikipedia",
+            "article": "Edinburgh_Castle",
             "caption": "Edinburgh Castle"
           }
         },
@@ -65,8 +65,8 @@
           "title": "Trainspotting (1996)",
           "body": "Danny Boyle's opening sequence features Renton and Spud sprinting through Edinburgh's streets — and the silhouette of Arthur's Seat looms throughout. The summit scene where they contemplate their lives was filmed right at the top.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?arthur's+seat+edinburgh",
+            "type": "wikipedia",
+            "article": "Arthur's_Seat",
             "caption": "Arthur's Seat, Edinburgh"
           }
         },
@@ -104,8 +104,8 @@
           "title": "Avengers: Infinity War (2018)",
           "body": "Several scenes set in Edinburgh were filmed on and around the Royal Mile. The chase sequence where Scarlet Witch and Vision are attacked by the Black Order used the narrow closes branching off the main street — look out for Cockburn Street in particular.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?royal+mile+edinburgh",
+            "type": "wikipedia",
+            "article": "Royal_Mile",
             "caption": "The Royal Mile, Edinburgh"
           }
         },
@@ -143,8 +143,8 @@
           "title": "Mary Queen of Scots",
           "body": "Mary Queen of Scots lived here from 1561 to 1567. Her Italian secretary David Rizzio was stabbed 56 times in her private supper room by conspirators including her husband Lord Darnley — a bloodstain on the floor is still pointed out to visitors today.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?holyrood+palace+edinburgh",
+            "type": "wikipedia",
+            "article": "Palace_of_Holyroodhouse",
             "caption": "Palace of Holyroodhouse"
           }
         },
@@ -177,8 +177,8 @@
           "title": "Greyfriars Bobby",
           "body": "The Skye Terrier who allegedly guarded his owner's grave for 14 years after his death in 1858. A statue outside the kirkyard gates has been rubbed so often for good luck that its nose is worn smooth.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?greyfriars+edinburgh",
+            "type": "wikipedia",
+            "article": "Greyfriars_Kirkyard",
             "caption": "Greyfriars Kirkyard"
           }
         },
@@ -216,8 +216,8 @@
           "title": "Diagon Alley inspiration",
           "body": "Victoria Street is widely cited as one of the inspirations for Diagon Alley in Harry Potter. Its curving form, tiered layout, and eclectic mix of small specialist shops bear a striking resemblance to the fictional wizarding street.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?victoria+street+edinburgh",
+            "type": "wikipedia",
+            "article": "Victoria_Street,_Edinburgh",
             "caption": "Victoria Street, Edinburgh"
           }
         },
@@ -251,8 +251,8 @@
           "title": "Trainspotting 2 (2017)",
           "body": "The reunion scene between Renton and Sick Boy — two decades on from the original — was filmed on Calton Hill, overlooking the city they once fled.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?calton+hill+edinburgh",
+            "type": "wikipedia",
+            "article": "Calton_Hill",
             "caption": "Calton Hill, Edinburgh"
           }
         },

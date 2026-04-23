@@ -24,8 +24,8 @@
           "title": "World War Z (2013)",
           "body": "George Square doubled as downtown Philadelphia in Brad Pitt's zombie blockbuster. The production closed the city centre for several days and transformed the square with American street furniture, yellow cabs, and debris. Glasgow is one of the most used stand-in cities in the world — its Victorian streetscape reads as almost any Anglo-American city from above.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?george+square+glasgow",
+            "type": "wikipedia",
+            "article": "George_Square,_Glasgow",
             "caption": "George Square, Glasgow"
           }
         },
@@ -58,9 +58,9 @@
           "title": "Built the wrong way round",
           "body": "Local legend holds that the architect was so horrified when he realised he'd built the museum back-to-front — with the grand entrance facing away from the main road — that he threw himself from one of its towers. This is entirely false: the building was deliberately designed so the 'rear' faced the grand boulevard, and the architect lived happily for many years after it opened in 1901.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?kelvingrove+museum+glasgow",
-            "caption": "Kelvingrove Art Gallery"
+            "type": "wikipedia",
+            "article": "Kelvingrove_Art_Gallery_and_Museum",
+            "caption": "Kelvingrove Art Gallery and Museum"
           }
         },
         {
@@ -87,8 +87,8 @@
           "title": "Mackintosh's genius",
           "body": "Charles Rennie Mackintosh designed this building in 1896 at just 28 years old, and it was constructed in two phases over 13 years. The design blends Scottish baronial, Art Nouveau, and a strange proto-modernism that was decades ahead of its time. Mackintosh died in 1928, largely forgotten, having sold his furniture for almost nothing. He is now recognised as one of the most influential architects of the 20th century.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?glasgow+school+art",
+            "type": "wikipedia",
+            "article": "Glasgow_School_of_Art",
             "caption": "Glasgow School of Art"
           }
         },
@@ -115,8 +115,8 @@
           "title": "The stalker of the Southern Necropolis",
           "body": "In 1954, hundreds of children armed with sharpened sticks and knives descended on the Southern Necropolis (a separate cemetery in the Gorbals) after rumours spread of a '7-foot tall vampire with iron teeth' who had abducted and eaten two local boys. No children were missing, and police found no evidence of any vampire. The panic was blamed on American horror comics — and led directly to the Children and Young Persons (Harmful Publications) Act 1955.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?glasgow+necropolis",
+            "type": "wikipedia",
+            "article": "Glasgow_Necropolis",
             "caption": "Glasgow Necropolis"
           }
         },
@@ -144,8 +144,8 @@
           "title": "What is the Nile to the mighty Clyde?",
           "body": "At the height of the British Empire, Glasgow's shipyards on the Clyde produced more ships than any other place on earth — at their peak in the early 20th century, one in five of the world's ships was built here. When Grand Duke Alexis of Russia visited the John Elder yard in Govan, he famously described Glasgow as 'the centre of the intelligence of England' — a geographical confusion that presumably did not delight his Scottish hosts.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?riverside+museum+glasgow+clyde",
+            "type": "wikipedia",
+            "article": "Riverside_Museum",
             "caption": "Riverside Museum, Glasgow"
           }
         },
@@ -173,8 +173,8 @@
           "title": "Monty Python and the Holy Grail (1975)",
           "body": "Doune Castle served as multiple locations in Monty Python and the Holy Grail — most famously as Castle Camelot ('It is a silly place'), Castle Anthrax where Galahad is tempted, and Swamp Castle where Herbert is locked in a tower. The Pythons chose it because it was cheap, available, and authentically medieval. Visitors today can borrow an audioguide narrated by cast members including Terry Jones, who reprises his role guiding you through each room.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?doune+castle+scotland",
+            "type": "wikipedia",
+            "article": "Doune_Castle",
             "caption": "Doune Castle"
           }
         },

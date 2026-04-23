@@ -24,9 +24,9 @@
           "title": "68 minutes that changed Scotland",
           "body": "The Battle of Culloden on 16 April 1746 lasted less than an hour. Around 1,200 Highlanders were slaughtered by government forces under the Duke of Cumberland, who earned the nickname 'Butcher' for ordering that wounded Jacobite soldiers be executed on the field. The battle ended the Jacobite cause, destroyed the clan system, and led directly to the Highland Clearances. The sombre moor where it was fought has barely changed in nearly 300 years.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?culloden+battlefield",
-            "caption": "Culloden Battlefield"
+            "type": "wikipedia",
+            "article": "Battle_of_Culloden",
+            "caption": "Battle of Culloden"
           }
         },
         {
@@ -34,8 +34,8 @@
           "title": "The piper who was hanged for music",
           "body": "James Reid was one of several pipers who played the Highland clans into battle at Culloden. After the Jacobite defeat he was captured, taken to York, and put on trial for treason. He argued he had carried neither gun nor sword — only the pipes. The judges were unmoved, ruling that the bagpipes were 'an instrument of war' and sentencing Reid to be hanged, drawn and quartered.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?culloden+memorial+scotland",
+            "type": "wikipedia",
+            "article": "Battle_of_Culloden",
             "caption": "Culloden Memorial"
           }
         },
@@ -63,8 +63,8 @@
           "title": "The monster business",
           "body": "On 22 July 1933, a local newspaper reported that a 'grey monster, some six feet long' had been seen crossing a road near Loch Ness. No such creature had been reported since St Columba's biographer mentioned an 'aquatic beast' in the 7th century. After the 1933 sighting, the monster was being spotted constantly. As Ian Crofton notes drily, this was 'all excellent news for local hoteliers, hirers of boats, drivers of charabancs, and so on.'",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?loch+ness+scotland",
+            "type": "wikipedia",
+            "article": "Loch_Ness",
             "caption": "Loch Ness"
           }
         },
@@ -92,8 +92,8 @@
           "title": "Macbeth's castle",
           "body": "Inverness Castle stands on the site of an earlier fortress associated with Macbeth, who was the real King of Scotland from 1040 to 1057. Shakespeare's play compresses and dramatically alters the historical record — the real Macbeth was by most accounts a capable ruler who kept the peace for 17 years. The current building dates from 1836 and served as the regional courthouse and prison.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?inverness+castle+scotland",
+            "type": "wikipedia",
+            "article": "Inverness_Castle",
             "caption": "Inverness Castle"
           }
         },
@@ -121,8 +121,8 @@
           "title": "Outlander's Craig na Dun",
           "body": "The standing stones at Clava Cairns directly inspired the fictional Craig na Dun stones in Outlander — the site through which Claire Randall travels back in time to 18th-century Scotland. The show's production designers visited the cairns extensively during pre-production. The real stones are around 4,000 years old, constructed in the Bronze Age as part of a ritual landscape that also included Culloden.",
           "media": {
-            "type": "image",
-            "url": "https://source.unsplash.com/1280x720/?clava+cairns+standing+stones",
+            "type": "wikipedia",
+            "article": "Clava_Cairns",
             "caption": "Clava Cairns"
           }
         },
