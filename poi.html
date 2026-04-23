@@ -269,12 +269,13 @@ async function loadImages() {
 function tryImageUrl(urls) {
   return new Promise(resolve => {
     let i = 0;
+    const bust = '?v=' + Date.now();
     function next() {
       if (i >= urls.length) return resolve(null);
       const img = new Image();
       img.onload = () => resolve(urls[i]);
       img.onerror = () => { i++; next(); };
-      img.src = urls[i];
+      img.src = urls[i] + bust;
     }
     next();
   });
