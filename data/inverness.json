@@ -13,7 +13,7 @@
       "lat": 57.4773,
       "lng": -4.0975,
       "category": "attraction",
-      "summary": "The site of the last pitched battle on British soil, in 1746 — where the Jacobite cause was crushed in 68 minutes.",
+      "summary": "The site of the last pitched battle on British soil, fought in 1746 — where the Jacobite cause was crushed in 68 minutes and the Highland way of life was effectively ended. The sombre moor where it happened has barely changed in nearly 300 years.",
       "tags": [
         "history",
         "film"
@@ -43,6 +43,16 @@
           "type": "film",
           "title": "Outlander",
           "body": "Culloden is central to the Outlander TV series — Claire visits the battlefield in both 1946 and 1746, with the battle itself depicted in harrowing detail in the season 2 finale. The series has brought a new wave of visitors to the site, and the visitor centre now explicitly acknowledges the show's cultural impact. Clava Cairns, just east of Culloden, inspired the standing stones through which Claire travels in time."
+        },
+        {
+          "type": "book",
+          "title": "Diana Gabaldon & the Outlander connection",
+          "body": "Diana Gabaldon has said she chose the Jacobite Rising as the setting for Outlander partly because of the emotional weight of Culloden — a defeat so total it ended an entire way of life. The battle is the fixed point around which the entire series orbits: Jamie Fraser's family lost everything here, and the tragedy reverberates through all eight novels. Gabaldon researched Culloden exhaustively, and the season 2 finale depicting the battle is considered one of the most historically accurate battle sequences in prestige television."
+        },
+        {
+          "type": "history",
+          "title": "You'll take the high road",
+          "body": "The famous song 'The Bonnie Banks o' Loch Lomond' is believed to have originated from the aftermath of Culloden. According to tradition, pairs of captured Jacobite rebels were sometimes given a cruel choice: one would be executed for treason, the other allowed to go free. The song is understood as the condemned man's farewell to his companion — the 'low road' being the spirit's path back to Scotland, taken immediately after death, while the 'high road' is the long living journey. 'I'll be in Scotland afore ye' refers to the ghost arriving home before the survivor. Whether or not this is the true origin, it captures the grief of what Culloden meant for thousands of Highland families."
         }
       ]
     },
@@ -52,7 +62,7 @@
       "lat": 57.3229,
       "lng": -4.4244,
       "category": "nature",
-      "summary": "Britain's largest body of fresh water by volume — home to a monster, or at least an excellent rumour of one.",
+      "summary": "Britain's largest body of fresh water by volume — 37km long, up to 230m deep, and home to a monster, or at least an excellent rumour of one. The loch contains more fresh water than all the lakes of England and Wales combined, and its dark peaty water ensures the question will never quite be resolved.",
       "tags": [
         "nature",
         "trivia"
@@ -72,6 +82,11 @@
           "type": "nature",
           "title": "Scotland's largest lake by volume",
           "body": "Loch Ness is 37km long, up to 230m deep, and contains more fresh water than all the lakes in England and Wales combined. Its dark, peaty water limits visibility to just a few metres even in bright sunlight — which is why sonar surveys have never conclusively resolved the monster question. The loch never freezes, even in severe winters, due to its sheer depth."
+        },
+        {
+          "type": "nature",
+          "title": "Why the loch never freezes",
+          "body": "Loch Ness is 23 miles long, less than a mile wide, and 754 feet deep — essentially a vast chasm along a geological fault line. Its sheer volume of water means it never freezes, even in the harshest Scottish winters. A traveller writing in the 16th century noted this curiosity and offered his own explanation: that there must be a mine of some hot material at the bottom. The real reason is simpler — the enormous thermal mass of the water maintains a temperature that resists freezing. The same depth that prevents freezing also makes sonar surveys of the loch notoriously inconclusive, which is why the monster question has never been definitively resolved."
         }
       ]
     },
@@ -81,7 +96,7 @@
       "lat": 57.48,
       "lng": -4.2249,
       "category": "attraction",
-      "summary": "A Victorian sandstone castle on a bluff above the River Ness — and the new Highland Centre due to open to visitors after renovation.",
+      "summary": "A Victorian sandstone castle on a bluff above the River Ness, built on the site of the fortress associated with the real Macbeth. Currently being transformed into a major Highland visitor centre, it briefly served as the seat of the British Cabinet in 1921.",
       "tags": [
         "history",
         "film"
@@ -101,6 +116,11 @@
           "type": "history",
           "title": "Inverness becomes the seat of empire",
           "body": "In September 1921, the British Cabinet met outside London for the first time in history — in Inverness. The unlikely choice was forced by the fact that Prime Minister Lloyd George was holidaying in Gairloch and summoned an emergency meeting to discuss the crisis in Ireland that would lead to the Anglo-Irish Treaty. For one brief moment, the Highland capital was the seat of imperial power."
+        },
+        {
+          "type": "history",
+          "title": "Inverness becomes the seat of empire",
+          "body": "In September 1921, the British Cabinet met outside London for the first time in history — in Inverness. The unlikely choice was forced by the fact that Prime Minister Lloyd George was holidaying in Gairloch and summoned an emergency meeting to discuss the crisis in Ireland that would lead to the Anglo-Irish Treaty. For one brief moment, the Highland capital was the seat of imperial power."
         }
       ]
     },
@@ -110,7 +130,7 @@
       "lat": 57.4754,
       "lng": -4.0807,
       "category": "history",
-      "summary": "A remarkable Bronze Age burial complex of passage tombs and standing stones, just minutes from Culloden — and the inspiration for Outlander's standing stones.",
+      "summary": "A remarkable Bronze Age burial complex of passage tombs and standing stones, just minutes from Culloden — and the direct inspiration for the time-travel stones in Outlander. Around 4,000 years old, aligned with the midwinter sun, and remarkably little-visited for how extraordinary they are.",
       "tags": [
         "history",
         "film"
@@ -130,6 +150,40 @@
           "type": "history",
           "title": "Aligned with the midwinter sun",
           "body": "The three main cairns at Clava are carefully positioned so that at midwinter sunset the passage of the two outer tombs aligns precisely with the setting sun, illuminating the interior chambers. This required extraordinary skill in planning and construction from people with no written mathematics. The site was in use for around 500 years before being abandoned, and has never been built over."
+        }
+      ]
+    },
+    {
+      "id": "urquhart-castle",
+      "name": "Urquhart Castle",
+      "lat": 57.3232,
+      "lng": -4.4418,
+      "category": "attraction",
+      "summary": "The dramatic ruins of one of Scotland's largest castles, perched on a promontory over Loch Ness — a front-row seat for monster spotting, and the site of 700 years of siege, surrender, and betrayal before its own garrison finally blew it up in 1692.",
+      "tags": [
+        "history",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "700 years of siege and surrender",
+          "body": "Urquhart changed hands repeatedly during the Wars of Independence — captured by Edward I of England in 1296, retaken by Robert the Bruce's forces in 1307, raided repeatedly over the following centuries. It was finally blown up by its own garrison in 1692 to prevent it falling to Jacobite forces, the explosion causing much of the collapse visible today. The castle's strategic position controlling the Great Glen made it perpetually fought over for four centuries.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Urquhart_Castle",
+            "caption": "Urquhart Castle on Loch Ness"
+          }
+        },
+        {
+          "type": "film",
+          "title": "Loch Ness (1996) & The Sorcerer's Apprentice",
+          "body": "Urquhart Castle featured in the 1996 film Loch Ness, starring Ted Danson as an American scientist sent to disprove the monster's existence who becomes a believer. The castle also appeared in The Sorcerer's Apprentice (2010) with Nicolas Cage. Its photogenic ruin on the lochside has made it one of the most photographed castles in Scotland — and the most likely viewpoint from which a Nessie sighting might theoretically be confirmed."
+        },
+        {
+          "type": "trivia",
+          "title": "St Columba's original encounter",
+          "body": "The first written account of a monster in Loch Ness dates to 565 AD, when St Columba reportedly encountered an 'aquatic beast' near here and commanded it to retreat in God's name. The beast obeyed. This account, written by Columba's biographer Adomnán over a century later, is the original source of the Nessie legend — though the creature in the story was in the River Ness, not the loch, and was apparently attacking a swimmer rather than lurking mysteriously in the depths."
         }
       ]
     }

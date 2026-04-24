@@ -13,7 +13,7 @@
       "lat": 56.4175,
       "lng": -5.4751,
       "category": "attraction",
-      "summary": "A circular granite folly resembling the Colosseum, looming over Oban — built by a banker to provide work and immortalise his family.",
+      "summary": "A circular granite folly resembling the Colosseum, looming over Oban — built by a wealthy banker in 1897 to provide work for local stonemasons and immortalise his family. The statues he planned were never built, but the views from the outer walls are among the finest on the west coast.",
       "tags": [
         "history",
         "trivia"
@@ -33,6 +33,11 @@
           "type": "trivia",
           "title": "Oban's own Colosseum",
           "body": "McCaig modelled his tower on the Colosseum in Rome, though at 200 metres in diameter the comparison is ambitious. The interior was intended to house a museum, art gallery, and statues — but was never completed beyond the outer walls. Today the interior is a pleasant public garden, and the views from the outer wall over Oban Bay and to the islands beyond are among the finest in the western Highlands."
+        },
+        {
+          "type": "book",
+          "title": "Ring of Bright Water (1969)",
+          "body": "In the 1950s, the naturalist and writer Gavin Maxwell moved into a remote cottage on the west coast near Oban to live with two pet otters. His memoir Ring of Bright Water — published in 1960 — became one of the most beloved nature books ever written in Britain, selling millions of copies and inspiring a generation of conservationists. A 1969 film adaptation used locations around the Oban coast. Otters can still be spotted in the waters here — one of the few places in Britain where they're reliably seen."
         }
       ]
     },
@@ -42,7 +47,7 @@
       "lat": 56.4147,
       "lng": -5.4712,
       "category": "attraction",
-      "summary": "The beating heart of Oban — a working harbour where CalMac ferries depart for Mull, Islay, Colonsay, and the outer islands.",
+      "summary": "The beating heart of Oban — a working harbour where CalMac ferries depart for Mull, Islay, Colonsay, and the outer islands. This is one of the best places in Scotland to eat fresh seafood, landed directly from boats at the pier.",
       "tags": [
         "nature",
         "history"
@@ -62,6 +67,16 @@
           "type": "nature",
           "title": "The seafood capital of Scotland",
           "body": "Oban is one of the finest places in Scotland to eat seafood — the waters of the Firth of Lorn produce outstanding langoustines, scallops, crab, and lobster. The famous Oban Seafood Shack at the harbour sells freshly caught seafood from a converted container. The day's catch is landed directly from boats at the pier, so what you eat in the afternoon may have been in the sea that morning."
+        },
+        {
+          "type": "trivia",
+          "title": "A cave under the distillery",
+          "body": "Oban Distillery, founded in 1794, sits in the heart of the town — one of the smallest and oldest distilleries in Scotland. When it wanted to expand in the 1890s, workers began excavating and discovered a cave system directly underneath containing human bones, artefacts, and evidence of habitation dating back around 7,000 years. The expansion was quietly abandoned. The distillery continued making whisky above a Mesolithic settlement, and the 14-year-old single malt it produces is now considered one of the definitive west coast expressions."
+        },
+        {
+          "type": "history",
+          "title": "Lady's Rock",
+          "body": "On the ferry between Oban and Craignure on Mull, look for a small rocky outcrop called Lady's Rock. In the early 16th century, Lachlan Cattanach Maclean — 11th Chief of Clan Maclean — had grown tired of his wife Katherine Campbell, sister of the Earl of Argyll. His solution was to abandon her on this tidal rock at night and leave her to drown. A passing boat rescued her. Rather than confront her husband directly, Katherine returned to her family. Shortly afterwards, Lachlan appeared in Edinburgh to announce his wife's death and mourn her publicly. Her brother had him murdered in his bed that same night. The rock has borne her name ever since."
         }
       ]
     },
@@ -71,7 +86,7 @@
       "lat": 56.4549,
       "lng": -5.4369,
       "category": "history",
-      "summary": "A 13th-century castle on a rock above the Firth of Lorn — one of the oldest standing castles in Scotland.",
+      "summary": "A 13th-century castle on a rock above the Firth of Lorn — one of the oldest standing castles in Scotland, with connections to the Stone of Destiny, Robert the Bruce, and Flora MacDonald. The Campbells of Dunstaffnage still hold the hereditary captaincy today.",
       "tags": [
         "history",
         "royalty"
@@ -90,7 +105,7 @@
         {
           "type": "history",
           "title": "Flora MacDonald imprisoned here",
-          "body": "After helping Bonnie Prince Charlie escape to Skye in 1746, Flora MacDonald was arrested and briefly imprisoned at Dunstaffnage Castle before being transferred to the Tower of London. She was later released without trial, returned to Scotland, and emigrated to North Carolina — where she supported the British side during the American Revolution, before returning to Skye to die in 1790."
+          "body": "After helping Bonnie Prince Charlie escape to Skye in 1746 disguised as her Irish maidservant 'Betty Burke', Flora MacDonald was arrested and briefly imprisoned at Dunstaffnage Castle before being transferred to the Tower of London. She was later released without trial, returned to Scotland, and emigrated to North Carolina — where she supported the British side during the American Revolution, before returning to Skye to die in 1790. Samuel Johnson visited her on his Highland tour and described her as 'a woman of soft features, gentle manners and elegant presence.'"
         }
       ]
     },
@@ -100,7 +115,7 @@
       "lat": 56.3988,
       "lng": -5.5155,
       "category": "nature",
-      "summary": "A small, car-free island just minutes by ferry from Oban, with a circular walking route, ruined castle, and views of the mainland.",
+      "summary": "A small, car-free island just minutes by ferry from Oban, with a circular walking route, ruined castle, and views across to the mainland. With a population of just 50 people, it offers complete escape from the bustle of the harbour town visible across the water.",
       "tags": [
         "nature",
         "history"
@@ -129,7 +144,7 @@
       "lat": 56.5693,
       "lng": -5.385,
       "category": "attraction",
-      "summary": "A 15th-century tower house on a tiny tidal island — the 'Castle of Aaaargh' from Monty Python and the Holy Grail.",
+      "summary": "A 15th-century tower house on a tiny tidal island — the 'Castle of Aaaargh' from the final scene of Monty Python and the Holy Grail. One of the most dramatically positioned castles in Scotland, it was famously lost by its owner in a drunken wager in 1620.",
       "tags": [
         "history",
         "film"

@@ -13,7 +13,7 @@
       "lat": 56.7969,
       "lng": -5.0035,
       "category": "nature",
-      "summary": "Britain's highest mountain at 1345m — a deceptively flat-backed giant that has lured and humbled walkers for centuries.",
+      "summary": "Britain's highest mountain at 1345m — a deceptively flat-backed giant that has lured and humbled walkers for centuries. Around 125,000 people attempt the summit every year; the ruins of a Victorian weather observatory are still visible at the top.",
       "tags": [
         "nature",
         "history"
@@ -33,6 +33,11 @@
           "type": "history",
           "title": "The summit observatory",
           "body": "Between 1883 and 1904, a team of meteorologists lived year-round in a stone observatory at the summit of Ben Nevis — at 1345m, the most isolated weather station in the British Isles. They recorded readings every hour, in conditions that included winds of over 150mph and temperatures of -17°C. The data they collected transformed the understanding of Scottish mountain weather. The ruins of the observatory are still visible at the summit."
+        },
+        {
+          "type": "trivia",
+          "title": "The annual race to the summit",
+          "body": "Every September, the Ben Nevis Race sends runners from the town of Fort William to the 1345m summit and back — a round trip of 14 miles with 1350m of ascent. The record, set in 1984 by Kenny Stuart, stands at 1 hour 25 minutes and 34 seconds. The average runner takes around 3-4 hours. The race has been run since 1895, with a gap during the two World Wars, making it one of the oldest fell races in Britain. Competitors regularly disappear into cloud within the first few hundred metres of ascent."
         }
       ]
     },
@@ -42,7 +47,7 @@
       "lat": 56.7831,
       "lng": -5.0256,
       "category": "nature",
-      "summary": "A dramatic glacial valley beneath Ben Nevis — the filming location for Braveheart, Rob Roy, and Harry Potter.",
+      "summary": "A dramatic glacial valley beneath Ben Nevis and one of Scotland's most-filmed landscapes — Braveheart, Rob Roy, and Harry Potter have all used it as a backdrop. The gorge at the head of the glen leads to Steall Falls, Scotland's second highest waterfall.",
       "tags": [
         "nature",
         "film"
@@ -76,7 +81,7 @@
       "lat": 56.8455,
       "lng": -5.1248,
       "category": "attraction",
-      "summary": "The UK's longest staircase lock — a flight of eight locks on Thomas Telford's Caledonian Canal, taking boats from sea level to Loch Lochy.",
+      "summary": "The UK's longest staircase lock — a flight of eight locks on the Caledonian Canal raising boats 20 metres in a single dramatic flight. Built by a shepherd's son who became Scotland's greatest engineer, and opened in 1822 to fight a war that was already over.",
       "tags": [
         "history"
       ],
@@ -104,7 +109,7 @@
       "lat": 56.8196,
       "lng": -5.1061,
       "category": "history",
-      "summary": "A small but fascinating museum in the heart of Fort William, packed with Highland memorabilia — including a secret portrait of Bonnie Prince Charlie.",
+      "summary": "A small but fascinating museum in the heart of Fort William, packed with Highland memorabilia — including a secret portrait of Bonnie Prince Charlie that can only be seen in a cylindrical mirror. One of the most ingenious pieces of hidden art ever made.",
       "tags": [
         "history",
         "trivia"
@@ -124,6 +129,11 @@
           "type": "history",
           "title": "Fort William's dark history",
           "body": "The original fort was built in 1654 by General Monck during Cromwell's occupation of Scotland, and rebuilt in stone after the Glorious Revolution. It was named after the future King William III and served as a garrison to suppress the Jacobite Highlanders. The town that grew up around it was known as Gordonsburgh before taking the fort's name. The fort itself was demolished in 1864 to make way for the railway."
+        },
+        {
+          "type": "history",
+          "title": "The room where the order was signed",
+          "body": "Among the West Highland Museum's most remarkable exhibits is the original wooden paneling from the room in Inveraray Castle where the order for the Massacre of Glencoe was signed in 1692. The order authorised soldiers to 'put all to the sword under seventy' — meaning every MacDonald man under the age of 70 was to be killed. It was signed by the Master of Stair, John Dalrymple, who had already expressed his desire to 'extirpate that nest of thieves'. The paneling was removed and brought here as a physical record of one of the most infamous acts of betrayal in Scottish history."
         }
       ]
     },
@@ -133,7 +143,7 @@
       "lat": 56.6806,
       "lng": -5.0989,
       "category": "nature",
-      "summary": "Scotland's most dramatic glen — brooding peaks, a notorious massacre, and more major film credits than almost anywhere else in the UK.",
+      "summary": "Scotland's most dramatic glen — brooding peaks, a notorious massacre, and more major film credits than almost anywhere else in the UK. Braveheart, Skyfall, Highlander, Harry Potter, and Monty Python have all filmed here, drawn by a landscape that looks genuinely otherworldly.",
       "tags": [
         "nature",
         "history",
@@ -164,6 +174,16 @@
           "type": "nature",
           "title": "A landscape of volcanoes",
           "body": "Glencoe sits inside the collapsed crater of an ancient supervolcano that erupted around 420 million years ago. The circular ring of mountains surrounding the glen — including the distinctive Three Sisters — are the remnants of the volcano's rim. The dramatic, almost vertical walls of rock that make the glen so cinematic are the result of both volcanic activity and subsequent glaciation during the last Ice Age."
+        },
+        {
+          "type": "film",
+          "title": "Harry Potter — Hagrid's Hut & the Hogwarts grounds",
+          "body": "Glencoe served as the location of Hagrid's Hut and the Hogwarts covered bridge in Harry Potter and the Prisoner of Azkaban (2004), and continued to appear in Goblet of Fire, Order of the Phoenix, Half-Blood Prince, and Deathly Hallows. The production built actual sets in the glen rather than using CGI backgrounds. The rugged landscape gave the films a sense of real Highland wilderness that became inseparable from audiences' mental image of Hogwarts' grounds.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Glencoe,_Scotland",
+            "caption": "Glencoe, Scotland"
+          }
         }
       ]
     }

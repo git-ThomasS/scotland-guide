@@ -147,7 +147,7 @@
         {
           "type": "nature",
           "title": "Ben Dorain and the great Gaelic poet",
-          "body": "The pyramid-shaped peak of Ben Dorain (1076m) dominates the view from Bridge of Orchy. It was immortalised by the 18th-century Gaelic poet Duncan Ban MacIntyre in his masterpiece 'Moladh Beinn Dobhrain' (In Praise of Ben Dorain) — a long, intricate poem of extraordinary beauty describing the mountain's deer, streams, and landscape in loving detail. MacIntyre was illiterate, and composed and memorised the entire poem in his head."
+          "body": "The pyramid-shaped peak of Ben Dorain (1076m) dominates the view from Bridge of Orchy. It was immortalised by the 18th-century Gaelic poet Duncan Ban MacIntyre in his masterpiece 'Moladh Beinn Dobhrain' (In Praise of Ben Dorain) — a long, intricate poem of extraordinary beauty describing the mountain's deer, streams, and landscape in loving detail. MacIntyre was illiterate, and composed and memorised the entire poem entirely in his head — it was only written down when someone transcribed it for him."
         }
       ]
     },
@@ -234,6 +234,292 @@
           "type": "history",
           "title": "The Highland Boundary Fault",
           "body": "The loch sits directly on the Highland Boundary Fault — the geological line that divides the Scottish Highlands from the Lowlands. The fault runs right through the middle of the loch, which is why the southern end is broad and shallow, surrounded by gentle hills, while the northern end narrows dramatically between steep Highland peaks. You cross it on the train between Balloch and Ardlui."
+        },
+        {
+          "type": "history",
+          "title": "The Bonnie Banks and the Jacobite tragedy",
+          "body": "The most famous song about Loch Lomond — 'The Bonnie Banks o' Loch Lomond' — is believed to have been written by a Jacobite prisoner after Culloden in 1746. Pairs of captured rebels were sometimes given a grim choice: one would be executed for treason, the other freed. The song is understood as the condemned man's farewell — the 'low road' being the spirit's rapid journey home after death, arriving in Scotland before the survivor's long living journey north. 'I'll be in Scotland afore ye' is the ghost's promise. The loch you're passing over was the landscape those soldiers were thinking of as they faced execution in London, hundreds of miles from home."
+        }
+      ]
+    },
+    {
+      "id": "linlithgow-palace",
+      "name": "Linlithgow Palace",
+      "lat": 55.9767,
+      "lng": -3.5971,
+      "category": "attraction",
+      "summary": "A magnificent ruined royal palace visible from the train 15 minutes west of Edinburgh — birthplace of Mary Queen of Scots in 1542, and the favourite residence of the Stewart kings for over a century.",
+      "tags": [
+        "history",
+        "royalty"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Mary Queen of Scots was born here",
+          "body": "On 8 December 1542, the heir to the Scottish throne was born in the queen's apartments at Linlithgow Palace. Her father, James V, had just suffered a devastating defeat at the Battle of Solway Moss and was in a state of mental collapse. He visited briefly, then rode to Falkland Palace where he took to his bed and died six days later — never knowing whether his child would be a boy or a girl. The infant became Queen of Scots at six days old. Mary would return to Linlithgow only once before her tumultuous reign ended in abdication, imprisonment, and eventual execution in England.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Linlithgow_Palace",
+            "caption": "Linlithgow Palace"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Bonnie Prince Charlie's fountain ran with wine",
+          "body": "In 1745 Bonnie Prince Charlie passed through Linlithgow on his march south to Edinburgh, and according to tradition the courtyard fountain — built for James V in 1538 — was made to run with wine to celebrate his arrival. It was the last great moment for the palace. In January 1746, troops of the Duke of Cumberland's army marched out after an overnight stay, leaving fires burning. The fires caught hold and gutted the entire building. Since 1746 the palace has stood roofless and uninhabited, one of the most dramatic ruins in Scotland — visible from the train for just a few seconds as you pass."
+        },
+        {
+          "type": "film",
+          "title": "Outlander filming location",
+          "body": "Linlithgow Palace served as a filming location for the Outlander TV series, used to represent various Highland fortresses throughout the show's run. Its dramatic ruined courtyards and great hall provided the production with an authentic medieval backdrop that purpose-built sets cannot replicate. The palace's combination of grandeur and ruin — roofless great hall, intact towers — made it ideal for period drama. It appears in the show as Wentworth Prison, the forbidding fortress where Jamie Fraser is imprisoned and tortured in season one."
+        }
+      ]
+    },
+    {
+      "id": "loch-awe-cruachan",
+      "name": "Loch Awe & The Hollow Mountain",
+      "lat": 56.3982,
+      "lng": -5.0719,
+      "category": "attraction",
+      "summary": "Scotland's longest freshwater loch — 41km of mountain-ringed water — with a remarkable secret: a hydroelectric power station built entirely inside the mountain beside it, its vast cavern large enough to hold a cathedral.",
+      "tags": [
+        "nature",
+        "history"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The Hollow Mountain",
+          "body": "Beside the train stop at Falls of Cruachan sits one of the most extraordinary engineering projects in British history. Inside Ben Cruachan, workers known as 'Tunnel Tigers' drilled and blasted a kilometre-long tunnel through solid granite, creating a cavern 36 metres tall — large enough to hold the Tower of London. The result is a pumped-storage hydroelectric power station that generates electricity on demand: water falls from a reservoir near the mountain's summit, drives turbines, then is pumped back up when power is cheap. It was the first reversible pumped-storage system of its scale in the world, opened by Queen Elizabeth II in 1965 — though at the time only two of the four turbines were actually ready, a fact concealed from her with carefully arranged special effects.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Cruachan_Power_Station",
+            "caption": "Cruachan Power Station — The Hollow Mountain"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The Pass of Brander and Robert the Bruce",
+          "body": "The narrow pass through which the train runs along Loch Awe's northern shore takes its name from the Gaelic word for 'ambush' — and it earned it. In August 1308, Robert the Bruce was marching west to besiege Dunstaffnage Castle when his enemies, the MacDougalls, laid an ambush in this pass. Bruce anticipated it, sending a flanking force up the hillside above to catch the ambushers from behind. The MacDougalls were routed. According to legend, the Cailleach Bheur — the Old Hag of Winter — once fell asleep while guarding a sacred spring on Ben Cruachan's summit. The water overflowed, burst through the Pass of Brander, and created both the River Awe and Loch Awe. The petrified Cailleach is said to still sit on the mountainside above."
+        },
+        {
+          "type": "nature",
+          "title": "Kilchurn Castle",
+          "body": "At the head of Loch Awe, visible from the train on a clear day, stand the ruins of Kilchurn Castle — one of the most photographed castles in Scotland. Built in 1440 by the Campbells before they moved their base to Inveraray, it sits on a rocky spit that was once a true island. The castle was struck by lightning in the 1760s and abandoned, leaving a dramatic shell against the mountain backdrop. Loch Awe itself is Scotland's longest freshwater loch at 41 kilometres — longer than Loch Ness, though far less famous."
+        }
+      ]
+    },
+    {
+      "id": "corrour-station",
+      "name": "Corrour Station",
+      "lat": 56.7598,
+      "lng": -4.691,
+      "category": "attraction",
+      "summary": "The most remote and highest mainline railway station in Britain — sitting at 408m on Rannoch Moor with no road access whatsoever. The nearest public road is 10 miles away.",
+      "tags": [
+        "nature",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "trivia",
+          "title": "Britain's most remote station",
+          "body": "Corrour station exists because a Victorian landowner — Sir John Stirling-Maxwell — agreed to let the West Highland Railway cross his estate in 1891, on condition they build him a private station. It opened in 1894 and has no road access to this day. The nearest public road is a 10-mile walk across open moorland. The station sits at 408 metres above sea level — the highest mainline station in Britain — and on the bleakest, most isolated stretch of track in the country. Despite this, it has a restaurant, three B&B rooms in the converted signal box, and receives thousands of visitors every year, most arriving by the very train you're sitting on.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Corrour_railway_station",
+            "caption": "Corrour Station, Rannoch Moor"
+          }
+        },
+        {
+          "type": "film",
+          "title": "Trainspotting — the Rannoch Moor scene",
+          "body": "In one of Trainspotting's most memorable scenes, Renton, Sick Boy, Spud and Begbie impulsively get off the train at Corrour station and find themselves stranded on the vast emptiness of Rannoch Moor. 'It's shite being Scottish,' Renton announces, before they decide to get back on the next train. The scene was filmed on the actual station platform and surrounding moorland — the bleakness is entirely real. Corrour's remoteness made it the perfect visual metaphor for the film's themes of escape and the impossibility of it. The station now receives visitors specifically looking to recreate the scene."
+        }
+      ]
+    },
+    {
+      "id": "aviemore-cairngorms",
+      "name": "Aviemore & the Cairngorms",
+      "lat": 57.1926,
+      "lng": -3.8293,
+      "category": "nature",
+      "summary": "The gateway to Britain's only subarctic mountain plateau — the Cairngorms contain five of the six highest peaks in the UK, and the ancient Caledonian pine forest that once covered most of Scotland.",
+      "tags": [
+        "nature",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Outlander — where Claire meets Jamie",
+          "body": "The forest of Tulloch Ghru on the Rothiemurchus Estate, just two miles south of Aviemore, is where Claire Randall first encounters Jamie Fraser after passing through the standing stones — the scene that sets the entire Outlander story in motion. It is also used in the show's opening credits. The production chose Rothiemurchus because its ancient Caledonian pines — some over 300 years old — look genuinely unlike any managed modern woodland, giving the sense of a wilder, older Scotland. The estate is open to walkers today and the forest looks exactly as it does on screen.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Cairngorms_National_Park",
+            "caption": "Cairngorms National Park, Scotland"
+          }
+        },
+        {
+          "type": "nature",
+          "title": "Britain's last subarctic wilderness",
+          "body": "The Cairngorms plateau is the closest thing Britain has to an arctic landscape. At altitude, the ground is frozen for much of the year, the plants are low and wind-blasted, and the wildlife includes species found nowhere else in the UK — ptarmigan, dotterel, snow bunting, and the only wild reindeer herd in Britain. The ancient Caledonian pine forest that clings to the lower slopes is a remnant of the vast forest that covered Scotland after the last Ice Age. Red squirrels, ospreys, and capercaillie all live here — species that have disappeared from most of the rest of Britain."
+        }
+      ]
+    },
+    {
+      "id": "highland-folk-museum",
+      "name": "Highland Folk Museum (Kingussie)",
+      "lat": 57.0746,
+      "lng": -4.0338,
+      "category": "attraction",
+      "summary": "An 80-acre open-air museum near Newtonmore containing an authentic reconstructed 18th-century Highland township — and the filming location for the MacKenzie village in Outlander.",
+      "tags": [
+        "history",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Outlander's MacKenzie village",
+          "body": "The Highland Folk Museum's reconstructed 18th-century township of Baile Gean — complete with turf-roofed crofts, a working mill, and period-accurate interiors — served as the MacKenzie clan village in multiple Outlander episodes. The production chose it because almost no set-building was required: the museum's buildings are so historically accurate that the crew simply dressed the existing structures and started filming. Scenes shot here include Dougal MacKenzie collecting rents from his tenants and various village life sequences from seasons 1 and 2. Costumed guides still work in the buildings today.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Highland_Folk_Museum",
+            "caption": "Highland Folk Museum, Newtonmore"
+          }
+        },
+        {
+          "type": "history",
+          "title": "A township frozen in time",
+          "body": "The museum contains buildings spanning 300 years of Highland life, from a 1700s township of black houses — low turf-walled buildings shared with livestock for warmth — to a 1930s farm and schoolhouse. The 1700s township is the most striking: identical in construction to the buildings that were burned during the Highland Clearances of the 18th and 19th centuries, when landlords evicted thousands of people to make way for sheep. Walking through it gives a visceral sense of how people actually lived in the Highlands before the modern world arrived."
+        }
+      ]
+    },
+    {
+      "id": "blair-atholl",
+      "name": "Blair Atholl & Blair Castle",
+      "lat": 56.7712,
+      "lng": -3.8501,
+      "category": "attraction",
+      "summary": "A gleaming white castle visible from the train — home to Europe's only remaining private army, the Atholl Highlanders, a ceremonial regiment that has existed since 1777 and still answers only to the Duke of Atholl.",
+      "tags": [
+        "history",
+        "royalty"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Europe's last private army",
+          "body": "The Duke of Atholl is the only person in Europe legally permitted to maintain a private army. The Atholl Highlanders — around 100 men in full Highland dress, armed with rifles — are not part of the British military and swear no oath to the Crown. Their allegiance is to the Duke alone. The regiment was raised in 1777, fell into abeyance after the First World War, and was revived in 1966 when eight local men were invited to join — most of them estate employees. Queen Victoria granted them official regimental status after they served as her personal guard during a visit to Blair Castle in 1844. Their annual parade still takes place at the castle each May.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Blair_Castle",
+            "caption": "Blair Castle, Perthshire"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The last castle besieged in Britain",
+          "body": "Blair Castle holds the distinction of being the last castle in the British Isles to be besieged — in 1746, during the Jacobite rising. In a bizarre twist, it was besieged by its own owner. Lord George Murray, the most capable Jacobite general, held the castle for the government while his brother the Duke of Atholl supported Bonnie Prince Charlie. The Jacobite forces — including the Duke himself — therefore laid siege to their own family home. The siege lasted several weeks before being lifted after Culloden ended the rising. The castle had previously been occupied by Bonnie Prince Charlie himself on his march south in 1745."
+        },
+        {
+          "type": "history",
+          "title": "The oldest whisky ever discovered",
+          "body": "In 2019, a bottle of whisky was found behind a hidden cellar door at Blair Castle, believed to have been distilled in the 1820s and sipped by a young Queen Victoria during her visits to the estate. If authentic, it would be the oldest known Scotch whisky in existence — pre-dating commercial distilleries as we know them. The discovery attracted global attention. Victoria visited Blair Castle multiple times during her reign, describing it as 'a fine place... the surroundings give the impression of perfect peace and grandeur.'"
+        }
+      ]
+    },
+    {
+      "id": "pitlochry",
+      "name": "Pitlochry & the Salmon Ladder",
+      "lat": 56.7059,
+      "lng": -3.734,
+      "category": "attraction",
+      "summary": "A Victorian spa town in the heart of Perthshire, with a hydroelectric dam where you can watch Atlantic salmon climbing a 34-chamber ladder on their return to their spawning grounds.",
+      "tags": [
+        "nature",
+        "history"
+      ],
+      "trivia": [
+        {
+          "type": "nature",
+          "title": "5,000 salmon can't be wrong",
+          "body": "When Pitlochry's hydroelectric dam was built across the River Tummel in 1947-51, engineers faced an unusual challenge: thousands of Atlantic salmon return every year from the North Atlantic to spawn in the same river where they were born, and a dam would block their path entirely. The solution was a 310-metre fish ladder — 34 stepped pools that allow fish to bypass the dam. Since it opened in 1952, over 250,000 salmon have used it. An underwater observation chamber lets visitors watch them pass. The turbine blades are designed like revolving doors to let smaller fish pass directly through without harm. At the time it was built, local people feared the dam would destroy Pitlochry's tourist trade — instead the salmon ladder became the town's main attraction.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Pitlochry_Dam",
+            "caption": "Pitlochry Dam and Fish Ladder"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The Tunnel Tigers",
+          "body": "Building the network of 54 hydroelectric power stations, 78 dams, and over 180 miles of tunnels across the Scottish Highlands in the 1940s and 50s required a workforce unlike any Scotland had seen. The tunnellers — many of them Irish, Polish, Italian, and Eastern European — became known as the Tunnel Tigers for their skill and speed working in the most dangerous conditions underground. At the peak of the scheme, 12,000 men were employed across dozens of Highland construction sites simultaneously. Many were prisoners of war, allowed to work after the end of WWII. Deaths were common. Their story is told in the visitor centre at Pitlochry Dam."
+        }
+      ]
+    },
+    {
+      "id": "dunkeld-birnam",
+      "name": "Dunkeld & Birnam Wood",
+      "lat": 56.5641,
+      "lng": -3.5869,
+      "category": "nature",
+      "summary": "A cathedral town on the River Tay — and across the bridge, the last surviving tree of the Birnam Wood that Shakespeare wrote into Macbeth. A 600-year-old oak that may have been standing when Shakespeare himself visited.",
+      "tags": [
+        "history",
+        "book"
+      ],
+      "trivia": [
+        {
+          "type": "book",
+          "title": "The tree that Shakespeare may have seen",
+          "body": "On the south bank of the River Tay, a single enormous oak stands as the last surviving remnant of the Birnam Wood that appears in Shakespeare's Macbeth. The witches prophecy that Macbeth shall never be defeated 'until Great Birnam Wood to high Dunsinane Hill shall come against him' — and of course Malcolm's army disguises its advance by carrying branches cut from this very wood. The tree is around 600 years old, which means it was already mature when Shakespeare is believed to have toured Scotland with a theatrical troupe in 1589. If he walked in Birnam Wood — which some historians think likely — this tree was there. It now leans heavily on wooden crutches, its great branches too wide to support themselves.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Birnam_Oak",
+            "caption": "The Birnam Oak, Perthshire"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The first King of all Scotland is buried here",
+          "body": "Dunkeld Cathedral, on the north bank of the Tay, stands on the site of one of the most significant places in early Scottish history. Around 848 AD, Kenneth MacAlpin — traditionally regarded as the first King of a united Scotland — moved the relics of St Columba here from Iona, making Dunkeld the religious capital of his new kingdom. The cathedral itself dates from the 12th to 15th centuries and is still partly in use as a parish church today, with the roofless nave open to the sky. During the Reformation it was sacked; in 1689 the Battle of Dunkeld was fought in its streets between Jacobite Highlanders and Covenanting soldiers."
+        }
+      ]
+    },
+    {
+      "id": "stirling",
+      "name": "Stirling — the Brooch of Scotland",
+      "lat": 56.1165,
+      "lng": -3.9369,
+      "category": "attraction",
+      "summary": "The city that controlled Scotland for centuries — whoever held Stirling Castle held the only crossing point between the Highlands and Lowlands, making it the most fought-over ground in Scottish history.",
+      "tags": [
+        "history",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The Battle of Stirling Bridge",
+          "body": "In September 1297, an English army of around 10,000 crossed Stirling Bridge to crush a Scottish rebellion — and walked into one of the most catastrophic traps in medieval military history. William Wallace and Andrew Moray waited until half the English force had crossed the narrow bridge, then attacked. The leading troops were slaughtered; those behind couldn't cross fast enough to help. The English treasurer Hugh Cressingham was killed and, according to the chronicles, his skin was taken and cut into strips as souvenirs. The victory made Wallace a national hero and the bridge — no longer standing — became a symbol of Scottish defiance. The Wallace Monument on Abbey Craig marks the spot where Wallace watched the English cross.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Wallace_Monument",
+            "caption": "The Wallace Monument, Stirling"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Bannockburn — the battle that secured Scotland",
+          "body": "In June 1314, Robert the Bruce met Edward II of England's army at Bannockburn, just south of Stirling, with roughly a third of the English numbers. Edward had marched north to relieve Stirling Castle, whose garrison had agreed to surrender if not relieved by midsummer. Over two days, Bruce's smaller, disciplined force drove the English cavalry onto boggy ground, defeated their archers, and then watched the English army disintegrate into panic. Edward II barely escaped with his life. The battle did not end the war — that took another 14 years — but it made clear that England could not conquer Scotland by force. The battlefield is visible from the train window as you approach Stirling from the north."
+        },
+        {
+          "type": "film",
+          "title": "Braveheart (1995) — and Mel Gibson's kilt",
+          "body": "The Wallace Monument saw a surge of 130% in visitor numbers in the years after Braveheart was released in 1995 — despite the film being almost entirely shot in Ireland and using Mel Gibson, an Australian-American, to play Scotland's national hero. Most Scots greeted the film with a mixture of pride and exasperation at its historical liberties: Wallace is depicted as wearing a kilt (kilts didn't exist in the 13th century), and his affair with the French princess is entirely invented. The scene of Scots lifting their kilts to flash the English army was filmed on a cold Irish morning, which reportedly did not make the extras enthusiastic participants."
         }
       ]
     }

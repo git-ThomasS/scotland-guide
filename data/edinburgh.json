@@ -13,7 +13,7 @@
       "lat": 55.9486,
       "lng": -3.1999,
       "category": "attraction",
-      "summary": "A fortress on volcanic rock, occupied for over 3,000 years.",
+      "summary": "A fortress on volcanic rock, occupied for over 3,000 years — home to Scotland's crown jewels, the famous One O'Clock Gun, and views across the entire city. Every Scottish monarch from the 11th century onwards has had a connection to this rock.",
       "tags": [
         "history",
         "film",
@@ -44,6 +44,16 @@
           "type": "history",
           "title": "The Honours of Scotland",
           "body": "The Scottish Crown Jewels — the Honours of Scotland — are the oldest surviving royal regalia in the British Isles, dating to the 15th and 16th centuries. During the Cromwellian occupation, they were hidden in Kinneff Church, smuggled out in a laundry basket by the wife of the local minister. After the Act of Union in 1707, they were locked in a chest in the castle and forgotten for over a century, until Sir Walter Scott petitioned the Prince Regent to have the chest opened in 1818 — and found them untouched."
+        },
+        {
+          "type": "history",
+          "title": "Mons Meg",
+          "body": "Edinburgh Castle houses Mons Meg — one of the largest cannons ever made, gifted to James II of Scotland by the Duke of Burgundy in 1457. She fired 18-inch stone balls weighing around 150kg, and could hurl them nearly two miles. Ironically, James II had earlier achieved the dubious distinction of becoming the first ruler in history to be killed by his own cannon, when one exploded beside him at the siege of Roxburgh Castle in 1460. Mons Meg herself cracked during a 21-gun salute for the Duke of York in 1681 and never fired again. She was taken to the Tower of London in 1754, returned to Edinburgh by Sir Walter Scott's campaigning in 1829, and has sat in the castle ever since.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Mons_Meg",
+            "caption": "Mons Meg, Edinburgh Castle"
+          }
         }
       ]
     },
@@ -53,7 +63,7 @@
       "lat": 55.9443,
       "lng": -3.1615,
       "category": "nature",
-      "summary": "An ancient volcano rising 251m above the city. Arguably the finest urban hike in Europe.",
+      "summary": "An ancient volcano rising 251m above the city — arguably the finest urban hike in Europe. The summit gives views across Edinburgh, the Firth of Forth, and on clear days as far as the Highlands, and the whole hill is riddled with history, mystery, and the odd film crew.",
       "tags": [
         "nature",
         "history",
@@ -62,8 +72,8 @@
       "trivia": [
         {
           "type": "film",
-          "title": "Trainspotting (1996)",
-          "body": "Danny Boyle's opening sequence features Renton and Spud sprinting through Edinburgh's streets — and the silhouette of Arthur's Seat looms throughout. The summit scene where they contemplate their lives was filmed right at the top.",
+          "title": "Trainspotting & T2 Trainspotting",
+          "body": "Arthur's Seat appears most prominently in T2 Trainspotting (2017) — after Renton rescues Spud from the brink, the pair go for an exhilarating run through Holyrood Park and up Arthur's Seat in one of the film's most uplifting sequences. The original Trainspotting (1996) uses the volcano as a skyline backdrop throughout rather than a filming location — the silhouette of Arthur's Seat is woven into Edinburgh's identity in both films. Worth knowing: despite being set entirely in Edinburgh, most of the original Trainspotting was actually filmed in Glasgow, with only the Princes Street opening chase shot in the actual city.",
           "media": {
             "type": "wikipedia",
             "article": "Arthur's_Seat",
@@ -84,6 +94,11 @@
           "type": "history",
           "title": "The pregnant ale-wives' race",
           "body": "In 1661, Edinburgh's Mercurius Caledonius newspaper reported that a dozen pregnant ale-wives had raced up Arthur's Seat 'for a groaning cheese of one hundred pound weight', with second prize being 'a budgell of Dunkeld aquavitae'. The following day the paper announced sixteen fish-wives would trot from Musselburgh to the Canon Cross for twelve pairs of lamb's offal. 17th-century Edinburgh entertainment was nothing if not inventive."
+        },
+        {
+          "type": "book",
+          "title": "Robert Louis Stevenson & Jekyll and Hyde",
+          "body": "Robert Louis Stevenson grew up in Edinburgh with Arthur's Seat visible from his window, and the volcano's brooding presence shaped his imagination. He came to see Edinburgh as fundamentally split — the respectable New Town versus the dark Old Town — a duality he crystallised in The Strange Case of Dr Jekyll and Mr Hyde (1886). That same idea later inspired Ian Rankin to write his Inspector Rebus series: a detective series that was, underneath, a modern Edinburgh Jekyll and Hyde. Stevenson, like Rankin, used the city's double nature as the engine of his fiction."
         }
       ]
     },
@@ -93,7 +108,7 @@
       "lat": 55.9503,
       "lng": -3.1883,
       "category": "attraction",
-      "summary": "The historic spine of Edinburgh's Old Town, running from the Castle down to Holyrood Palace.",
+      "summary": "The historic spine of Edinburgh's Old Town, running for exactly one Scottish mile from the Castle down to Holyrood Palace. Every close and wynd branching off it hides centuries of stories — murders, mysteries, literary connections, and the occasional film crew.",
       "tags": [
         "history",
         "film"
@@ -123,6 +138,16 @@
           "type": "history",
           "title": "Waverley — the only station named after a novel",
           "body": "Edinburgh's main railway station is the only terminus in the world named after a work of fiction — Walter Scott's 1814 novel Waverley. Scott himself largely invented the romantic tartan-clad image of the Highlands: in 1822, he stage-managed King George IV's visit to Edinburgh, persuading the king to wear a kilt in public for the first time. The resulting tartan-mania swept fashionable Britain and permanently shaped how Scotland is seen."
+        },
+        {
+          "type": "book",
+          "title": "Inspector Rebus & Ian Rankin",
+          "body": "The Royal Mile is the beating heart of Ian Rankin's Inspector Rebus novels — Edinburgh's most famous fictional detective has walked these closes in 23 books since 1987. Rankin conceived Rebus as a modern Jekyll and Hyde, the respectable surface of the Old Town concealing a dark underbelly. The fictional Rebus frequents the Oxford Bar on Young Street (a real pub still serving pints today), and Rankin's own handprints are set in the pavement outside the City Chambers on the High Street — the city's award to its most celebrated living author.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Inspector_Rebus",
+            "caption": "Inspector Rebus novels"
+          }
         }
       ]
     },
@@ -132,7 +157,7 @@
       "lat": 55.9524,
       "lng": -3.1723,
       "category": "attraction",
-      "summary": "The official Scottish residence of the British monarch, at the foot of the Royal Mile.",
+      "summary": "The official Scottish residence of the British monarch, at the foot of the Royal Mile — and the scene of some of the most dramatic episodes in Scottish royal history. Mary Queen of Scots lived here through six turbulent years that changed the course of British history.",
       "tags": [
         "history",
         "royalty"
@@ -166,7 +191,7 @@
       "lat": 55.9469,
       "lng": -3.1916,
       "category": "trivia",
-      "summary": "One of Edinburgh's most atmospheric graveyards — and one of its most haunted.",
+      "summary": "One of Edinburgh's most atmospheric graveyards — and one of its most haunted. The kirkyard contains the graves of Covenanters, a famously loyal dog, and names that J.K. Rowling apparently found useful when naming her characters.",
       "tags": [
         "history",
         "book"
@@ -196,6 +221,11 @@
           "type": "history",
           "title": "The Covenanters' Prison",
           "body": "In 1679, over 1,200 Covenanters captured at the Battle of Bothwell Brig were imprisoned in the open air in Greyfriars Kirkyard for five months. Many died of cold and starvation. Their jailer was Sir George Mackenzie — the same 'Bluidy Mackenzie' whose tomb later became associated with poltergeist activity. The walled enclosure in the kirkyard where they were held can still be visited today."
+        },
+        {
+          "type": "history",
+          "title": "Half-Hangit Maggie",
+          "body": "One of Edinburgh's most remarkable stories unfolded near the Grassmarket, just minutes from Greyfriars. In 1724, a fishwife called Margaret Dickson was hanged for concealing the birth of an illegitimate child who died shortly after. Her body was cut down and placed in a coffin for burial — but on the road home, those carrying the coffin heard knocking from inside. Maggie had survived. Under Scots law, having been formally hanged, her sentence was deemed served and she could not be executed again. She returned to her trade, married again, and lived for many more years. Locals called her 'Half-Hangit Maggie'."
         }
       ]
     },
@@ -205,7 +235,7 @@
       "lat": 55.9482,
       "lng": -3.1929,
       "category": "trivia",
-      "summary": "A curved, cobbled street of colourful shopfronts — said to have inspired Diagon Alley.",
+      "summary": "A curved, cobbled street of colourful shopfronts widely cited as the inspiration for Diagon Alley in Harry Potter. Built in the 1840s over the older medieval West Bow, it sits above layers of Edinburgh history that go back centuries.",
       "tags": [
         "book",
         "history"
@@ -239,7 +269,7 @@
       "lat": 55.9553,
       "lng": -3.1819,
       "category": "nature",
-      "summary": "A hill at the east end of Princes Street with panoramic views and a collection of monuments.",
+      "summary": "A hill at the east end of Princes Street with panoramic views and a collection of grand monuments — including one that was never finished. The hill featured prominently in T2 Trainspotting and remains one of the best free viewpoints in any European capital.",
       "tags": [
         "history",
         "nature",
@@ -249,7 +279,7 @@
         {
           "type": "film",
           "title": "Trainspotting 2 (2017)",
-          "body": "The reunion scene between Renton and Sick Boy — two decades on from the original — was filmed on Calton Hill, overlooking the city they once fled.",
+          "body": "Calton Hill appears throughout T2 Trainspotting (2017) as one of the film's recurring Edinburgh landmarks — used for establishing shots and atmospheric city views. Danny Boyle filmed extensively across Edinburgh for the sequel, in contrast to the original where most scenes were shot in a Glasgow factory. Over half of T2's scenes were filmed on location in Edinburgh — the sequel is essentially a love letter to the actual city, twenty years on.",
           "media": {
             "type": "wikipedia",
             "article": "Calton_Hill",
@@ -265,6 +295,89 @@
           "type": "history",
           "title": "Scotland's Disgrace and the Parthenon plan",
           "body": "The unfinished National Monument on Calton Hill was meant to be a full replica of the Athenian Parthenon, funded by public subscription to honour Scots killed in the Napoleonic Wars. Construction began in 1826 with great fanfare — but money ran out after just twelve columns. Mocked as 'Edinburgh's Disgrace' and 'Scotland's Shame', the twelve columns were left standing. Locals have since grown fond of the ruin, and several proposals to complete it have been firmly rejected."
+        }
+      ]
+    },
+    {
+      "id": "mary-kings-close",
+      "name": "Mary King's Close",
+      "lat": 55.9499,
+      "lng": -3.1912,
+      "category": "attraction",
+      "summary": "A labyrinth of buried 17th-century streets sealed beneath the Royal Mile since the 18th century — one of Edinburgh's most atmospheric underground attractions. Walking through it gives a genuine sense of the medieval city that still exists beneath the modern one.",
+      "tags": [
+        "history",
+        "book"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The city built over itself",
+          "body": "In the 18th century, the Royal Exchange (now the City Chambers) was built directly over a medieval street, sealing the old buildings beneath its foundations. Some residents continued living in the underground levels for decades afterwards. The close takes its name from Mary King, a merchant who owned property here in the 1630s — one of the few women recorded as a business owner in 17th-century Edinburgh.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Mary_King's_Close",
+            "caption": "Mary King's Close, Edinburgh"
+          }
+        },
+        {
+          "type": "book",
+          "title": "A Rebus crime scene",
+          "body": "Ian Rankin set a pivotal scene in his 1994 novel Mortal Causes in Mary King's Close — a torture victim is discovered in the underground passages at the start of the book. At the time Rankin wrote it, the Close was not yet open to visitors, accessible only by prior arrangement with Edinburgh Council. It has since opened as a major attraction drawing 200,000 visitors a year through the same medieval streets Rebus once treated as a crime scene."
+        },
+        {
+          "type": "history",
+          "title": "The plague myth",
+          "body": "A persistent legend holds that plague victims were walled up alive in Mary King's Close during the 1645 outbreak, sealed in to prevent infection spreading. This is almost certainly false — historical records show the Close continued to be inhabited after the plague. But the story proved irresistible, and the Close acquired a reputation for hauntings long before it was opened to tourists. Ghost tours regularly report unexplained phenomena in the underground chambers."
+        }
+      ]
+    },
+    {
+      "id": "princes-street",
+      "name": "Princes Street",
+      "lat": 55.9522,
+      "lng": -3.1965,
+      "category": "attraction",
+      "summary": "Edinburgh's most famous street — unique in having buildings only on one side, with the other open to the castle and gardens. The opening chase of Trainspotting was filmed here, and it remains the beating commercial heart of the city.",
+      "tags": [
+        "history",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Trainspotting — the opening chase",
+          "body": "The iconic opening sequence of Trainspotting (1996) begins here — Renton and Spud sprint down Princes Street after shoplifting from the bookshop at 107-109 Princes Street (now a Next clothing store), with Iggy Pop's Lust for Life blasting over the top. The chase continues down the steps to Calton Road and under the Regent Bridge. Despite the film being set in Edinburgh, this Princes Street sequence and a handful of other shots are almost the only scenes actually filmed in the city — the rest was shot in Glasgow.",
+          "media": {
+            "type": "url",
+            "url": "https://img.youtube.com/vi/SaP7qmsQbSI/maxresdefault.jpg",
+            "caption": "Trainspotting opening chase, Princes Street (1996)"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The street with one side",
+          "body": "Princes Street is unique among major city shopping streets in having buildings only on one side — the south side is entirely open, giving uninterrupted views across Princes Street Gardens to the castle rock. This is not an accident: a legal restriction dating to the early 19th century prevents any building on the garden side. Several attempts to develop it have been defeated in court over the centuries. The result is one of the most dramatic urban vistas in Europe, visible from every café and shop window on the street.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Princes_Street",
+            "caption": "Princes Street, Edinburgh"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The Scott Monument",
+          "body": "The 61-metre Gothic rocket ship that dominates Princes Street Gardens is a monument to the novelist Walter Scott, erected in 1844 — just 12 years after his death. It is the largest monument to a writer anywhere in the world. Visitors can climb 287 steps to the top for views across the city. Scott himself is depicted seated inside with his dog Maida. The monument turns black over time from pollution — it has been cleaned several times but always darkens again.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Scott_Monument",
+            "caption": "The Scott Monument, Edinburgh"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The city that nearly had a different king",
+          "body": "In September 1745, Bonnie Prince Charlie marched down from the north and occupied Edinburgh for six triumphant weeks — holding court at Holyroodhouse and throwing lavish balls while his Highland army camped outside the city walls. He did not enter Edinburgh Castle, which remained in government hands throughout. The city he occupied was the same Princes Street and Old Town you walk today. Within a year his cause would be crushed at Culloden, and he would spend the rest of his life in increasingly dissolute exile in Rome, dying in 1788 never having returned to Scotland."
         }
       ]
     }

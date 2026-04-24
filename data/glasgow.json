@@ -13,7 +13,7 @@
       "lat": 55.8611,
       "lng": -4.2506,
       "category": "attraction",
-      "summary": "Glasgow's grand civic heart, ringed by Victorian architecture and overlooked by the City Chambers.",
+      "summary": "Glasgow's grand civic heart, ringed by Victorian architecture and overlooked by the City Chambers — and one of Europe's most used film locations, having doubled for Philadelphia, San Francisco, and various American cities across dozens of productions.",
       "tags": [
         "history",
         "film"
@@ -38,6 +38,11 @@
           "type": "film",
           "title": "Fast & Furious 6, Cloud Atlas & more",
           "body": "Glasgow is one of Europe's most used film stand-ins. Its grid of Victorian streets has doubled for Philadelphia (World War Z), San Francisco (Cloud Atlas), and various American cities across dozens of productions. Fast & Furious 6 (2013) filmed chase sequences on the Kingston Bridge and surrounding streets. The 2019 war epic 1917 used the former Govan docks as a WWI canal crossing. Directors love Glasgow because it offers century-old architecture without the tourist crowds of London."
+        },
+        {
+          "type": "film",
+          "title": "Glasgow University as medieval England",
+          "body": "Glasgow's Victorian Gothic University, just north of the city centre, doubled as the English royal court in Mel Gibson's Braveheart (1995). King Edward II practised archery among its ornate cloisters, and the medieval banquet scene with the swan was filmed in the same quadrangle. The university's 19th-century architecture reads convincingly as medieval on screen — the same trick used when the BBC filmed parts of Ivanhoe here decades earlier."
         }
       ]
     },
@@ -47,7 +52,7 @@
       "lat": 55.8683,
       "lng": -4.2885,
       "category": "attraction",
-      "summary": "One of Scotland's most visited attractions — a magnificent red sandstone palace housing Salvador Dalí's Christ of Saint John of the Cross.",
+      "summary": "One of Scotland's most visited attractions — a magnificent red sandstone palace housing Salvador Dalí's Christ of Saint John of the Cross, a world-class arms and armour collection, and a stuffed elephant named Sir Roger. Free entry, and genuinely unmissable.",
       "tags": [
         "art",
         "history"
@@ -67,6 +72,11 @@
           "type": "art",
           "title": "Dalí's Christ",
           "body": "The gallery's most famous work, Salvador Dalí's Christ of Saint John of the Cross (1951), shows the crucifixion from an aerial perspective above Christ's head, with a Scottish fishing village below. Glasgow Corporation bought it for £8,200 in 1952 — a decision widely mocked at the time. It was damaged by a visitor who threw a stone at it in 1961. It is now worth an estimated £80 million."
+        },
+        {
+          "type": "film",
+          "title": "Taggart — Glasgow on screen",
+          "body": "While Inspector Rebus stalks Edinburgh, Glasgow has its own crime fiction identity through Taggart — the longest-running TV detective series in the world, airing from 1983 to 2010. The show used real Glasgow locations obsessively: the Necropolis, the Clyde, Kelvingrove, the West End tenements. Its catchphrase 'There's been a murder' became so associated with the city that Glaswegians began saying it ironically at the slightest inconvenience. The show attracted 12 million UK viewers at its peak and ran for 27 years."
         }
       ]
     },
@@ -76,7 +86,7 @@
       "lat": 55.8659,
       "lng": -4.2586,
       "category": "attraction",
-      "summary": "Charles Rennie Mackintosh's masterpiece — a building so revolutionary it changed the course of European design.",
+      "summary": "Charles Rennie Mackintosh's masterpiece — a building so revolutionary it changed the course of European design. Twice devastated by fire, it is currently being painstakingly restored by craftspeople having to rediscover lost 19th-century techniques.",
       "tags": [
         "art",
         "history"
@@ -105,7 +115,7 @@
       "lat": 55.8617,
       "lng": -4.2373,
       "category": "trivia",
-      "summary": "A Victorian garden cemetery on a dramatic hill overlooking the city, with over 50,000 burials and extraordinary monuments.",
+      "summary": "A Victorian garden cemetery on a dramatic hill overlooking the city, with over 50,000 burials and extraordinary monuments. The views over Glasgow from the top are among the finest in the city, and the stories buried here range from the tragic to the genuinely bizarre.",
       "tags": [
         "history"
       ],
@@ -133,7 +143,7 @@
       "lat": 55.8607,
       "lng": -4.3058,
       "category": "attraction",
-      "summary": "The river that built Glasgow's industrial empire — and Zaha Hadid's striking Riverside Museum on its banks.",
+      "summary": "The river that built Glasgow's industrial empire — at its peak, one in five of the world's ships was built on these banks. Zaha Hadid's striking Riverside Museum now stands where the ships were launched, housing one of the finest transport collections in Europe.",
       "tags": [
         "history",
         "art"
@@ -162,7 +172,7 @@
       "lat": 56.1852,
       "lng": -4.0502,
       "category": "attraction",
-      "summary": "A 14th-century castle near Stirling that has played Camelot, Castle Leoch, and Winterfell — the most filmed castle in Scotland.",
+      "summary": "A 14th-century castle near Stirling that has played Camelot, Castle Leoch, and Winterfell — the most filmed castle in Scotland. Remarkably well-preserved, it comes with an audioguide narrated by Monty Python cast members reprising their original roles.",
       "tags": [
         "history",
         "film"

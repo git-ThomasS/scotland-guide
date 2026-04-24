@@ -13,7 +13,7 @@
       "lat": 57.4994,
       "lng": -6.1869,
       "category": "nature",
-      "summary": "A 50m pinnacle of crumbling basalt that seems to defy gravity — the most photographed rock formation in Scotland.",
+      "summary": "A 50m pinnacle of crumbling basalt that seems to defy gravity — the most photographed rock formation in Scotland. Formed by a massive ancient landslide, it has appeared in Prometheus, Macbeth, and The BFG, and was first climbed only in 1955.",
       "tags": [
         "nature",
         "film"
@@ -42,7 +42,7 @@
       "lat": 57.6373,
       "lng": -6.2749,
       "category": "nature",
-      "summary": "A surreal landscape of land-slipped cliffs, pinnacles, and hidden plateaux on Skye's Trotternish Peninsula.",
+      "summary": "A surreal landscape of land-slipped cliffs, pinnacles, and hidden plateaux on Skye's Trotternish Peninsula — still slowly moving today. The road that crosses it is one of the most dramatic drives in the UK, and the landscape has appeared in Macbeth, Stardust, and Transformers.",
       "tags": [
         "nature",
         "film"
@@ -62,6 +62,11 @@
           "type": "nature",
           "title": "Still moving today",
           "body": "The entire Trotternish Ridge is the result of a massive ongoing landslide — the longest in the UK. The basalt lava that caps the peninsula is sliding slowly over the softer sedimentary rocks below, creating the chaotic landscape of pinnacles, mesas, and tilted slabs you see today. The road over the Quiraing regularly needs realigning as the ground beneath it continues to shift."
+        },
+        {
+          "type": "film",
+          "title": "Macbeth (2015)",
+          "body": "Justin Kurzel's brutal Macbeth, starring Michael Fassbender and Marion Cotillard, used the Quiraing for the pivotal scene where Macbeth's army returns victorious from battle and he is awarded the title Thane of Cawdor. The choice of Skye's most alien landscape — tilting rock slabs, hidden plateaux, perpetual mist — gave the film an otherworldly quality that separated it from every previous adaptation. The production also filmed at other Scottish locations, but the Quiraing sequences are the most visually distinctive."
         }
       ]
     },
@@ -71,7 +76,7 @@
       "lat": 57.4476,
       "lng": -6.5948,
       "category": "attraction",
-      "summary": "The ancient seat of Clan MacLeod — one of the oldest continuously inhabited castles in Scotland, home to the legendary Fairy Flag.",
+      "summary": "The ancient seat of Clan MacLeod — continuously inhabited for over 800 years and home to the Fairy Flag, a silk banner dating to the 4th-7th century with a legend attached to it. Also home to a drinking horn that holds 2.2 litres of claret, which each new clan chief must drain in one sitting.",
       "tags": [
         "history",
         "royalty"
@@ -96,6 +101,16 @@
           "type": "history",
           "title": "Bonnie Prince Charlie's keepsakes",
           "body": "Bonnie Prince Charlie's waistcoat and a lock of his hair are displayed at Dunvegan — donated by Flora MacDonald's granddaughter. Flora MacDonald herself visited the castle after helping the Prince escape 'over the sea to Skye' disguised as her Irish maid 'Betty Burke' in 1746. The Prince was an unconvincing woman: described by one witness as 'an odd muckle trallup of a carlin', and caused alarm by his wide stride and unshaven face."
+        },
+        {
+          "type": "film",
+          "title": "Made of Honor (2008) & Outlaw King",
+          "body": "Dunvegan Castle appeared in the romantic comedy Made of Honor (2008) starring Patrick Dempsey and Michelle Monaghan, used as the backdrop for a Scottish Highland wedding. The film brought significant tourist attention to Skye. The castle and its loch also featured in Outlaw King (2018). Portree, just down the road, served as a filming location for several Outlander scenes set in 18th-century Scottish coastal towns."
+        },
+        {
+          "type": "history",
+          "title": "The Tigh-an-Truish — House of Trousers",
+          "body": "Just south of Skye on the Isle of Seil near Oban stands a pub called Tigh-an-Truish — Gaelic for 'House of Trousers'. After the Jacobite rebellions, an Act of Parliament banned the wearing of kilts on the mainland. Highlanders on the island of Seil used this pub as a changing room — arriving by boat in their traditional dress, changing into trousers to cross the bridge to the mainland, then reverting to the kilt on the way back. The ban on Highland dress lasted until 1782, but the pub still serves as a reminder that the kilt was once a political statement as much as a traditional garment — something the MacLeods of Dunvegan understood well, having fought through centuries to preserve their Highland identity."
         }
       ]
     },
@@ -105,7 +120,7 @@
       "lat": 57.2505,
       "lng": -6.3111,
       "category": "nature",
-      "summary": "A series of crystal-clear, ice-cold pools and waterfalls at the foot of the Black Cuillin — one of the most visited spots in all of Scotland.",
+      "summary": "A series of crystal-clear, ice-cold pools and waterfalls at the foot of the Black Cuillin — one of the most visited spots in all of Scotland. The water is extraordinarily clear but bitterly cold even in summer, and the Cuillin ridge above is considered the only genuine mountaineering terrain in Britain.",
       "tags": [
         "nature"
       ],
@@ -133,7 +148,7 @@
       "lat": 57.4134,
       "lng": -6.1937,
       "category": "attraction",
-      "summary": "Skye's largest town and capital — a pretty harbour ringed by colourful painted houses, named 'King's Harbour' after a royal visit in 1540.",
+      "summary": "Skye's largest town and capital — a pretty harbour ringed by colourful painted houses, named King's Harbour after a royal visit in 1540. This is where Bonnie Prince Charlie said his final farewell to Flora MacDonald in 1746, never to see her again.",
       "tags": [
         "history",
         "nature"
@@ -153,6 +168,45 @@
           "type": "history",
           "title": "King's Harbour",
           "body": "Portree takes its name from the Gaelic 'Port Righ' — King's Harbour — commemorating a visit by King James V in 1540. James sailed to the Hebrides with a fleet of twelve warships to assert royal authority over the island chiefs, many of whom were essentially independent rulers. The visit was more diplomatic than military, though James arrested several chiefs briefly to make his point."
+        },
+        {
+          "type": "history",
+          "title": "The Leopard Man of Skye",
+          "body": "For decades, a man known as the Leopard Man lived in a simple bothy near Kyleakin on Skye. Tom Leppard had covered 99.9 percent of his body in leopard-spot tattoos — a pattern of dark spots over a golden background — making him at one time the most tattooed man in the world according to the Guinness Book of Records. Every week he would kayak across the strait to Kyle of Lochalsh to collect his pension and do his shopping. He was described by neighbours as polite, well-read, and entirely content. He eventually moved into sheltered housing in his eighties, reportedly reluctant to leave the island life he had chosen."
+        }
+      ]
+    },
+    {
+      "id": "eilean-donan",
+      "name": "Eilean Donan Castle",
+      "lat": 57.2735,
+      "lng": -5.5157,
+      "category": "attraction",
+      "summary": "The most photographed castle in Scotland — a 13th-century island fortress on the confluence of three sea lochs, en route from Inverness to Skye. The 'ancient' building visitors see today was actually rebuilt between 1919 and 1932, having lain in ruins for 200 years after being blown up by a Spanish garrison.",
+      "tags": [
+        "history",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Highlander (1986)",
+          "body": "Eilean Donan is the clan seat of the MacLeods in Highlander — the castle where Connor MacLeod (Christopher Lambert) grew up before his immortality was revealed. The film used it as the fictional village of Glenfinnan. Eilean Donan also appeared in The World Is Not Enough (1999) as a Scottish castle, and in Elizabeth: The Golden Age (2007). Its photogenic position on a tiny island connected to the mainland by a stone bridge has made it the default image of Scotland worldwide.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Eilean_Donan",
+            "caption": "Eilean Donan Castle"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Blown up and rebuilt",
+          "body": "The original medieval castle was largely destroyed in 1719 during a Jacobite rising — Spanish troops garrisoned inside were bombarded by three English frigates, and the castle was demolished with its own powder magazine. It lay in ruins for 200 years until Lieutenant Colonel John MacRae-Gilstrap began a full reconstruction in 1919, completing it in 1932. The 'ancient' castle that appears in every Scotland photograph is therefore less than 100 years old — but based on careful research of the original structure."
+        },
+        {
+          "type": "history",
+          "title": "The Spanish connection",
+          "body": "The 1719 Jacobite rising was a Spanish-backed attempt to restore the Stuarts — Spain and Britain were at war, and the Spanish saw the Jacobites as useful allies. Around 300 Spanish soldiers arrived at Eilean Donan as the vanguard of a planned invasion force of 5,000. The main fleet was scattered by storms off Cape Finisterre before it could sail. The 300 at Eilean Donan held out briefly before the English frigates arrived. The survivors were marched south and the rising collapsed at the Battle of Glenshiel nearby."
         }
       ]
     }
