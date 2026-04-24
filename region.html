@@ -31,7 +31,7 @@
 
     /* Map */
     .map-wrap { position: relative; }
-    #map { width: 100%; height: 200px; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
+    #map { width: 100%; height: 280px; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
     .map-btn { position: absolute; bottom: 10px; width: 36px; height: 36px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; touch-action: manipulation; }
     .map-btn:active { background: var(--surface2); }
     .map-btn svg { width: 16px; height: 16px; color: var(--accent); }
@@ -69,15 +69,15 @@
     .compass-row { display: flex; justify-content: center; }
     .compass-inner { display: flex; align-items: center; gap: 22px; width: 100%; max-width: 340px; }
     .compass-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-    .compass-dial { width: 132px; height: 132px; flex-shrink: 0; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface); position: relative; display: flex; align-items: center; justify-content: center; }
+    .compass-dial { width: 156px; height: 156px; flex-shrink: 0; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface); position: relative; display: flex; align-items: center; justify-content: center; }
     .c-n,.c-s,.c-e,.c-w { position: absolute; font-size: 11px; font-weight: 500; color: var(--text3); transform: translate(-50%,-50%); }
     .c-n { top: 12px; left: 50%; color: var(--accent); }
     .c-s { bottom: 4px; left: 50%; }
     .c-e { right: 4px; top: 50%; }
     .c-w { left: 12px; top: 50%; }
     .needle { position: absolute; top: 50%; left: 50%; transform-origin: 0 0; transition: transform 0.25s ease-out; }
-    .needle-n { position: absolute; left: -5px; bottom: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 42px solid var(--accent); }
-    .needle-s { position: absolute; left: -5px; top: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 42px solid var(--text3); }
+    .needle-n { position: absolute; left: -5px; bottom: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 50px solid var(--accent); }
+    .needle-s { position: absolute; left: -5px; top: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 50px solid var(--text3); }
     .needle-dot { position: absolute; left: -6px; top: -6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
     .compass-hdg { font-size: 13px; color: var(--text3); letter-spacing: 0.08em; }
     .compass-info { flex: 1; min-width: 0; }
@@ -505,7 +505,7 @@ function renderVisited() {
 function checkArrivals() {
   if (!GEO.lat || !regionData) return;
   const arrived = regionData.pois.filter(poi =>
-    haversine(GEO.lat,GEO.lng,poi.lat,poi.lng) <= 50
+    haversine(GEO.lat,GEO.lng,poi.lat,poi.lng) <= 150
   );
   const section = document.getElementById('arrivals-section');
   if (!arrived.length) { section.style.display = 'none'; return; }
@@ -589,7 +589,7 @@ function updatePinnedMarker() {
 function initMap() {
   const dark = !document.body.classList.contains('sunlight');
   map = L.map('map', { zoomControl: false, attributionControl: false, tap: false })
-    .setView([regionData.center.lat, regionData.center.lng], 14);
+    .setView([regionData.center.lat, regionData.center.lng], 13);
   tileLayer = L.tileLayer(
     dark ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
          : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
@@ -624,7 +624,7 @@ function centerOnMe() {
 }
 function centerOnRegion() {
   if (!map||!regionData) return;
-  map.setView([regionData.center.lat,regionData.center.lng],14,{animate:true});
+  map.setView([regionData.center.lat,regionData.center.lng],13,{animate:true});
 }
 async function startGPS() {
   document.getElementById('status-text').textContent = 'Requesting location…';
