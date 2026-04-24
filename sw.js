@@ -1,4 +1,4 @@
-const CACHE = 'scotland-guide-v7';
+const CACHE = 'scotland-guide-v9';
 
 const PRECACHE = [
   '/scotland-guide/',
@@ -8,6 +8,7 @@ const PRECACHE = [
   '/scotland-guide/style.css',
   '/scotland-guide/compass.js',
   '/scotland-guide/manifest.json',
+  '/scotland-guide/map.html',
   '/scotland-guide/data/edinburgh.json',
   '/scotland-guide/data/glasgow.json',
   '/scotland-guide/data/oban.json',
@@ -67,26 +68,10 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // External images (Wikipedia etc) — network only, never cache
+  // External images (Unsplash etc) — network only, don't cache
   if (!url.hostname.includes('github.io') && !url.hostname.includes('unpkg.com') &&
       !url.hostname.includes('fonts.g') && url.pathname.match(/\.(jpg|jpeg|png|webp)$/i)) {
     e.respondWith(fetch(e.request).catch(() => new Response('')));
-    return;
-  }
-
-  // Own images in /images/ — always network first, so dropping a new file shows immediately
-  if (url.hostname.includes('github.io') && url.pathname.includes('/images/')) {
-    e.respondWith(
-      fetch(e.request)
-        .then(res => {
-          if (res && res.status === 200) {
-            const clone = res.clone();
-            caches.open(CACHE).then(cache => cache.put(e.request, clone));
-          }
-          return res;
-        })
-        .catch(() => caches.match(e.request))
-    );
     return;
   }
 

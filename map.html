@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1a2e">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Scotland">
+  <title>All POIs — Scotland Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .top-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: calc(0.75rem + var(--safe-top)) 1.25rem 0.75rem;
+      padding-left: calc(1.25rem + var(--safe-left));
+      padding-right: calc(1.25rem + var(--safe-right));
+      background: var(--bg2); border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 1100;
+    }
+    .top-bar-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--text2); text-decoration: none;
+      min-height: 44px; min-width: 44px; padding-right: 12px;
+    }
+    .top-bar-back:active { color: var(--accent); }
+    .top-bar-back svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    html, body { height: 100%; overflow: hidden; }
+    .page-wrap { display: flex; flex-direction: column; height: 100%; }
+    #map { flex: 1; width: 100%; min-height: 0; }
+
+    /* Map bottom sheet */
+    .map-sheet {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border2);
+      border-radius: 16px 16px 0 0;
+      padding: 12px 16px calc(1rem + var(--safe-bottom));
+      z-index: 2000;
+      animation: slideUp 0.2s ease-out;
+    }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    .map-sheet.open { display: block; }
+    .sheet-drag { width: 36px; height: 4px; border-radius: 2px; background: var(--border2); margin: 0 auto 12px; }
+    .sheet-region { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .sheet-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.2; }
+    .sheet-summary { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: 12px; }
+    .sheet-actions { display: flex; gap: 8px; }
+    .sheet-btn {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      gap: 6px; min-height: 44px; border-radius: var(--radius);
+      font-family: inherit; font-size: 13px; font-weight: 500;
+      cursor: pointer; text-decoration: none; touch-action: manipulation;
+      letter-spacing: 0.03em;
+    }
+    .sheet-btn-primary { background: var(--accent); color: var(--bg); border: none; }
+    .sheet-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .sheet-btn-primary:active { opacity: 0.85; }
+
+    /* Map control buttons */
+    .map-controls { position: fixed; bottom: calc(16px + var(--safe-bottom)); left: 12px; z-index: 1000; display: flex; flex-direction: column; gap: 6px; }
+    .map-ctrl-btn { width: 40px; height: 40px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+    .map-ctrl-btn:active { background: var(--surface2); }
+    .map-ctrl-btn svg { width: 18px; height: 18px; color: var(--accent); }
+
+    /* Nearest POI bar */
+    .nearest-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border2);
+      padding: 8px calc(1.25rem + var(--safe-left));
+      padding-right: calc(1.25rem + var(--safe-right));
+      display: none;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .nearest-bar.visible { display: flex; }
+    .nearest-label { color: var(--text3); white-space: nowrap; }
+    .nearest-name { color: var(--text); font-weight: 500; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .nearest-dist { color: var(--accent); font-weight: 500; white-space: nowrap; }
+    .nearest-region { color: var(--text3); font-size: 11px; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a class="top-bar-back" href="index.html">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 3L5 8l5 5"/></svg>
+    Scotland Guide
+  </a>
+  <button class="sunlight-btn" onclick="toggleSunlight()" aria-label="Toggle sunlight mode">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41"/></svg>
+    <span class="label-dark">Sunlight</span>
+    <span class="label-light">Night</span>
+  </button>
+</div>
+
+<div class="page-wrap">
+<div class="nearest-bar" id="nearest-bar">
+  <span class="nearest-label">Nearest</span>
+  <span class="nearest-name" id="nearest-name">—</span>
+  <span class="nearest-region" id="nearest-region"></span>
+  <span class="nearest-dist" id="nearest-dist"></span>
+</div>
+
+<div id="map"></div>
+
+<div class="map-controls">
+  <button class="map-ctrl-btn" onclick="centerOnMe()" title="Centre on me">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v3M8 12v3M1 8h3M12 8h3"/></svg>
+  </button>
+  <button class="map-ctrl-btn" onclick="centerOnScotland()" title="Centre on Scotland">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 12l4-8 4 8M4.5 8.5h5"/><path d="M12 5l2 6M13 5l2 6"/></svg>
+  </button>
+</div>
+</div>
+
+<!-- Bottom sheet -->
+<div class="map-sheet" id="map-sheet">
+  <div class="sheet-drag"></div>
+  <div class="sheet-region" id="sheet-region"></div>
+  <div class="sheet-name" id="sheet-name"></div>
+  <span id="sheet-pill"></span>
+  <div class="sheet-summary" id="sheet-summary"></div>
+  <div class="sheet-actions">
+    <a class="sheet-btn sheet-btn-primary" id="sheet-explore" href="#">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      Explore
+    </a>
+  </div>
+</div>
+
+<script src="compass.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+</script>
+<script>
+const REGION_SLUGS = ['edinburgh','glasgow','oban','fort-william','inverness','skye','scenic-rail'];
+
+const CAT_COLORS = {
+  attraction: '#c8a96e',
+  nature:     '#6bcf7f',
+  film:       '#b89fd4',
+  history:    '#89bdd4',
+  trivia:     '#888780',
+};
+const CAT_LABELS = {
+  attraction: 'Must-see',
+  nature:     'Nature',
+  film:       'Film',
+  history:    'History',
+  trivia:     'Trivia',
+};
+const CAT_SIZES = {
+  attraction: 13,
+  nature:     9,
+  film:       9,
+  history:    9,
+  trivia:     9,
+};
+
+let map, tileLayer, userMarker, accuracyCircle;
+let _mapDragging = false;
+let allPois = []; // { poi, regionSlug, regionName }
+let selectedPoi = null;
+
+// ── Init map ──────────────────────────────────────────────
+function initMap() {
+  const dark = !document.body.classList.contains('sunlight');
+  map = L.map('map', { zoomControl: false, attributionControl: false, tap: false, tapTolerance: 30, dragging: true, inertia: true })
+    .setView([57.0, -4.5], 7); // Scotland overview
+
+  tileLayer = L.tileLayer(
+    dark
+      ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+      : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    { maxZoom: 19 }
+  ).addTo(map);
+
+  L.control.zoom({ position: 'bottomright' }).addTo(map);
+  map.on('click', hideSheet);
+  map.on('dragstart', () => { _mapDragging = true; });
+  map.on('dragend',   () => { setTimeout(() => { _mapDragging = false; }, 50); });
+}
+
+function centerOnMe() {
+  if (!GEO.lat || !map) { showToast('Location not available yet'); return; }
+  map.setView([GEO.lat, GEO.lng], 14, { animate: true });
+}
+
+function centerOnScotland() {
+  if (!map) return;
+  map.setView([57.0, -4.5], 7, { animate: true });
+}
+
+// ── Load all region JSONs ─────────────────────────────────
+async function loadAllPois() {
+  const results = await Promise.all(
+    REGION_SLUGS.map(slug =>
+      fetch(`data/${slug}.json`)
+        .then(r => r.json())
+        .catch(() => null)
+    )
+  );
+
+  results.forEach(region => {
+    if (!region) return;
+    region.pois.forEach(poi => {
+      allPois.push({ poi, regionSlug: region.slug, regionName: region.region });
+      addMarker(poi, region.slug, region.region);
+    });
+  });
+}
+
+function addMarker(poi, regionSlug, regionName) {
+  const color = CAT_COLORS[poi.category] || '#888780';
+  const radius = poi.category === 'attraction' ? 7 : 5;
+  L.circleMarker([poi.lat, poi.lng], {
+    radius,
+    color: 'rgba(15,15,26,0.6)',
+    weight: 1.5,
+    fillColor: color,
+    fillOpacity: 1,
+  })
+    .addTo(map)
+    .on('click', (e) => {
+      L.DomEvent.stopPropagation(e);
+      showSheet(poi, regionSlug, regionName);
+    });
+}
+
+// ── Bottom sheet ──────────────────────────────────────────
+function showSheet(poi, regionSlug, regionName) {
+  selectedPoi = poi;
+  document.getElementById('sheet-region').textContent = regionName;
+  document.getElementById('sheet-name').textContent = poi.name;
+  document.getElementById('sheet-summary').textContent = poi.summary;
+  const color = CAT_COLORS[poi.category] || '#888780';
+  const label = CAT_LABELS[poi.category] || poi.category;
+  document.getElementById('sheet-pill').innerHTML =
+    `<span class="cat-pill ${poi.category}" style="display:inline-block;margin-bottom:8px;">${label}</span>`;
+  document.getElementById('sheet-explore').href =
+    `poi.html?region=${regionSlug}&id=${poi.id}`;
+  document.getElementById('map-sheet').classList.add('open');
+}
+
+function hideSheet() {
+  if (_mapDragging) return;
+  document.getElementById('map-sheet').classList.remove('open');
+  selectedPoi = null;
+}
+
+// ── GPS + nearest POI ─────────────────────────────────────
+GEO.onUpdate(() => {
+  // Update user marker
+  if (GEO.lat && map) {
+    if (!userMarker) {
+      userMarker = L.circleMarker([GEO.lat, GEO.lng], {
+        radius: 7,
+        color: '#0f0f1a',
+        weight: 2,
+        fillColor: '#6bcf7f',
+        fillOpacity: 1,
+      }).addTo(map);
+      accuracyCircle = L.circle([GEO.lat, GEO.lng], {
+        radius: GEO.accuracy, color: '#6bcf7f',
+        fillColor: '#6bcf7f', fillOpacity: 0.08, weight: 1, opacity: 0.4,
+      }).addTo(map);
+      // Centre on user on first fix
+      map.setView([GEO.lat, GEO.lng], 13, { animate: true });
+    } else {
+      userMarker.setLatLng([GEO.lat, GEO.lng]);
+      accuracyCircle.setLatLng([GEO.lat, GEO.lng]);
+      accuracyCircle.setRadius(GEO.accuracy);
+    }
+  }
+
+  // Update nearest POI bar
+  if (GEO.lat && allPois.length) {
+    let nearest = null, nearestDist = Infinity;
+    allPois.forEach(({ poi, regionSlug, regionName }) => {
+      const d = haversine(GEO.lat, GEO.lng, poi.lat, poi.lng);
+      if (d < nearestDist) {
+        nearestDist = d;
+        nearest = { poi, regionSlug, regionName };
+      }
+    });
+    if (nearest) {
+      document.getElementById('nearest-name').textContent = nearest.poi.name;
+      document.getElementById('nearest-region').textContent = nearest.regionName;
+      document.getElementById('nearest-dist').textContent = formatDist(nearestDist);
+      document.getElementById('nearest-bar').classList.add('visible');
+    }
+  }
+});
+
+// Sunlight tile swap
+const _origToggle = window.toggleSunlight;
+window.toggleSunlight = function() {
+  _origToggle();
+  if (!map || !tileLayer) return;
+  const dark = !document.body.classList.contains('sunlight');
+  tileLayer.setUrl(dark
+    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png');
+};
+
+initMap();
+loadAllPois();
+</script>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("/scotland-guide/sw.js").catch(()=>{});}</script>
+</body>
+</html>
