@@ -1,0 +1,182 @@
+{
+  "region": "Glencoe",
+  "slug": "glencoe",
+  "description": "The Weeping Glen — Scotland's most dramatic valley, carved by volcanoes, glaciers, and one of the most infamous acts of betrayal in Highland history.",
+  "center": {
+    "lat": 56.6806,
+    "lng": -5.0989
+  },
+  "pois": [
+    {
+      "id": "glencoe-valley",
+      "name": "Glencoe Valley",
+      "lat": 56.672,
+      "lng": -5.065,
+      "category": "nature",
+      "summary": "A vast U-shaped glacial valley ringed by some of the most dramatic peaks in Scotland — carved by a supervolcano 420 million years ago, then sculpted by ice, and haunted ever since by the events of February 1692.",
+      "tags": [
+        "nature",
+        "history",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The Massacre of Glencoe",
+          "body": "On 13 February 1692, soldiers of King William III's army — who had been guests of the MacDonald clan for twelve days, eating their food and sleeping under their roof — rose before dawn and murdered 38 MacDonalds in their beds. Around 40 more died fleeing through a blizzard. The order had been given because the MacDonald chief had been five days late signing an oath of allegiance. The phrase used in the written order was 'to put all to the sword under seventy'. What made it notorious beyond the death toll was the violation of Highland hospitality — the soldiers had been welcomed as guests. It became the defining atrocity of the Jacobite era and earned the valley its name: the Weeping Glen.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Massacre_of_Glencoe",
+            "caption": "Glencoe, Scotland"
+          }
+        },
+        {
+          "type": "nature",
+          "title": "A landscape of ancient volcanoes",
+          "body": "Glencoe sits inside the collapsed crater of a supervolcano that erupted around 420 million years ago. The circular ring of mountains surrounding the glen — including the Three Sisters — are the remnants of the volcano's rim. The catastrophic collapse of the magma chamber created a circular depression roughly 8km across, which was then deepened by glaciers into the steep-walled U-shaped valley you see today. The darker, rougher rock of the peaks is rhyolite from the eruption; the smoother valley floor is glacial debris. Robert Louis Stevenson called Rannoch Moor at the valley's eastern end the 'Highland Desert'."
+        },
+        {
+          "type": "film",
+          "title": "The most filmed glen in Scotland",
+          "body": "Glencoe has been used as a filming location more than almost anywhere else in Britain. Mel Gibson's Braveheart (1995) used the glen for sweeping battle sequences. Daniel Craig and Judi Dench hid from the villain here in Skyfall (2012) — the ruined cottage was purpose-built on the moor and demolished after filming. The opening battle of Highlander (1986) was filmed at Buachaille Etive Mòr at the valley entrance. Harry Potter and the Prisoner of Azkaban built Hagrid's Hut here. Monty Python filmed the Knights Who Say Ni scene in the glen. Outlaw King and Mary Queen of Scots both used the Three Sisters as backdrop.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Glencoe,_Scotland",
+            "caption": "Glencoe valley"
+          }
+        }
+      ]
+    },
+    {
+      "id": "three-sisters",
+      "name": "The Three Sisters",
+      "lat": 56.6672,
+      "lng": -5.0094,
+      "category": "nature",
+      "summary": "Three enormous rock buttresses rising almost vertically from the valley floor — the most dramatic viewpoint in Glencoe, and the starting point for the Hidden Valley hike.",
+      "tags": [
+        "nature",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "nature",
+          "title": "The Hidden Valley",
+          "body": "Between the first and second of the Three Sisters lies the entrance to a secret hanging valley — Coire Gabhail, known as the Hidden Valley. The MacDonalds used it for centuries as a place to hide stolen cattle, the steep gorge entrance concealing the valley completely from the road below. Today it is one of Glencoe's most rewarding hikes: around 2.5 miles each way with 300m of ascent, involving some scrambling through a rocky gorge. At the top, the valley opens out into a flat hidden bowl ringed by peaks — completely invisible from the glen below. Rick Steves describes it as requiring some scrambling and calls it not advisable in bad weather.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Bidean_nam_Bian",
+            "caption": "The Three Sisters, Glencoe"
+          }
+        },
+        {
+          "type": "film",
+          "title": "Skyfall (2012) — Bond's Highland retreat",
+          "body": "The desolate moorland scene in Skyfall where Bond brings M to the ruined Skyfall Lodge — his ancestral home in the Highlands — was filmed in Glen Etive, the side glen that branches off just past the Three Sisters. The production built an actual ruined stone cottage on the moor specifically for the film, then demolished it after shooting. Glen Etive itself is a 14-mile dead-end road along a loch of extraordinary beauty, used only by shepherds and climbers in normal times. After Skyfall was released, the number of visitors to Glen Etive increased dramatically — to the point where the local council introduced a parking management scheme to manage the crowds."
+        },
+        {
+          "type": "trivia",
+          "title": "The Tears of the MacDonalds",
+          "body": "Driving up the valley from Glencoe village, about a mile past the visitor centre, a waterfall cascades down a dark canyon on the right side of the road. It is known as the Tears of the MacDonalds — a name that needs no explanation given the history of the glen. The Coffin Cairn further up the road — a stone structure that resembles a small igloo — marks a resting place on the old coffin road, where funeral parties would stop to set down their burden on the long journey to the burial island in the loch."
+        }
+      ]
+    },
+    {
+      "id": "buachaille-etive-mor",
+      "name": "Buachaille Etive Mòr",
+      "lat": 56.6354,
+      "lng": -4.939,
+      "category": "nature",
+      "summary": "The Great Shepherd of Etive — a near-perfect pyramid of ancient rock guarding the eastern entrance to Glencoe, one of the most photographed mountains in Scotland.",
+      "tags": [
+        "nature",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "nature",
+          "title": "The Great Shepherd",
+          "body": "Buachaille Etive Mòr means 'Great Herdsman of Etive' in Gaelic — a fitting name for a mountain that seems to stand guard at the entrance to two glens simultaneously, commanding the junction of Glencoe and Glen Etive. Its distinctive pyramidal profile, seen from the A82 as you cross Rannoch Moor, is one of the most iconic mountain silhouettes in Scotland. The summit, Stob Dearg, stands at 1,022m and requires genuine mountaineering skills to reach safely — the routes involve exposed ridges and significant rock scrambling. Rick Steves notes it 'looms like a dour watchman, guarding the far end of the valley'.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Buachaille_Etive_Mòr",
+            "caption": "Buachaille Etive Mòr, Glencoe"
+          }
+        },
+        {
+          "type": "film",
+          "title": "Highlander (1986) — the opening battle",
+          "body": "The opening sequence of Highlander — where Connor MacLeod fights in a 16th-century clan battle and is killed, then rises immortal — was filmed at the foot of Buachaille Etive Mòr. The sweeping Highland landscape, its vast emptiness, and the mountain's brooding bulk gave the scene its mythic quality. The film's tagline was 'There can be only one' — which is also a reasonable description of Buachaille's singular dominance of the Rannoch Moor skyline. The mountain has appeared in countless car advertisements, tourism campaigns, and landscape photographs — it is to Glencoe what the Matterhorn is to Switzerland."
+        }
+      ]
+    },
+    {
+      "id": "signal-rock",
+      "name": "Signal Rock & An Torr",
+      "lat": 56.6799,
+      "lng": -5.0524,
+      "category": "history",
+      "summary": "The rock from which, according to tradition, the signal was given to begin the Glencoe Massacre — now surrounded by an ancient oak wood, a 20-minute walk from the valley road.",
+      "tags": [
+        "history",
+        "nature"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The signal that started the massacre",
+          "body": "Signal Rock is a large, flat-topped boulder in the old oak wood above the valley floor, reached by a short walk from the car park on the A82. Local tradition holds that it was from this rock that the signal was given to begin the Massacre of Glencoe in the pre-dawn darkness of 13 February 1692 — a fire or torch visible to the soldiers positioned around the MacDonalds' houses in the valley below. There is no contemporary documentary evidence for this specific claim, and historians treat it with caution. But the rock has been a place of sombre pilgrimage for centuries, and the ancient oak wood surrounding it — one of the finest remaining in the Highlands — gives it a genuinely eerie atmosphere.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Signal_Rock,_Glencoe",
+            "caption": "Signal Rock, Glencoe"
+          }
+        },
+        {
+          "type": "nature",
+          "title": "Ancient oak wood",
+          "body": "The woodland around Signal Rock and An Torr is one of the finest examples of ancient semi-natural oak woodland remaining in the Scottish Highlands. These twisted, moss-covered oaks are descendants of the great Atlantic oakwood that once stretched along Scotland's west coast — a temperate rainforest habitat now reduced to scattered fragments. The wood is a National Nature Reserve. In spring the floor is carpeted with bluebells and wood anemones; in autumn it turns gold and copper against the dark rock faces above. A trail network connects the wood to Glencoe Lochan — a man-made lake created in 1894 by Lord Strathcona for his homesick Canadian wife, landscaped to resemble the Rockies."
+        },
+        {
+          "type": "history",
+          "title": "Swans and the Celtic soul",
+          "body": "If you see a swan on the loch below the Signal Rock wood, Celtic tradition says you are looking at something sacred. In Scottish Gaelic the swan is 'eala' — a word threaded through Highland place names and poetry for centuries. Across the Celtic world, from Ireland to Brittany, swans were believed to carry the souls of the dead to the Otherworld, and to embody fidelity because they mate for life. A pair of swans seen together was considered a sign of true and lasting love. Killing a swan was regarded as a terrible omen — some Highland communities believed the act brought death within the year. The whooper swans that winter in the Scottish Highlands, arriving each October from Iceland with their bugling calls, were particularly associated with the soul's journey: birds that disappeared beyond the horizon every spring and returned from some unreachable place in the north, just as the dead were believed to travel to islands beyond the western sea. In a glen already heavy with grief, a swan on the water meant something."
+        },
+        {
+          "type": "history",
+          "title": "The Swans of Coire Gabhail",
+          "body": "A local legend tells of Eala — 'swan' in Scots Gaelic — a herdsman's daughter from the hidden valley above the Three Sisters, and Fearchar, a shepherd's son from the far side of the mountain. For fifteen years he returned to the glen each Samhain, leaving small things at the valley entrance: carved rowan wood, heather, a river-smoothed stone. She always found them. On the fifteenth Samhain — the night the boundary between the living world and the Otherworld grows thin — she came down to the loch and found two whooper swans resting with their necks crossed. When she looked up, he was standing on the other side of the water. He had finally crossed into the valley. They were married in the spring."
+        }
+      ]
+    },
+    {
+      "id": "glencoe-visitor-centre",
+      "name": "Glencoe Visitor Centre",
+      "lat": 56.6772,
+      "lng": -5.0298,
+      "category": "attraction",
+      "summary": "The NTS gateway to Glencoe National Nature Reserve — free entry, excellent maps and hiking advice, a reconstructed turf house, and the best café in the glen. Start here.",
+      "tags": [
+        "history",
+        "nature"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Built to look like the settlement it replaced",
+          "body": "The Glencoe Visitor Centre was deliberately designed to resemble a clachan — a traditional Highland settlement of low, turf-roofed buildings clustered together for warmth and shelter. Behind the building, a reconstructed turf house gives a sense of how MacDonalds would actually have lived in the glen in 1692: a single dark room, shared with animals in winter, sleeping on heather packed onto a raised platform. The contrast between this and the modern visitor centre a few metres away is intentional. The centre sits inside the Glencoe National Nature Reserve, managed by the National Trust for Scotland, and the parking fee contributes to conservation.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Glencoe_National_Nature_Reserve",
+            "caption": "Glencoe Visitor Centre"
+          }
+        },
+        {
+          "type": "trivia",
+          "title": "The Devil's Staircase",
+          "body": "Eight miles east of Glencoe village, a section of the West Highland Way climbs out of the valley via a series of punishing switchbacks known as the Devil's Staircase — named by the soldiers who built it for General Wade after the 1715 Jacobite rising. It rises 250m in less than a mile. At the top, the path crests a pass with views back over the full length of Glencoe and forward over Kinlochleven and the Ben Nevis massif. The full descent to Kinlochleven takes around two hours. The visitor centre staff can advise on current conditions and provide the OS map essential for any serious hiking in the glen."
+        }
+      ]
+    }
+  ]
+}
