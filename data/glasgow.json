@@ -10,8 +10,8 @@
     {
       "id": "george-square",
       "name": "George Square",
-      "lat": 55.8611,
-      "lng": -4.2506,
+      "lat": 55.86115872352404,
+      "lng": -4.250163139103827,
       "category": "attraction",
       "summary": "Glasgow's grand civic heart, ringed by Victorian architecture and overlooked by the City Chambers — and one of Europe's most used film locations, having doubled for Philadelphia, San Francisco, and various American cities across dozens of productions.",
       "tags": [
@@ -49,8 +49,8 @@
     {
       "id": "kelvingrove",
       "name": "Kelvingrove Art Gallery",
-      "lat": 55.8683,
-      "lng": -4.2885,
+      "lat": 55.86857101350312,
+      "lng": -4.290603902333797,
       "category": "attraction",
       "summary": "One of Scotland's most visited attractions — a magnificent red sandstone palace housing Salvador Dalí's Christ of Saint John of the Cross, a world-class arms and armour collection, and a stuffed elephant named Sir Roger. Free entry, and genuinely unmissable.",
       "tags": [
@@ -83,8 +83,8 @@
     {
       "id": "mackintosh-school",
       "name": "Glasgow School of Art",
-      "lat": 55.8659,
-      "lng": -4.2586,
+      "lat": 55.86613493262089,
+      "lng": -4.263693302333942,
       "category": "attraction",
       "summary": "Charles Rennie Mackintosh's masterpiece — a building so revolutionary it changed the course of European design. Twice devastated by fire, it is currently being painstakingly restored by craftspeople having to rediscover lost 19th-century techniques.",
       "tags": [
@@ -112,8 +112,8 @@
     {
       "id": "necropolis",
       "name": "Glasgow Necropolis",
-      "lat": 55.8617,
-      "lng": -4.2373,
+      "lat": 55.86268667312503,
+      "lng": -4.231132431169948,
       "category": "trivia",
       "summary": "A Victorian garden cemetery on a dramatic hill overlooking the city, with over 50,000 burials and extraordinary monuments. The views over Glasgow from the top are among the finest in the city, and the stories buried here range from the tragic to the genuinely bizarre.",
       "tags": [
@@ -140,8 +140,8 @@
     {
       "id": "river-clyde",
       "name": "River Clyde & Riverside Museum",
-      "lat": 55.8607,
-      "lng": -4.3058,
+      "lat": 55.86510297312593,
+      "lng": -4.306184744662374,
       "category": "attraction",
       "summary": "The river that built Glasgow's industrial empire — at its peak, one in five of the world's ships was built on these banks. Zaha Hadid's striking Riverside Museum now stands where the ships were launched, housing one of the finest transport collections in Europe.",
       "tags": [
@@ -163,40 +163,6 @@
           "type": "history",
           "title": "The Ghostly Armies of the Clyde",
           "body": "In the summer of 1686, many witnesses in the Clyde Valley reported extraordinary visions: showers of bonnets, hats, guns, and swords falling from the sky, covering the trees and ground; companies of men in arms marching along the riverside; armies meeting armies and dissolving into the ground. Covenanting memoirist Patrick Walker recorded the accounts in detail, noting that even hardened sceptics present were visibly shaken."
-        }
-      ]
-    },
-    {
-      "id": "doune-castle",
-      "name": "Doune Castle",
-      "lat": 56.1852,
-      "lng": -4.0502,
-      "category": "attraction",
-      "summary": "A 14th-century castle near Stirling that has played Camelot, Castle Leoch, and Winterfell — the most filmed castle in Scotland. Remarkably well-preserved, it comes with an audioguide narrated by Monty Python cast members reprising their original roles.",
-      "tags": [
-        "history",
-        "film"
-      ],
-      "trivia": [
-        {
-          "type": "film",
-          "title": "Monty Python and the Holy Grail (1975)",
-          "body": "Doune Castle served as multiple locations in Monty Python and the Holy Grail — most famously as Castle Camelot ('It is a silly place'), Castle Anthrax where Galahad is tempted, and Swamp Castle where Herbert is locked in a tower. The Pythons chose it because it was cheap, available, and authentically medieval. Visitors today can borrow an audioguide narrated by cast members including Terry Jones, who reprises his role guiding you through each room.",
-          "media": {
-            "type": "wikipedia",
-            "article": "Doune_Castle",
-            "caption": "Doune Castle"
-          }
-        },
-        {
-          "type": "film",
-          "title": "Outlander & Game of Thrones",
-          "body": "Doune Castle has an extraordinary on-screen CV. It plays Castle Leoch — the seat of Clan MacKenzie — throughout Outlander. It was also used as Winterfell in the original Game of Thrones pilot episode, before the production moved to Northern Ireland. The same castle therefore hosted both the Jacobite Highlands and the North of Westeros. It also appeared in Ivanhoe (1952) and the BBC's Merlin."
-        },
-        {
-          "type": "history",
-          "title": "Built by the Regent Albany",
-          "body": "Doune Castle was built around 1400 by Robert Stewart, Duke of Albany, who effectively ruled Scotland as regent while King Robert III was incapacitated. Albany was one of the most powerful men in Scottish history — and one of the most ruthless. He almost certainly arranged the imprisonment of the young Prince James in England, ensuring his own dominance. When James eventually returned as James I, one of his first acts was to execute Albany's son."
         }
       ]
     }

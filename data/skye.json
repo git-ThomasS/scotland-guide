@@ -10,8 +10,8 @@
     {
       "id": "old-man-of-storr",
       "name": "Old Man of Storr",
-      "lat": 57.4994,
-      "lng": -6.1869,
+      "lat": 57.50704101875504,
+      "lng": -6.1831262503846975,
       "category": "nature",
       "summary": "A 50m pinnacle of crumbling basalt that seems to defy gravity — the most photographed rock formation in Scotland. Formed by a massive ancient landslide, it has appeared in Prometheus, Macbeth, and The BFG, and was first climbed only in 1955.",
       "tags": [
@@ -39,8 +39,8 @@
     {
       "id": "quiraing",
       "name": "The Quiraing",
-      "lat": 57.6373,
-      "lng": -6.2749,
+      "lat": 57.643610081474364,
+      "lng": -6.265278034910426,
       "category": "nature",
       "summary": "A surreal landscape of land-slipped cliffs, pinnacles, and hidden plateaux on Skye's Trotternish Peninsula — still slowly moving today. The road that crosses it is one of the most dramatic drives in the UK, and the landscape has appeared in Macbeth, Stardust, and Transformers.",
       "tags": [
@@ -73,8 +73,8 @@
     {
       "id": "dunvegan-castle",
       "name": "Dunvegan Castle",
-      "lat": 57.4476,
-      "lng": -6.5948,
+      "lat": 57.448426255537086,
+      "lng": -6.590053373404455,
       "category": "attraction",
       "summary": "The ancient seat of Clan MacLeod — continuously inhabited for over 800 years and home to the Fairy Flag, a silk banner dating to the 4th-7th century with a legend attached to it. Also home to a drinking horn that holds 2.2 litres of claret, which each new clan chief must drain in one sitting.",
       "tags": [
@@ -117,8 +117,8 @@
     {
       "id": "fairy-pools",
       "name": "Fairy Pools",
-      "lat": 57.2505,
-      "lng": -6.3111,
+      "lat": 57.25034307367509,
+      "lng": -6.258295402252089,
       "category": "nature",
       "summary": "A series of crystal-clear, ice-cold pools and waterfalls at the foot of the Black Cuillin — one of the most visited spots in all of Scotland. The water is extraordinarily clear but bitterly cold even in summer, and the Cuillin ridge above is considered the only genuine mountaineering terrain in Britain.",
       "tags": [
@@ -145,8 +145,8 @@
     {
       "id": "portree",
       "name": "Portree",
-      "lat": 57.4134,
-      "lng": -6.1937,
+      "lat": 57.41304399792449,
+      "lng": -6.194483033807776,
       "category": "attraction",
       "summary": "Skye's largest town and capital — a pretty harbour ringed by colourful painted houses, named King's Harbour after a royal visit in 1540. This is where Bonnie Prince Charlie said his final farewell to Flora MacDonald in 1746, never to see her again.",
       "tags": [
@@ -179,8 +179,8 @@
     {
       "id": "eilean-donan",
       "name": "Eilean Donan Castle",
-      "lat": 57.2735,
-      "lng": -5.5157,
+      "lat": 57.27400007826242,
+      "lng": -5.515965383205983,
       "category": "attraction",
       "summary": "The most photographed castle in Scotland — a 13th-century island fortress on the confluence of three sea lochs, en route from Inverness to Skye. The 'ancient' building visitors see today was actually rebuilt between 1919 and 1932, having lain in ruins for 200 years after being blown up by a Spanish garrison.",
       "tags": [

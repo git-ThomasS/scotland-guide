@@ -10,8 +10,8 @@
     {
       "id": "culloden-battlefield",
       "name": "Culloden Battlefield",
-      "lat": 57.4773,
-      "lng": -4.0975,
+      "lat": 57.47778813399458,
+      "lng": -4.095700141290093,
       "category": "attraction",
       "summary": "The site of the last pitched battle on British soil, fought in 1746 — where the Jacobite cause was crushed in 68 minutes and the Highland way of life was effectively ended. The sombre moor where it happened has barely changed in nearly 300 years.",
       "tags": [
@@ -59,8 +59,8 @@
     {
       "id": "loch-ness",
       "name": "Loch Ness",
-      "lat": 57.3229,
-      "lng": -4.4244,
+      "lat": 57.33991707897137,
+      "lng": -4.402803920506936,
       "category": "nature",
       "summary": "Britain's largest body of fresh water by volume — 37km long, up to 230m deep, and home to a monster, or at least an excellent rumour of one. The loch contains more fresh water than all the lakes of England and Wales combined, and its dark peaty water ensures the question will never quite be resolved.",
       "tags": [
@@ -93,8 +93,8 @@
     {
       "id": "inverness-castle",
       "name": "Inverness Castle",
-      "lat": 57.48,
-      "lng": -4.2249,
+      "lat": 57.476314605431675,
+      "lng": -4.225394188746061,
       "category": "attraction",
       "summary": "A Victorian sandstone castle on a bluff above the River Ness, built on the site of the fortress associated with the real Macbeth. Currently being transformed into a major Highland visitor centre, it briefly served as the seat of the British Cabinet in 1921.",
       "tags": [
@@ -127,8 +127,8 @@
     {
       "id": "clava-cairns",
       "name": "Clava Cairns",
-      "lat": 57.4754,
-      "lng": -4.0807,
+      "lat": 57.473475098625755,
+      "lng": -4.073167502238759,
       "category": "history",
       "summary": "A remarkable Bronze Age burial complex of passage tombs and standing stones, just minutes from Culloden — and the direct inspiration for the time-travel stones in Outlander. Around 4,000 years old, aligned with the midwinter sun, and remarkably little-visited for how extraordinary they are.",
       "tags": [
@@ -156,8 +156,8 @@
     {
       "id": "urquhart-castle",
       "name": "Urquhart Castle",
-      "lat": 57.3232,
-      "lng": -4.4418,
+      "lat": 57.32411670431738,
+      "lng": -4.442001202247684,
       "category": "attraction",
       "summary": "The dramatic ruins of one of Scotland's largest castles, perched on a promontory over Loch Ness — a front-row seat for monster spotting, and the site of 700 years of siege, surrender, and betrayal before its own garrison finally blew it up in 1692.",
       "tags": [

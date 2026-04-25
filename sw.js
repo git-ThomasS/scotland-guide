@@ -1,4 +1,4 @@
-const CACHE = 'scotland-guide-v9';
+const CACHE = 'scotland-guide-v10';
 
 const PRECACHE = [
   '/scotland-guide/',

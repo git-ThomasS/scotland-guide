@@ -10,8 +10,8 @@
     {
       "id": "edinburgh-castle",
       "name": "Edinburgh Castle",
-      "lat": 55.9486,
-      "lng": -3.1999,
+      "lat": 55.94860527145333,
+      "lng": -3.199886211775331,
       "category": "attraction",
       "summary": "A fortress on volcanic rock, occupied for over 3,000 years — home to Scotland's crown jewels, the famous One O'Clock Gun, and views across the entire city. Every Scottish monarch from the 11th century onwards has had a connection to this rock.",
       "tags": [
@@ -60,8 +60,8 @@
     {
       "id": "arthur-seat",
       "name": "Arthur's Seat",
-      "lat": 55.9443,
-      "lng": -3.1615,
+      "lat": 55.944033505123606,
+      "lng": -3.1618753518693423,
       "category": "nature",
       "summary": "An ancient volcano rising 251m above the city — arguably the finest urban hike in Europe. The summit gives views across Edinburgh, the Firth of Forth, and on clear days as far as the Highlands, and the whole hill is riddled with history, mystery, and the odd film crew.",
       "tags": [
@@ -105,8 +105,8 @@
     {
       "id": "royal-mile",
       "name": "The Royal Mile",
-      "lat": 55.9503,
-      "lng": -3.1883,
+      "lat": 55.95010927315803,
+      "lng": -3.188010273493216,
       "category": "attraction",
       "summary": "The historic spine of Edinburgh's Old Town, running for exactly one Scottish mile from the Castle down to Holyrood Palace. Every close and wynd branching off it hides centuries of stories — murders, mysteries, literary connections, and the occasional film crew.",
       "tags": [
@@ -154,8 +154,8 @@
     {
       "id": "holyrood-palace",
       "name": "Palace of Holyroodhouse",
-      "lat": 55.9524,
-      "lng": -3.1723,
+      "lat": 55.95268974584122,
+      "lng": -3.1723904195228303,
       "category": "attraction",
       "summary": "The official Scottish residence of the British monarch, at the foot of the Royal Mile — and the scene of some of the most dramatic episodes in Scottish royal history. Mary Queen of Scots lived here through six turbulent years that changed the course of British history.",
       "tags": [
@@ -188,8 +188,8 @@
     {
       "id": "greyfriars-kirkyard",
       "name": "Greyfriars Kirkyard",
-      "lat": 55.9469,
-      "lng": -3.1916,
+      "lat": 55.94665490762329,
+      "lng": -3.1922345888366697,
       "category": "trivia",
       "summary": "One of Edinburgh's most atmospheric graveyards — and one of its most haunted. The kirkyard contains the graves of Covenanters, a famously loyal dog, and names that J.K. Rowling apparently found useful when naming her characters.",
       "tags": [
@@ -232,8 +232,8 @@
     {
       "id": "victoria-street",
       "name": "Victoria Street",
-      "lat": 55.9482,
-      "lng": -3.1929,
+      "lat": 55.94871615081825,
+      "lng": -3.193198102329103,
       "category": "trivia",
       "summary": "A curved, cobbled street of colourful shopfronts widely cited as the inspiration for Diagon Alley in Harry Potter. Built in the 1840s over the older medieval West Bow, it sits above layers of Edinburgh history that go back centuries.",
       "tags": [
@@ -266,8 +266,8 @@
     {
       "id": "calton-hill",
       "name": "Calton Hill",
-      "lat": 55.9553,
-      "lng": -3.1819,
+      "lat": 55.95503608588538,
+      "lng": -3.182745541281638,
       "category": "nature",
       "summary": "A hill at the east end of Princes Street with panoramic views and a collection of grand monuments — including one that was never finished. The hill featured prominently in T2 Trainspotting and remains one of the best free viewpoints in any European capital.",
       "tags": [
@@ -301,8 +301,8 @@
     {
       "id": "mary-kings-close",
       "name": "Mary King's Close",
-      "lat": 55.9499,
-      "lng": -3.1912,
+      "lat": 55.94991517407183,
+      "lng": -3.190512043340856,
       "category": "attraction",
       "summary": "A labyrinth of buried 17th-century streets sealed beneath the Royal Mile since the 18th century — one of Edinburgh's most atmospheric underground attractions. Walking through it gives a genuine sense of the medieval city that still exists beneath the modern one.",
       "tags": [
@@ -335,8 +335,8 @@
     {
       "id": "princes-street",
       "name": "Princes Street",
-      "lat": 55.9522,
-      "lng": -3.1965,
+      "lat": 55.952546422073475,
+      "lng": -3.1941803718780744,
       "category": "attraction",
       "summary": "Edinburgh's most famous street — unique in having buildings only on one side, with the other open to the castle and gardens. The opening chase of Trainspotting was filmed here, and it remains the beating commercial heart of the city.",
       "tags": [
@@ -346,12 +346,12 @@
       "trivia": [
         {
           "type": "film",
-          "title": "Trainspotting — the opening chase",
+          "title": "Trainspotting - the opening chase",
           "body": "The iconic opening sequence of Trainspotting (1996) begins here — Renton and Spud sprint down Princes Street after shoplifting from the bookshop at 107-109 Princes Street (now a Next clothing store), with Iggy Pop's Lust for Life blasting over the top. The chase continues down the steps to Calton Road and under the Regent Bridge. Despite the film being set in Edinburgh, this Princes Street sequence and a handful of other shots are almost the only scenes actually filmed in the city — the rest was shot in Glasgow.",
           "media": {
-            "type": "url",
-            "url": "https://img.youtube.com/vi/SaP7qmsQbSI/maxresdefault.jpg",
-            "caption": "Trainspotting opening chase, Princes Street (1996)"
+            "type": "wikipedia",
+            "article": "Trainspotting_opening_scene",
+            "caption": "Trainspotting (1996)"
           }
         },
         {

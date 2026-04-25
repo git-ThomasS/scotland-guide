@@ -277,7 +277,7 @@ async function loadImages() {
     }
 
     // 2. Fall back to JSON media field
-    if (t.media && t.media.type !== 'wikipedia') {
+    if (t.media) {
       const url = await resolveMediaUrl(t.media);
       if (url) {
         cap.textContent = t.media.caption;

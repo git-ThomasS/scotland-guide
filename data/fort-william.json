@@ -10,8 +10,8 @@
     {
       "id": "ben-nevis",
       "name": "Ben Nevis",
-      "lat": 56.7969,
-      "lng": -5.0035,
+      "lat": 56.79683267497248,
+      "lng": -5.003507620376046,
       "category": "nature",
       "summary": "Britain's highest mountain at 1345m — a deceptively flat-backed giant that has lured and humbled walkers for centuries. Around 125,000 people attempt the summit every year; the ruins of a Victorian weather observatory are still visible at the top.",
       "tags": [
@@ -44,8 +44,8 @@
     {
       "id": "glen-nevis",
       "name": "Glen Nevis",
-      "lat": 56.7831,
-      "lng": -5.0256,
+      "lat": 56.7922305012906,
+      "lng": -5.060462188786779,
       "category": "nature",
       "summary": "A dramatic glacial valley beneath Ben Nevis and one of Scotland's most-filmed landscapes — Braveheart, Rob Roy, and Harry Potter have all used it as a backdrop. The gorge at the head of the glen leads to Steall Falls, Scotland's second highest waterfall.",
       "tags": [
@@ -78,8 +78,8 @@
     {
       "id": "neptunes-staircase",
       "name": "Neptune's Staircase",
-      "lat": 56.8455,
-      "lng": -5.1248,
+      "lat": 56.84508597350805,
+      "lng": -5.095687431112028,
       "category": "attraction",
       "summary": "The UK's longest staircase lock — a flight of eight locks on the Caledonian Canal raising boats 20 metres in a single dramatic flight. Built by a shepherd's son who became Scotland's greatest engineer, and opened in 1822 to fight a war that was already over.",
       "tags": [
@@ -106,8 +106,8 @@
     {
       "id": "west-highland-museum",
       "name": "West Highland Museum",
-      "lat": 56.8196,
-      "lng": -5.1061,
+      "lat": 56.817646429597374,
+      "lng": -5.111011317621077,
       "category": "history",
       "summary": "A small but fascinating museum in the heart of Fort William, packed with Highland memorabilia — including a secret portrait of Bonnie Prince Charlie that can only be seen in a cylindrical mirror. One of the most ingenious pieces of hidden art ever made.",
       "tags": [
@@ -138,52 +138,88 @@
       ]
     },
     {
-      "id": "glencoe",
-      "name": "Glencoe",
-      "lat": 56.6806,
-      "lng": -5.0989,
-      "category": "nature",
-      "summary": "Scotland's most dramatic glen — brooding peaks, a notorious massacre, and more major film credits than almost anywhere else in the UK. Braveheart, Skyfall, Highlander, Harry Potter, and Monty Python have all filmed here, drawn by a landscape that looks genuinely otherworldly.",
+      "id": "glenfinnan-viaduct",
+      "name": "Glenfinnan Viaduct",
+      "lat": 56.876217173520715,
+      "lng": -5.431748173438557,
+      "category": "attraction",
+      "summary": "The 21-arch curved viaduct made famous as the Hogwarts Express crossing — one of the most photographed railway structures in the world.",
       "tags": [
-        "nature",
         "history",
         "film"
       ],
       "trivia": [
         {
           "type": "film",
-          "title": "Braveheart, Skyfall, Highlander & more",
-          "body": "Glencoe is Scotland's most filmed landscape. Mel Gibson's Braveheart (1995) used the glen for its sweeping battle sequences. Daniel Craig and Judi Dench hid from the villain here in Skyfall (2012) — the ruined cottage used was purpose-built and then demolished after filming. The opening battle of Highlander (1986) was filmed at Buachaille Etive Beag. Outlaw King (2018) and Mary Queen of Scots (2018) both used the Three Sisters rock formation. Monty Python and the Holy Grail filmed the Knights Who Say Ni scene here.",
+          "title": "The Hogwarts Express",
+          "body": "The Glenfinnan Viaduct first appeared in Harry Potter and the Chamber of Secrets (2002) and became a recurring landmark throughout the series — most memorably in Prisoner of Azkaban when Dementors board the train. The viaduct is crossed by the Jacobite steam train, which supplied its locomotive and rolling stock for the films. The viewpoint for the classic shot is a 45-minute walk from Glenfinnan station.",
           "media": {
             "type": "wikipedia",
-            "article": "Glencoe,_Scotland",
-            "caption": "Glencoe, Scotland"
+            "article": "Glenfinnan_Viaduct",
+            "caption": "Glenfinnan Viaduct"
           }
         },
         {
           "type": "history",
-          "title": "The Massacre of Glencoe",
-          "body": "On 13 February 1692, soldiers of King William III's army — who had been guests of the MacDonald clan for twelve days — rose before dawn and murdered 38 members of the MacIain MacDonalds in their beds. Around 40 more died fleeing through the snow. The massacre was ordered because the MacDonald chief had been five days late in signing an oath of allegiance. It became one of the most infamous acts of betrayal in Scottish history — the violation of Highland hospitality making it far more shocking than the death toll alone.",
+          "title": "Built without steel",
+          "body": "The viaduct was built in 1901 using mass concrete — an unusually advanced technique for the era. Engineer Robert McAlpine, known as 'Concrete Bob', pioneered the method partly because of a local shortage of skilled stonemasons. The 21 arches span 380 metres and stand up to 30 metres above the valley floor. More than a century later, the structure is in excellent condition."
+        }
+      ]
+    },
+    {
+      "id": "glenfinnan-monument",
+      "name": "Glenfinnan Monument",
+      "lat": 56.86920699897784,
+      "lng": -5.43710740585699,
+      "category": "history",
+      "summary": "A tall column topped by a kilted Highlander, marking the spot where Bonnie Prince Charlie raised his standard in 1745 — with Loch Shiel stretching hauntingly behind.",
+      "tags": [
+        "history"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The standard is raised",
+          "body": "On 19 August 1745, Charles Edward Stuart raised his standard at Glenfinnan before a gathering of Highland clans, marking the beginning of the Jacobite Rising that would sweep through Scotland before ending in catastrophe at Culloden 14 months later. At first only a handful of men had gathered — the Prince's supporters held their breath. Then the MacDonalds of Clanranald arrived, around 150 strong, followed shortly by the Camerons of Lochiel with 800 men. The rising had begun.",
           "media": {
             "type": "wikipedia",
-            "article": "Massacre_of_Glencoe",
-            "caption": "Massacre of Glencoe"
+            "article": "Glenfinnan_Monument",
+            "caption": "Glenfinnan Monument"
           }
         },
         {
-          "type": "nature",
-          "title": "A landscape of volcanoes",
-          "body": "Glencoe sits inside the collapsed crater of an ancient supervolcano that erupted around 420 million years ago. The circular ring of mountains surrounding the glen — including the distinctive Three Sisters — are the remnants of the volcano's rim. The dramatic, almost vertical walls of rock that make the glen so cinematic are the result of both volcanic activity and subsequent glaciation during the last Ice Age."
-        },
+          "type": "history",
+          "title": "The inn where the Prince may have slept",
+          "body": "The Prince's House Hotel in Glenfinnan dates to 1658 and was the only sizeable building in the area when Bonnie Prince Charlie was here in 1745. There is no documentary proof that he actually stayed the night — but as the hotel now puts it, 'it was the only sizeable house in Glenfinnan at the time, so…' The building is still an inn today."
+        }
+      ]
+    },
+    {
+      "id": "jacobite-steam-train",
+      "name": "The Jacobite Steam Train",
+      "lat": 56.82041055894968,
+      "lng": -5.105999231113462,
+      "category": "attraction",
+      "summary": "The 'Hogwarts Express' — a steam train running from Fort William to Mallaig across the Glenfinnan Viaduct, one of the greatest railway journeys in the world.",
+      "tags": [
+        "history",
+        "film"
+      ],
+      "trivia": [
         {
           "type": "film",
-          "title": "Harry Potter — Hagrid's Hut & the Hogwarts grounds",
-          "body": "Glencoe served as the location of Hagrid's Hut and the Hogwarts covered bridge in Harry Potter and the Prisoner of Azkaban (2004), and continued to appear in Goblet of Fire, Order of the Phoenix, Half-Blood Prince, and Deathly Hallows. The production built actual sets in the glen rather than using CGI backgrounds. The rugged landscape gave the films a sense of real Highland wilderness that became inseparable from audiences' mental image of Hogwarts' grounds.",
+          "title": "The real Hogwarts Express",
+          "body": "West Coast Railways provided the route, carriages, and steam locomotives for every Harry Potter film featuring the Hogwarts Express. The specific locomotive used in the films — GWR 4900 Class 5972 Olton Hall, built in 1937 — now sits permanently on display at Warner Bros Studio Tour London. But the carriages used in filming are still in service on the Jacobite today, and the route crossing Glenfinnan Viaduct is identical. The morning First Class carriage even has period-style compartments that match the film interiors.",
           "media": {
             "type": "wikipedia",
-            "article": "Glencoe,_Scotland",
-            "caption": "Glencoe, Scotland"
+            "article": "Jacobite_steam_train",
+            "caption": "Jacobite Steam Train"
           }
+        },
+        {
+          "type": "history",
+          "title": "The Road to the Isles",
+          "body": "The Fort William to Mallaig line — known as the Road to the Isles — was completed in 1901 and was one of the last great Victorian railway projects. It was built to open up the remote western Highlands and provide a rail connection to the Hebridean ferry port at Mallaig. The line crosses 11 viaducts, passes through 21 tunnels, and runs along the shores of three lochs. It is consistently voted one of the greatest rail journeys in the world."
         }
       ]
     }

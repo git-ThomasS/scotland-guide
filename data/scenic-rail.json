@@ -8,96 +8,10 @@
   },
   "pois": [
     {
-      "id": "glenfinnan-viaduct",
-      "name": "Glenfinnan Viaduct",
-      "lat": 56.8724,
-      "lng": -5.4314,
-      "category": "attraction",
-      "summary": "The 21-arch curved viaduct made famous as the Hogwarts Express crossing — one of the most photographed railway structures in the world.",
-      "tags": [
-        "history",
-        "film"
-      ],
-      "trivia": [
-        {
-          "type": "film",
-          "title": "The Hogwarts Express",
-          "body": "The Glenfinnan Viaduct first appeared in Harry Potter and the Chamber of Secrets (2002) and became a recurring landmark throughout the series — most memorably in Prisoner of Azkaban when Dementors board the train. The viaduct is crossed by the Jacobite steam train, which supplied its locomotive and rolling stock for the films. The viewpoint for the classic shot is a 45-minute walk from Glenfinnan station.",
-          "media": {
-            "type": "wikipedia",
-            "article": "Glenfinnan_Viaduct",
-            "caption": "Glenfinnan Viaduct"
-          }
-        },
-        {
-          "type": "history",
-          "title": "Built without steel",
-          "body": "The viaduct was built in 1901 using mass concrete — an unusually advanced technique for the era. Engineer Robert McAlpine, known as 'Concrete Bob', pioneered the method partly because of a local shortage of skilled stonemasons. The 21 arches span 380 metres and stand up to 30 metres above the valley floor. More than a century later, the structure is in excellent condition."
-        }
-      ]
-    },
-    {
-      "id": "glenfinnan-monument",
-      "name": "Glenfinnan Monument",
-      "lat": 56.8715,
-      "lng": -5.4487,
-      "category": "history",
-      "summary": "A tall column topped by a kilted Highlander, marking the spot where Bonnie Prince Charlie raised his standard in 1745 — with Loch Shiel stretching hauntingly behind.",
-      "tags": [
-        "history"
-      ],
-      "trivia": [
-        {
-          "type": "history",
-          "title": "The standard is raised",
-          "body": "On 19 August 1745, Charles Edward Stuart raised his standard at Glenfinnan before a gathering of Highland clans, marking the beginning of the Jacobite Rising that would sweep through Scotland before ending in catastrophe at Culloden 14 months later. At first only a handful of men had gathered — the Prince's supporters held their breath. Then the MacDonalds of Clanranald arrived, around 150 strong, followed shortly by the Camerons of Lochiel with 800 men. The rising had begun.",
-          "media": {
-            "type": "wikipedia",
-            "article": "Glenfinnan_Monument",
-            "caption": "Glenfinnan Monument"
-          }
-        },
-        {
-          "type": "history",
-          "title": "The inn where the Prince may have slept",
-          "body": "The Prince's House Hotel in Glenfinnan dates to 1658 and was the only sizeable building in the area when Bonnie Prince Charlie was here in 1745. There is no documentary proof that he actually stayed the night — but as the hotel now puts it, 'it was the only sizeable house in Glenfinnan at the time, so…' The building is still an inn today."
-        }
-      ]
-    },
-    {
-      "id": "jacobite-steam-train",
-      "name": "The Jacobite Steam Train",
-      "lat": 56.8198,
-      "lng": -5.1052,
-      "category": "attraction",
-      "summary": "The 'Hogwarts Express' — a steam train running from Fort William to Mallaig across the Glenfinnan Viaduct, one of the greatest railway journeys in the world.",
-      "tags": [
-        "history",
-        "film"
-      ],
-      "trivia": [
-        {
-          "type": "film",
-          "title": "The real Hogwarts Express",
-          "body": "West Coast Railways provided the route, carriages, and steam locomotives for every Harry Potter film featuring the Hogwarts Express. The specific locomotive used in the films — GWR 4900 Class 5972 Olton Hall, built in 1937 — now sits permanently on display at Warner Bros Studio Tour London. But the carriages used in filming are still in service on the Jacobite today, and the route crossing Glenfinnan Viaduct is identical. The morning First Class carriage even has period-style compartments that match the film interiors.",
-          "media": {
-            "type": "wikipedia",
-            "article": "Jacobite_steam_train",
-            "caption": "Jacobite Steam Train"
-          }
-        },
-        {
-          "type": "history",
-          "title": "The Road to the Isles",
-          "body": "The Fort William to Mallaig line — known as the Road to the Isles — was completed in 1901 and was one of the last great Victorian railway projects. It was built to open up the remote western Highlands and provide a rail connection to the Hebridean ferry port at Mallaig. The line crosses 11 viaducts, passes through 21 tunnels, and runs along the shores of three lochs. It is consistently voted one of the greatest rail journeys in the world."
-        }
-      ]
-    },
-    {
       "id": "rannoch-moor",
       "name": "Rannoch Moor",
-      "lat": 56.6501,
-      "lng": -4.7102,
+      "lat": 56.62183843128762,
+      "lng": -4.765216779103748,
       "category": "nature",
       "summary": "Europe's largest and wildest expanse of blanket bog — a vast, treeless plateau crossed by the West Highland Line in one of its most dramatic stretches.",
       "tags": [
@@ -125,8 +39,8 @@
     {
       "id": "bridge-of-orchy",
       "name": "Bridge of Orchy & West Highland Way",
-      "lat": 56.5163,
-      "lng": -4.762,
+      "lat": 56.514009718407074,
+      "lng": -4.766039120644489,
       "category": "nature",
       "summary": "The station where the West Highland Way crosses the railway — a remote Highland outpost with stunning views of Ben Dorain.",
       "tags": [
@@ -154,8 +68,8 @@
     {
       "id": "drumochter-pass",
       "name": "Drumochter Pass",
-      "lat": 56.8994,
-      "lng": -4.2239,
+      "lat": 56.85972977622174,
+      "lng": -4.249039897032693,
       "category": "nature",
       "summary": "The highest point on the main railway network in Britain — at 452m, a bleak Highland pass on the Inverness to Edinburgh line.",
       "tags": [
@@ -183,8 +97,8 @@
     {
       "id": "forth-bridge",
       "name": "The Forth Bridge",
-      "lat": 56.0004,
-      "lng": -3.3878,
+      "lat": 56.00111667592248,
+      "lng": -3.3888255888334577,
       "category": "attraction",
       "summary": "The world's first major steel bridge — a Victorian engineering marvel crossing the Firth of Forth, visible from the train approaching Edinburgh.",
       "tags": [
@@ -211,8 +125,8 @@
     {
       "id": "loch-lomond-train",
       "name": "Loch Lomond — from the train",
-      "lat": 56.1013,
-      "lng": -4.6389,
+      "lat": 56.083924104391045,
+      "lng": -4.5990520524430165,
       "category": "nature",
       "summary": "Scotland's most famous loch, glimpsed from the West Highland Line — the train runs right along its eastern shore from Balloch to Ardlui.",
       "tags": [
@@ -245,8 +159,8 @@
     {
       "id": "linlithgow-palace",
       "name": "Linlithgow Palace",
-      "lat": 55.9767,
-      "lng": -3.5971,
+      "lat": 55.97890083246732,
+      "lng": -3.600839830894367,
       "category": "attraction",
       "summary": "A magnificent ruined royal palace visible from the train 15 minutes west of Edinburgh — birthplace of Mary Queen of Scots in 1542, and the favourite residence of the Stewart kings for over a century.",
       "tags": [
@@ -279,8 +193,8 @@
     {
       "id": "loch-awe-cruachan",
       "name": "Loch Awe & The Hollow Mountain",
-      "lat": 56.3982,
-      "lng": -5.0719,
+      "lat": 56.29750558684477,
+      "lng": -5.227747304083241,
       "category": "attraction",
       "summary": "Scotland's longest freshwater loch — 41km of mountain-ringed water — with a remarkable secret: a hydroelectric power station built entirely inside the mountain beside it, its vast cavern large enough to hold a cathedral.",
       "tags": [
@@ -313,8 +227,8 @@
     {
       "id": "corrour-station",
       "name": "Corrour Station",
-      "lat": 56.7598,
-      "lng": -4.691,
+      "lat": 56.760312159089004,
+      "lng": -4.6907719752961246,
       "category": "attraction",
       "summary": "The most remote and highest mainline railway station in Britain — sitting at 408m on Rannoch Moor with no road access whatsoever. The nearest public road is 10 miles away.",
       "tags": [
@@ -342,8 +256,8 @@
     {
       "id": "aviemore-cairngorms",
       "name": "Aviemore & the Cairngorms",
-      "lat": 57.1926,
-      "lng": -3.8293,
+      "lat": 57.06058003644241,
+      "lng": -3.6066143354681444,
       "category": "nature",
       "summary": "The gateway to Britain's only subarctic mountain plateau — the Cairngorms contain five of the six highest peaks in the UK, and the ancient Caledonian pine forest that once covered most of Scotland.",
       "tags": [
@@ -371,8 +285,8 @@
     {
       "id": "highland-folk-museum",
       "name": "Highland Folk Museum (Kingussie)",
-      "lat": 57.0746,
-      "lng": -4.0338,
+      "lat": 57.07017581508768,
+      "lng": -4.102232832949363,
       "category": "attraction",
       "summary": "An 80-acre open-air museum near Newtonmore containing an authentic reconstructed 18th-century Highland township — and the filming location for the MacKenzie village in Outlander.",
       "tags": [
@@ -400,8 +314,8 @@
     {
       "id": "blair-atholl",
       "name": "Blair Atholl & Blair Castle",
-      "lat": 56.7712,
-      "lng": -3.8501,
+      "lat": 56.76695545391335,
+      "lng": -3.8455898022807884,
       "category": "attraction",
       "summary": "A gleaming white castle visible from the train — home to Europe's only remaining private army, the Atholl Highlanders, a ceremonial regiment that has existed since 1777 and still answers only to the Duke of Atholl.",
       "tags": [
@@ -434,8 +348,8 @@
     {
       "id": "pitlochry",
       "name": "Pitlochry & the Salmon Ladder",
-      "lat": 56.7059,
-      "lng": -3.734,
+      "lat": 56.69895602344907,
+      "lng": -3.7403601752997475,
       "category": "attraction",
       "summary": "A Victorian spa town in the heart of Perthshire, with a hydroelectric dam where you can watch Atlantic salmon climbing a 34-chamber ladder on their return to their spawning grounds.",
       "tags": [
@@ -463,8 +377,8 @@
     {
       "id": "dunkeld-birnam",
       "name": "Dunkeld & Birnam Wood",
-      "lat": 56.5641,
-      "lng": -3.5869,
+      "lat": 56.554667499135284,
+      "lng": -3.567197577233449,
       "category": "nature",
       "summary": "A cathedral town on the River Tay — and across the bridge, the last surviving tree of the Birnam Wood that Shakespeare wrote into Macbeth. A 600-year-old oak that may have been standing when Shakespeare himself visited.",
       "tags": [
@@ -492,8 +406,8 @@
     {
       "id": "stirling",
       "name": "Stirling — the Brooch of Scotland",
-      "lat": 56.1165,
-      "lng": -3.9369,
+      "lat": 56.11668875958763,
+      "lng": -3.936780732811765,
       "category": "attraction",
       "summary": "The city that controlled Scotland for centuries — whoever held Stirling Castle held the only crossing point between the Highlands and Lowlands, making it the most fought-over ground in Scottish history.",
       "tags": [
@@ -520,6 +434,40 @@
           "type": "film",
           "title": "Braveheart (1995) — and Mel Gibson's kilt",
           "body": "The Wallace Monument saw a surge of 130% in visitor numbers in the years after Braveheart was released in 1995 — despite the film being almost entirely shot in Ireland and using Mel Gibson, an Australian-American, to play Scotland's national hero. Most Scots greeted the film with a mixture of pride and exasperation at its historical liberties: Wallace is depicted as wearing a kilt (kilts didn't exist in the 13th century), and his affair with the French princess is entirely invented. The scene of Scots lifting their kilts to flash the English army was filmed on a cold Irish morning, which reportedly did not make the extras enthusiastic participants."
+        }
+      ]
+    },
+    {
+      "id": "doune-castle",
+      "name": "Doune Castle",
+      "lat": 56.18518693183096,
+      "lng": -4.049935073479367,
+      "category": "attraction",
+      "summary": "A 14th-century castle near Stirling that has played Camelot, Castle Leoch, and Winterfell — the most filmed castle in Scotland. Remarkably well-preserved, it comes with an audioguide narrated by Monty Python cast members reprising their original roles.",
+      "tags": [
+        "history",
+        "film"
+      ],
+      "trivia": [
+        {
+          "type": "film",
+          "title": "Monty Python and the Holy Grail (1975)",
+          "body": "Doune Castle served as multiple locations in Monty Python and the Holy Grail — most famously as Castle Camelot ('It is a silly place'), Castle Anthrax where Galahad is tempted, and Swamp Castle where Herbert is locked in a tower. The Pythons chose it because it was cheap, available, and authentically medieval. Visitors today can borrow an audioguide narrated by cast members including Terry Jones, who reprises his role guiding you through each room.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Doune_Castle",
+            "caption": "Doune Castle"
+          }
+        },
+        {
+          "type": "film",
+          "title": "Outlander & Game of Thrones",
+          "body": "Doune Castle has an extraordinary on-screen CV. It plays Castle Leoch — the seat of Clan MacKenzie — throughout Outlander. It was also used as Winterfell in the original Game of Thrones pilot episode, before the production moved to Northern Ireland. The same castle therefore hosted both the Jacobite Highlands and the North of Westeros. It also appeared in Ivanhoe (1952) and the BBC's Merlin."
+        },
+        {
+          "type": "history",
+          "title": "Built by the Regent Albany",
+          "body": "Doune Castle was built around 1400 by Robert Stewart, Duke of Albany, who effectively ruled Scotland as regent while King Robert III was incapacitated. Albany was one of the most powerful men in Scottish history — and one of the most ruthless. He almost certainly arranged the imprisonment of the young Prince James in England, ensuring his own dominance. When James eventually returned as James I, one of his first acts was to execute Albany's son."
         }
       ]
     }

@@ -10,8 +10,8 @@
     {
       "id": "mccaigs-tower",
       "name": "McCaig's Tower",
-      "lat": 56.4175,
-      "lng": -5.4751,
+      "lat": 56.4154178733367,
+      "lng": -5.469205431137429,
       "category": "attraction",
       "summary": "A circular granite folly resembling the Colosseum, looming over Oban — built by a wealthy banker in 1897 to provide work for local stonemasons and immortalise his family. The statues he planned were never built, but the views from the outer walls are among the finest on the west coast.",
       "tags": [
@@ -44,8 +44,8 @@
     {
       "id": "oban-harbour",
       "name": "Oban Harbour",
-      "lat": 56.4147,
-      "lng": -5.4712,
+      "lat": 56.41223028165744,
+      "lng": -5.476015928398621,
       "category": "attraction",
       "summary": "The beating heart of Oban — a working harbour where CalMac ferries depart for Mull, Islay, Colonsay, and the outer islands. This is one of the best places in Scotland to eat fresh seafood, landed directly from boats at the pier.",
       "tags": [
@@ -83,8 +83,8 @@
     {
       "id": "dunstaffnage-castle",
       "name": "Dunstaffnage Castle",
-      "lat": 56.4549,
-      "lng": -5.4369,
+      "lat": 56.454679373352086,
+      "lng": -5.43745535997094,
       "category": "history",
       "summary": "A 13th-century castle on a rock above the Firth of Lorn — one of the oldest standing castles in Scotland, with connections to the Stone of Destiny, Robert the Bruce, and Flora MacDonald. The Campbells of Dunstaffnage still hold the hereditary captaincy today.",
       "tags": [
@@ -112,8 +112,8 @@
     {
       "id": "isle-of-kerrera",
       "name": "Isle of Kerrera",
-      "lat": 56.3988,
-      "lng": -5.5155,
+      "lat": 56.398159189195574,
+      "lng": -5.5511529502873485,
       "category": "nature",
       "summary": "A small, car-free island just minutes by ferry from Oban, with a circular walking route, ruined castle, and views across to the mainland. With a population of just 50 people, it offers complete escape from the bustle of the harbour town visible across the water.",
       "tags": [
@@ -141,8 +141,8 @@
     {
       "id": "castle-stalker",
       "name": "Castle Stalker",
-      "lat": 56.5693,
-      "lng": -5.385,
+      "lat": 56.5715103687394,
+      "lng": -5.386033271605852,
       "category": "attraction",
       "summary": "A 15th-century tower house on a tiny tidal island — the 'Castle of Aaaargh' from the final scene of Monty Python and the Holy Grail. One of the most dramatically positioned castles in Scotland, it was famously lost by its owner in a drunken wager in 1620.",
       "tags": [

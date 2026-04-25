@@ -10,8 +10,8 @@
     {
       "id": "glencoe-valley",
       "name": "Glencoe Valley",
-      "lat": 56.672,
-      "lng": -5.065,
+      "lat": 56.66023626583082,
+      "lng": -5.068384466535517,
       "category": "nature",
       "summary": "A vast U-shaped glacial valley ringed by some of the most dramatic peaks in Scotland — carved by a supervolcano 420 million years ago, then sculpted by ice, and haunted ever since by the events of February 1692.",
       "tags": [
@@ -50,8 +50,8 @@
     {
       "id": "three-sisters",
       "name": "The Three Sisters",
-      "lat": 56.6672,
-      "lng": -5.0094,
+      "lat": 56.659309106516545,
+      "lng": -4.994322557869934,
       "category": "nature",
       "summary": "Three enormous rock buttresses rising almost vertically from the valley floor — the most dramatic viewpoint in Glencoe, and the starting point for the Hidden Valley hike.",
       "tags": [
@@ -84,8 +84,8 @@
     {
       "id": "buachaille-etive-mor",
       "name": "Buachaille Etive Mòr",
-      "lat": 56.6354,
-      "lng": -4.939,
+      "lat": 56.64400457483157,
+      "lng": -4.914493635864512,
       "category": "nature",
       "summary": "The Great Shepherd of Etive — a near-perfect pyramid of ancient rock guarding the eastern entrance to Glencoe, one of the most photographed mountains in Scotland.",
       "tags": [
@@ -113,8 +113,8 @@
     {
       "id": "signal-rock",
       "name": "Signal Rock & An Torr",
-      "lat": 56.6799,
-      "lng": -5.0524,
+      "lat": 56.66319277343478,
+      "lng": -5.062005802286987,
       "category": "history",
       "summary": "The rock from which, according to tradition, the signal was given to begin the Glencoe Massacre — now surrounded by an ancient oak wood, a 20-minute walk from the valley road.",
       "tags": [
@@ -136,24 +136,14 @@
           "type": "nature",
           "title": "Ancient oak wood",
           "body": "The woodland around Signal Rock and An Torr is one of the finest examples of ancient semi-natural oak woodland remaining in the Scottish Highlands. These twisted, moss-covered oaks are descendants of the great Atlantic oakwood that once stretched along Scotland's west coast — a temperate rainforest habitat now reduced to scattered fragments. The wood is a National Nature Reserve. In spring the floor is carpeted with bluebells and wood anemones; in autumn it turns gold and copper against the dark rock faces above. A trail network connects the wood to Glencoe Lochan — a man-made lake created in 1894 by Lord Strathcona for his homesick Canadian wife, landscaped to resemble the Rockies."
-        },
-        {
-          "type": "history",
-          "title": "Swans and the Celtic soul",
-          "body": "If you see a swan on the loch below the Signal Rock wood, Celtic tradition says you are looking at something sacred. In Scottish Gaelic the swan is 'eala' — a word threaded through Highland place names and poetry for centuries. Across the Celtic world, from Ireland to Brittany, swans were believed to carry the souls of the dead to the Otherworld, and to embody fidelity because they mate for life. A pair of swans seen together was considered a sign of true and lasting love. Killing a swan was regarded as a terrible omen — some Highland communities believed the act brought death within the year. The whooper swans that winter in the Scottish Highlands, arriving each October from Iceland with their bugling calls, were particularly associated with the soul's journey: birds that disappeared beyond the horizon every spring and returned from some unreachable place in the north, just as the dead were believed to travel to islands beyond the western sea. In a glen already heavy with grief, a swan on the water meant something."
-        },
-        {
-          "type": "history",
-          "title": "The Swans of Coire Gabhail",
-          "body": "A local legend tells of Eala — 'swan' in Scots Gaelic — a herdsman's daughter from the hidden valley above the Three Sisters, and Fearchar, a shepherd's son from the far side of the mountain. For fifteen years he returned to the glen each Samhain, leaving small things at the valley entrance: carved rowan wood, heather, a river-smoothed stone. She always found them. On the fifteenth Samhain — the night the boundary between the living world and the Otherworld grows thin — she came down to the loch and found two whooper swans resting with their necks crossed. When she looked up, he was standing on the other side of the water. He had finally crossed into the valley. They were married in the spring."
         }
       ]
     },
     {
       "id": "glencoe-visitor-centre",
       "name": "Glencoe Visitor Centre",
-      "lat": 56.6772,
-      "lng": -5.0298,
+      "lat": 56.67177268906406,
+      "lng": -5.082636302286473,
       "category": "attraction",
       "summary": "The NTS gateway to Glencoe National Nature Reserve — free entry, excellent maps and hiking advice, a reconstructed turf house, and the best café in the glen. Start here.",
       "tags": [
@@ -175,6 +165,49 @@
           "type": "trivia",
           "title": "The Devil's Staircase",
           "body": "Eight miles east of Glencoe village, a section of the West Highland Way climbs out of the valley via a series of punishing switchbacks known as the Devil's Staircase — named by the soldiers who built it for General Wade after the 1715 Jacobite rising. It rises 250m in less than a mile. At the top, the path crests a pass with views back over the full length of Glencoe and forward over Kinlochleven and the Ben Nevis massif. The full descent to Kinlochleven takes around two hours. The visitor centre staff can advise on current conditions and provide the OS map essential for any serious hiking in the glen."
+        }
+      ]
+    },
+    {
+      "id": "pap-of-glencoe",
+      "name": "Pap of Glencoe",
+      "lat": 56.68883237511844,
+      "lng": -5.062888835821945,
+      "category": "nature",
+      "summary": "A compact, conical peak towering directly above Glencoe village — steep, boggy, and finishing with a rocky scramble, but rewarded with some of the finest views in Scotland: Ben Nevis, the Mamores, Loch Leven, and the full gateway of the glen.",
+      "tags": [
+        "nature"
+      ],
+      "trivia": [
+        {
+          "type": "nature",
+          "title": "Sgorr na Cìche — Peak of the Breast",
+          "body": "The Pap of Glencoe's Gaelic name is Sgorr na Cìche — meaning 'Peak of the Breast', a reference to its unmistakable rounded, conical silhouette visible from across Loch Leven and the whole lower glen. At 742m it falls short of Munro status (which requires 914m) but is classified as a Graham — and it punches well above its weight. The climb starts near sea level in Glencoe village, gains height relentlessly on steep boggy terrain, and finishes with a light scramble over boulders to the summit dome. Allow 4-5 hours for the round trip. The view from the top — Ben Nevis, the Mamores, Loch Linnhe, and the full sweep of Glencoe — is consistently described by walkers as among the finest in Scotland.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Pap_of_Glencoe",
+            "caption": "Pap of Glencoe, Sgorr na Cìche"
+          }
+        },
+        {
+          "type": "trivia",
+          "title": "Don't be fooled by the numbers",
+          "body": "The Pap of Glencoe is only 4 miles and 742m — numbers that sound modest until you start climbing. The path is steep, boggy, and rough throughout, finishing with a scramble over large boulders where hands are needed for balance. It is considerably harder than its height suggests, especially in wet weather when the scree becomes treacherous. Start from the Glencoe Lochan car park — cross the bridge at the end of the village, follow the minor road for 500m. The car park fills early on good days. Finish at the Clachaig Inn, 10 minutes from the trailhead — a legendary hillwalkers' pub that has been serving post-hike pints since 1755. There is a sign above the door that reads 'No Hawkers, No Campbells' — a reference to the Glencoe Massacre that has hung there for centuries."
+        },
+        {
+          "type": "history",
+          "title": "The Aonach Eagach — not for the faint-hearted",
+          "body": "The Pap sits at the western end of the Aonach Eagach — the Notched Ridge — which runs along the northern wall of Glencoe for several kilometres. The Aonach Eagach is considered the most fearsome ridge walk on the Scottish mainland: a sustained knife-edge traverse with significant exposure and genuine scrambling throughout, from which there is no easy escape once committed. It is not a walk — it is a mountaineering route that claims lives most years. The Pap itself is a manageable introduction to the area's terrain, but it gives a clear view of the Aonach Eagach's serrated profile above, which puts the glen's wilder side in sharp perspective."
+        },
+        {
+          "type": "history",
+          "title": "Swans and the Celtic soul",
+          "body": "If you see a swan on Loch Leven below — the long silver stretch of water visible from the Pap's summit — Celtic tradition says you are looking at something sacred. In Scottish Gaelic the swan is 'eala', a word threaded through Highland place names and poetry for centuries. Across the Celtic world, swans were believed to carry the soul on its journey to the Otherworld, and to embody fidelity because they mate for life. A pair of swans seen together was a sign of true and lasting love. Killing a swan was regarded as a terrible omen. The whooper swans that winter here, arriving each October from Iceland with their bugling calls, were particularly associated with the soul's journey — birds that vanished beyond the horizon every spring and returned from some unreachable northern place, just as the dead were believed to travel to islands beyond the western sea."
+        },
+        {
+          "type": "history",
+          "title": "The Swans of Loch Leven",
+          "body": "A local legend tells of Eala — 'swan' in Scots Gaelic — a herdsman's daughter from the glen below, and Fearchar, a shepherd's son from the far side of the mountain. For fifteen years he returned each Samhain, leaving small things at her door: carved rowan wood, heather, a river-smoothed stone. She always found them. On the fifteenth Samhain — the night the boundary between the living world and the Otherworld grows thin — she walked down to the shore of Loch Leven. Two whooper swans rested on the still water, very much alive, their necks crossed. When she looked up, Fearchar was standing on the other side of the shore. He had finally come down from the mountain. They were married in the spring."
         }
       ]
     }
