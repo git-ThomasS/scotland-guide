@@ -10,8 +10,8 @@
     {
       "id": "edinburgh-castle",
       "name": "Edinburgh Castle",
-      "lat": 55.94860527145333,
-      "lng": -3.199886211775331,
+      "lat": 55.948719583587234,
+      "lng": -3.201176428162832,
       "category": "attraction",
       "summary": "A fortress on volcanic rock, occupied for over 3,000 years — home to Scotland's crown jewels, the famous One O'Clock Gun, and views across the entire city. Every Scottish monarch from the 11th century onwards has had a connection to this rock.",
       "tags": [
@@ -60,8 +60,8 @@
     {
       "id": "arthur-seat",
       "name": "Arthur's Seat",
-      "lat": 55.944033505123606,
-      "lng": -3.1618753518693423,
+      "lat": 55.94428250775023,
+      "lng": -3.163974238593985,
       "category": "nature",
       "summary": "An ancient volcano rising 251m above the city — arguably the finest urban hike in Europe. The summit gives views across Edinburgh, the Firth of Forth, and on clear days as far as the Highlands, and the whole hill is riddled with history, mystery, and the odd film crew.",
       "tags": [
@@ -106,7 +106,7 @@
       "id": "royal-mile",
       "name": "The Royal Mile",
       "lat": 55.95010927315803,
-      "lng": -3.188010273493216,
+      "lng": -3.1880317311648487,
       "category": "attraction",
       "summary": "The historic spine of Edinburgh's Old Town, running for exactly one Scottish mile from the Castle down to Holyrood Palace. Every close and wynd branching off it hides centuries of stories — murders, mysteries, literary connections, and the occasional film crew.",
       "tags": [
@@ -154,8 +154,8 @@
     {
       "id": "holyrood-palace",
       "name": "Palace of Holyroodhouse",
-      "lat": 55.95268974584122,
-      "lng": -3.1723904195228303,
+      "lat": 55.95268609076656,
+      "lng": -3.1724058492869287,
       "category": "attraction",
       "summary": "The official Scottish residence of the British monarch, at the foot of the Royal Mile — and the scene of some of the most dramatic episodes in Scottish royal history. Mary Queen of Scots lived here through six turbulent years that changed the course of British history.",
       "tags": [
@@ -188,8 +188,8 @@
     {
       "id": "greyfriars-kirkyard",
       "name": "Greyfriars Kirkyard",
-      "lat": 55.94665490762329,
-      "lng": -3.1922345888366697,
+      "lat": 55.94671549344942,
+      "lng": -3.1922626702447188,
       "category": "trivia",
       "summary": "One of Edinburgh's most atmospheric graveyards — and one of its most haunted. The kirkyard contains the graves of Covenanters, a famously loyal dog, and names that J.K. Rowling apparently found useful when naming her characters.",
       "tags": [
@@ -232,8 +232,8 @@
     {
       "id": "victoria-street",
       "name": "Victoria Street",
-      "lat": 55.94871615081825,
-      "lng": -3.193198102329103,
+      "lat": 55.94866761792733,
+      "lng": -3.1937484256617643,
       "category": "trivia",
       "summary": "A curved, cobbled street of colourful shopfronts widely cited as the inspiration for Diagon Alley in Harry Potter. Built in the 1840s over the older medieval West Bow, it sits above layers of Edinburgh history that go back centuries.",
       "tags": [
@@ -266,8 +266,8 @@
     {
       "id": "calton-hill",
       "name": "Calton Hill",
-      "lat": 55.95503608588538,
-      "lng": -3.182745541281638,
+      "lat": 55.95504415849536,
+      "lng": -3.182740789678394,
       "category": "nature",
       "summary": "A hill at the east end of Princes Street with panoramic views and a collection of grand monuments — including one that was never finished. The hill featured prominently in T2 Trainspotting and remains one of the best free viewpoints in any European capital.",
       "tags": [
@@ -301,8 +301,8 @@
     {
       "id": "mary-kings-close",
       "name": "Mary King's Close",
-      "lat": 55.94991517407183,
-      "lng": -3.190512043340856,
+      "lat": 55.94993115672617,
+      "lng": -3.190309111244566,
       "category": "attraction",
       "summary": "A labyrinth of buried 17th-century streets sealed beneath the Royal Mile since the 18th century — one of Edinburgh's most atmospheric underground attractions. Walking through it gives a genuine sense of the medieval city that still exists beneath the modern one.",
       "tags": [
@@ -335,8 +335,8 @@
     {
       "id": "princes-street",
       "name": "Princes Street",
-      "lat": 55.952546422073475,
-      "lng": -3.1941803718780744,
+      "lat": 55.95250887833705,
+      "lng": -3.194183328677523,
       "category": "attraction",
       "summary": "Edinburgh's most famous street — unique in having buildings only on one side, with the other open to the castle and gardens. The opening chase of Trainspotting was filmed here, and it remains the beating commercial heart of the city.",
       "tags": [
@@ -378,6 +378,164 @@
           "type": "history",
           "title": "The city that nearly had a different king",
           "body": "In September 1745, Bonnie Prince Charlie marched down from the north and occupied Edinburgh for six triumphant weeks — holding court at Holyroodhouse and throwing lavish balls while his Highland army camped outside the city walls. He did not enter Edinburgh Castle, which remained in government hands throughout. The city he occupied was the same Princes Street and Old Town you walk today. Within a year his cause would be crushed at Culloden, and he would spend the rest of his life in increasingly dissolute exile in Rome, dying in 1788 never having returned to Scotland."
+        }
+      ]
+    },
+    {
+      "id": "scottish-parliament",
+      "name": "Scottish Parliament",
+      "lat": 55.9521488,
+      "lng": -3.1749881,
+      "category": "attraction",
+      "summary": "The home of devolved Scottish government at the foot of the Royal Mile — one of the most controversial and celebrated pieces of architecture built in Britain in the last 50 years, designed by a Catalan architect who died before it was finished.",
+      "tags": [
+        "history",
+        "art"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The building that came in at ten times the budget",
+          "body": "When the Scottish Parliament building was first mooted in 1997, an early estimate of £40 million was floated. The final cost, when it opened in October 2004, was £414 million — ten times over, and three years late. The architect, Enric Miralles, a Catalan Spaniard who came last in an Evening News public poll during the competition, died of a brain tumour in 2000 aged 45, before seeing a single room completed. His widow carried the project to completion. The building won the RIBA Stirling Prize — the most prestigious architecture award in the UK — in 2005, posthumously vindicating Miralles. It has since also been voted the ugliest building in the world.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Scottish_Parliament_Building",
+            "caption": "Scottish Parliament Building, Edinburgh"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Upturned boats and whisky bottles",
+          "body": "Miralles designed the building as a meditation on Scotland itself. The distinctive steel roofs of the tower buildings are shaped like upturned fishing boats. The 'trigger panels' around the windows are cut from black Highland granite. The ponds in the grounds represent Scottish lochs. Inside the debating chamber, look for the whisky bottles hidden in the decorative panels. The recurring motif on the exterior panels is believed to be based on Henry Raeburn's famous 'Skating Minister' painting, which hangs in the National Gallery a few hundred metres away. Miralles once said: 'Parliament is just a way of sitting together.'"
+        },
+        {
+          "type": "history",
+          "title": "The Queensberry House cannibal",
+          "body": "Incorporated into the parliament complex is Queensberry House, a 17th-century mansion with a remarkable history. In 1707, the Duke of Queensberry — who lived here — was one of the key architects of the Act of Union with England, accused of accepting bribes from Queen Anne to deliver Scottish votes. On the day the Union was signed, his son James — described by contemporaries as a violent idiot of enormous stature — broke free from his room, found a kitchen boy, killed him, and was found roasting him on a spit when discovered. The oven he used can still be seen in the building. Ian Rankin used this story in his Rebus novel Set in Darkness."
+        }
+      ]
+    },
+    {
+      "id": "national-museum-scotland",
+      "name": "National Museum of Scotland",
+      "lat": 55.9469421,
+      "lng": -3.190494,
+      "category": "attraction",
+      "summary": "The finest collection of Scottish historical artefacts anywhere in the world — from Pictish stones and Jacobite relics to Dolly the sheep — free to enter and one of the most rewarding museums in Britain.",
+      "tags": [
+        "history"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Dolly the sheep",
+          "body": "Among the most famous exhibits in the National Museum of Scotland is the taxidermied body of Dolly the sheep — the first mammal ever cloned from an adult cell, created at the Roslin Institute near Edinburgh in 1996. Dolly was named after Dolly Parton, because she was cloned from a mammary gland cell. She lived for six years before being put down in 2003. Her cloning was one of the most significant scientific events of the 20th century and raised profound ethical questions that are still debated today.",
+          "media": {
+            "type": "wikipedia",
+            "article": "National_Museum_of_Scotland",
+            "caption": "National Museum of Scotland"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The Lewis Chessmen",
+          "body": "The museum holds some of the Lewis Chessmen — a set of 12th-century Norse chess pieces carved from walrus ivory and whale teeth, discovered on the Isle of Lewis in 1831. The pieces are among the most recognisable medieval artefacts in the world, and have appeared in Harry Potter and the Philosopher's Stone as the animated chess pieces in McGonagall's giant chess set. Most of the 93 pieces are in the British Museum in London, which Scotland has long argued should be repatriated. Edinburgh holds 11. The argument continues."
+        },
+        {
+          "type": "history",
+          "title": "The sword of William Wallace",
+          "body": "The museum holds a sword attributed to William Wallace, Scotland's greatest national hero — the man immortalised, somewhat inaccurately, by Mel Gibson in Braveheart. The sword dates to the 16th century, which is about 200 years after Wallace was executed in 1305. This does not deter anyone. Wallace was hanged, drawn, and quartered in London for high treason against a king he had never recognised. Parts of his body were sent to Newcastle, Berwick, Stirling, and Perth as a warning. Scotland made him a national hero anyway."
+        }
+      ]
+    },
+    {
+      "id": "new-town",
+      "name": "Edinburgh New Town",
+      "lat": 55.9551234,
+      "lng": -3.1997493,
+      "category": "attraction",
+      "summary": "One of the finest examples of Georgian urban planning in the world — a grid of elegant streets built from 1766 when Edinburgh's overcrowded Old Town was deemed uninhabitable by the wealthy. The contrast with the Old Town across Princes Street is dramatic and deliberate.",
+      "tags": [
+        "history",
+        "art"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "Built to escape the smell",
+          "body": "In the mid-18th century, Edinburgh's Old Town was one of the most overcrowded places in Europe. Around 50,000 people lived in medieval tenements up to 14 storeys high, sharing wells and outdoor privies. Waste was thrown from windows into the street at 10pm with a shouted warning of 'Gardyloo' — a corruption of the French 'Gardez l'eau'. When plans for the New Town were announced in 1766, the wealthy fled across the drained loch — now Princes Street Gardens — to the new Georgian grid with almost indecent haste. Within a generation the Old Town had become a slum.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Edinburgh_New_Town",
+            "caption": "Edinburgh New Town"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Planned by a 23-year-old",
+          "body": "The grid of streets that forms the first New Town was designed by James Craig, who was 23 years old when he won the competition in 1766. His plan was elegantly simple: three main east-west streets named for the royal family (George Street in the centre, Queen Street to the north, Princes Street to the south), two garden squares at each end, and linking streets named Hanover, Frederick, and Castle. Craig died in poverty in 1795, having received little credit for the design during his lifetime. The New Town he conceived is now a UNESCO World Heritage Site."
+        },
+        {
+          "type": "history",
+          "title": "Deacon Brodie — the real Jekyll and Hyde",
+          "body": "The most famous resident of the New Town's fringes was a man who inspired one of literature's great dualities. William Brodie was a respected Edinburgh cabinet maker and town councillor by day — and a burglar by night, using wax impressions of keys made while visiting clients' homes to rob them after dark. He was caught, tried, and hanged in 1788 on a gallows he had himself designed in his capacity as a city councillor. A young Robert Louis Stevenson grew up hearing stories of Brodie, and the idea of a respectable man with a criminal double life became the seed of Dr Jekyll and Mr Hyde. There is a pub on the Royal Mile named after him."
+        }
+      ]
+    },
+    {
+      "id": "royal-yacht-britannia",
+      "name": "Royal Yacht Britannia",
+      "lat": 55.9820518,
+      "lng": -3.177215,
+      "category": "attraction",
+      "summary": "The Queen's floating palace for 44 years — now permanently moored in Leith, Edinburgh's port. Tripadvisor's No.1 UK attraction, and the only place where Queen Elizabeth II said she could truly relax.",
+      "tags": [
+        "history",
+        "royalty"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The ship that made the Queen cry",
+          "body": "HMY Britannia served the Royal Family for 44 years, travelling over one million nautical miles on 968 state visits, stopping at 600 ports in 135 countries — making Elizabeth II the most widely travelled monarch in history. When Britannia was decommissioned in December 1997, the Queen — normally undemonstrative in public — was seen to cry at the ceremony. She had said of the ship: 'This is the only place I can truly relax.' In the event of nuclear war, the Queen and Prince Philip were to be evacuated aboard her to the north-west coast of Scotland. She was built on the Clyde in 1953 and made her last voyage carrying the final Governor of Hong Kong as it was handed back to China in 1997.",
+          "media": {
+            "type": "wikipedia",
+            "article": "HMY_Britannia",
+            "caption": "HMY Britannia, Leith"
+          }
+        },
+        {
+          "type": "history",
+          "title": "The royal honeymoons",
+          "body": "Britannia hosted numerous royal honeymoons — Princess Margaret and Antony Armstrong-Jones were the first, in 1960. Princess Anne honeymooned aboard in 1973, and Charles and Diana sailed on her in 1981, departing Gibraltar. The ship's rules required complete silence near the royal apartments, with all work finished by 8am. A thermometer was kept in the Queen's bathroom to ensure the water was always the correct temperature. A mahogany windbreak was added to the balcony deck specifically to prevent breezes from blowing up skirts and inadvertently revealing royal underwear."
+        }
+      ]
+    },
+    {
+      "id": "grassmarket",
+      "name": "Grassmarket",
+      "lat": 55.947453,
+      "lng": -3.1961632,
+      "category": "attraction",
+      "summary": "A wide cobbled square below the castle where Edinburgh held public executions for centuries — now lined with pubs and restaurants, with a gallows memorial still marking the spot where over 100 Covenanters were hanged.",
+      "tags": [
+        "history"
+      ],
+      "trivia": [
+        {
+          "type": "history",
+          "title": "The public executions",
+          "body": "The Grassmarket was Edinburgh's main site for public hangings from the 15th century until 1784. The Last Drop pub — one of several still trading here — takes its name from the scaffold that once stood outside. Landlords rented window seats to spectators for particularly popular executions. Over 100 Covenanters were hanged here in the 1680s for refusing to accept the king's authority over the church — their memorial, a simple flat stone, still sits in the square.",
+          "media": {
+            "type": "wikipedia",
+            "article": "Grassmarket",
+            "caption": "The Grassmarket, Edinburgh"
+          }
+        },
+        {
+          "type": "history",
+          "title": "Burke and the anatomy trade",
+          "body": "William Burke and William Hare murdered 16 people in the closes nearby between 1827 and 1828, selling the bodies to anatomist Robert Knox at Edinburgh Medical School. Demand for fresh corpses for dissection far exceeded the legal supply — creating a black market for body-snatching and, in Burke and Hare's case, murder. Burke was hanged in January 1829 before a crowd of 25,000. His body was publicly dissected, his skeleton placed on permanent display, and his skin tanned and made into a pocket book — which is still held by the Royal College of Surgeons of Edinburgh."
         }
       ]
     }
